@@ -5,20 +5,38 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="856d9de2-fdf1-48e7-a1cc-e0b8a566e004" name="Changes" comment="rspec + db config">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/public/css/main.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/public/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/assets/background.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/assets/background2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/assets/background3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/assets/background4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/assets/logo1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/LoginComponent.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/MainMenu.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/Notes.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/Registration.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/services/TokenDataService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Team12_Notes_Web_App.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Team12_Notes_Web_App.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/config/application.rb" beforeDir="false" afterPath="$PROJECT_DIR$/server/config/application.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/config/mongoid.yml" beforeDir="false" afterPath="$PROJECT_DIR$/server/config/mongoid.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="Vue Single File Component" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="fixv2" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_COMMON_BRANCH" value="main" />
@@ -34,23 +52,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "ruby.rails.projectView.checked": "true",
-    "ruby.structure.view.model.defaults.configured": "true",
-    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/UCLM/2nd term/Web/Team12_Notes_Web_App&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ruby.rails.projectView.checked&quot;: &quot;true&quot;,
+    &quot;ruby.structure.view.model.defaults.configured&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\UCLM\2nd term\Web\Team12_Notes_Web_App\client\src\assets" />
+      <recent name="D:\UCLM\2nd term\Web\Team12_Notes_Web_App\client\src" />
+      <recent name="D:\UCLM\2nd term\Web\Team12_Notes_Web_App\client" />
+      <recent name="D:\UCLM\2nd term\Web\Team12_Notes_Web_App\client\public\css" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpringUtil" SPRING_PRE_LOADER_OPTION="true" RAKE_SPRING_PRE_LOADER_OPTION="true" RAILS_SPRING_PRE_LOADER_OPTION="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="856d9de2-fdf1-48e7-a1cc-e0b8a566e004" name="Changes" comment="" />
@@ -59,6 +87,13 @@
       <option name="presentableId" value="Default" />
       <updated>1676726897424</updated>
       <workItem from="1676726900144" duration="4700000" />
+      <workItem from="1676890832040" duration="6154000" />
+      <workItem from="1676910595116" duration="1716000" />
+      <workItem from="1677409997636" duration="330000" />
+      <workItem from="1677414964056" duration="9469000" />
+      <workItem from="1677439036292" duration="2300000" />
+      <workItem from="1677494217256" duration="1372000" />
+      <workItem from="1677498409245" duration="1600000" />
     </task>
     <task id="LOCAL-00001" summary="initial  server added">
       <created>1676727805344</created>

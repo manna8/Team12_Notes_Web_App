@@ -24,6 +24,7 @@ Bundler.require(*Rails.groups)
 module Server
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
+    config.api_only = true
     config.load_defaults 7.0
 
     config.before_configuration do

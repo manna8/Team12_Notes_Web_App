@@ -4,11 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="856d9de2-fdf1-48e7-a1cc-e0b8a566e004" name="Changes" comment="rspec + db config">
+    <list default="true" id="856d9de2-fdf1-48e7-a1cc-e0b8a566e004" name="Changes" comment="login + registration">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/server/Gemfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/server/Gemfile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/app/models/user.rb" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/models/user.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/config/application.rb" beforeDir="false" afterPath="$PROJECT_DIR$/server/config/application.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/config/environment.rb" beforeDir="false" afterPath="$PROJECT_DIR$/server/config/environment.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/config/mongoid.yml" beforeDir="false" afterPath="$PROJECT_DIR$/server/config/mongoid.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/server/config/routes.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/log/development.log" beforeDir="false" afterPath="$PROJECT_DIR$/server/log/development.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/log/test.log" beforeDir="false" afterPath="$PROJECT_DIR$/server/log/test.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/spec/models/user_spec.rb" beforeDir="false" afterPath="$PROJECT_DIR$/server/spec/models/user_spec.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/spec/requests/users_spec.rb" beforeDir="false" afterPath="$PROJECT_DIR$/server/spec/requests/users_spec.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,6 +66,68 @@
   }
 }</component>
   <component name="RunManager" selected="RSpec.User">
+    <configuration name="User should only add first one " type="RSpecRunConfigurationType" factoryName="RSpec" temporary="true" nameIsGenerated="true">
+      <module name="server" />
+      <predefined_log_file enabled="true" id="RUBY_RSPEC" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$MODULE_DIR$/../../server" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <envs>
+        <env name="RAILS_ENV" value="test" />
+        <env name="JRUBY_OPTS" value="-X+O" />
+      </envs>
+      <EXTENSION ID="BundlerRunConfigurationExtension" BUNDLE_MODE="AUTO" bundleExecEnabled="true" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov" ENABLE_BRANCH_COVERAGE="true" ENABLE_FORKED_COVERAGE="true" />
+      <EXTENSION ID="org.jetbrains.plugins.ruby.rails.run.RailsRunConfigurationExtension" SCRATCH_USE_RAILS_RUNNER="false" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$MODULE_DIR$/../../server/spec/models/user_spec.rb" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATHS" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_RUNNER_PATH" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="**/*_spec.rb" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_EXAMPLE_NAME" VALUE="User should only add first one " />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_ARGS" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_VERSION" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="USE_CUSTOM_SPEC_RUNNER" VALUE="false" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="DRB" VALUE="false" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="ZEUS" VALUE="false" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPRING" VALUE="false" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="FULL_BACKTRACE" VALUE="false" />
+      <method v="2" />
+    </configuration>
+    <configuration name="User validations" type="RSpecRunConfigurationType" factoryName="RSpec" temporary="true" nameIsGenerated="true">
+      <module name="server" />
+      <predefined_log_file enabled="true" id="RUBY_RSPEC" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$MODULE_DIR$/../../server" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <envs>
+        <env name="RAILS_ENV" value="test" />
+        <env name="JRUBY_OPTS" value="-X+O" />
+      </envs>
+      <EXTENSION ID="BundlerRunConfigurationExtension" BUNDLE_MODE="AUTO" bundleExecEnabled="true" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov" ENABLE_BRANCH_COVERAGE="true" ENABLE_FORKED_COVERAGE="true" />
+      <EXTENSION ID="org.jetbrains.plugins.ruby.rails.run.RailsRunConfigurationExtension" SCRATCH_USE_RAILS_RUNNER="false" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$MODULE_DIR$/../../server/spec/models/user_spec.rb" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATHS" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_RUNNER_PATH" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="**/*_spec.rb" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_EXAMPLE_NAME" VALUE="User validations" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_ARGS" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_VERSION" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="USE_CUSTOM_SPEC_RUNNER" VALUE="false" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="DRB" VALUE="false" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="ZEUS" VALUE="false" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPRING" VALUE="false" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="FULL_BACKTRACE" VALUE="false" />
+      <method v="2" />
+    </configuration>
     <configuration name="User" type="RSpecRunConfigurationType" factoryName="RSpec" temporary="true" nameIsGenerated="true">
       <module name="server" />
       <predefined_log_file enabled="true" id="RUBY_RSPEC" />
@@ -111,11 +181,15 @@
     </configuration>
     <list>
       <item itemvalue="Rails.Server" />
+      <item itemvalue="RSpec.User should only add first one " />
+      <item itemvalue="RSpec.User validations" />
       <item itemvalue="RSpec.User" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="RSpec.User" />
+        <item itemvalue="RSpec.User validations" />
+        <item itemvalue="RSpec.User should only add first one " />
       </list>
     </recent_temporary>
   </component>
@@ -129,6 +203,7 @@
       <option name="presentableId" value="Default" />
       <updated>1676726897424</updated>
       <workItem from="1676726900144" duration="4700000" />
+      <workItem from="1677495084200" duration="1801000" />
     </task>
     <task id="LOCAL-00001" summary="initial  server added">
       <created>1676727805344</created>
@@ -193,7 +268,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676730183559</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="login + registration">
+      <created>1677434176074</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1677434176074</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -217,15 +299,19 @@
     <MESSAGE value="initial  server added" />
     <MESSAGE value="new mongodb" />
     <MESSAGE value="rspec + db config" />
-    <option name="LAST_COMMIT_MESSAGE" value="rspec + db config" />
+    <MESSAGE value="login + registration" />
+    <option name="LAST_COMMIT_MESSAGE" value="login + registration" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Team12_Notes_Web_App@User.rcov" NAME="User Coverage Results" MODIFIED="1677433944387" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server" MODULE_NAME="server" />
+    <SUITE FILE_PATH="coverage/Team12_Notes_Web_App@User_validations.rcov" NAME="User validations Coverage Results" MODIFIED="1677439273374" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server" MODULE_NAME="server" />
+    <SUITE FILE_PATH="coverage/Team12_Notes_Web_App@User.rcov" NAME="User Coverage Results" MODIFIED="1677439724051" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server" MODULE_NAME="server" />
     <SUITE FILE_PATH="coverage/Team12_Notes_Web_App@rails.rcov" NAME="rails Coverage Results" MODIFIED="1676821632284" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Team12_Notes_Web_App" />
     <SUITE FILE_PATH="coverage/Team12_Notes_Web_App@User_ensures_username_presence.rcov" NAME="User ensures username presence Coverage Results" MODIFIED="1677432564387" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server" MODULE_NAME="Team12_Notes_Web_App" />
-    <SUITE FILE_PATH="coverage/Team12_Notes_Web_App@server.rcov" NAME="server Coverage Results" MODIFIED="1677431509189" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server" MODULE_NAME="server" />
+    <SUITE FILE_PATH="coverage/Team12_Notes_Web_App@server.rcov" NAME="server Coverage Results" MODIFIED="1677434016578" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server" MODULE_NAME="server" />
     <SUITE FILE_PATH="coverage/Team12_Notes_Web_App@config_ru.rcov" NAME="config.ru Coverage Results" MODIFIED="1676821653522" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Team12_Notes_Web_App" />
     <SUITE FILE_PATH="coverage/Team12_Notes_Web_App@user_spec.rcov" NAME="user_spec Coverage Results" MODIFIED="1677433890485" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server" MODULE_NAME="server" />
     <SUITE FILE_PATH="coverage/Team12_Notes_Web_App@test__server.rcov" NAME="test: server Coverage Results" MODIFIED="1677431504039" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server" MODULE_NAME="server" />
+    <SUITE FILE_PATH="coverage/Team12_Notes_Web_App@Server.rcov" NAME="Server Coverage Results" MODIFIED="1677434031973" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server" MODULE_NAME="server" />
+    <SUITE FILE_PATH="coverage/Team12_Notes_Web_App@User_should_only_add_first_one_.rcov" NAME="User should only add first one  Coverage Results" MODIFIED="1677437884960" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server" MODULE_NAME="server" />
   </component>
 </project>

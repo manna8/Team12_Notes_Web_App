@@ -3,4 +3,10 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+  post "/login" => "login#login"
+
+  post '/users' => 'users#create'
+
+  get 'users/get' => 'users#get'
+
 end

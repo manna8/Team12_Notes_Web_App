@@ -14,3 +14,4 @@ class User
   # uniqueness: true,
   has_secure_password
 end
+

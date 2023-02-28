@@ -7,7 +7,7 @@ class UsersController < ApplicationController
     if user
       render json: user, status: :ok
     else
-      render json: { message: "No user" }, status: :not_ok
+      render json: { message: "No user" }, status: :unprocessable_entity
     end
   end
   def create
@@ -15,7 +15,7 @@ class UsersController < ApplicationController
     if user.save
       render json: user, status: :ok
     else
-      render json: { message: "User not added" }, status: :error
+      render json: { message: "User not added" }, status: :unprocessable_entity
 
 
     end

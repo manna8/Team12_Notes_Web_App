@@ -5,10 +5,10 @@ class LoginController < ApplicationController
       if user.authenticate(params[:password])
         render json:{message: "You are logged in "}, status: :ok
       else
-        render json:{message: "Wrong password"}, status: :bad
+        render json:{message: "Wrong password"}, status: :unprocessable_entity
       end
     else
-      render json:{message: "User doesn't exist"}, status: :bad
+      render json:{message: "User doesn't exist"}, status: :unprocessable_entity
     end
   end
 end

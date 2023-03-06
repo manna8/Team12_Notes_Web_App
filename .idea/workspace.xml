@@ -4,21 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="856d9de2-fdf1-48e7-a1cc-e0b8a566e004" name="Changes" comment="rspec + db config">
-      <change afterPath="$PROJECT_DIR$/client/public/css/main.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/public/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/assets/background.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/assets/background2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/assets/background3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/assets/background4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/assets/logo1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/LoginComponent.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/MainMenu.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/Notes.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/Registration.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/services/TokenDataService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Team12_Notes_Web_App.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Team12_Notes_Web_App.iml" afterDir="false" />
+    <list default="true" id="856d9de2-fdf1-48e7-a1cc-e0b8a566e004" name="Changes" comment="Added Login, Registration and Notes outline">
+      <change afterPath="$PROJECT_DIR$/client/config/config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/http-common.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/public/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/public/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/LoginComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/LoginComponent.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/services/TokenDataService.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/services/TokenDataService.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,8 +23,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="Vue Single File Component" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -93,7 +88,11 @@
       <workItem from="1677414964056" duration="9469000" />
       <workItem from="1677439036292" duration="2300000" />
       <workItem from="1677494217256" duration="1372000" />
-      <workItem from="1677498409245" duration="1600000" />
+      <workItem from="1677498409245" duration="1779000" />
+      <workItem from="1677941212307" duration="2987000" />
+      <workItem from="1677956665605" duration="1641000" />
+      <workItem from="1678099126993" duration="7000" />
+      <workItem from="1678099387213" duration="739000" />
     </task>
     <task id="LOCAL-00001" summary="initial  server added">
       <created>1676727805344</created>
@@ -158,7 +157,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676730183559</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Added Login, Registration and Notes outline">
+      <created>1677500144030</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1677500144030</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -171,6 +177,7 @@
     <MESSAGE value="initial  server added" />
     <MESSAGE value="new mongodb" />
     <MESSAGE value="rspec + db config" />
-    <option name="LAST_COMMIT_MESSAGE" value="rspec + db config" />
+    <MESSAGE value="Added Login, Registration and Notes outline" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Login, Registration and Notes outline" />
   </component>
 </project>

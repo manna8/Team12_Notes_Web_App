@@ -1,6 +1,7 @@
 import { createApp } from 'vue';
-import {BootstrapVue3} from "bootstrap-vue-3";
+import BootstrapVue3 from "bootstrap-vue-3";
 import { createRouter, createWebHistory} from "vue-router";
+// import Toasted from 'vue-toasted';
 
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue-3/dist/bootstrap-vue-3.css'
@@ -22,9 +23,12 @@ const router = createRouter({
 
 const app = createApp(App).use(BootstrapVue3);
 
+// app.use(Toasted);
+
 app.use(router);
 
 app.mount('#app');
+
 
 
 

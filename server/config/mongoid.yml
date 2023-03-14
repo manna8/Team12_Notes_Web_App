@@ -189,8 +189,14 @@
 development:
   clients:
     default:
-      uri: mongodb+srv://ENV["DB_USERNAME”]:ENV["DB_PASSWORD"]@notes.bsbwlz3.mongodb.net/test
+      uri: mongodb+srv://admin:VMBd89S0L6x3lYDl@notes.bsbwlz3.mongodb.net/test
       options:
         server_selection_timeout: 5
 
 
+test:
+  clients:
+    default:
+      uri: mongodb+srv://admin:VMBd89S0L6x3lYDl@notes.bsbwlz3.mongodb.net/test
+      options:
+        server_selection_timeout: 5

@@ -11,12 +11,12 @@
 
       <div class="mb-3 d-flex flex-column align-items-start">
         <label for="username">Username</label>
-        <input type="text" class="form-control" placeholder="Enter username">
+        <input type="text" class="form-control" placeholder="Enter username" v-model="input.username">
       </div>
 
       <div class="mb-3 d-flex flex-column align-items-start">
         <label for="password">Password</label>
-        <input type="password" class="form-control" placeholder="Enter password">
+        <input type="password" class="form-control" placeholder="Enter password" v-model="input.password">
       </div>
 
       <p>Already have an account?
@@ -24,7 +24,7 @@
       </p>
 
       <div class="text-center">
-        <button type="submit" class="btn btn-outline-dark">Register!</button>
+        <button type="submit" class="btn btn-outline-dark" @click="register">Register!</button>
       </div>
 
     </form>
@@ -32,8 +32,31 @@
 </template>
 
 <script>
+import TokenDataService from "@/services/TokenDataService";
 export default {
-  name: "Registration"
+  name: "Registration",
+
+  data() {
+    return {
+      input: {
+        username: "",
+        password: ""
+      }
+    }
+  },
+  methods: {
+    register() {
+      if (this.input.password !== "" && this.input.username !== "") {
+        TokenDataService.newToken(this.input.username, this.input.password)
+            .then(() => {
+              this.$router.push({path: '/notes'});
+            })
+            .catch(err => console.log(err.response.data ? err.response.data : err.message));
+      } else {
+        console.log('Password and username cannot be empty!');
+      }
+    }
+  }
 }
 </script>
 

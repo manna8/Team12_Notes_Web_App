@@ -1,7 +1,7 @@
 <template id="register">
   <div id="register">
 
-    <form class="container p-3 my-3 border bg-light mx-auto mb-3 mt-5 border-warning rounded" style="width: 450px; height: 450px">
+    <form class="container p-3 my-3 border bg-light mx-auto mb-3 mt-5 border-warning rounded" style="width: 450px; height: 450px" @click.prevent>
       <h2 class="text-center text-warning">Register!</h2>
 
       <div class="mb-3 d-flex flex-column align-items-start">
@@ -32,7 +32,9 @@
 </template>
 
 <script>
-import TokenDataService from "@/services/TokenDataService";
+// import TokenDataService from "@/services/TokenDataService";
+import axios from "axios";
+import config from "../../config/config";
 export default {
   name: "Registration",
 
@@ -47,13 +49,20 @@ export default {
   methods: {
     register() {
       if (this.input.password !== "" && this.input.username !== "") {
-        TokenDataService.newToken(this.input.username, this.input.password)
-            .then(() => {
-              this.$router.push({path: '/notes'});
-            })
-            .catch(err => console.log(err.response.data ? err.response.data : err.message));
-      } else {
-        console.log('Password and username cannot be empty!');
+        axios.post(config.apiURL, {
+          "name": this.input.username,
+          "email": this.input.username,
+          "password": this.input.password,
+          "password_confirmation": this.input.password
+        })
+            .then(response => console.log(response));
+      //   TokenDataService.newToken(this.input.username, this.input.password)
+      //       .then(() => {
+      //         this.$router.push({path: '/notes'});
+      //       })
+      //       .catch(err => console.log(err.response.data ? err.response.data : err.message));
+      // } else {
+      //   console.log('Password and username cannot be empty!');
       }
     }
   }

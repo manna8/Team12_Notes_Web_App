@@ -28,6 +28,9 @@
 <script>
 // import TokenDataService from "@/services/TokenDataService";
 
+import axios from "axios";
+import config from "../../config/config";
+
 export default {
   name: "login",
   data() {
@@ -40,9 +43,14 @@ export default {
   },
   methods: {
     login() {
-      if (this.input.password === "user" && this.input.username === "user") {
-        this.$store.commit('login');
-        console.log(this.$store.state.loggedIn);
+      if (this.input.password !== "" && this.input.username !== "") {
+        axios.post(config.loginURL, {
+          "email": this.input.username,
+          "password": this.input.password
+        })
+        .then(response => console.log(response));
+        // this.$store.commit('login');
+        // console.log(this.$store.state.loggedIn);
         this.$router.push({path: '/notes'});
       }
       //   TokenDataService.newToken(this.input.username, this.input.password)

@@ -49,7 +49,7 @@ export default {
   methods: {
     register() {
       if (this.input.password !== "" && this.input.username !== "") {
-        axios.post(config.apiURL, {
+        axios.post(config.registerURL, {
           "name": this.input.username,
           "email": this.input.username,
           "password": this.input.password,

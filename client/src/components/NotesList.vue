@@ -6,7 +6,7 @@
       <div class="card-body">
         <h5 class="note-title">{{ note.title }}</h5>
         <p class="note-text">{{ note.description }}</p>
-        <a href="#" class="btn btn-primary">Details</a>
+        <a href="#" class="btn btn-warning">Details</a>
         <button class="btn btn-outline-dark" @click="deleteNote(index)">Delete note</button>
       </div>
     </div>

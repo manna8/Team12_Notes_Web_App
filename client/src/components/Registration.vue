@@ -1,13 +1,8 @@
 <template id="register">
   <div id="register">
 
-    <form class="container p-3 my-3 border bg-light mx-auto mb-3 mt-5 border-warning rounded" style="width: 450px; height: 450px" @click.prevent>
+    <form class="container p-3 my-3 border bg-light mx-auto mb-3 mt-5 border-warning rounded" style="width: 450px; height: 500px" @click.prevent>
       <h2 class="text-center text-warning">Register!</h2>
-
-      <div class="mb-3 d-flex flex-column align-items-start">
-        <label for="email">Email</label>
-        <input type="text" class="form-control" placeholder="Enter email">
-      </div>
 
       <div class="mb-3 d-flex flex-column align-items-start">
         <label for="username">Username</label>
@@ -15,8 +10,18 @@
       </div>
 
       <div class="mb-3 d-flex flex-column align-items-start">
+        <label for="email">Email</label>
+        <input type="text" class="form-control" placeholder="Enter email" v-model="input.email">
+      </div>
+
+      <div class="mb-3 d-flex flex-column align-items-start">
         <label for="password">Password</label>
         <input type="password" class="form-control" placeholder="Enter password" v-model="input.password">
+      </div>
+
+      <div class="mb-3 d-flex flex-column align-items-start">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" placeholder="Repeat password" v-model="input.password_v2">
       </div>
 
       <p>Already have an account?
@@ -32,7 +37,6 @@
 </template>
 
 <script>
-// import TokenDataService from "@/services/TokenDataService";
 import axios from "axios";
 import config from "../../config/config";
 export default {
@@ -41,19 +45,21 @@ export default {
   data() {
     return {
       input: {
+        email: "",
         username: "",
-        password: ""
+        password: "",
+        password_v2: ""
       }
     }
   },
   methods: {
     register() {
-      if (this.input.password !== "" && this.input.username !== "") {
+      if (this.input.email !== "" && this.input.username !== "" && this.input.password !== "" && this.input.password_v2 !== "") {
         axios.post(config.registerURL, {
           "name": this.input.username,
-          "email": this.input.username,
+          "email": this.input.email,
           "password": this.input.password,
-          "password_confirmation": this.input.password
+          "password_confirmation": this.input.password_v2
         }).then(() => this.$router.push({path: '/notes'}))
         .catch(err => console.log(err.response.data ? err.response.data : err.message));
       //   TokenDataService.newToken(this.input.username, this.input.password)

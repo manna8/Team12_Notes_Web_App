@@ -11,13 +11,17 @@ import App from '@/App.vue'
 import Registration from "@/components/Registration.vue";
 import LoginComponent from "@/components/LoginComponent.vue";
 import Notes from "@/components/Notes.vue";
+import Friends from "@/components/Friends.vue";
+import Profile from "@/components/Profile.vue";
 
 const router = createRouter({
     history: createWebHistory(),
     routes: [
         { path: '/register', component: Registration },
         { path: '/', component: LoginComponent },
-        { path: '/notes', component: Notes }
+        { path: '/notes', component: Notes },
+        { path: '/friends', component: Friends },
+        { path: '/profile', component: Profile },
     ]
 });
 

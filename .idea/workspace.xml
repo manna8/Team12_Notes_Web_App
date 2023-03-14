@@ -5,15 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="856d9de2-fdf1-48e7-a1cc-e0b8a566e004" name="Changes" comment="Added Token data service">
-      <change afterPath="$PROJECT_DIR$/client/src/components/NotesList.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/LoginComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/LoginComponent.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/MainMenu.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/MainMenu.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Notes.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Notes.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Registration.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Registration.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -189,5 +182,18 @@
     <MESSAGE value="Added Login, Registration and Notes outline" />
     <MESSAGE value="Added Token data service" />
     <option name="LAST_COMMIT_MESSAGE" value="Added Token data service" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Team12_Notes_Web_App@server.rcov" NAME="server Coverage Results" MODIFIED="1677434016578" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server" MODULE_NAME="server" />
+    <SUITE FILE_PATH="coverage/Team12_Notes_Web_App@User.rcov" NAME="User Coverage Results" MODIFIED="1677439724051" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server" MODULE_NAME="server" />
+    <SUITE FILE_PATH="coverage/Team12_Notes_Web_App@test__server.rcov" NAME="test: server Coverage Results" MODIFIED="1677431504039" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server" MODULE_NAME="server" />
+    <SUITE FILE_PATH="coverage/Team12_Notes_Web_App@User_should_only_add_first_one_.rcov" NAME="User should only add first one  Coverage Results" MODIFIED="1677437884960" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server" MODULE_NAME="server" />
+    <SUITE FILE_PATH="coverage/Team12_Notes_Web_App@User_ensures_username_presence.rcov" NAME="User ensures username presence Coverage Results" MODIFIED="1677432564387" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server" MODULE_NAME="Team12_Notes_Web_App" />
+    <SUITE FILE_PATH="coverage/Team12_Notes_Web_App@Server.rcov" NAME="Server Coverage Results" MODIFIED="1677434031973" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server" MODULE_NAME="server" />
+    <SUITE FILE_PATH="coverage/Team12_Notes_Web_App@config_ru.rcov" NAME="config.ru Coverage Results" MODIFIED="1676821653522" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Team12_Notes_Web_App" />
+    <SUITE FILE_PATH="coverage/Team12_Notes_Web_App@user_spec.rcov" NAME="user_spec Coverage Results" MODIFIED="1677433890485" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server" MODULE_NAME="server" />
+    <SUITE FILE_PATH="coverage/Team12_Notes_Web_App@User_validations.rcov" NAME="User validations Coverage Results" MODIFIED="1677439273374" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server" MODULE_NAME="server" />
+    <SUITE FILE_PATH="coverage/Team12_Notes_Web_App@Users_GET__index_contains_users.rcov" NAME="Users GET /index contains users Coverage Results" MODIFIED="1678713977910" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server" MODULE_NAME="server" />
+    <SUITE FILE_PATH="coverage/Team12_Notes_Web_App@rails.rcov" NAME="rails Coverage Results" MODIFIED="1676821632284" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Team12_Notes_Web_App" />
   </component>
 </project>

@@ -4,26 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="856d9de2-fdf1-48e7-a1cc-e0b8a566e004" name="Changes" comment="http response corrected">
-      <change afterPath="$PROJECT_DIR$/server/app/controllers/notes_controller.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/app/controllers/sessions_controller.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/app/models/note.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/app/views/notes/_note.json.jbuilder" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/app/views/notes/index.json.jbuilder" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/app/views/notes/show.json.jbuilder" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/spec/factories/notes.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/spec/models/note_spec.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/spec/requests/notes_spec.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/spec/routing/notes_routing_spec.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/server/Gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/server/Gemfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/app/controllers/application_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/controllers/application_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/app/controllers/users_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/controllers/users_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/app/models/user.rb" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/models/user.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/server/config/routes.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/log/development.log" beforeDir="false" afterPath="$PROJECT_DIR$/server/log/development.log" afterDir="false" />
-    </list>
+    <list default="true" id="856d9de2-fdf1-48e7-a1cc-e0b8a566e004" name="Changes" comment="logging and registration, jwt and cookies" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -251,6 +232,7 @@
       <workItem from="1678099753233" duration="1585000" />
       <workItem from="1678709176381" duration="10352000" />
       <workItem from="1678747864827" duration="1477000" />
+      <workItem from="1678784973126" duration="770000" />
     </task>
     <task id="LOCAL-00001" summary="initial  server added">
       <created>1676727805344</created>
@@ -336,7 +318,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677588621984</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="logging and registration, jwt and cookies">
+      <created>1678785078354</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1678785078354</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -363,7 +352,8 @@
     <MESSAGE value="login + registration" />
     <MESSAGE value="api corrections" />
     <MESSAGE value="http response corrected" />
-    <option name="LAST_COMMIT_MESSAGE" value="http response corrected" />
+    <MESSAGE value="logging and registration, jwt and cookies" />
+    <option name="LAST_COMMIT_MESSAGE" value="logging and registration, jwt and cookies" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Team12_Notes_Web_App@User_validations.rcov" NAME="User validations Coverage Results" MODIFIED="1677439273374" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server" MODULE_NAME="server" />

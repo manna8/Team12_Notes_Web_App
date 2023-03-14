@@ -47,11 +47,12 @@ export default {
         axios.post(config.loginURL, {
           "email": this.input.username,
           "password": this.input.password
-        })
-        .then(response => console.log(response));
+        }).then(() => this.$router.push({path: '/notes'}))
+        .catch(err => console.log(err.response.data ? err.response.data : err.message));
+
         // this.$store.commit('login');
         // console.log(this.$store.state.loggedIn);
-        this.$router.push({path: '/notes'});
+
       }
       //   TokenDataService.newToken(this.input.username, this.input.password)
       //       .then(() => {

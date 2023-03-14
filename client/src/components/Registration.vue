@@ -54,8 +54,8 @@ export default {
           "email": this.input.username,
           "password": this.input.password,
           "password_confirmation": this.input.password
-        })
-            .then(response => console.log(response));
+        }).then(() => this.$router.push({path: '/notes'}))
+        .catch(err => console.log(err.response.data ? err.response.data : err.message));
       //   TokenDataService.newToken(this.input.username, this.input.password)
       //       .then(() => {
       //         this.$router.push({path: '/notes'});

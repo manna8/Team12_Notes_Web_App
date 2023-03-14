@@ -1,5 +1,5 @@
 const config = {
-    apiURL: "http://" + location.host + "/api"
+    apiURL: "http://" + "localhost:3000/register"
 };
 
 module.exports = config;

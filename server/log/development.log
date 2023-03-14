@@ -8349,3 +8349,56 @@ MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:385 | test.find |
 Completed 422 Unprocessable Entity in 261ms (Views: 0.2ms | MongoDB: 86.3ms | Allocations: 4927)
 
 
+Started OPTIONS "/register" for ::1 at 2023-03-14 11:32:23 +0100
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/register"):
+  
+Started POST "/register" for ::1 at 2023-03-14 11:33:58 +0100
+Processing by UsersController#create as HTML
+  Parameters: {"name"=>"sdf", "email"=>"sdf", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "user"=>{"name"=>"sdf", "email"=>"sdf"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00000266b6aa51a8>, params: {"name"=>"sdf", "email"=>"sdf", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "controller"=>"users", "action"=>"create", "user"=>{"name"=>"sdf", "email"=>"sdf"}} }[0m
+MONGODB | Topology type 'unknown' initializing.
+MONGODB | Topology type 'Unknown' changed to type 'ReplicaSetNoPrimary'.
+MONGODB | Server ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 initializing.
+MONGODB | Server ac-mspcz06-shard-00-00.bsbwlz3.mongodb.net:27017 initializing.
+MONGODB | Server ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 initializing.
+MONGODB | Waiting for up to 5.00 seconds for servers to be scanned: #<Cluster topology=ReplicaSetNoPrimary[ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017,ac-mspcz06-shard-00-00.bsbwlz3.mongodb.net:27017,ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017,name=atlas-kjem2r-shard-0] servers=[#<Server address=ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 UNKNOWN>,#<Server address=ac-mspcz06-shard-00-00.bsbwlz3.mongodb.net:27017 UNKNOWN>,#<Server address=ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 UNKNOWN>]>
+MONGODB | Server description for ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 changed from 'unknown' to 'secondary'.
+MONGODB | There was a change in the members of the 'ReplicaSetNoPrimary' topology.
+MONGODB | Waiting for up to 4.58 seconds for servers to be scanned: #<Cluster topology=ReplicaSetNoPrimary[ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017,ac-mspcz06-shard-00-00.bsbwlz3.mongodb.net:27017,ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017,name=atlas-kjem2r-shard-0] servers=[#<Server address=ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 SECONDARY replica_set=atlas-kjem2r-shard-0 pool=#<ConnectionPool size=0 (0-20) used=0 avail=0 pending=0>>,#<Server address=ac-mspcz06-shard-00-00.bsbwlz3.mongodb.net:27017 UNKNOWN>,#<Server address=ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 UNKNOWN>]>
+MONGODB | Server description for ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 changed from 'unknown' to 'primary'.
+MONGODB | Topology type 'ReplicaSetNoPrimary' changed to type 'ReplicaSetWithPrimary'.
+MONGODB | Server description for ac-mspcz06-shard-00-00.bsbwlz3.mongodb.net:27017 changed from 'unknown' to 'secondary'.
+MONGODB | There was a change in the members of the 'ReplicaSetWithPrimary' topology.
+MONGODB | Server description for ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 changed from 'primary' to 'primary'.
+MONGODB | There was a change in the members of the 'ReplicaSetWithPrimary' topology.
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:10 conn:1:1 sconn:184369 | admin.saslStart | STARTED | {}
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:10 | admin.saslStart | SUCCEEDED | 0.044s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:11 conn:1:1 sconn:184369 | admin.saslContinue | STARTED | {}
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:11 | admin.saslContinue | SUCCEEDED | 0.043s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:12 conn:1:1 sconn:184369 | test.find | STARTED | {"find"=>"users", "filter"=>{"name"=>"sdf"}, "limit"=>1, "projection"=>{"_id"=>1}, "$db"=>"test", "lsid"=>{"id"=><BSON::Binary:0x15120 type=uuid data=0x318fe93a011048d6...>}}
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:12 | test.find | SUCCEEDED | 0.044s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:13 conn:1:1 sconn:184369 | test.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"sdf"}, "limit"=>1, "projection"=>{"_id"=>1}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x00000266b8163278 @seconds=1678790038, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x15140 typ...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:13 | test.find | SUCCEEDED | 0.044s
+Completed 422 Unprocessable Entity in 1079ms (Views: 0.3ms | MongoDB: 175.5ms | Allocations: 35669)
+
+
+MONGODB | Server description for ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 changed from 'secondary' to 'secondary'.
+MONGODB | There was a change in the members of the 'ReplicaSetWithPrimary' topology.
+MONGODB | Server description for ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 changed from 'primary' to 'primary'.
+MONGODB | There was a change in the members of the 'ReplicaSetWithPrimary' topology.
+MONGODB | Server description for ac-mspcz06-shard-00-00.bsbwlz3.mongodb.net:27017 changed from 'secondary' to 'secondary'.
+MONGODB | There was a change in the members of the 'ReplicaSetWithPrimary' topology.
+Started POST "/register" for ::1 at 2023-03-14 11:34:48 +0100
+Processing by UsersController#create as HTML
+  Parameters: {"name"=>"dsf@a.com", "email"=>"dsf@a.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "user"=>{"name"=>"dsf@a.com", "email"=>"dsf@a.com"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00000266b4e06d58>, params: {"name"=>"dsf@a.com", "email"=>"dsf@a.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "controller"=>"users", "action"=>"create", "user"=>{"name"=>"dsf@a.com", "email"=>"dsf@a.com"}} }[0m
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:26 conn:1:1 sconn:184369 | test.find | STARTED | {"find"=>"users", "filter"=>{"name"=>"dsf@a.com"}, "limit"=>1, "projection"=>{"_id"=>1}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x00000266b8178b78 @seconds=1678790039, @increment=1>, "signature"=>{"hash"=><BSON::Binary:0x1570...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:26 | test.find | SUCCEEDED | 0.037s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:27 conn:1:1 sconn:184369 | test.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"dsf@a.com"}, "limit"=>1, "projection"=>{"_id"=>1}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x00000266b529b760 @seconds=1678790088, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x157...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:27 | test.find | SUCCEEDED | 0.044s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:28 conn:1:1 sconn:184369 | test.insert | STARTED | {"insert"=>"users", "ordered"=>true, "documents"=>[{"_id"=>BSON::ObjectId('64104dc94d88377a1879461b'), "name"=>"dsf@a.com", "email"=>"dsf@a.com", "password_digest"=>"$2a$12$FbZxVHyA26mNZ4k5nNE.2urdPLQO0IVClfPRIpgBGMbt9SO94CjwW", "updated_at"=>2023-03-...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:28 | test.insert | SUCCEEDED | 0.058s
+Completed 201 Created in 315ms (Views: 0.1ms | MongoDB: 138.7ms | Allocations: 5909)
+
+

@@ -1,48 +1,53 @@
 <template>
-<div id="note">
-  <div class="container p-3 my-3 border bg-light mx-auto mb-3 mt-5 border-warning rounded" v-if="notes.length < 1">
-    <h2>You don't have any notes yet!</h2>
+<div id="notes">
 
-    <div class="text-center">
-      <button class="btn btn-outline-dark">Add new note</button>
-    </div>
-  </div>
-  <div v-else>
-    <ul v-for="(note, index) in notes" v-bind:key="note.title">
-      <div class="container p-3 my-3 border bg-light mx-auto mb-3 mt-5 border-warning rounded">
-        <h3>{{ note.title }}</h3>
-        <h5>{{ note.description }}</h5>
+<!--    <h2>You don't have any notes yet!</h2>-->
 
-        <div class="text-center">
-          <button class="btn btn-outline-dark" @click="deleteNote(index)">Delete note</button>
-        </div>
+    <form class="container p-3 my-3 border bg-light mx-auto mb-3 mt-5 border-warning rounded" style="width: 450px; height: 450px">
+      <h2 class="text-center text-warning">Add new note!</h2>
+      <div class="mb-3 d-flex flex-column align-items-start">
+        <label for="title">Title</label>
+        <input type="text" class="form-control" v-model="input.title" placeholder="Enter title">
       </div>
 
-    </ul>
+      <div class="mb-3 d-flex flex-column align-items-start">
+        <label for="description">Description</label>
+        <input type="text" class="form-control" v-model="input.description" placeholder="Enter description">
+      </div>
+
+      <div class="text-center">
+        <button type="submit" class="btn btn-outline-dark" @click="addNote">Create Note</button>
+      </div>
+
+    </form>
+
+  <div>
+  <NotesList></NotesList>
   </div>
 
 </div>
 </template>
 
 <script>
+import NotesList from "@/components/NotesList.vue";
+
 export default {
   name: "Notes",
 
   data() {
     return {
-      notes: [
-        {title: 'Shopping',
-        description: 'My shopping list'},
-
-        {title: 'Gifts',
-          description: 'Gift ideas'
-        }
-      ]
+      input: {
+        title: "",
+        description: ""
+      },
     };
   },
+  components: {
+    NotesList
+  },
   methods: {
-    deleteNote(idx) {
-      this.notes.splice(idx, 1);
+    addNote() {
+
     }
   }
 }

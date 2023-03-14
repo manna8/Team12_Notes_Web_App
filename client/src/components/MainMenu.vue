@@ -1,6 +1,6 @@
 <template id="app">
   <nav class="navbar navbar-expand navbar-light bg-light border border-warning">
-    <router-link class="navbar-brand" to="login">
+    <router-link class="navbar-brand" to="/">
       <h3 class="font-weight-bold">MindNote</h3>
     </router-link>
     <div class="w-100">
@@ -17,7 +17,7 @@
       </ul>
     </div>
 
-    <div class="w-200">
+    <div class="w-200" v-if="loggedIn === false">
       <ul class="navbar-nav">
         <li class="nav-item">
           <button type="button" class="btn btn-outline-warning">
@@ -31,8 +31,14 @@
 </template>
 
 <script>
+
 export default {
-  name: "MainMenu"
+  name: "MainMenu",
+  methods: {
+    loggedIn() {
+      return this.$store.state.loggedIn === 1;
+    }
+  }
 }
 </script>
 

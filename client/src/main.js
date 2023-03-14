@@ -1,10 +1,10 @@
 import { createApp } from 'vue';
-import BootstrapVue3 from "bootstrap-vue-3";
+import { createStore } from 'vuex';
+import BootstrapVue from "bootstrap-vue-next";
 import { createRouter, createWebHistory} from "vue-router";
-// import Toasted from 'vue-toasted';
+// import Vue3Toastify from 'vue3-toastify';
 
 import 'bootstrap/dist/css/bootstrap.css'
-import 'bootstrap-vue-3/dist/bootstrap-vue-3.css'
 import '../public/css/main.css';
 
 import App from '@/App.vue'
@@ -16,15 +16,28 @@ const router = createRouter({
     history: createWebHistory(),
     routes: [
         { path: '/register', component: Registration },
-        { path: '/login', component: LoginComponent },
+        { path: '/', component: LoginComponent },
         { path: '/notes', component: Notes }
     ]
 });
 
-const app = createApp(App).use(BootstrapVue3);
+const store = createStore({
+    state() {
+        return {
+            loggedIn: 0
+        };
+    },
+    mutations: {
+        login (state) {
+            state.loggedIn = 1;
+        }
+    }
+});
 
-// app.use(Toasted);
+const app = createApp(App).use(BootstrapVue);
 
+app.use(store);
+// app.use(Vue3Toastify);
 app.use(router);
 
 app.mount('#app');

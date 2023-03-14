@@ -20,7 +20,7 @@
       </div>
 
       <p>Already have an account?
-        <router-link to="login" class="link-warning">Login!</router-link>
+        <router-link to="/" class="link-warning">Login!</router-link>
       </p>
 
       <div class="text-center">

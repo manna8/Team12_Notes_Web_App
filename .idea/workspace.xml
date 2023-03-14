@@ -4,16 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="856d9de2-fdf1-48e7-a1cc-e0b8a566e004" name="Changes" comment="Added Login, Registration and Notes outline">
-      <change afterPath="$PROJECT_DIR$/client/config/config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/http-common.js" afterDir="false" />
+    <list default="true" id="856d9de2-fdf1-48e7-a1cc-e0b8a566e004" name="Changes" comment="Added Token data service">
+      <change afterPath="$PROJECT_DIR$/client/src/components/NotesList.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/public/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/public/css/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/LoginComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/LoginComponent.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/MainMenu.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/MainMenu.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Notes.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Notes.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Registration.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Registration.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/services/TokenDataService.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/services/TokenDataService.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,8 +23,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Vue Single File Component" />
         <option value="JavaScript File" />
+        <option value="Vue Single File Component" />
       </list>
     </option>
   </component>
@@ -92,7 +92,9 @@
       <workItem from="1677941212307" duration="2987000" />
       <workItem from="1677956665605" duration="1641000" />
       <workItem from="1678099126993" duration="7000" />
-      <workItem from="1678099387213" duration="739000" />
+      <workItem from="1678099387213" duration="3909000" />
+      <workItem from="1678652397013" duration="1378000" />
+      <workItem from="1678710017990" duration="9780000" />
     </task>
     <task id="LOCAL-00001" summary="initial  server added">
       <created>1676727805344</created>
@@ -164,7 +166,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677500144030</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Added Token data service">
+      <created>1678100189516</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1678100189516</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -178,6 +187,7 @@
     <MESSAGE value="new mongodb" />
     <MESSAGE value="rspec + db config" />
     <MESSAGE value="Added Login, Registration and Notes outline" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Login, Registration and Notes outline" />
+    <MESSAGE value="Added Token data service" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Token data service" />
   </component>
 </project>

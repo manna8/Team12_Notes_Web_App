@@ -1,8 +1,8 @@
 import { createApp } from 'vue';
 import { createStore } from 'vuex';
+// import Cookies from 'js-cookie';
 import BootstrapVue from "bootstrap-vue-next";
 import { createRouter, createWebHistory} from "vue-router";
-// import Vue3Toastify from 'vue3-toastify';
 
 import 'bootstrap/dist/css/bootstrap.css'
 import '../public/css/main.css';
@@ -41,10 +41,17 @@ const store = createStore({
 const app = createApp(App).use(BootstrapVue);
 
 app.use(store);
-// app.use(Vue3Toastify);
 app.use(router);
 
 app.mount('#app');
+// import Vue from 'vue';
+// import App from './App.vue';
+// import router from './router';
+//
+// new Vue({
+//     router,
+//     render: h => h(App)
+// }).$mount('#app');
 
 
 

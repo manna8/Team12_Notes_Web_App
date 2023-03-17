@@ -24,7 +24,7 @@
 
       <div class="col">
         <div>
-        <NotesList></NotesList>
+          <NotesList></NotesList>
         </div>
       </div>
 

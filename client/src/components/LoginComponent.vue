@@ -48,22 +48,12 @@ export default {
         axios.post(config.loginURL, {
           "email": this.input.username,
           "password": this.input.password
-        }).then(() => this.$router.push({path: '/notes'}))
+        }, {withCredentials: true}).then(res => console.log(res))
+            .then(response => localStorage.setItem('jwtToken', response.data.token))
+            .then(() => this.$router.push({path: '/notes'}))
+            .then(() => console.log(localStorage.getItem('jwtToken')))
         .catch(err => console.log(err.response.data ? err.response.data : err.message));
-
-        // this.$store.commit('login');
-        // console.log(this.$store.state.loggedIn);
-
       }
-      //   TokenDataService.newToken(this.input.username, this.input.password)
-      //       .then(() => {
-      //         this.$router.push({path: '/notes'})
-      //             .then(() => this.$toasted.success('Logged in successfully'));
-      //       })
-      //       .catch(err => this.$toasted.error(err.response.data ? err.response.data : err.message));
-      // } else {
-      //   this.$toasted.error('Password and username cannot be empty!');
-      // }
     }
   }
 }

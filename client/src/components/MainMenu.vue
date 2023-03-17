@@ -17,9 +17,9 @@
       </ul>
     </div>
 
-    <div class="w-200" v-if="loggedIn === false">
+    <div class="w-200" v-if="isLoggedIn">
       <ul class="navbar-nav">
-        <li class="nav-item">
+        <li class="nav-item" @click="logout">
           <button type="button" class="btn btn-outline-warning">
             <router-link class="nav-link" to="/">Logout</router-link>
           </button>
@@ -34,9 +34,22 @@
 
 export default {
   name: "MainMenu",
+  data() {
+    return {
+      isLoggedIn: false
+    }
+  },
   methods: {
-    loggedIn() {
-      return this.$store.state.loggedIn === 1;
+    logout() {
+      this.$cookies.remove('TOKEN');
+      this.$router.push({path: '/'})
+          .then(() => this.$toasted.success('Logged out'))
+          .catch(err => this.$toasted.error(err.response.data ? err.response.data : err.message));
+    },
+  },
+  watch: {
+    $route() {
+      this.isLoggedIn = this.loggedIn();
     }
   }
 }

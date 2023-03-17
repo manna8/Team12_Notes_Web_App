@@ -1,6 +1,7 @@
 import { createApp } from 'vue';
 import { createStore } from 'vuex';
 // import Cookies from 'js-cookie';
+import VueCookies from 'vue-cookies'
 import BootstrapVue from "bootstrap-vue-next";
 import { createRouter, createWebHistory} from "vue-router";
 
@@ -42,6 +43,23 @@ const app = createApp(App).use(BootstrapVue);
 
 app.use(store);
 app.use(router);
+app.use(VueCookies);
+
+app.mixin({
+    methods: {
+        handleError: function ({message, response}, redirectURL) {
+            if (response.status === 401) {
+                this.$cookies.remove('TOKEN');
+                this.$router.push({path: redirectURL});
+            } else {
+                console.error(message);
+            }
+        },
+        loggedIn: function () {
+            return this.$cookies.get('TOKEN') !== null;
+        }
+    }
+})
 
 app.mount('#app');
 // import Vue from 'vue';

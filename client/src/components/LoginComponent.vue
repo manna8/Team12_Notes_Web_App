@@ -49,9 +49,7 @@ export default {
           "email": this.input.username,
           "password": this.input.password
         }, {withCredentials: true}).then(res => console.log(res))
-            .then(response => localStorage.setItem('jwtToken', response.data.token))
             .then(() => this.$router.push({path: '/notes'}))
-            .then(() => console.log(localStorage.getItem('jwtToken')))
         .catch(err => console.log(err.response.data ? err.response.data : err.message));
       }
     }

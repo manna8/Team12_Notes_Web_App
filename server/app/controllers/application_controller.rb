@@ -1,17 +1,23 @@
 class ApplicationController < ActionController::API
   include ActionController::Cookies
-  #before_action :authenticate_user!
-
+  #before_action :authenticate_user! , only: [:show]
+  #before_action :authenicate_user, only: [:show]
   def authenticate_user!
     jwt_token = cookies[:jwt]
+
     if jwt_token
+      #puts jwt_token
       begin
-        decoded_token = JWT.decode(jwt_token, Rails.application.secrets.secret_key_base, true, algorithm: 'HS256')
-        user_id = decoded_token.first['user_id']
+        #decoded_token = JWT.decode(jwt_token, Rails.application.secrets.secret_key_base, true, algorithm: 'HS256')
+        decoded_token = decode_token(jwt_token)
+        #puts decoded_token
+        user_id = decoded_token["user_id"]["$oid"]
+        #puts  User.find_by(id: user_id)
         @current_user = User.find_by(id: user_id)
+        #puts @current_user.id
       rescue JWT::ExpiredSignature, JWT::VerificationError, JWT::DecodeError
         @current_user = nil
-      end
+       end
     end
 
     unless @current_user
@@ -19,6 +25,11 @@ class ApplicationController < ActionController::API
     end
   end
   include ActionController::Cookies
+
+  def authenticate_user
+    jwt = cookies.signed[:jwt]
+    decode_token(jwt)
+  end
   def encode_token(payload)
     JWT.encode(payload, Rails.application.secret_key_base)
   end

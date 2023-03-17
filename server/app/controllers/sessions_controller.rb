@@ -1,6 +1,7 @@
 class SessionsController < ApplicationController
 
   include ActionController::Cookies
+  before_action :authenticate_user! , only: [:show]
   # def create
   #   user = User.authenticate(params[:email], params[:password])
   #   if user
@@ -15,17 +16,27 @@ class SessionsController < ApplicationController
 
   def create
     user = User.find_by(:email => params[:email])
-    if user&.authenticate(params[:password])
-      jwt = encode_token(user_id: user.id)
-      cookies[:jwt] = { value: jwt, httponly: true }
+    if user && user.authenticate(params[:password])
+      jwt = encode_token({user_id: user.id})
+      cookies[:jwt] = { value: jwt, httponly: true, domain: '.localhost' }
+      puts cookies[:jwt]
       render json: { message: 'Logged in successfully.' }, status: :ok
     else
       render json: { message: 'Invalid email or password.' }, status: :unauthorized
     end
   end
 
+  def show
+
+    jwt_token = cookies[:jwt]
+    render json: @current_user
+  end
+
+
   def destroy
+    puts cookies[:jwt]
     cookies.delete(:jwt)
+
     render json: { message: 'Logged out successfully.' }, status: :ok
   end
 end

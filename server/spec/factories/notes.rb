@@ -3,7 +3,7 @@ FactoryBot.define do
     title { "MyString" }
     description { "MyString" }
     owner_id { "MyString" }
-    collection { "MyString" }
+    collection_id { "MyString" }
     image { "MyString" }
   end
 end

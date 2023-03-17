@@ -4,6 +4,8 @@ class Note
   field :title, type: String
   field :description, type: String
   field :owner_id, type: String
-  field :collection, type: String
+  field :collection_id, type: String
   field :image, type: String
+
+  belongs_to :user
 end

@@ -53,6 +53,8 @@ class NotesController < ApplicationController
   # DELETE /notes/1.json
   def destroy
     @note.destroy
+    render json: { message: 'Note deleted successfully.' }, status: :ok
+
   end
 
   private

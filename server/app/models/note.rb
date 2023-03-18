@@ -8,4 +8,5 @@ class Note
   field :image, type: String
 
   belongs_to :user
+  belongs_to :notes_collection, optional: true
 end

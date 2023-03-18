@@ -1,6 +1,6 @@
 import { createApp } from 'vue';
 import { createStore } from 'vuex';
-// import Cookies from 'js-cookie';
+import Cookies from 'js-cookie';
 import VueCookies from 'vue-cookies'
 import BootstrapVue from "bootstrap-vue-next";
 import { createRouter, createWebHistory} from "vue-router";
@@ -44,19 +44,20 @@ const app = createApp(App).use(BootstrapVue);
 app.use(store);
 app.use(router);
 app.use(VueCookies);
+app.use(Cookies);
 
 app.mixin({
     methods: {
         handleError: function ({message, response}, redirectURL) {
             if (response.status === 401) {
-                this.$cookies.remove('TOKEN');
+                this.$cookies.remove('jwt');
                 this.$router.push({path: redirectURL});
             } else {
                 console.error(message);
             }
         },
         loggedIn: function () {
-            return this.$cookies.get('TOKEN') !== null;
+            return this.$cookies.get('jwt') !== null;
         }
     }
 })

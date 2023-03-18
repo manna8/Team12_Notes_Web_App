@@ -18,7 +18,7 @@ class SessionsController < ApplicationController
     user = User.find_by(:email => params[:email])
     if user && user.authenticate(params[:password])
       jwt = encode_token({user_id: user.id})
-      cookies[:jwt] = { value: jwt, httponly: true, domain: '.localhost' }
+      cookies[:jwt] = { value: jwt, httponly: true, domain: '.127.0.0.1',  expires: 1.month.from_now, same_site: :none, secure: true}
       puts cookies[:jwt]
       render json: { message: 'Logged in successfully.' }, status: :ok
     else
@@ -26,7 +26,9 @@ class SessionsController < ApplicationController
     end
   end
 
-  def show
+
+
+    def show
 
     jwt_token = cookies[:jwt]
     render json: @current_user

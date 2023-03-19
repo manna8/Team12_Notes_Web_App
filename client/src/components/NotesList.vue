@@ -16,7 +16,7 @@
         </div>
       </ul>
       </div>
-      <div class="container p-3 my-3 border mx-auto mb-3 mt-5 border-dark rounded"  v-else>
+      <div class="container p-3 my-3 border mx-auto mb-3 mt-5 border-dark rounded" v-else>
         <h3>You don't have any notes yet!</h3>
       </div>
     </div>

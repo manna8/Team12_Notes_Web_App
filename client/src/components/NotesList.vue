@@ -65,7 +65,7 @@ export default {
       this.notes.splice(idx, 1);
     },
     getNotes() {
-      this.notes = axios.get(config.getNotesURL);
+      this.notes = axios.get(config.getNotesURL, {withCredentials: true});
     }
   },
   mounted() {

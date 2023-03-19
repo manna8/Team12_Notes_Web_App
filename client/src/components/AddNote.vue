@@ -1,6 +1,6 @@
 <template>
   <div>
-    <form class="container p-3 my-3 border bg-light mx-auto mb-3 mt-5 border-warning rounded" style="width: 450px; height: 350px">
+    <form class="container p-3 my-3 border bg-light mx-auto mb-3 mt-5 border-warning rounded" style="width: 450px; height: 350px" @click.prevent>
       <h2 class="text-center text-warning">Add new note!</h2>
       <div class="mb-3 d-flex flex-column align-items-start">
         <label for="title">Title</label>
@@ -23,7 +23,6 @@
 <script>
 import axios from "axios";
 import config from "../../config/config";
-import Cookies from "js-cookie";
 
 export default {
   name: "AddNote",
@@ -39,7 +38,6 @@ export default {
   methods: {
     addNote() {
       if (this.input.title !== "" && this.input.description !== "") {
-
         axios.post(config.addNoteURL, {
           "title": this.input.title,
           "description": this.input.description

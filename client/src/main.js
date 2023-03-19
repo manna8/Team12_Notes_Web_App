@@ -16,6 +16,7 @@ import Friends from "@/components/Friends.vue";
 import Profile from "@/components/Profile.vue";
 import AddNote from "@/components/AddNote.vue";
 import Home from "@/components/Home.vue";
+import Collections from "@/components/Collections.vue";
 
 const router = createRouter({
     history: createWebHistory(),
@@ -26,6 +27,7 @@ const router = createRouter({
         { path: '/friends', component: Friends },
         { path: '/profile', component: Profile },
         { path: '/createNote', component: AddNote},
+        { path: '/collections', component: Collections},
         { path: '/', component: Home},
     ]
 });

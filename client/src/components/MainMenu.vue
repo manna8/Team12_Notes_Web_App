@@ -32,8 +32,8 @@
 
     <div class="w-200">
       <ul class="navbar-nav">
-        <li class="nav-item" @click="logout" v-if="login">
-          <button type="button" class="btn btn-outline-warning">
+        <li class="nav-item" v-if="login">
+          <button type="button" class="btn btn-outline-warning"  @click="logout">
             <router-link class="nav-link" to="/">Logout</router-link>
           </button>
         </li>

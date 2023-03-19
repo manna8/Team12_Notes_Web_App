@@ -41,6 +41,9 @@ const store = createStore({
     mutations: {
         login (state) {
             state.loggedIn = 1;
+        },
+        logout (state) {
+            state.loggedIn = 0;
         }
     }
 });

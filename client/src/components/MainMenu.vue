@@ -4,7 +4,7 @@
       <h3 class="font-weight-bold">MindNote</h3>
     </router-link>
     <div class="w-100">
-      <div  v-if="isLoggedIn">
+      <div  v-if="login">
         <ul class="navbar-nav">
           <li class="nav-item">
             <div class="dropdown">
@@ -32,7 +32,7 @@
 
     <div class="w-200">
       <ul class="navbar-nav">
-        <li class="nav-item" @click="logout" v-if="isLoggedIn">
+        <li class="nav-item" @click="logout" v-if="login">
           <button type="button" class="btn btn-outline-warning">
             <router-link class="nav-link" to="/">Logout</router-link>
           </button>
@@ -50,9 +50,12 @@
 
 <script>
 
+import axios from "axios";
+import config from "../../config/config";
+
 export default {
   name: "MainMenu",
-  props: ['menuKey'],
+
   data() {
     return {
       isLoggedIn: false
@@ -60,16 +63,14 @@ export default {
   },
   methods: {
     logout() {
-      this.$cookies.remove('TOKEN');
-      this.$router.push({path: '/'})
-          .then(() => this.$toasted.success('Logged out'))
-          .catch(err => this.$toasted.error(err.response.data ? err.response.data : err.message));
+      axios.delete(config.logoutURL, {withCredentials: true})
+          .then(() => this.$router.push({path: '/'}))
+          .catch(err => console.log(err.message));
     },
   },
-  watch: {
-    $route() {
-      this.$store.commit("loggedIn");
-      this.isLoggedIn = this.$store.state.loggedIn;
+  computed: {
+    login() {
+      return this.$store.state.loggedIn;
     }
   }
 }

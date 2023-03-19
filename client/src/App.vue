@@ -1,5 +1,5 @@
 <template id="app">
-  <MainMenu :key="menuKey"/>
+  <MainMenu/>
   <div class="d-flex justify-content-center">
     <main>
       <router-view></router-view>

@@ -1,7 +1,7 @@
 class NotesController < ApplicationController
   before_action :set_note, only: %i[ show update destroy ]
   before_action :authenticate_user!
-
+  before_action :authorize_admin!, only:[:all_notes]
   # GET /notes
   # GET /notes.json
   def index
@@ -10,9 +10,21 @@ class NotesController < ApplicationController
     @notes = Note.where(:user_id => @current_user[:id])
     #@notes = Note.all
     render json: @notes
-
   end
 
+
+  def show
+    if @note[:user_id] == @current_user[:id] or @is_admin
+    render json:@note
+    else
+      render json: { error: 'Not authenticated' }, status: :unauthorized
+    end
+  end
+
+  def all_notes
+    @notes = Note.all
+    render json:@notes
+  end
   # GET /notes/1
   # GET /notes/1.json
   # def show
@@ -42,7 +54,6 @@ class NotesController < ApplicationController
   # PATCH/PUT /notes/1.json
   def update
     if @note.update(note_params)
-
       render :show, status: :ok, location: @note
     else
       render json: @note.errors, status: :unprocessable_entity

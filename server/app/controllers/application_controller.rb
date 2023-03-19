@@ -4,31 +4,37 @@ class ApplicationController < ActionController::API
   #before_action :authenicate_user, only: [:show]
   def authenticate_user!
     jwt_token = cookies[:jwt]
-
     if jwt_token
-      #puts jwt_token
       begin
-        #decoded_token = JWT.decode(jwt_token, Rails.application.secrets.secret_key_base, true, algorithm: 'HS256')
         decoded_token = decode_token(jwt_token)
-        #puts decoded_token
         user_id = decoded_token["user_id"]["$oid"]
-        #puts  User.find_by(id: user_id)
         @current_user = User.find_by(id: user_id)
-        #puts @current_user.id
+        if @current_user[:role] == "admin"
+          @is_admin = true
+        else
+          @is_admin = false
+        end
       rescue JWT::ExpiredSignature, JWT::VerificationError, JWT::DecodeError
         @current_user = nil
-       end
+        @is_admin = false
+        end
+      end
+      unless @current_user or @is_admin
+        render json: { error: 'Not authenticated' }, status: :unauthorized
+      end
     end
 
-    unless @current_user
-      render json: { error: 'Not authenticated' }, status: :unauthorized
+    def authorize_admin!
+      unless @is_admin
+        render json: { error: 'Not authorized' }, status: :forbidden
+      end
     end
-  end
-  include ActionController::Cookies
 
-  def authenticate_user
-    jwt = cookies.signed[:jwt]
-    decode_token(jwt)
+
+  def check_admin
+    if @current_user[:role] != "admin"
+      render json: { error: 'You are not an admin' }, status: :unauthorized
+    end
   end
   def encode_token(payload)
     JWT.encode(payload, Rails.application.secret_key_base)
@@ -39,7 +45,11 @@ class ApplicationController < ActionController::API
   end
 
 
-
+  # def authenticate_user
+  #   jwt = cookies.signed[:jwt]
+  #   decode_token(jwt)
+  # end
+  #
   #before_action :authenticate_user!
 
   # def authenticate_user!

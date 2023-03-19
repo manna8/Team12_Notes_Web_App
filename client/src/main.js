@@ -4,6 +4,7 @@ import VueCookies from 'vue-cookies'
 import BootstrapVue from "bootstrap-vue-next";
 import { createRouter, createWebHistory} from "vue-router";
 import axios from "axios";
+import createPersistedState from 'vuex-persistedstate'
 
 import 'bootstrap/dist/css/bootstrap.css'
 import '../public/css/main.css';
@@ -33,6 +34,9 @@ const router = createRouter({
 });
 
 const store = createStore({
+    plugins: [createPersistedState({
+        storage: window.sessionStorage,
+    })],
     state() {
         return {
             loggedIn: 0

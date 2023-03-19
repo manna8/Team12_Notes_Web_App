@@ -67,6 +67,7 @@ export default {
           .then(() => this.$router.push({path: '/'}))
           .catch(err => console.log(err.message));
       this.$store.state.loggedIn = 0;
+      sessionStorage.clear();
     },
   },
   computed: {

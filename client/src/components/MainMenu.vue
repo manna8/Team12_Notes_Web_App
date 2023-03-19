@@ -4,27 +4,30 @@
       <h3 class="font-weight-bold">MindNote</h3>
     </router-link>
     <div class="w-100">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <div class="dropdown">
-            <button class="btn btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Notes
-            </button>
-            <ul class="dropdown-menu">
-              <li><router-link class="nav-link dropdown-item" to="/notes">Notes</router-link></li>
-              <li><router-link class="nav-link dropdown-item" to="/collections">Collections</router-link></li>
-            </ul>
-          </div>
-        </li>
+      <div  v-if="isLoggedIn">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <div class="dropdown">
+              <button class="btn btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Notes
+              </button>
+              <ul class="dropdown-menu">
+                <li><router-link class="nav-link dropdown-item" to="/notes">Notes</router-link></li>
+                <li><router-link class="nav-link dropdown-item" to="/collections">Collections</router-link></li>
+              </ul>
+            </div>
+          </li>
 
-        <li class="nav-item">
-          <router-link class="nav-link active" to="/friends">Friends</router-link>
-        </li>
+          <li class="nav-item">
+            <router-link class="nav-link active" to="/friends">Friends</router-link>
+          </li>
 
-        <li class="nav-item">
-          <router-link class="nav-link active" to="/profile">Profile</router-link>
-        </li>
-      </ul>
+          <li class="nav-item">
+            <router-link class="nav-link active" to="/profile">Profile</router-link>
+          </li>
+        </ul>
+      </div>
+
     </div>
 
     <div class="w-200">
@@ -65,7 +68,8 @@ export default {
   },
   watch: {
     $route() {
-      this.isLoggedIn = this.loggedIn();
+      this.$store.commit("loggedIn");
+      this.isLoggedIn = this.$store.state.loggedIn;
     }
   }
 }

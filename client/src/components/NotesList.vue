@@ -37,12 +37,10 @@ export default {
 
   data() {
     return {
-
-      notes: [
-
-      ]
+      notes: []
     };
   },
+
   methods: {
     deleteNote(id) {
       axios.delete(config.deleteNotesURL + id.$oid, {withCredentials: true})

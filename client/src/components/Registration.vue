@@ -60,7 +60,7 @@ export default {
           "email": this.input.email,
           "password": this.input.password,
           "password_confirmation": this.input.password_v2
-        }).then(() => this.$router.push({path: '/notes'}))
+        }).then(() => this.$router.push({path: '/login'}))
         .catch(err => console.log(err.message));
 
       }

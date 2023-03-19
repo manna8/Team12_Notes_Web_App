@@ -34,9 +34,7 @@ const router = createRouter({
 });
 
 const store = createStore({
-    plugins: [createPersistedState({
-        storage: window.sessionStorage,
-    })],
+    plugins: [createPersistedState()],
     state() {
         return {
             loggedIn: 0

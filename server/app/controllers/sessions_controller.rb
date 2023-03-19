@@ -2,16 +2,6 @@ class SessionsController < ApplicationController
 
   include ActionController::Cookies
   before_action :authenticate_user! , only: [:show, :destroy]
-  # def create
-  #   user = User.authenticate(params[:email], params[:password])
-  #   if user
-  #     jwt_token = JWT.encode({ user_id: user.id }, Rails.application.secrets.secret_key_base)
-  #     cookies[:jwt] = { value: jwt_token, httponly: true }
-  #     render json: { success: true }
-  #   else
-  #     render json: { success: false }
-  #   end
-  # end
 
 
   def create
@@ -33,7 +23,9 @@ class SessionsController < ApplicationController
 
 
   def destroy
-    cookies.delete(:jwt)
+    cookies.delete(:jwt, domain: '.127.0.0.1', path: "/", secure: true, httponly: true, expires: Time.at(0), same_site: :none)
+    @current_user = nil
+    # puts @current_user
     render json: { message: 'Logged out successfully.' }, status: :ok
   end
 end

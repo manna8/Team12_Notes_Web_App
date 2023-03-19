@@ -3,11 +3,13 @@ class ApplicationController < ActionController::API
   #before_action :authenticate_user! , only: [:show]
   #before_action :authenicate_user, only: [:show]
   def authenticate_user!
+
     jwt_token = cookies[:jwt]
     if jwt_token
       begin
         decoded_token = decode_token(jwt_token)
         user_id = decoded_token["user_id"]["$oid"]
+
         @current_user = User.find_by(id: user_id)
         if @current_user[:role] == "admin"
           @is_admin = true
@@ -45,50 +47,9 @@ class ApplicationController < ActionController::API
   end
 
 
-  # def authenticate_user
-  #   jwt = cookies.signed[:jwt]
-  #   decode_token(jwt)
-  # end
-  #
-  #before_action :authenticate_user!
-
-  # def authenticate_user!
-  #   jwt_token = cookies[:jwt]
-  #   begin
-  #     decoded_token = decode_token(jwt_token)
-  #     @current_user = User.find(decoded_token['user_id'])
-  #   rescue JWT::DecodeError
-  #     render json: { message: 'Invalid token.' }, status: :unauthorized
-  #   rescue Mongoid::Errors::DocumentNotFound
-  #     render json: { message: 'User not found.' }, status: :unauthorized
-  #   end
-  #
-  # end
 
   def current_user
     @current_user
   end
 
 end
-#   include ActionController::Cookies
-#
-#   def authenticate_user!
-#     jwt_token = cookies[:jwt]
-#     if jwt_token.nil?
-#       render json: { message: 'You must be logged in to do that.' }, status: :unauthorized
-#       return
-#     end
-#
-#     begin
-#       decoded_token = User.decode_token(jwt_token)
-#       @current_user_id = decoded_token[:user_id]
-#     rescue JWT::DecodeError
-#       render json: { message: 'Invalid token.' }, status: :unauthorized
-#     end
-#
-#     @current_user = User.find_by(id: @current_user_id)
-#     if @current_user.nil?
-#       render json: { message: 'User not found.' }, status: :unauthorized
-#     end
-#   end
-#end

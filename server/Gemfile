@@ -66,8 +66,15 @@ group :development do
   end
 
   gem 'rswag'
+  gem 'rswag-api'
   gem 'jwt'
 
   gem 'rack-cors'
+
+  gem 'faker'
+
+  gem 'shoulda-matchers'
+
+  gem 'mongoid-rspec'
 end
 

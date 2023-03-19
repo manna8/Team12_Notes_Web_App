@@ -68,7 +68,7 @@ export default {
           .catch(err => console.log(err.message));
       this.$store.commit('logout');
       console.log(this.$store.state.loggedIn);
-      sessionStorage.clear();
+      // sessionStorage.clear();
     },
   },
   computed: {

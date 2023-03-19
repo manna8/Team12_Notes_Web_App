@@ -14,6 +14,11 @@ require "action_view/railtie"
 require "action_cable/engine"
 # require "rails/test_unit/railtie"
 
+require 'rack/cors'
+require 'rswag/api'
+require 'rswag/ui'
+require 'faker'
+require 'shoulda/matchers'
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
@@ -23,7 +28,8 @@ Bundler.require(*Rails.groups)
 
 module Server
   class Application < Rails::Application
-    # Initialize configuration defaults for originally generated Rails version.
+    # Initialize configuration defaults for originally generated Rails version
+
     config.middleware.use ActionDispatch::Cookies
     config.api_only = true
     config.load_defaults 7.0

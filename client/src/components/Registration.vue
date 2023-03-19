@@ -62,8 +62,6 @@ export default {
           "password_confirmation": this.input.password_v2
         }).then(() => this.$router.push({path: '/login'}))
         .catch(err => console.log(err.message));
-        this.$store.state.loggedIn = 0;
-
       }
     }
   }

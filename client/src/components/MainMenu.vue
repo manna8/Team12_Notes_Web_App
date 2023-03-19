@@ -1,5 +1,5 @@
 <template id="app">
-  <nav class="navbar navbar-expand navbar-light bg-light border border-warning" :key="menuKey">
+  <nav class="navbar navbar-expand navbar-light bg-light border border-warning">
     <router-link class="navbar-brand" to="/">
       <h3 class="font-weight-bold">MindNote</h3>
     </router-link>
@@ -66,6 +66,7 @@ export default {
       axios.delete(config.logoutURL, {withCredentials: true})
           .then(() => this.$router.push({path: '/'}))
           .catch(err => console.log(err.message));
+      this.$store.state.loggedIn = 0;
     },
   },
   computed: {

@@ -4,7 +4,7 @@
       <h3 class="font-weight-bold">MindNote</h3>
     </router-link>
     <div class="w-100">
-      <div  v-if="login">
+      <div  v-if="isLogged">
         <ul class="navbar-nav">
           <li class="nav-item">
             <div class="dropdown">
@@ -32,7 +32,7 @@
 
     <div class="w-200">
       <ul class="navbar-nav">
-        <li class="nav-item" v-if="login">
+        <li class="nav-item" v-if="isLogged">
           <button type="button" class="btn btn-outline-warning"  @click="logout">
             <router-link class="nav-link" to="/">Logout</router-link>
           </button>
@@ -66,12 +66,13 @@ export default {
       axios.delete(config.logoutURL, {withCredentials: true})
           .then(() => this.$router.push({path: '/'}))
           .catch(err => console.log(err.message));
-      this.$store.state.loggedIn = 0;
+      this.$store.commit('logout');
+      console.log(this.$store.state.loggedIn);
       sessionStorage.clear();
     },
   },
   computed: {
-    login() {
+    isLogged() {
       return this.$store.state.loggedIn;
     }
   }

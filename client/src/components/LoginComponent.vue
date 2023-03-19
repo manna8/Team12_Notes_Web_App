@@ -54,7 +54,7 @@ export default {
 
         const myCookie = Cookies.get('jwt');
         console.log(myCookie);
-        this.$store.state.loggedIn = 1;
+        this.$store.commit('login');
         console.log(this.$store.state.loggedIn);
       }
     }

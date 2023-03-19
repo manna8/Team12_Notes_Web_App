@@ -1,5 +1,5 @@
 <template id="app">
-  <nav class="navbar navbar-expand navbar-light bg-light border border-warning">
+  <nav class="navbar navbar-expand navbar-light bg-light border border-warning" :key="menuKey">
     <router-link class="navbar-brand" to="/">
       <h3 class="font-weight-bold">MindNote</h3>
     </router-link>
@@ -17,11 +17,16 @@
       </ul>
     </div>
 
-    <div class="w-200" v-if="isLoggedIn">
+    <div class="w-200">
       <ul class="navbar-nav">
-        <li class="nav-item" @click="logout">
+        <li class="nav-item" @click="logout" v-if="isLoggedIn">
           <button type="button" class="btn btn-outline-warning">
             <router-link class="nav-link" to="/">Logout</router-link>
+          </button>
+        </li>
+        <li  class="nav-item" v-else>
+          <button type="button" class="btn btn-outline-warning">
+            <router-link class="nav-link" to="/login">Login</router-link>
           </button>
         </li>
       </ul>
@@ -34,6 +39,7 @@
 
 export default {
   name: "MainMenu",
+  props: ['menuKey'],
   data() {
     return {
       isLoggedIn: false

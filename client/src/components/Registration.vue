@@ -25,7 +25,7 @@
       </div>
 
       <p>Already have an account?
-        <router-link to="/" class="link-warning">Login!</router-link>
+        <router-link to="/login" class="link-warning">Login!</router-link>
       </p>
 
       <div class="text-center">
@@ -61,14 +61,8 @@ export default {
           "password": this.input.password,
           "password_confirmation": this.input.password_v2
         }).then(() => this.$router.push({path: '/notes'}))
-        .catch(err => console.log(err.response.data ? err.response.data : err.message));
-      //   TokenDataService.newToken(this.input.username, this.input.password)
-      //       .then(() => {
-      //         this.$router.push({path: '/notes'});
-      //       })
-      //       .catch(err => console.log(err.response.data ? err.response.data : err.message));
-      // } else {
-      //   console.log('Password and username cannot be empty!');
+        .catch(err => console.log(err.message));
+
       }
     }
   }

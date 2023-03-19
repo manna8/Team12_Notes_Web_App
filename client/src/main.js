@@ -1,9 +1,9 @@
 import { createApp } from 'vue';
 import { createStore } from 'vuex';
-import Cookies from 'js-cookie';
 import VueCookies from 'vue-cookies'
 import BootstrapVue from "bootstrap-vue-next";
 import { createRouter, createWebHistory} from "vue-router";
+import axios from "axios";
 
 import 'bootstrap/dist/css/bootstrap.css'
 import '../public/css/main.css';
@@ -14,15 +14,19 @@ import LoginComponent from "@/components/LoginComponent.vue";
 import Notes from "@/components/Notes.vue";
 import Friends from "@/components/Friends.vue";
 import Profile from "@/components/Profile.vue";
+import AddNote from "@/components/AddNote.vue";
+import Home from "@/components/Home.vue";
 
 const router = createRouter({
     history: createWebHistory(),
     routes: [
         { path: '/register', component: Registration },
-        { path: '/', component: LoginComponent },
+        { path: '/login', component: LoginComponent },
         { path: '/notes', component: Notes },
         { path: '/friends', component: Friends },
         { path: '/profile', component: Profile },
+        { path: '/createNote', component: AddNote},
+        { path: '/', component: Home},
     ]
 });
 
@@ -39,12 +43,18 @@ const store = createStore({
     }
 });
 
+const instance = axios.create({
+    withCredentials: true
+});
+
+instance.get("http://127.0.0.1:3000/login")
+    .then(response => console.log(response.data));
+
 const app = createApp(App).use(BootstrapVue);
 
 app.use(store);
 app.use(router);
 app.use(VueCookies);
-app.use(Cookies);
 
 app.mixin({
     methods: {

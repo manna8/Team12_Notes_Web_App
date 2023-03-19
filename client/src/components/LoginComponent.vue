@@ -1,7 +1,7 @@
 <template id="login">
  <div id="login">
 
-  <form class="container p-3 my-3 border bg-light mx-auto mb-3 mt-5 border-warning rounded" style="width: 450px; height: 400px" @click.prevent>
+  <form class="container p-3 my-3 border bg-light mx-auto mb-3 mt-5 border-warning rounded" style="width: 450px; height: 400px">
     <h2 class="text-center text-warning">Login!</h2>
     <div class="mb-3 d-flex flex-column align-items-start">
       <label for="username">Username</label>
@@ -49,15 +49,7 @@ export default {
           "email": this.input.username,
           "password": this.input.password
         }, {withCredentials: true})
-        //     .then(res => console.log(res))
-        //     .then(res => {const cookies = res.default.headers('Set-Cookie')
-        // // Do something with the cookies
-        // console.log(cookies)})
-            //.then(() => this.$router.push({path: '/notes'}))
-            // .then(() => localStorage.setItem('TOKEN', this.$cookies.get('jwt')))
-            // .then(() => this.$router.push({path: '/notes'}))
-            // .then(() => console.log(this.$cookies.keys()))
-
+            .then(() => this.$router.push({path: '/notes'}))
             .catch(err => console.log(err.message));
 
         const myCookie = Cookies.get('jwt');

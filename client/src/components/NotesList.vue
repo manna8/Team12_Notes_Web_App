@@ -1,7 +1,9 @@
 <template>
   <div>
     <div class="overflow-auto">
+      <div class="row row-cols-1 row-cols-md-3 g-4">
       <ul v-for="(note, index) in notes" v-bind:key="note.title">
+        <div class="col">
         <div class="card" style="width: 18rem;">
           <img src="../assets/background2.png" class="card-img-top" alt="image :/">
           <div class="card-body">
@@ -11,7 +13,9 @@
             <button class="btn btn-outline-dark" @click="deleteNote(index)">Delete note</button>
           </div>
         </div>
+        </div>
       </ul>
+      </div>
     </div>
   </div>
 

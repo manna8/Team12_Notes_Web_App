@@ -1,7 +1,7 @@
 <template id="login">
  <div id="login">
 
-  <form class="container p-3 my-3 border bg-light mx-auto mb-3 mt-5 border-warning rounded" style="width: 450px; height: 400px">
+  <form class="container p-3 my-3 border bg-light mx-auto mb-3 mt-5 border-warning rounded" style="width: 450px; height: 400px" @click.prevent>
     <h2 class="text-center text-warning">Login!</h2>
     <div class="mb-3 d-flex flex-column align-items-start">
       <label for="username">Username</label>

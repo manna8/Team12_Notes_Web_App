@@ -37,8 +37,28 @@ This prject is develped using TDD in 4 sprints:
 - **Strint 4** Friendships and Collections management.
 
 
+## Running the program
+### Running the server
+In order to run this program you new to go to server folder and type
+```
+bundle install
+```
+and then
+```
+rails s
+```
+### Running the client
+Go to client folder and type;
+```
+npm install
+```
+and then
+```
+npm run serve
+```
+## User guide
+
 ## Project structure
-Add a file structure here with the basic details about files, below is an example.
 
 ```
 .
@@ -101,6 +121,5 @@ Add a file structure here with the basic details about files, below is an exampl
 │   ├── Rakefile
 │   └── config.ru
 └── README.md
-## Running the program
+```
 
-## User guide

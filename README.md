@@ -38,4 +38,69 @@ This prject is develped using TDD in 4 sprints:
 
 
 ## Project structure
+Add a file structure here with the basic details about files, below is an example.
 
+```
+.
+├── client
+│   ├── config
+│   │   └── config.js
+│   ├── public
+│   │   ├── css
+│   │   │   └── main.css
+│   │   ├── favicon.ico
+│   │   └── index.html
+│   └── src
+│       ├── assets
+│       │   ├── image1.png
+│       │   : 
+│       │   └── imageN.png
+│       ├── components
+│       │   ├── component1.png
+│       │   : 
+│       │   └── componentN.png 
+│       ├── services
+│       │   └── TokenDataService.js
+│       ├── App.vue
+│       ├── http-common.js
+│       ├── main.js
+│       └──  router.js
+├── sever
+│   ├── app
+│   │   ├── assets
+│   │   │   └── ...
+│   │   ├── controllers
+│   │   │   └── ...
+│   │   ├── helpers
+│   │   │   └── ...
+│   │   ├── jobs
+│   │   │   └── ...
+│   │   ├── mailers
+│   │   │   └── ...
+│   │   ├── models
+│   │   │   └── ...
+│   │   └── views
+│   │       └── ...
+│   ├──  bin
+│   │   └── ...
+│   ├── config
+│   │   └── ...
+│   ├── lib
+│   │   └── ...
+│   ├── log
+│   │   └── ...
+│   ├── public
+│   │   └── ...
+│   ├── spec
+│   │   └── ...
+│   ├── temp
+│   │   └── ...
+│   ├── vendor
+│   │   └── ...
+│   ├── Gemfile
+│   ├── Rakefile
+│   └── config.ru
+└── README.md
+## Running the program
+
+## User guide

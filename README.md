@@ -59,7 +59,7 @@ npm run serve
 ```
 ## User guide
 
-Documentation can be accessible through this link [documentation](https://github.com/manna8/Team12_Notes_Web_App/blob/documentation/MindNote%20-%20user%20guide.pdf)
+User guide can be accessible through this link [user guide](https://github.com/manna8/Team12_Notes_Web_App/blob/documentation/MindNote%20-%20user%20guide.pdf)
 
 ## Project structure
 

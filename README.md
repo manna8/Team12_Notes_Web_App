@@ -24,9 +24,10 @@ Web application for the Web System Development subject. Goal of this project is 
 
 ## Technologies 
 - Ruby on Rails 7
-- RSpec
-- Vue.js
-- MongoDB Atlas
+- Vue.js 3
+- MongoDB Atlas 
+- Boostrap 5
+- CSS
 
 ## Development
 

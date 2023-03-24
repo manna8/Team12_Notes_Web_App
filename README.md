@@ -33,9 +33,9 @@ Web application for the Web System Development subject. Goal of this project is 
 
 This prject is develped using TDD in 4 sprints:
 - [x] **Sprint 1** Registration and login of users
-- [x] **Strint 2**  Managing the notes
-- [ ] **Strint 3**  Users management
-- [ ] **Strint 4** Friendships and Collections management.
+- [x] **Sprint 2**  Managing the notes
+- [ ] **Sprint 3**  Users management
+- [ ] **Sprint 4** Friendships and Collections management.
 
 
 ## Running the program

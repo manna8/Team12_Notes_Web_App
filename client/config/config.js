@@ -5,6 +5,12 @@ const config = {
     getNotesURL: "http://127.0.0.1:3000/notes",
     deleteNotesURL: "http://127.0.0.1:3000/notes/",
     logoutURL: "http://127.0.0.1:3000/logout",
+    addImageURLL: "http://127.0.0.1:3000/uploadImage",
+    getNoteURL: "http://127.0.0.1:3000/notes/",
+    updateNoteURL: "http://127.0.0.1:3000/notes/",
+    addCollectionsURL: "http://127.0.0.1:3000/notes_collections",
+    getCollectionsURL: "http://127.0.0.1:3000/notes_collections",
+    deleteCollectionURL: "http://127.0.0.1:3000/notes_collections/",
 };
 
 module.exports = config;

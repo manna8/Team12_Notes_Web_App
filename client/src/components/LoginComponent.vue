@@ -6,11 +6,13 @@
     <div class="mb-3 d-flex flex-column align-items-start">
       <label for="username">Username</label>
       <input type="text" class="form-control" v-model="input.username" placeholder="Enter username">
+      <p class="text-warning text-opacity-75" v-if="!usernameValid">Please provide an username!</p>
     </div>
 
     <div class="mb-3 d-flex flex-column align-items-start">
       <label for="password">Password</label>
       <input type="password" class="form-control" v-model="input.password" placeholder="Enter password">
+      <p class="text-warning text-opacity-75" v-if="!passwordValid">Please provide a password!</p>
     </div>
 
     <p>Don't have an account?
@@ -38,13 +40,26 @@ export default {
       input: {
         username: "",
         password: ""
-      }
+      },
+      usernameValid: true,
+      passwordValid: true
     }
   },
   methods: {
     login() {
-      if (this.input.password !== "" && this.input.username !== "") {
+      if (this.input.password === "") {
+        this.passwordValid = false;
+      } else {
+        this.passwordValid = true;
+      }
 
+      if (this.input.username === "") {
+        this.usernameValid = false;
+      } else {
+        this.usernameValid = true;
+      }
+
+      if (this.usernameValid && this.passwordValid) {
         axios.post(config.loginURL, {
           "email": this.input.username,
           "password": this.input.password
@@ -56,6 +71,8 @@ export default {
         console.log(myCookie);
         this.$store.commit('login');
         console.log(this.$store.state.loggedIn);
+      } else if (this.input.password !== ""){
+        this.passwordValid = false;
       }
     }
   }

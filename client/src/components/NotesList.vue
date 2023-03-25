@@ -9,7 +9,7 @@
           <div class="card-body">
             <h5 class="note-title">{{ note.title }}</h5>
             <p class="note-text">{{ note.description }}</p>
-            <a href="#" class="btn btn-warning">Details</a>
+            <router-link :to="'/notes/' + note._id.$oid" class="btn btn-outline-warning">Details</router-link>
             <button class="btn btn-outline-dark" @click="deleteNote(note._id)">Delete note</button>
           </div>
         </div>
@@ -31,6 +31,7 @@ import config from "../../config/config";
 export default {
   name: "NotesList",
   props: {
+    id: String,
     title: String,
     description: Number
   },
@@ -50,7 +51,6 @@ export default {
     async getNotes() {
       const res = await axios.get(config.getNotesURL, {withCredentials: true});
       this.notes = res.data;
-      console.log(this.notes);
     }
   },
   mounted() {

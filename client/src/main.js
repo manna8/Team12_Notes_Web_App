@@ -18,6 +18,7 @@ import Profile from "@/components/Profile.vue";
 import AddNote from "@/components/AddNote.vue";
 import Home from "@/components/Home.vue";
 import Collections from "@/components/Collections.vue";
+import EditNote from "@/components/EditNote.vue";
 
 const router = createRouter({
     history: createWebHistory(),
@@ -29,6 +30,7 @@ const router = createRouter({
         { path: '/profile', component: Profile },
         { path: '/createNote', component: AddNote},
         { path: '/collections', component: Collections},
+        { path: '/notes/:id', component: EditNote, props: true},
         { path: '/', component: Home},
     ]
 });

@@ -53,6 +53,7 @@ class NotesController < ApplicationController
   # PATCH/PUT /notes/1
   # PATCH/PUT /notes/1.json
   def update
+    @note = Note.find(note_params[:id])
     if @note.update(note_params)
       render :show, status: :ok, location: @note
     else
@@ -76,6 +77,6 @@ class NotesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def note_params
-      params.require(:note).permit(:title, :description,  :collection_id, :image)
+      params.require(:note).permit(:title, :description, :collection_id, :image)
     end
 end

@@ -1,15 +1,22 @@
 class NotesCollectionsController < ApplicationController
   before_action :set_notes_collection, only: %i[ show update destroy ]
   before_action :authenticate_user!
-
+  before_action :authorize_admin!, only:[:all_collections]
   # GET /notes_collections
   # GET /notes_collections.json
   def index
-    @notes_collections = NotesCollection.where(:user_id => @current_user[:id])
-
-    render json: @notes_collections
+    if @is_admin
+      all_collections
+    else
+      @notes_collections = NotesCollection.where(:user_id => @current_user[:id])
+      render json: @notes_collections
+    end
   end
 
+  def all_collections
+    @notes_collections = NotesCollection.all
+    render json:@notes_collections
+  end
   # GET /notes_collections/1
   # GET /notes_collections/1.json
   def show
@@ -22,6 +29,15 @@ class NotesCollectionsController < ApplicationController
     puts User.find_by(:id => @current_user[:id])
     @notes_collection.user = User.find_by(:id => @current_user[:id])
     if @notes_collection.save
+      if params[:note_ids].present?
+        note_ids = params[:note_ids]
+        notes = Note.where(id: note_ids)
+
+        notes.each do |note|
+          note.notes_collection = @notes_collection
+          note.save
+        end
+      end
       render json: { message: 'Collection created successfully.' }, status: :created
     else
       render json: { errors: user.errors.full_messages }, status: :unprocessable_entity
@@ -57,6 +73,6 @@ class NotesCollectionsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def notes_collection_params
-      params.require(:notes_collection).permit(:title, :description)
+      params.require(:notes_collection).permit(:title, :description,  note_ids: [])
     end
 end

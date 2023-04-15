@@ -10,6 +10,7 @@ const config = {
     updateNoteURL: "http://127.0.0.1:3000/notes/",
     addCollectionsURL: "http://127.0.0.1:3000/notes_collections",
     getCollectionsURL: "http://127.0.0.1:3000/notes_collections",
+    getCollectionURL: "http://127.0.0.1:3000/notes_collections/",
     deleteCollectionURL: "http://127.0.0.1:3000/notes_collections/",
 };
 

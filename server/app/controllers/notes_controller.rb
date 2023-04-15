@@ -54,6 +54,8 @@ class NotesController < ApplicationController
   # PATCH/PUT /notes/1.json
   def update
     @note = Note.find(note_params[:id])
+    puts User.find_by(:id => @current_user[:id])
+    @note.user = User.find_by(:id => @current_user[:id])
     if @note.update(note_params)
       render :show, status: :ok, location: @note
     else

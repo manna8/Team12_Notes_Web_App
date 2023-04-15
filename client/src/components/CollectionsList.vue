@@ -8,8 +8,8 @@
               <div class="card-body">
                 <li class="list-group-item">
                   <h4 class="text-white">{{ collection.title }}</h4>
-                  <button class="btn btn-outline-warning" @click="deleteCollection(collection._id)">Delete Collection</button>
                   <router-link :to="'/collections/' + collection._id.$oid" class="btn btn-warning">Details</router-link>
+                  <button class="btn btn-outline-warning" @click="deleteCollection(collection._id)">Delete Collection</button>
                 </li>
               </div>
             </div>

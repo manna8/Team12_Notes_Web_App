@@ -14,6 +14,17 @@
         <p class="text-warning text-opacity-75" v-if="!descValid">Provide a description!</p>
       </div>
 
+      <div class="dropdown" v-if="collections.length !== 0">
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="true">
+          Add to collection
+        </button>
+        <ul class="dropdown-menu" v-for="collection in collections" :key="collection.title">
+          <li>
+            <p class="dropdown-item">{{ collection.title }}</p>
+          </li>
+        </ul>
+      </div>
+
       <div class="mb-3 d-flex flex-column align-items-start">
           <label for="formFile" class="form-label">Upload Image</label>
           <input accept="image/*" class="form-control" type="file" id="formFile" @change="uploadImage">
@@ -36,6 +47,8 @@ export default {
 
   data() {
     return {
+      collections: [],
+
       input: {
         title: "",
         description: "",
@@ -43,7 +56,8 @@ export default {
         selectedImage: null,
       },
       titleValid: true,
-      descValid: true
+      descValid: true,
+
     };
   },
   methods: {
@@ -82,9 +96,18 @@ export default {
       } else {
         this.descValid = true;
       }
+    },
+    async getCollections() {
+      const res = await axios.get(config.getCollectionsURL, {withCredentials: true});
+      this.collections = res.data;
+      console.log(this.collections);
+    },
+  },
+    mounted() {
+      this.getCollections();
     }
   }
-}
+
 </script>
 
 <style scoped>

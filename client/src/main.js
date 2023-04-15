@@ -41,16 +41,16 @@ const store = createStore({
     plugins: [createPersistedState()],
     state() {
         return {
-            loggedIn: 0
+            loggedIn: 0,
         };
     },
     mutations: {
-        login (state) {
+        login(state) {
             state.loggedIn = 1;
         },
-        logout (state) {
+        logout(state) {
             state.loggedIn = 0;
-        }
+        },
     }
 });
 

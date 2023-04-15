@@ -13,6 +13,11 @@ class NotesCollectionsController < ApplicationController
   # GET /notes_collections/1
   # GET /notes_collections/1.json
   def show
+    if @notes_collection[:user_id] == @current_user[:id] or @is_admin
+      render json:@notes_collection
+    else
+      render json: { error: 'Not authenticated' }, status: :unauthorized
+    end
   end
 
   # POST /notes_collections

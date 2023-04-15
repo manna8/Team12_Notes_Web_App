@@ -71,10 +71,12 @@ export default {
         console.log(myCookie);
         this.$store.commit('login');
         console.log(this.$store.state.loggedIn);
+
       } else if (this.input.password !== ""){
         this.passwordValid = false;
       }
-    }
+    },
+
   }
 }
 </script>

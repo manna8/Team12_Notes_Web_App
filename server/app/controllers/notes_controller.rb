@@ -7,9 +7,13 @@ class NotesController < ApplicationController
   def index
   # .where(:country => 'canada')
   #   @notes = Note.find(:all, :conditions => { :user_id => @current_user[:id] })
-    @notes = Note.where(:user_id => @current_user[:id])
-    #@notes = Note.all
-    render json: @notes
+    if @is_admin
+      all_notes
+    else
+      @notes = Note.where(:user_id => @current_user[:id])
+      #@notes = Note.all
+      render json: @notes
+    end
   end
 
 
@@ -53,11 +57,8 @@ class NotesController < ApplicationController
   # PATCH/PUT /notes/1
   # PATCH/PUT /notes/1.json
   def update
-    @note = Note.find(note_params[:id])
-    puts User.find_by(:id => @current_user[:id])
-    @note.user = User.find_by(:id => @current_user[:id])
     if @note.update(note_params)
-      render :show, status: :ok, location: @note
+      render json: { message: 'Note updated successfully.'}, status: :ok
     else
       render json: @note.errors, status: :unprocessable_entity
     end

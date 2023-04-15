@@ -5,7 +5,7 @@ class User
   field :name, type: String
   field :email, type: String
   field :password_digest, type: String
-  #field :role, type: String
+  field :role, type: String, default: 'user'
 
 
   validates :name, uniqueness: true, presence: true

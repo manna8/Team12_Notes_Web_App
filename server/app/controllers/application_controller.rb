@@ -3,7 +3,6 @@ class ApplicationController < ActionController::API
   #before_action :authenticate_user! , only: [:show]
   #before_action :authenicate_user, only: [:show]
   def authenticate_user!
-
     jwt_token = cookies[:jwt]
     if jwt_token
       begin

@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   resources :notes
   post 'create_note', to: 'notes#create'
   get 'all_notes', to: 'notes#all_notes'
+  post '/notes/:id', to: 'notes#update'
   resources :users, only: [:create, :show]
   post 'login', to: 'sessions#create'
   get 'login', to: 'sessions#show'

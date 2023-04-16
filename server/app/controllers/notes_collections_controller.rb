@@ -21,7 +21,8 @@ class NotesCollectionsController < ApplicationController
   # GET /notes_collections/1.json
   def show
     if @notes_collection[:user_id] == @current_user[:id] or @is_admin
-      render json:@notes_collection
+      @notes = Note.where(:notes_collection_id => params[:id])
+      render json:{ notes_collection: @notes_collection, notes: @notes }
     else
       render json: { error: 'Not authenticated' }, status: :unauthorized
     end

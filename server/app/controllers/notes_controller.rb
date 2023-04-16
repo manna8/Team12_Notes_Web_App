@@ -38,8 +38,9 @@ class NotesController < ApplicationController
   # POST /notes.json
   def create
     @note = Note.new(note_params)
-    puts User.find_by(:id => @current_user[:id])
+    puts note_params
     @note.user = User.find_by(:id => @current_user[:id])
+
     if @note.save
         render json: { message: 'Note created successfully.' }, status: :created
       else
@@ -80,6 +81,6 @@ class NotesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def note_params
-      params.require(:note).permit(:title, :description, :collection_id, :image)
+      params.require(:note).permit(:title, :description, :photo_url, :notes_collection_id)
     end
 end

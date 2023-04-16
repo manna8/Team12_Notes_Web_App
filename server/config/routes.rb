@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   get 'login', to: 'sessions#show'
   delete 'logout', to: 'sessions#destroy'
   post 'register', to: 'users#create'
+  get 'show', to: 'users#show'
 
 
 

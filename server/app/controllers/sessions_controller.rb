@@ -13,6 +13,8 @@ class SessionsController < ApplicationController
     else
       render json: { message: 'Invalid email or password.' }, status: :unauthorized
     end
+    rescue Mongoid::Errors::DocumentNotFound
+    render json: { message: 'Invalid email or password.' }, status: :unauthorized
   end
 
 

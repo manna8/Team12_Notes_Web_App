@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::API
   include ActionController::Cookies
+
   #before_action :authenticate_user! , only: [:show]
   #before_action :authenicate_user, only: [:show]
   def authenticate_user!

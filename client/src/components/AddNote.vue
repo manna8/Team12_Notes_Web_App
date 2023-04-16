@@ -60,7 +60,7 @@ export default {
   methods: {
     addNote() {
       if (this.titleValid() && this.descValid()) {
-        console.log(this.input.selectedImageURL);
+        console.log(this.input.selectedCollection);
 
         axios.post(config.addNoteURL, {
           "title": this.input.title,
@@ -73,7 +73,7 @@ export default {
     },
     async uploadFile(event) {
       const file = event.target.files[0];
-      const accessToken = 'sl.BcrdaVTUpmdbDUwVX0CVSTvj5XpdSas1y526K5xvNQxbNvWlaId-LOQbf1bcUEa0riHZII7e8GmXboXDw-zSi2iFNHuN-mmrJ2W89fk-Ebh94Kvf_BvuaMVjG_BcVsCfHzLM6aNYzbM5';
+      const accessToken = 'sl.BcoWaUllvrGd_rCAg8_CB42kecA-BZGSEdVpG1YZQi_R-lPJJfUxGm1EqmwRUg6nMdcOxuEMQHFWFaFlruWZzSxyCrdFnxj7bAObuDxMz7gZuUqFMyIhVzOlW04UldK3l2ZaAJJxfEeD';
       const url = 'https://content.dropboxapi.com/2/files/upload';
       const headers = {
         'Authorization': `Bearer ${accessToken}`,

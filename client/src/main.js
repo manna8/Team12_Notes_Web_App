@@ -66,6 +66,7 @@ const app = createApp(App).use(BootstrapVue);
 app.use(store);
 app.use(router);
 app.use(VueCookies);
+// app.use(VueFire);
 
 app.mixin({
     methods: {
@@ -84,14 +85,7 @@ app.mixin({
 })
 
 app.mount('#app');
-// import Vue from 'vue';
-// import App from './App.vue';
-// import router from './router';
-//
-// new Vue({
-//     router,
-//     render: h => h(App)
-// }).$mount('#app');
+
 
 
 

@@ -14,20 +14,18 @@
         <p class="text-warning text-opacity-75" v-if="!descValid">Provide a description!</p>
       </div>
 
-      <div class="dropdown" v-if="collections.length !== 0">
-        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="true">
-          Add to collection
-        </button>
-        <ul class="dropdown-menu" v-for="collection in collections" :key="collection.title">
-          <li>
-            <p class="dropdown-item">{{ collection.title }}</p>
-          </li>
-        </ul>
+      <div class="mb-3 d-flex flex-column align-items-start" v-if="collections.length !== 0">
+        <div>Selected collection: {{ input.selectedCollection }}</div>
+
+        <select v-model="input.selectedCollection">
+          <option></option>
+          <option v-for="collection in collections" :key="collection.title">{{ collection.title }}</option>
+        </select>
       </div>
 
       <div class="mb-3 d-flex flex-column align-items-start">
           <label for="formFile" class="form-label">Upload Image</label>
-          <input accept="image/*" class="form-control" type="file" id="formFile" @change="uploadImage">
+          <input accept="image/*" class="form-control" type="file" id="formFile" @change="uploadFile">
       </div>
 
       <div class="text-center">
@@ -53,50 +51,73 @@ export default {
         title: "",
         description: "",
         fileName: "",
-        selectedImage: null,
+        selectedImageURL: "",
+        selectedImageData: null,
+        selectedCollection: ""
       },
-      titleValid: true,
-      descValid: true,
-
     };
   },
   methods: {
     addNote() {
-
-      this.checkIfValid();
-
-      if (this.titleValid && this.descValid) {
+      if (this.titleValid() && this.descValid()) {
         axios.post(config.addNoteURL, {
           "title": this.input.title,
-          "description": this.input.description
+          "description": this.input.description,
+          "photo_url": this.input.selectedImageURL
         }, {withCredentials: true})
             .then(() => this.$router.push({path: '/notes'}))
             .catch(err => console.log(err.message));
       }
+    },
+    async uploadFile(event) {
+      console.log(event.target.files[0]);
+      const file = event.target.files[0];
+      const accessToken = 'sl.BcpQgdIyoIL36bH28wDJR20k7Y5ZUI7LAspsHI5UgkvAOMOpJ0Xcl07WDg16iSh8lw7HSuRnk9yc_Q-koUtuxrMPXI2ResrGbtylnlhYh0xBS3HbFHnViwxjuge2zRGEPREI017_bhuB';
+      const url = 'https://content.dropboxapi.com/2/files/upload';
+      const headers = {
+        'Authorization': `Bearer ${accessToken}`,
+        'Content-Type': 'application/octet-stream',
+        'Dropbox-API-Arg': JSON.stringify({
+          path: `/mindnote/${file.name}`,
+          mode: 'add',
+          autorename: false,
+          mute: false,
+          strict_conflict: false
+        })
+      };
+      const response = await axios.post(url, file, { headers });
+      console.log(response.data);
 
-      if (this.input.title !== '') {
-        const imageData = new FormData();
-        imageData.append("image", this.input.selectedImage, this.input.fileName);
-        axios.post(config.addNoteURL, imageData)
-            .then(res => console.log(res));
-      }
+      const sharingUrl = 'https://api.dropboxapi.com/2/sharing/create_shared_link_with_settings';
+      const sharingHeaders = {
+        'Authorization': `Bearer ${accessToken}`,
+        'Content-Type': 'application/json'
+      };
+      const sharingData = {
+        path: response.data.path_display
+      };
+      const sharingResponse = await axios.post(sharingUrl, sharingData, { headers: sharingHeaders });
+      console.log(sharingResponse.data.url);
+
+      // Use the shared link URL in your application
+      const imageUrl = sharingResponse.data.url;
+      this.input.selectedImageURL = imageUrl;
     },
-    uploadImage(event) {
-      console.log(event);
-    },
-    checkIfValid() {
+    titleValid() {
       if (this.input.title === "") {
-        this.titleValid = false;
+        return false;
       } else {
-        this.titleValid = true;
-      }
-
-      if (this.input.description === "") {
-        this.descValid = false;
-      } else {
-        this.descValid = true;
+        return true;
       }
     },
+    descValid() {
+      if (this.input.description === "") {
+        return false;
+      } else {
+        return true;
+      }
+    },
+
     async getCollections() {
       const res = await axios.get(config.getCollectionsURL, {withCredentials: true});
       this.collections = res.data;

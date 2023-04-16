@@ -60,6 +60,8 @@ export default {
   methods: {
     addNote() {
       if (this.titleValid() && this.descValid()) {
+        console.log(this.input.selectedImageURL);
+
         axios.post(config.addNoteURL, {
           "title": this.input.title,
           "description": this.input.description,
@@ -70,9 +72,8 @@ export default {
       }
     },
     async uploadFile(event) {
-      console.log(event.target.files[0]);
       const file = event.target.files[0];
-      const accessToken = 'sl.BcpQgdIyoIL36bH28wDJR20k7Y5ZUI7LAspsHI5UgkvAOMOpJ0Xcl07WDg16iSh8lw7HSuRnk9yc_Q-koUtuxrMPXI2ResrGbtylnlhYh0xBS3HbFHnViwxjuge2zRGEPREI017_bhuB';
+      const accessToken = 'sl.BcrdaVTUpmdbDUwVX0CVSTvj5XpdSas1y526K5xvNQxbNvWlaId-LOQbf1bcUEa0riHZII7e8GmXboXDw-zSi2iFNHuN-mmrJ2W89fk-Ebh94Kvf_BvuaMVjG_BcVsCfHzLM6aNYzbM5';
       const url = 'https://content.dropboxapi.com/2/files/upload';
       const headers = {
         'Authorization': `Bearer ${accessToken}`,
@@ -97,7 +98,6 @@ export default {
         path: response.data.path_display
       };
       const sharingResponse = await axios.post(sharingUrl, sharingData, { headers: sharingHeaders });
-      console.log(sharingResponse.data.url);
 
       // Use the shared link URL in your application
       const imageUrl = sharingResponse.data.url;

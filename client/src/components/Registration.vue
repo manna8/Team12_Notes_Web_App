@@ -4,27 +4,27 @@
     <form class="container p-3 my-3 border bg-light mx-auto mb-3 mt-5 border-warning rounded" style="width: 450px; height: auto" @click.prevent>
       <h2 class="text-center text-warning">Register!</h2>
 
-      <div class="mb-3 d-flex flex-column align-items-start">
-        <label for="username">Username</label>
-        <input type="text" class="form-control" placeholder="Enter username" v-model="input.username">
-        <p class="text-warning text-opacity-75"  v-if="!usernameValid">Please provide an username!</p>
+      <div class="form-floating mb-3 d-flex flex-column align-items-start">
+        <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com" v-model="input.username">
+        <label for="floatingInput">Username</label>
+        <p class="text-warning text-opacity-75" v-if="!usernameValid">Please provide an username!</p>
       </div>
 
-      <div class="mb-3 d-flex flex-column align-items-start">
-        <label for="email">Email</label>
-        <input type="text" class="form-control" placeholder="Enter email" v-model="input.email">
-        <p class="text-warning text-opacity-75"  v-if="!emailValid">Please provide an email!</p>
+      <div class="form-floating mb-3 d-flex flex-column align-items-start">
+        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" v-model="input.email">
+        <label for="floatingInput">Email address</label>
+        <p class="text-warning text-opacity-75" v-if="!emailValid">Please provide an email!</p>
       </div>
 
-      <div class="mb-3 d-flex flex-column align-items-start">
-        <label for="password">Password</label>
-        <input type="password" class="form-control" placeholder="Enter password" v-model="input.password">
-        <p class="text-warning text-opacity-75"  v-if="!passwordValid">Please provide a password!</p>
+      <div class="form-floating mb-3 d-flex flex-column align-items-start">
+        <input type="password" class="form-control" id="floatingInput" placeholder="Enter password" v-model="input.password">
+        <label for="floatingInput">Password</label>
+        <p class="text-warning text-opacity-75" v-if="!passwordValid">Please provide a password!</p>
       </div>
 
-      <div class="mb-3 d-flex flex-column align-items-start">
-        <label for="password">Password</label>
-        <input type="password" class="form-control" placeholder="Repeat password" v-model="input.password_v2">
+      <div class="form-floating mb-3 d-flex flex-column align-items-start">
+        <input type="password" class="form-control" id="floatingInput" placeholder="Repeat password" v-model="input.password_v2">
+        <label for="floatingInput">Repeat password</label>
         <p class="text-warning text-opacity-75"  v-if="!passwordsMatch">Oh no, passwords don't match!</p>
       </div>
 

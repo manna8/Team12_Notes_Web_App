@@ -42,6 +42,7 @@ const store = createStore({
     state() {
         return {
             loggedIn: 0,
+            admin: false
         };
     },
     mutations: {
@@ -50,7 +51,11 @@ const store = createStore({
         },
         logout(state) {
             state.loggedIn = 0;
+            state.admin = false;
         },
+        setAdmin(state) {
+            state.admin = true;
+        }
     }
 });
 
@@ -66,7 +71,6 @@ const app = createApp(App).use(BootstrapVue);
 app.use(store);
 app.use(router);
 app.use(VueCookies);
-// app.use(VueFire);
 
 app.mixin({
     methods: {

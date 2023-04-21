@@ -2,7 +2,7 @@ class UsersController < ApplicationController
 
   before_action :authenticate_user!, only: [:show, :update, :destroy]
   before_action :authorize_admin!, only:[:all_users]
-  before_action :set_user, only: %i[update destroy ]
+  before_action :set_user, only: %i[update destroy]
 
 
   include ActionController::Cookies
@@ -28,7 +28,7 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(user_params)
-      render json: { message: 'Note updated successfully.'}, status: :ok
+      render json: { message: 'User updated successfully.'}, status: :ok
     else
       render json: { errors: @user.errors.full_messages }, status: :unprocessable_entity
     end
@@ -45,7 +45,11 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
   def user_params
-    params.permit(:name, :email, :password, :password_confirmation)
+    if params[:password].present? && params[:password_confirmation].present?
+      params.permit(:name, :email, :password, :password_confirmation)
+    else
+      params.permit(:name, :email)
+    end
   end
 
 

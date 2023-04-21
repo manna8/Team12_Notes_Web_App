@@ -97,8 +97,8 @@ export default {
         axios.post(config.updateUserURL + this.userDetails._id.$oid, {
           "name": this.input.newUsername,
           "email": this.input.newEmail,
-          "password": "1",
-          "password_confirmation": "1"
+          // "password": "1",
+          // "password_confirmation": "1"
         },{withCredentials: true})
             .then(res => console.log(res))
             .catch(err => console.log(err))
@@ -108,8 +108,8 @@ export default {
         axios.post(config.updateUserURL + this.userDetails._id.$oid, {
           "name": this.input.newUsername,
           "email": this.input.newEmail,
-          "password": "1",
-          "password_confirmation": "1"
+           "password": this.input.newPassword,
+           "password_confirmation": this.input.newPassword
         },{withCredentials: true})
             .then(res => console.log(res))
             .catch(err => console.log(err))

@@ -22,3 +22,14 @@ html, body {
 .card-columns {
     column-count: 3;
 }
+
+.accordion-button:focus {
+    --bs-accordion-active-bg: rgb(255, 201, 11);
+    --bs-accordion-active-color: black;
+    box-shadow: 0 0 0 0.2rem rgb(255, 201, 11);
+}
+
+.accordion-item {
+    --bs-accordion-active-bg: rgb(255, 201, 11);
+    --bs-accordion-active-color: black;
+}

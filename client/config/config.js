@@ -12,6 +12,7 @@ const config = {
     getCollectionsURL: "http://127.0.0.1:3000/notes_collections",
     getCollectionURL: "http://127.0.0.1:3000/notes_collections/",
     deleteCollectionURL: "http://127.0.0.1:3000/notes_collections/",
+    getUserInfoURL: "http://127.0.0.1:3000/show"
 };
 
 module.exports = config;

@@ -73,7 +73,7 @@ export default {
     },
     async uploadFile(event) {
       const file = event.target.files[0];
-      const accessToken = 'sl.BcoWaUllvrGd_rCAg8_CB42kecA-BZGSEdVpG1YZQi_R-lPJJfUxGm1EqmwRUg6nMdcOxuEMQHFWFaFlruWZzSxyCrdFnxj7bAObuDxMz7gZuUqFMyIhVzOlW04UldK3l2ZaAJJxfEeD';
+      const accessToken = 'sl.Bcp1GgNyV7HKbbYCJlmIN-0-sA7Cnc8Ev0TEYQ3KNjpnrFs5lCQedHpHUDsYYRA7J6UcrDYPxTdDvKdL7gccMw9DgIba0-DTKbovKx052Cuyqz7ty2WrgQ0vNWM9O9xzFQJqUksg9CDG';
       const url = 'https://content.dropboxapi.com/2/files/upload';
       const headers = {
         'Authorization': `Bearer ${accessToken}`,

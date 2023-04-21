@@ -20513,3 +20513,57 @@ MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:172 | development
 Completed 200 OK in 50ms (Views: 0.8ms | MongoDB: 46.6ms | Allocations: 1605)
 
 
+Started GET "/show" for 127.0.0.1 at 2023-04-21 16:11:45 +0200
+Processing by UsersController#show as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:870 conn:2:3 sconn:116400 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x000001cf2ca574e8 @seconds=1682083974, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x61380...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:870 | development.find | SUCCEEDED | 0.041s
+Completed 200 OK in 58ms (Views: 1.3ms | MongoDB: 40.6ms | Allocations: 7619)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-04-21 16:12:22 +0200
+Started GET "/show" for 127.0.0.1 at 2023-04-21 16:12:22 +0200
+Processing by UsersController#show as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:882 conn:2:3 sconn:116400 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x000001cf2ca93358 @seconds=1682086308, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x61860...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:882 | development.find | SUCCEEDED | 0.044s
+Completed 200 OK in 48ms (Views: 0.6ms | MongoDB: 43.9ms | Allocations: 3137)
+
+
+Processing by SessionsController#show as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:883 conn:2:3 sconn:116400 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x000001cf2cc283a8 @seconds=1682086343, @increment=2>, "signature"=>{"hash"=><BSON::Binary:0x61920...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:883 | development.find | SUCCEEDED | 0.036s
+Completed 200 OK in 40ms (Views: 1.0ms | MongoDB: 36.2ms | Allocations: 1953)
+
+
+Started POST "/users/64178a304d883733548e78e9" for 127.0.0.1 at 2023-04-21 16:12:30 +0200
+Processing by UsersController#update as HTML
+  Parameters: {"name"=>"MajaMojaMiłość", "email"=>"m@m.com", "id"=>"64178a304d883733548e78e9", "user"=>{"name"=>"MajaMojaMiłość", "email"=>"m@m.com"}}
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:887 conn:2:3 sconn:116400 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x000001cf2cc283a8 @seconds=1682086343, @increment=2>, "signature"=>{"hash"=><BSON::Binary:0x61920...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:887 | development.find | SUCCEEDED | 0.037s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:888 conn:2:3 sconn:116400 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x000001cf2ce1edd8 @seconds=1682086351, @increment=2>, "signature"=>{"hash"=><BSON::Binary:0x62140...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:888 | development.find | SUCCEEDED | 0.045s
+[31mUnpermitted parameters: :id, :user. Context: { controller: UsersController, action: update, request: #<ActionDispatch::Request:0x000001cf2cd96028>, params: {"name"=>"MajaMojaMiłość", "email"=>"m@m.com", "controller"=>"users", "action"=>"update", "id"=>"64178a304d883733548e78e9", "user"=>{"name"=>"MajaMojaMiłość", "email"=>"m@m.com"}} }[0m
+Completed 200 OK in 143ms (Views: 0.2ms | MongoDB: 81.4ms | Allocations: 15602)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-04-21 16:12:33 +0200
+Started GET "/show" for 127.0.0.1 at 2023-04-21 16:12:33 +0200
+Processing by SessionsController#show as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:889 conn:2:3 sconn:116400 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x000001cf2ce1edd8 @seconds=1682086351, @increment=2>, "signature"=>{"hash"=><BSON::Binary:0x62140...
+Processing by UsersController#show as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:889 | development.find | SUCCEEDED | 0.066s
+Completed 200 OK in 70ms (Views: 0.9ms | MongoDB: 65.6ms | Allocations: 2890)
+
+
+MONGODB | Server description for ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 changed from 'primary' to 'primary'.
+MONGODB | There was a change in the members of the 'ReplicaSetWithPrimary' topology.
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:891 conn:2:4 sconn:116907 | admin.saslStart | STARTED | {}
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:891 | admin.saslStart | SUCCEEDED | 0.045s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:892 conn:2:4 sconn:116907 | admin.saslContinue | STARTED | {}
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:892 | admin.saslContinue | SUCCEEDED | 0.045s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:893 conn:2:4 sconn:116907 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x000001cf2b6be508 @seconds=1682086354, @increment=2>, "signature"=>{"hash"=><BSON::Binary:0x62340...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:893 | development.find | SUCCEEDED | 0.045s
+Completed 200 OK in 361ms (Views: 1.1ms | MongoDB: 135.4ms | Allocations: 5219)
+
+
+MONGODB | Server description for ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 changed from 'primary' to 'primary' [awaited].
+MONGODB | There was a change in the members of the 'ReplicaSetWithPrimary' topology.

@@ -23139,57 +23139,162 @@ MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4169 | developmen
 Completed 200 OK in 99ms (Views: 5.9ms | MongoDB: 83.4ms | Allocations: 10995)
 
 
-Started GET "/login" for 127.0.0.1 at 2023-04-21 21:26:37 +0200
+Started GET "/show" for 127.0.0.1 at 2023-04-21 21:17:17 +0200
+Processing by UsersController#show as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4632 conn:3:5 sconn:119132 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x000001cf2c7e1a60 @seconds=1682104418, @increment=1>, "signature"=>{"hash"=><BSON::Binary:0x23096...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4632 | development.find | SUCCEEDED | 0.132s
+Completed 200 OK in 145ms (Views: 1.5ms | MongoDB: 132.5ms | Allocations: 8311)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-04-21 21:17:22 +0200
+Started GET "/show" for 127.0.0.1 at 2023-04-21 21:17:22 +0200
 Processing by SessionsController#show as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4635 conn:3:5 sconn:119132 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x000001cf2cd82cf8 @seconds=1682104641, @increment=2>, "signature"=>{"hash"=><BSON::Binary:0x23110...
+Processing by UsersController#show as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4636 conn:3:7 sconn:119358 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x000001cf2cd82cf8 @seconds=1682104641, @increment=2>, "signature"=>{"hash"=><BSON::Binary:0x23110...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4635 | development.find | SUCCEEDED | 0.069s
+Completed 200 OK in 88ms (Views: 4.9ms | MongoDB: 69.1ms | Allocations: 4000)
+
+
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4636 | development.find | SUCCEEDED | 0.076s
+Completed 200 OK in 87ms (Views: 3.7ms | MongoDB: 76.4ms | Allocations: 2582)
+
+
+Started GET "/show" for 127.0.0.1 at 2023-04-21 21:20:15 +0200
+Processing by UsersController#show as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4688 conn:3:7 sconn:119358 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x000001cf2c761450 @seconds=1682104644, @increment=1>, "signature"=>{"hash"=><BSON::Binary:0x23324...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4688 | development.find | SUCCEEDED | 0.049s
+Completed 200 OK in 56ms (Views: 3.1ms | MongoDB: 49.5ms | Allocations: 1607)
+
+
+Started POST "/friendships" for 127.0.0.1 at 2023-04-21 21:20:26 +0200
+Processing by FriendshipsController#create as HTML
+  Parameters: {"email"=>"a@a.pl", "friendship"=>{}}
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4692 conn:3:7 sconn:119358 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x000001cf2ba17970 @seconds=1682104816, @increment=1>, "signature"=>{"hash"=><BSON::Binary:0x23348...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4692 | development.find | SUCCEEDED | 0.047s
+Completed 400 Bad Request in 50ms (MongoDB: 47.0ms | Allocations: 2102)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: friendship):
+  
+app/controllers/friendships_controller.rb:71:in `friendship_params'
+app/controllers/friendships_controller.rb:34:in `create'
+Started POST "/friendships" for 127.0.0.1 at 2023-04-21 21:22:12 +0200
+Processing by FriendshipsController#create as HTML
+  Parameters: {"email"=>"a@a.pl", "friendship"=>{}}
 MONGODB | Topology type 'unknown' initializing.
 MONGODB | Topology type 'Unknown' changed to type 'ReplicaSetNoPrimary'.
-MONGODB | Server ac-mspcz06-shard-00-00.bsbwlz3.mongodb.net:27017 initializing.
 MONGODB | Server ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 initializing.
 MONGODB | Server ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 initializing.
-MONGODB | Waiting for up to 5.00 seconds for servers to be scanned: #<Cluster topology=ReplicaSetNoPrimary[ac-mspcz06-shard-00-00.bsbwlz3.mongodb.net:27017,ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017,ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017,name=atlas-kjem2r-shard-0] servers=[#<Server address=ac-mspcz06-shard-00-00.bsbwlz3.mongodb.net:27017 UNKNOWN>,#<Server address=ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 UNKNOWN>,#<Server address=ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 UNKNOWN>]>
+MONGODB | Server ac-mspcz06-shard-00-00.bsbwlz3.mongodb.net:27017 initializing.
+MONGODB | Waiting for up to 5.00 seconds for servers to be scanned: #<Cluster topology=ReplicaSetNoPrimary[ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017,ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017,ac-mspcz06-shard-00-00.bsbwlz3.mongodb.net:27017,name=atlas-kjem2r-shard-0] servers=[#<Server address=ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 UNKNOWN>,#<Server address=ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 UNKNOWN>,#<Server address=ac-mspcz06-shard-00-00.bsbwlz3.mongodb.net:27017 UNKNOWN>]>
 MONGODB | Server description for ac-mspcz06-shard-00-00.bsbwlz3.mongodb.net:27017 changed from 'unknown' to 'secondary'.
 MONGODB | There was a change in the members of the 'ReplicaSetNoPrimary' topology.
-MONGODB | Waiting for up to 4.56 seconds for servers to be scanned: #<Cluster topology=ReplicaSetNoPrimary[ac-mspcz06-shard-00-00.bsbwlz3.mongodb.net:27017,ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017,ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017,name=atlas-kjem2r-shard-0] servers=[#<Server address=ac-mspcz06-shard-00-00.bsbwlz3.mongodb.net:27017 SECONDARY replica_set=atlas-kjem2r-shard-0 pool=#<ConnectionPool size=0 (0-20) used=0 avail=0 pending=0>>,#<Server address=ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 UNKNOWN>,#<Server address=ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 UNKNOWN>]>
-MONGODB | Server description for ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 changed from 'unknown' to 'secondary'.
-MONGODB | There was a change in the members of the 'ReplicaSetNoPrimary' topology.
-MONGODB | Waiting for up to 4.54 seconds for servers to be scanned: #<Cluster topology=ReplicaSetNoPrimary[ac-mspcz06-shard-00-00.bsbwlz3.mongodb.net:27017,ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017,ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017,name=atlas-kjem2r-shard-0] servers=[#<Server address=ac-mspcz06-shard-00-00.bsbwlz3.mongodb.net:27017 SECONDARY replica_set=atlas-kjem2r-shard-0 pool=#<ConnectionPool size=0 (0-20) used=0 avail=0 pending=0>>,#<Server address=ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 SECONDARY replica_set=atlas-kjem2r-shard-0 pool=#<ConnectionPool size=0 (0-20) used=0 avail=0 pending=0>>,#<Server address=ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 UNKNOWN>]>
+MONGODB | Waiting for up to 4.58 seconds for servers to be scanned: #<Cluster topology=ReplicaSetNoPrimary[ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017,ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017,ac-mspcz06-shard-00-00.bsbwlz3.mongodb.net:27017,name=atlas-kjem2r-shard-0] servers=[#<Server address=ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 UNKNOWN>,#<Server address=ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 UNKNOWN>,#<Server address=ac-mspcz06-shard-00-00.bsbwlz3.mongodb.net:27017 SECONDARY replica_set=atlas-kjem2r-shard-0 pool=#<ConnectionPool size=0 (0-20) used=0 avail=0 pending=0>>]>
 MONGODB | Server description for ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 changed from 'unknown' to 'primary'.
 MONGODB | Topology type 'ReplicaSetNoPrimary' changed to type 'ReplicaSetWithPrimary'.
+MONGODB | Waiting for up to 4.51 seconds for servers to be scanned: #<Cluster topology=ReplicaSetWithPrimary[ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017,ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017,ac-mspcz06-shard-00-00.bsbwlz3.mongodb.net:27017,name=atlas-kjem2r-shard-0,v=1,e=7fffffff000000000000004d] servers=[#<Server address=ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 UNKNOWN>,#<Server address=ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 PRIMARY replica_set=atlas-kjem2r-shard-0 pool=#<ConnectionPool size=0 (0-20) used=0 avail=0 pending=0>>,#<Server address=ac-mspcz06-shard-00-00.bsbwlz3.mongodb.net:27017 SECONDARY replica_set=atlas-kjem2r-shard-0 pool=#<ConnectionPool size=0 (0-20) used=0 avail=0 pending=0>>]>
+MONGODB | Server description for ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 changed from 'unknown' to 'secondary'.
+MONGODB | There was a change in the members of the 'ReplicaSetWithPrimary' topology.
 MONGODB | Server description for ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 changed from 'primary' to 'primary'.
 MONGODB | There was a change in the members of the 'ReplicaSetWithPrimary' topology.
-MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:10 conn:1:1 sconn:120942 | admin.saslStart | STARTED | {}
-MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:10 | admin.saslStart | SUCCEEDED | 0.037s
-MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:11 conn:1:1 sconn:120942 | admin.saslContinue | STARTED | {}
-MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:11 | admin.saslContinue | SUCCEEDED | 0.040s
-MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:12 conn:1:1 sconn:120942 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "lsid"=>{"id"=><BSON::Binary:0x17800 type=uuid data=0xd868924e1a7243b5...>}}
-MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:12 | development.find | SUCCEEDED | 0.043s
-Completed 200 OK in 862ms (Views: 0.7ms | MongoDB: 120.1ms | Allocations: 34936)
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:10 conn:1:1 sconn:120883 | admin.saslStart | STARTED | {}
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:10 | admin.saslStart | SUCCEEDED | 0.044s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:11 conn:1:1 sconn:120883 | admin.saslContinue | STARTED | {}
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:11 | admin.saslContinue | SUCCEEDED | 0.043s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:12 conn:1:1 sconn:120883 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "lsid"=>{"id"=><BSON::Binary:0x17820 type=uuid data=0x89954cedff30478e...>}}
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:12 | development.find | SUCCEEDED | 0.044s
+Completed 400 Bad Request in 941ms (MongoDB: 130.5ms | Allocations: 35522)
 
 
-Started GET "/show" for 127.0.0.1 at 2023-04-21 21:26:40 +0200
-Processing by UsersController#show as HTML
-MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:13 conn:1:1 sconn:120942 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000021eb0da7e30 @seconds=1682105198, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x17920...
-MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:13 | development.find | SUCCEEDED | 0.046s
-Completed 200 OK in 51ms (Views: 0.8ms | MongoDB: 46.2ms | Allocations: 2075)
+  
+ActionController::ParameterMissing (param is missing or the value is empty: friendship):
+  
+app/controllers/friendships_controller.rb:71:in `friendship_params'
+app/controllers/friendships_controller.rb:34:in `create'
+Started POST "/friendships" for 127.0.0.1 at 2023-04-21 21:22:13 +0200
+Processing by FriendshipsController#create as HTML
+  Parameters: {"email"=>"a@a.pl", "friendship"=>{}}
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:13 conn:1:1 sconn:120883 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x000002401de032b0 @seconds=1682104934, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x18560...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:13 | development.find | SUCCEEDED | 0.034s
+Completed 400 Bad Request in 38ms (MongoDB: 34.5ms | Allocations: 2002)
 
 
-Started GET "/login" for 127.0.0.1 at 2023-04-21 21:26:46 +0200
-Processing by SessionsController#show as HTML
-MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:14 conn:1:1 sconn:120942 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000021eb0e2a010 @seconds=1682105200, @increment=2>, "signature"=>{"hash"=><BSON::Binary:0x18000...
-MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:14 | development.find | SUCCEEDED | 0.035s
-Completed 200 OK in 40ms (Views: 0.9ms | MongoDB: 35.5ms | Allocations: 1598)
-
-
+  
+ActionController::ParameterMissing (param is missing or the value is empty: friendship):
+  
+app/controllers/friendships_controller.rb:71:in `friendship_params'
+app/controllers/friendships_controller.rb:34:in `create'
 MONGODB | Server description for ac-mspcz06-shard-00-00.bsbwlz3.mongodb.net:27017 changed from 'secondary' to 'secondary'.
+MONGODB | There was a change in the members of the 'ReplicaSetWithPrimary' topology.
+MONGODB | Server description for ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 changed from 'primary' to 'primary'.
 MONGODB | There was a change in the members of the 'ReplicaSetWithPrimary' topology.
 MONGODB | Server description for ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 changed from 'secondary' to 'secondary'.
 MONGODB | There was a change in the members of the 'ReplicaSetWithPrimary' topology.
-MONGODB | Server description for ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 changed from 'primary' to 'primary'.
-MONGODB | There was a change in the members of the 'ReplicaSetWithPrimary' topology.
-Started GET "/login" for 127.0.0.1 at 2023-04-21 21:27:20 +0200
+Started POST "/friendships" for 127.0.0.1 at 2023-04-21 21:23:18 +0200
+Started POST "/friendships" for 127.0.0.1 at 2023-04-21 21:23:20 +0200
+Processing by FriendshipsController#create as HTML
+  Parameters: {"email"=>"a@a.pl", "friendship"=>{}}
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:32 conn:1:1 sconn:120883 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x000002401de032b0 @seconds=1682104934, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x18560...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:32 | development.find | SUCCEEDED | 0.046s
+Completed 400 Bad Request in 71ms (MongoDB: 45.8ms | Allocations: 7549)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: friendship):
+  
+app/controllers/friendships_controller.rb:71:in `friendship_params'
+app/controllers/friendships_controller.rb:34:in `create'
+Started GET "/login" for 127.0.0.1 at 2023-04-21 21:23:23 +0200
+Processing by FriendshipsController#create as HTML
+  Parameters: {"email"=>"a@a.pl", "friendship"=>{}}
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:33 conn:1:1 sconn:120883 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x000002402317df58 @seconds=1682105001, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x29860...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:33 | development.find | SUCCEEDED | 0.041s
+Completed 400 Bad Request in 50ms (MongoDB: 40.5ms | Allocations: 7693)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: friendship):
+  
+app/controllers/friendships_controller.rb:71:in `friendship_params'
+app/controllers/friendships_controller.rb:34:in `create'
 Processing by SessionsController#show as HTML
-MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:27 conn:1:1 sconn:120942 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000021eb0e8ec18 @seconds=1682105206, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x18540...
-MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:27 | development.find | SUCCEEDED | 0.042s
-Completed 200 OK in 46ms (Views: 0.8ms | MongoDB: 41.7ms | Allocations: 1598)
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:36 conn:1:1 sconn:120883 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000024023278908 @seconds=1682105004, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x30080...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:36 | development.find | SUCCEEDED | 0.045s
+Completed 200 OK in 50ms (Views: 1.2ms | MongoDB: 45.2ms | Allocations: 9424)
 
 
+Started POST "/friendships" for 127.0.0.1 at 2023-04-21 21:23:28 +0200
+Processing by FriendshipsController#create as HTML
+  Parameters: {"email"=>"a@a.pl", "friendship"=>{}}
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:38 conn:1:1 sconn:120883 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000024023278908 @seconds=1682105004, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x30080...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:38 | development.find | SUCCEEDED | 0.044s
+Completed 400 Bad Request in 47ms (MongoDB: 44.3ms | Allocations: 1715)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: friendship):
+  
+app/controllers/friendships_controller.rb:71:in `friendship_params'
+app/controllers/friendships_controller.rb:34:in `create'
+Started GET "/login" for 127.0.0.1 at 2023-04-21 21:24:06 +0200
+Processing by SessionsController#show as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:51 conn:1:1 sconn:120883 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000024021cb3280 @seconds=1682105009, @increment=2>, "signature"=>{"hash"=><BSON::Binary:0x36120...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:51 | development.find | SUCCEEDED | 0.049s
+Completed 200 OK in 60ms (Views: 1.3ms | MongoDB: 49.4ms | Allocations: 7545)
+
+
+Started POST "/friendships" for 127.0.0.1 at 2023-04-21 21:24:11 +0200
+Processing by FriendshipsController#create as HTML
+  Parameters: {"email"=>"a@a.pl", "friendship"=>{}}
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:52 conn:1:1 sconn:120883 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000024022c1dbf8 @seconds=1682105049, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x36240...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:52 | development.find | SUCCEEDED | 0.046s
+Completed 400 Bad Request in 50ms (MongoDB: 46.2ms | Allocations: 2040)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: friendship):
+  
+app/controllers/friendships_controller.rb:71:in `friendship_params'
+app/controllers/friendships_controller.rb:34:in `create'

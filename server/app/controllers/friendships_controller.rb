@@ -18,13 +18,13 @@ class FriendshipsController < ApplicationController
     render json: @friends[:name]
   end
   def sent_friend_requests
-    sent = Friendship.where(sender_id: params[:id], :status => "pending")
+    sent = Friendship.where(sender_id: @current_user[:id], :status => "pending")
     sent_users = User.where(:id => sent[:receiver_id])
     render json: sent_users[:name]
   end
 
   def received_friend_requests
-    sent = Friendship.where(:receiver_id => params[:id], :status => "pending")
+    sent = Friendship.where(:receiver_id => @current_user[:id], :status => "pending")
     received_users = User.where(:id => sent[:sender_id])
     render json: received_users[:name]
   end

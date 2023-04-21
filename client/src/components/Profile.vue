@@ -97,11 +97,19 @@ export default {
         axios.post(config.updateUserURL + this.userDetails._id.$oid, {
           "name": this.input.newUsername,
           "email": this.input.newEmail,
-        },{withCredentials: true})
-            .then(res => console.log(res))
-            .catch(err => console.log(err))
+        }, {withCredentials: true})
+            .then(() => {
+              this.$router.go(0);
 
-        // this.$router.go(0);
+              this.$swal({
+                position: 'top-end',
+                icon: 'success',
+                title: 'Details changed successfully',
+                showConfirmButton: false,
+                timer: 1000
+              });
+            })
+            .catch(err => console.log(err))
       } else {
         axios.post(config.updateUserURL + this.userDetails._id.$oid, {
           "name": this.input.newUsername,
@@ -109,9 +117,20 @@ export default {
            "password": this.input.newPassword,
            "password_confirmation": this.input.newPassword
         },{withCredentials: true})
-            .then(res => console.log(res))
+            .then(() => {
+              this.$router.go(0);
+
+              this.$swal({
+                position: 'top-end',
+                icon: 'success',
+                title: 'Details changed successfully',
+                showConfirmButton: false,
+                timer: 1000
+              });
+            })
             .catch(err => console.log(err))
       }
+
     },
 
     checkPasswordValidity() {
@@ -121,12 +140,26 @@ export default {
     deleteUser() {
       const id = this.userDetails._id.$oid;
 
-      axios.delete(config.updateUserURL + id, {withCredentials: true})
-          .then(() => this.$router.push({path: '/'}))
-          .then(() => this.$store.commit('logout'))
-          .catch(err => console.log(err.message));
-
+      this.$swal({
+        title: 'Delete your account?',
+        text: "Are you sure? You won't be able to revert this!",
+        type: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!',
+        cancelButtonText: 'No, cancel!',
+        buttonsStyling: true
+      }).then((isConfirm) => {
+        if(isConfirm.value) {
+          axios.delete(config.updateUserURL + id, {withCredentials: true})
+              .then(() => this.$router.push({path: '/'}))
+              .then(() => this.$store.commit('logout'))
+              .catch(err => console.log(err.message));
+        }
+      });
     },
+
   },
 
   mounted() {

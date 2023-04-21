@@ -5,6 +5,10 @@ import BootstrapVue from "bootstrap-vue-next";
 import { createRouter, createWebHistory} from "vue-router";
 import axios from "axios";
 import createPersistedState from 'vuex-persistedstate'
+import VueSweetalert2 from 'vue-sweetalert2';
+
+// If you don't need the styles, do not connect
+import 'sweetalert2/dist/sweetalert2.min.css';
 
 import 'bootstrap/dist/css/bootstrap.css'
 import '../public/css/main.css';
@@ -71,6 +75,7 @@ const app = createApp(App).use(BootstrapVue);
 app.use(store);
 app.use(router);
 app.use(VueCookies);
+app.use(VueSweetalert2);
 
 app.mixin({
     methods: {

@@ -19325,3 +19325,770 @@ MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1077 | developmen
 Completed 200 OK in 56ms (Views: 0.1ms | MongoDB: 53.5ms | Allocations: 1435)
 
 
+Started POST "/register" for ::1 at 2023-04-20 18:17:16 +0200
+Processing by UsersController#create as HTML
+  Parameters: {"name"=>"changes", "email"=>"c@c.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "user"=>{"name"=>"changes", "email"=>"c@c.com"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00000262a51d85d0>, params: {"name"=>"changes", "email"=>"c@c.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "controller"=>"users", "action"=>"create", "user"=>{"name"=>"changes", "email"=>"c@c.com"}} }[0m
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1381 conn:1:1 sconn:99234 | development.find | STARTED | {"find"=>"users", "filter"=>{"name"=>"changes"}, "limit"=>1, "projection"=>{"_id"=>1}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x00000262a8a83790 @seconds=1682006422, @increment=1>, "signature"=>{"hash"=><BSON::Binary:0...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1381 | development.find | SUCCEEDED | 0.057s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1382 conn:1:1 sconn:99234 | development.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"c@c.com"}, "limit"=>1, "projection"=>{"_id"=>1}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x00000262a66df0a0 @seconds=1682007436, @increment=2>, "signature"=>{"hash"=><BSON::Binary:...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1382 | development.find | SUCCEEDED | 0.045s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1383 conn:1:1 sconn:99234 | development.insert | STARTED | {"insert"=>"users", "ordered"=>true, "documents"=>[{"_id"=>BSON::ObjectId('6441658ded69891744d64547'), "role"=>"user", "name"=>"changes", "email"=>"c@c.com", "password_digest"=>"$2a$12$2HqD5qtkFO5Guv3Ta.UAEuLsDZk0rfMfEgtkP8JotlNwErJA2hEfe", "updated_a...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1383 | development.insert | SUCCEEDED | 0.058s
+Completed 201 Created in 458ms (Views: 0.2ms | MongoDB: 161.1ms | Allocations: 12355)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-04-20 18:17:25 +0200
+Processing by SessionsController#create as HTML
+  Parameters: {"email"=>"c@c.com", "password"=>"[FILTERED]", "session"=>{"email"=>"c@c.com", "password"=>"[FILTERED]"}}
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1387 conn:1:1 sconn:99234 | development.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"c@c.com"}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x00000262a6ea8bd8 @seconds=1682007436, @increment=4>, "signature"=>{"hash"=><BSON::Binary:0x73140 type=generic data=0x9ae0f09b9e...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1387 | development.find | SUCCEEDED | 0.046s
+Completed 200 OK in 244ms (Views: 0.1ms | MongoDB: 45.6ms | Allocations: 1546)
+
+
+Started GET "/notes" for 127.0.0.1 at 2023-04-20 18:17:26 +0200
+Processing by NotesController#index as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1388 conn:1:1 sconn:99234 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('6441658ded69891744d64547')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x00000262a80ee6f8 @seconds=1682007445, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x73180...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1388 | development.find | SUCCEEDED | 0.053s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1389 conn:1:1 sconn:99234 | development.find | STARTED | {"find"=>"notes", "filter"=>{"user_id"=>BSON::ObjectId('6441658ded69891744d64547')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x00000262a80ee6f8 @seconds=1682007445, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x7...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1389 | development.find | SUCCEEDED | 0.044s
+Completed 200 OK in 102ms (Views: 2.8ms | MongoDB: 96.7ms | Allocations: 2872)
+
+
+Started GET "/notes_collections" for 127.0.0.1 at 2023-04-20 18:17:28 +0200
+Processing by NotesCollectionsController#index as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1390 conn:1:1 sconn:99234 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('6441658ded69891744d64547')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x00000262a80ee6f8 @seconds=1682007445, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x73180...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1390 | development.find | SUCCEEDED | 0.052s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1391 conn:1:1 sconn:99234 | development.find | STARTED | {"find"=>"notes_collections", "filter"=>{"user_id"=>BSON::ObjectId('6441658ded69891744d64547')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x00000262a8316340 @seconds=1682007448, @increment=2>, "signature"=>{"hash"=><BSON...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1391 | development.find | SUCCEEDED | 0.372s
+Completed 200 OK in 432ms (Views: 4.4ms | MongoDB: 424.6ms | Allocations: 2861)
+
+
+Started GET "/show" for 127.0.0.1 at 2023-04-20 18:17:31 +0200
+Processing by UsersController#show as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1392 conn:1:1 sconn:99234 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('6441658ded69891744d64547')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x00000262a83e0050 @seconds=1682007448, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x73320...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1392 | development.find | SUCCEEDED | 0.054s
+Completed 200 OK in 60ms (Views: 2.3ms | MongoDB: 54.0ms | Allocations: 1602)
+
+
+Started GET "/show" for 127.0.0.1 at 2023-04-20 18:18:16 +0200
+Processing by UsersController#show as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1408 conn:1:1 sconn:99234 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('6441658ded69891744d64547')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x00000262a843ecb8 @seconds=1682007451, @increment=2>, "signature"=>{"hash"=><BSON::Binary:0x73960...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1408 | development.find | SUCCEEDED | 0.047s
+Completed 200 OK in 50ms (Views: 1.0ms | MongoDB: 46.6ms | Allocations: 1585)
+
+
+Started GET "/show" for 127.0.0.1 at 2023-04-20 18:18:23 +0200
+Processing by UsersController#show as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1409 conn:1:1 sconn:99234 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('6441658ded69891744d64547')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x00000262a8ba9390 @seconds=1682007496, @increment=1>, "signature"=>{"hash"=><BSON::Binary:0x74060...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1409 | development.find | SUCCEEDED | 0.053s
+Completed 200 OK in 57ms (Views: 1.1ms | MongoDB: 53.3ms | Allocations: 1585)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2023-04-20 18:18:27 +0200
+Processing by SessionsController#destroy as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1413 conn:1:1 sconn:99234 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('6441658ded69891744d64547')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x00000262a8f4d0a0 @seconds=1682007503, @increment=2>, "signature"=>{"hash"=><BSON::Binary:0x74220...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1413 | development.find | SUCCEEDED | 0.047s
+Completed 200 OK in 49ms (Views: 0.1ms | MongoDB: 46.5ms | Allocations: 1428)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-04-20 18:36:35 +0200
+Processing by SessionsController#create as HTML
+  Parameters: {"email"=>"c@c.com", "password"=>"[FILTERED]", "session"=>{"email"=>"c@c.com", "password"=>"[FILTERED]"}}
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1738 conn:1:1 sconn:99234 | development.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"c@c.com"}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x00000262a908bc28 @seconds=1682007506, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x87280 type=generic data=0x25b1d03e30...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1738 | development.find | SUCCEEDED | 0.050s
+Completed 200 OK in 244ms (Views: 0.1ms | MongoDB: 50.3ms | Allocations: 1446)
+
+
+Started GET "/notes" for 127.0.0.1 at 2023-04-20 18:36:35 +0200
+Processing by NotesController#index as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1739 conn:1:1 sconn:99234 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('6441658ded69891744d64547')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x00000262a8dd4930 @seconds=1682008595, @increment=1>, "signature"=>{"hash"=><BSON::Binary:0x87320...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1739 | development.find | SUCCEEDED | 0.056s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1740 conn:1:1 sconn:99234 | development.find | STARTED | {"find"=>"notes", "filter"=>{"user_id"=>BSON::ObjectId('6441658ded69891744d64547')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x00000262a8f462f0 @seconds=1682008595, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x8...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1740 | development.find | SUCCEEDED | 0.056s
+Completed 200 OK in 121ms (Views: 5.3ms | MongoDB: 112.0ms | Allocations: 2842)
+
+
+Started GET "/notes" for 127.0.0.1 at 2023-04-20 18:37:29 +0200
+Processing by NotesController#index as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1756 conn:1:1 sconn:99234 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('6441658ded69891744d64547')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x00000262a8f462f0 @seconds=1682008595, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x87340...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1756 | development.find | SUCCEEDED | 0.055s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1757 conn:1:1 sconn:99234 | development.find | STARTED | {"find"=>"notes", "filter"=>{"user_id"=>BSON::ObjectId('6441658ded69891744d64547')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x00000262a5784498 @seconds=1682008648, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x8...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1757 | development.find | SUCCEEDED | 0.045s
+Completed 200 OK in 107ms (Views: 2.6ms | MongoDB: 100.3ms | Allocations: 2848)
+
+
+Started POST "/create_note" for 127.0.0.1 at 2023-04-20 18:38:52 +0200
+Processing by NotesController#create as */*
+  Parameters: {"title"=>"http", "description"=>"http", "photo_url"=>"", "note"=>{"title"=>"http", "description"=>"http", "photo_url"=>""}}
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.1ms | MongoDB: 0.0ms | Allocations: 103)
+
+
+Started POST "/create_note" for 127.0.0.1 at 2023-04-20 18:43:24 +0200
+Processing by NotesController#create as */*
+  Parameters: {"title"=>"http", "description"=>"http", "photo_url"=>"", "note"=>{"title"=>"http", "description"=>"http", "photo_url"=>""}}
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | MongoDB: 0.0ms | Allocations: 99)
+
+
+Started POST "/create_note" for 127.0.0.1 at 2023-04-20 18:44:14 +0200
+Processing by NotesController#create as */*
+  Parameters: {"title"=>"http", "description"=>"http", "photo_url"=>"", "note"=>{"title"=>"http", "description"=>"http", "photo_url"=>""}}
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.1ms | MongoDB: 0.0ms | Allocations: 99)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-04-20 18:47:15 +0200
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"c@c.com", "password"=>"[FILTERED]", "session"=>{"email"=>"c@c.com", "password"=>"[FILTERED]"}}
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1932 conn:1:1 sconn:99234 | development.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"c@c.com"}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x00000262a5784498 @seconds=1682008648, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x88000 type=generic data=0x0d0ca2e77d...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1932 | development.find | SUCCEEDED | 0.050s
+Completed 200 OK in 242ms (Views: 0.1ms | MongoDB: 49.9ms | Allocations: 1449)
+
+
+Started POST "/create_note" for 127.0.0.1 at 2023-04-20 18:47:15 +0200
+Processing by NotesController#create as */*
+  Parameters: {"title"=>"http", "description"=>"http", "photo_url"=>"", "note"=>{"title"=>"http", "description"=>"http", "photo_url"=>""}}
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.1ms | MongoDB: 0.0ms | Allocations: 99)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2023-04-20 18:48:19 +0200
+Processing by SessionsController#destroy as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1954 conn:1:1 sconn:99234 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('6441658ded69891744d64547')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x00000262a3412f28 @seconds=1682009234, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x96040...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1954 | development.find | SUCCEEDED | 0.056s
+Completed 200 OK in 58ms (Views: 0.1ms | MongoDB: 55.5ms | Allocations: 1428)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-04-21 13:27:17 +0200
+Processing by SessionsController#show as HTML
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | MongoDB: 0.0ms | Allocations: 358)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-04-21 13:28:40 +0200
+Processing by SessionsController#create as HTML
+  Parameters: {"email"=>"m@m.com", "password"=>"[FILTERED]", "session"=>{"email"=>"m@m.com", "password"=>"[FILTERED]"}}
+Started POST "/login" for 127.0.0.1 at 2023-04-21 13:28:45 +0200
+Processing by SessionsController#create as HTML
+  Parameters: {"email"=>"m@m.com", "password"=>"[FILTERED]", "session"=>{"email"=>"m@m.com", "password"=>"[FILTERED]"}}
+Started GET "/login" for 127.0.0.1 at 2023-04-21 13:28:59 +0200
+Processing by SessionsController#show as HTML
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.3ms | MongoDB: 0.0ms | Allocations: 146)
+
+
+MONGODB | Topology type 'unknown' initializing.
+MONGODB | Topology type 'Unknown' changed to type 'ReplicaSetNoPrimary'.
+MONGODB | Server ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 initializing.
+MONGODB | Server ac-mspcz06-shard-00-00.bsbwlz3.mongodb.net:27017 initializing.
+MONGODB | Server ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 initializing.
+MONGODB | Waiting for up to 4.98 seconds for servers to be scanned: #<Cluster topology=ReplicaSetNoPrimary[ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017,ac-mspcz06-shard-00-00.bsbwlz3.mongodb.net:27017,ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017,name=atlas-kjem2r-shard-0] servers=[#<Server address=ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 UNKNOWN>,#<Server address=ac-mspcz06-shard-00-00.bsbwlz3.mongodb.net:27017 UNKNOWN>,#<Server address=ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 UNKNOWN>]>
+MONGODB | Server description for ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 changed from 'unknown' to 'secondary'.
+MONGODB | There was a change in the members of the 'ReplicaSetNoPrimary' topology.
+MONGODB | Server description for ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 changed from 'unknown' to 'primary'.
+MONGODB | Topology type 'ReplicaSetNoPrimary' changed to type 'ReplicaSetWithPrimary'.
+MONGODB | Waiting for up to 4.23 seconds for servers to be scanned: #<Cluster topology=ReplicaSetWithPrimary[ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017,ac-mspcz06-shard-00-00.bsbwlz3.mongodb.net:27017,ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017,name=atlas-kjem2r-shard-0,v=1,e=7fffffff000000000000004d] servers=[#<Server address=ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 PRIMARY replica_set=atlas-kjem2r-shard-0 pool=#<ConnectionPool size=0 (0-20) used=0 avail=0 pending=0>>,#<Server address=ac-mspcz06-shard-00-00.bsbwlz3.mongodb.net:27017 UNKNOWN>,#<Server address=ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 SECONDARY replica_set=atlas-kjem2r-shard-0 pool=#<ConnectionPool size=0 (0-20) used=0 avail=0 pending=0>>]>
+MONGODB | Server description for ac-mspcz06-shard-00-00.bsbwlz3.mongodb.net:27017 changed from 'unknown' to 'secondary'.
+MONGODB | There was a change in the members of the 'ReplicaSetWithPrimary' topology.
+MONGODB | Server description for ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 changed from 'primary' to 'primary'.
+MONGODB | There was a change in the members of the 'ReplicaSetWithPrimary' topology.
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:11 conn:1:2 sconn:114726 | admin.saslStart | STARTED | {}
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:12 conn:1:1 sconn:114726 | admin.saslStart | STARTED | {}
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:11 | admin.saslStart | SUCCEEDED | 0.034s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:13 conn:1:2 sconn:114726 | admin.saslContinue | STARTED | {}
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:12 | admin.saslStart | SUCCEEDED | 0.053s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:14 conn:1:1 sconn:114726 | admin.saslContinue | STARTED | {}
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:13 | admin.saslContinue | SUCCEEDED | 0.040s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:15 conn:1:2 sconn:114726 | development.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"m@m.com"}, "$db"=>"development", "lsid"=>{"id"=><BSON::Binary:0x16520 type=uuid data=0x49f05d9782024bb5...>}}
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:14 | admin.saslContinue | SUCCEEDED | 0.052s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:16 conn:1:1 sconn:114726 | development.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"m@m.com"}, "$db"=>"development", "lsid"=>{"id"=><BSON::Binary:0x16540 type=uuid data=0xac8c505747fe454d...>}}
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:16 | development.find | SUCCEEDED | 0.040s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:15 | development.find | SUCCEEDED | 0.056s
+Completed 200 OK in 22075ms (Views: 0.2ms | MongoDB: 145.0ms | Allocations: 47912)
+
+
+Completed 200 OK in 17390ms (Views: 0.1ms | MongoDB: 129.8ms | Allocations: 25522)
+
+
+MONGODB | Server description for ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 changed from 'secondary' to 'secondary'.
+MONGODB | There was a change in the members of the 'ReplicaSetWithPrimary' topology.
+MONGODB | Server description for ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 changed from 'primary' to 'primary'.
+MONGODB | There was a change in the members of the 'ReplicaSetWithPrimary' topology.
+MONGODB | Server description for ac-mspcz06-shard-00-00.bsbwlz3.mongodb.net:27017 changed from 'secondary' to 'secondary'.
+MONGODB | There was a change in the members of the 'ReplicaSetWithPrimary' topology.
+Started POST "/login" for 127.0.0.1 at 2023-04-21 13:29:22 +0200
+Processing by SessionsController#create as HTML
+  Parameters: {"email"=>"m@m.com", "password"=>"[FILTERED]", "session"=>{"email"=>"m@m.com", "password"=>"[FILTERED]"}}
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:23 conn:1:2 sconn:114726 | development.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"m@m.com"}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cf45082e0 @seconds=1682076541, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x16820 type=generic data=0xf63c48b7c1...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:23 | development.find | SUCCEEDED | 0.070s
+Completed 200 OK in 676ms (Views: 0.1ms | MongoDB: 70.5ms | Allocations: 1514)
+
+
+Started GET "/notes" for 127.0.0.1 at 2023-04-21 13:29:23 +0200
+Processing by NotesController#index as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:24 conn:1:2 sconn:114726 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cf4977588 @seconds=1682076562, @increment=9>, "signature"=>{"hash"=><BSON::Binary:0x16880...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:24 | development.find | SUCCEEDED | 0.104s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:25 conn:1:2 sconn:114726 | development.find | STARTED | {"find"=>"notes", "filter"=>{"user_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cf496c570 @seconds=1682076563, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x1...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:25 | development.find | SUCCEEDED | 0.043s
+Completed 200 OK in 313ms (Views: 51.6ms | MongoDB: 146.6ms | Allocations: 11374)
+
+
+Started GET "/notes_collections" for 127.0.0.1 at 2023-04-21 13:29:37 +0200
+Processing by NotesCollectionsController#index as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:29 conn:1:2 sconn:114726 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cf496c570 @seconds=1682076563, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x16920...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:29 | development.find | SUCCEEDED | 0.078s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:30 conn:1:2 sconn:114726 | development.find | STARTED | {"find"=>"notes_collections", "filter"=>{"user_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cf52855d0 @seconds=1682076577, @increment=3>, "signature"=>{"hash"=><BSON...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:30 | development.find | SUCCEEDED | 0.041s
+Completed 200 OK in 182ms (Views: 39.1ms | MongoDB: 118.7ms | Allocations: 11138)
+
+
+Started GET "/notes" for 127.0.0.1 at 2023-04-21 13:29:41 +0200
+Processing by NotesController#index as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:31 conn:1:2 sconn:114726 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cf52855d0 @seconds=1682076577, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x17180...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:31 | development.find | SUCCEEDED | 0.046s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:32 conn:1:2 sconn:114726 | development.find | STARTED | {"find"=>"notes", "filter"=>{"user_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cf20a3940 @seconds=1682076582, @increment=1>, "signature"=>{"hash"=><BSON::Binary:0x1...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:32 | development.find | SUCCEEDED | 0.052s
+Completed 200 OK in 139ms (Views: 34.5ms | MongoDB: 97.9ms | Allocations: 4955)
+
+
+Started GET "/notes_collections" for 127.0.0.1 at 2023-04-21 13:29:44 +0200
+Processing by NotesCollectionsController#index as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:36 conn:1:2 sconn:114726 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cf1d45668 @seconds=1682076582, @increment=2>, "signature"=>{"hash"=><BSON::Binary:0x17640...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:36 | development.find | SUCCEEDED | 0.043s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:37 conn:1:2 sconn:114726 | development.find | STARTED | {"find"=>"notes_collections", "filter"=>{"user_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cf2c28ba8 @seconds=1682076584, @increment=3>, "signature"=>{"hash"=><BSON...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:37 | development.find | SUCCEEDED | 0.045s
+Completed 200 OK in 124ms (Views: 30.5ms | MongoDB: 88.7ms | Allocations: 5181)
+
+
+Started GET "/show" for 127.0.0.1 at 2023-04-21 13:29:57 +0200
+Processing by UsersController#show as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:41 conn:1:2 sconn:114726 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cf2c28ba8 @seconds=1682076584, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x17660...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:41 | development.find | SUCCEEDED | 0.038s
+Completed 200 OK in 44ms (Views: 1.8ms | MongoDB: 37.8ms | Allocations: 1989)
+
+
+MONGODB | Error checking ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017: Mongo::Error::SocketTimeoutError: Errno::ETIMEDOUT: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond. - Took more than 10 seconds to receive data (select call timed out) (for 13.36.193.74:27017 (ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017, TLS)) (on ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017, sconn:110827)
+MONGODB | Server description for ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 changed from 'secondary' to 'unknown'.
+MONGODB | There was a change in the members of the 'ReplicaSetWithPrimary' topology.
+MONGODB | Error running awaited hello on ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017: Mongo::Error::SocketTimeoutError: Errno::ETIMEDOUT: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond. - Took more than 20 seconds to receive data (select call timed out) (for 13.36.193.74:27017 (ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017, TLS)) (on ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017)
+MONGODB | Error checking ac-mspcz06-shard-00-00.bsbwlz3.mongodb.net:27017: Mongo::Error::SocketTimeoutError: Errno::ETIMEDOUT: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond. - Took more than 10 seconds to receive data (select call timed out) (for 13.37.253.144:27017 (ac-mspcz06-shard-00-00.bsbwlz3.mongodb.net:27017, TLS)) (on ac-mspcz06-shard-00-00.bsbwlz3.mongodb.net:27017, sconn:114740)
+MONGODB | Server description for ac-mspcz06-shard-00-00.bsbwlz3.mongodb.net:27017 changed from 'secondary' to 'unknown'.
+MONGODB | There was a change in the members of the 'ReplicaSetWithPrimary' topology.
+MONGODB | Error running awaited hello on ac-mspcz06-shard-00-00.bsbwlz3.mongodb.net:27017: Mongo::Error::SocketTimeoutError: Errno::ETIMEDOUT: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond. - Took more than 20 seconds to receive data (select call timed out) (for 13.37.253.144:27017 (ac-mspcz06-shard-00-00.bsbwlz3.mongodb.net:27017, TLS)) (on ac-mspcz06-shard-00-00.bsbwlz3.mongodb.net:27017)
+MONGODB | Error running awaited hello on ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017: Mongo::Error::SocketTimeoutError: Errno::ETIMEDOUT: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond. - Took more than 20 seconds to receive data (select call timed out) (for 15.236.189.229:27017 (ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017, TLS)) (on ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017)
+MONGODB | Server description for ac-mspcz06-shard-00-00.bsbwlz3.mongodb.net:27017 changed from 'unknown' to 'secondary'.
+MONGODB | There was a change in the members of the 'ReplicaSetWithPrimary' topology.
+MONGODB | Server description for ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 changed from 'unknown' to 'secondary'.
+MONGODB | There was a change in the members of the 'ReplicaSetWithPrimary' topology.
+MONGODB | Server description for ac-mspcz06-shard-00-00.bsbwlz3.mongodb.net:27017 changed from 'secondary' to 'secondary'.
+MONGODB | There was a change in the members of the 'ReplicaSetWithPrimary' topology.
+MONGODB | Server description for ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 changed from 'secondary' to 'secondary'.
+MONGODB | There was a change in the members of the 'ReplicaSetWithPrimary' topology.
+Started GET "/show" for 127.0.0.1 at 2023-04-21 13:43:14 +0200
+Processing by UsersController#show as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:260 conn:1:2 sconn:114726 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cf4155878 @seconds=1682076598, @increment=1>, "signature"=>{"hash"=><BSON::Binary:0x25900...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:260 | development.find | SUCCEEDED | 0.056s
+Completed 200 OK in 61ms (Views: 1.2ms | MongoDB: 56.2ms | Allocations: 1592)
+
+
+Started GET "/show" for 127.0.0.1 at 2023-04-21 13:43:28 +0200
+Processing by UsersController#show as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:267 conn:1:2 sconn:114726 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cf41bab10 @seconds=1682077395, @increment=2>, "signature"=>{"hash"=><BSON::Binary:0x26140...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:267 | development.find | SUCCEEDED | 0.054s
+Completed 200 OK in 68ms (Views: 1.5ms | MongoDB: 53.5ms | Allocations: 1590)
+
+
+Started GET "/show" for 127.0.0.1 at 2023-04-21 13:43:36 +0200
+Processing by UsersController#show as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:271 conn:1:2 sconn:114726 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cf4608b68 @seconds=1682077409, @increment=2>, "signature"=>{"hash"=><BSON::Binary:0x26300...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:271 | development.find | SUCCEEDED | 0.049s
+Completed 200 OK in 53ms (Views: 1.3ms | MongoDB: 49.1ms | Allocations: 1590)
+
+
+Started GET "/show" for 127.0.0.1 at 2023-04-21 13:43:45 +0200
+Processing by UsersController#show as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:272 conn:1:2 sconn:114726 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cf47dca70 @seconds=1682077417, @increment=2>, "signature"=>{"hash"=><BSON::Binary:0x26400...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:272 | development.find | SUCCEEDED | 0.088s
+Completed 200 OK in 93ms (Views: 1.2ms | MongoDB: 88.2ms | Allocations: 1590)
+
+
+Started GET "/show" for 127.0.0.1 at 2023-04-21 13:43:54 +0200
+Processing by UsersController#show as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:276 conn:1:2 sconn:114726 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cf496d8d0 @seconds=1682077426, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x26520...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:276 | development.find | SUCCEEDED | 0.050s
+Completed 200 OK in 55ms (Views: 1.4ms | MongoDB: 49.8ms | Allocations: 1591)
+
+
+Started GET "/show" for 127.0.0.1 at 2023-04-21 13:44:04 +0200
+Processing by UsersController#show as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:280 conn:1:2 sconn:114726 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cf4a600a8 @seconds=1682077434, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x26720...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:280 | development.find | SUCCEEDED | 0.052s
+Completed 200 OK in 57ms (Views: 1.4ms | MongoDB: 52.4ms | Allocations: 1590)
+
+
+Started GET "/show" for 127.0.0.1 at 2023-04-21 13:44:12 +0200
+Processing by UsersController#show as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:284 conn:1:2 sconn:114726 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cf4f29ad0 @seconds=1682077445, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x26840...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:284 | development.find | SUCCEEDED | 0.054s
+Completed 200 OK in 59ms (Views: 1.9ms | MongoDB: 53.9ms | Allocations: 1590)
+
+
+Started GET "/show" for 127.0.0.1 at 2023-04-21 13:44:21 +0200
+Processing by UsersController#show as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:288 conn:1:2 sconn:114726 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cf525ef20 @seconds=1682077454, @increment=1>, "signature"=>{"hash"=><BSON::Binary:0x27000...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:288 | development.find | SUCCEEDED | 0.112s
+Completed 200 OK in 116ms (Views: 1.3ms | MongoDB: 111.8ms | Allocations: 1662)
+
+
+Started GET "/show" for 127.0.0.1 at 2023-04-21 13:44:23 +0200
+Processing by UsersController#show as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:289 conn:1:2 sconn:114726 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cef6663f8 @seconds=1682077462, @increment=1>, "signature"=>{"hash"=><BSON::Binary:0x27060...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:289 | development.find | SUCCEEDED | 0.315s
+Completed 200 OK in 321ms (Views: 1.1ms | MongoDB: 315.3ms | Allocations: 2015)
+
+
+Started GET "/show" for 127.0.0.1 at 2023-04-21 13:44:28 +0200
+Processing by UsersController#show as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:293 conn:1:2 sconn:114726 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cf1566d98 @seconds=1682077464, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x27220...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:293 | development.find | SUCCEEDED | 0.045s
+Completed 200 OK in 49ms (Views: 1.3ms | MongoDB: 44.7ms | Allocations: 1590)
+
+
+Started GET "/show" for 127.0.0.1 at 2023-04-21 13:45:14 +0200
+Processing by UsersController#show as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:306 conn:1:2 sconn:114726 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cf1e25628 @seconds=1682077469, @increment=1>, "signature"=>{"hash"=><BSON::Binary:0x27700...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:306 | development.find | SUCCEEDED | 0.058s
+Completed 200 OK in 66ms (Views: 3.3ms | MongoDB: 58.3ms | Allocations: 1593)
+
+
+Started GET "/notes" for 127.0.0.1 at 2023-04-21 13:45:44 +0200
+Processing by NotesController#index as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:316 conn:1:2 sconn:114726 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cf3e4b150 @seconds=1682077515, @increment=1>, "signature"=>{"hash"=><BSON::Binary:0x28060...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:316 | development.find | SUCCEEDED | 0.046s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:317 conn:1:2 sconn:114726 | development.find | STARTED | {"find"=>"notes", "filter"=>{"user_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cf42f4490 @seconds=1682077545, @increment=2>, "signature"=>{"hash"=><BSON::Binary:0x2...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:317 | development.find | SUCCEEDED | 0.043s
+Completed 200 OK in 124ms (Views: 29.2ms | MongoDB: 89.4ms | Allocations: 4905)
+
+
+Started GET "/notes" for 127.0.0.1 at 2023-04-21 13:48:13 +0200
+Processing by NotesController#index as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:363 conn:1:2 sconn:114726 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cf42f4490 @seconds=1682077545, @increment=2>, "signature"=>{"hash"=><BSON::Binary:0x28080...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:363 | development.find | SUCCEEDED | 0.041s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:364 conn:1:2 sconn:114726 | development.find | STARTED | {"find"=>"notes", "filter"=>{"user_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cf20d2bf0 @seconds=1682077693, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x2...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:364 | development.find | SUCCEEDED | 0.194s
+Completed 200 OK in 251ms (Views: 11.8ms | MongoDB: 234.2ms | Allocations: 4908)
+
+
+Started GET "/notes" for 127.0.0.1 at 2023-04-21 13:48:55 +0200
+Processing by NotesController#index as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:377 conn:1:2 sconn:114726 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cf29ca050 @seconds=1682077694, @increment=2>, "signature"=>{"hash"=><BSON::Binary:0x30100...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:377 | development.find | SUCCEEDED | 0.070s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:378 conn:1:2 sconn:114726 | development.find | STARTED | {"find"=>"notes", "filter"=>{"user_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cf3f9f100 @seconds=1682077736, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x3...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:378 | development.find | SUCCEEDED | 0.073s
+Completed 200 OK in 160ms (Views: 12.7ms | MongoDB: 143.3ms | Allocations: 4896)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-04-21 13:49:37 +0200
+Started GET "/notes" for 127.0.0.1 at 2023-04-21 13:49:37 +0200
+Processing by SessionsController#show as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:391 conn:1:2 sconn:114726 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cf3f9f100 @seconds=1682077736, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x30120...
+Processing by NotesController#index as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:392 conn:1:1 sconn:114726 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cf3f9f100 @seconds=1682077736, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x30120...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:391 | development.find | SUCCEEDED | 0.049s
+Completed 200 OK in 53ms (Views: 1.4ms | MongoDB: 48.6ms | Allocations: 3019)
+
+
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:392 | development.find | SUCCEEDED | 0.045s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:393 conn:1:1 sconn:114726 | development.find | STARTED | {"find"=>"notes", "filter"=>{"user_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cf48ada80 @seconds=1682077778, @increment=2>, "signature"=>{"hash"=><BSON::Binary:0x3...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:393 | development.find | SUCCEEDED | 0.061s
+Completed 200 OK in 119ms (Views: 10.5ms | MongoDB: 105.9ms | Allocations: 5630)
+
+
+Started GET "/notes" for 127.0.0.1 at 2023-04-21 13:49:55 +0200
+Processing by NotesController#index as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:400 conn:1:1 sconn:114726 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cf48ada80 @seconds=1682077778, @increment=2>, "signature"=>{"hash"=><BSON::Binary:0x30600...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:400 | development.find | SUCCEEDED | 0.146s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:401 conn:1:1 sconn:114726 | development.find | STARTED | {"find"=>"notes", "filter"=>{"user_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cf4b8f5f0 @seconds=1682077796, @increment=2>, "signature"=>{"hash"=><BSON::Binary:0x3...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:401 | development.find | SUCCEEDED | 0.046s
+Completed 200 OK in 204ms (Views: 9.3ms | MongoDB: 192.1ms | Allocations: 4895)
+
+
+Started GET "/notes" for 127.0.0.1 at 2023-04-21 13:51:02 +0200
+Processing by NotesController#index as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:423 conn:1:1 sconn:114726 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cf4b8f5f0 @seconds=1682077796, @increment=2>, "signature"=>{"hash"=><BSON::Binary:0x30900...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:423 | development.find | SUCCEEDED | 0.050s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:424 conn:1:1 sconn:114726 | development.find | STARTED | {"find"=>"notes", "filter"=>{"user_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cf28bf840 @seconds=1682077863, @increment=1>, "signature"=>{"hash"=><BSON::Binary:0x3...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:424 | development.find | SUCCEEDED | 0.045s
+Completed 200 OK in 109ms (Views: 10.9ms | MongoDB: 95.1ms | Allocations: 4897)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-04-21 13:51:23 +0200
+Started GET "/notes" for 127.0.0.1 at 2023-04-21 13:51:23 +0200
+Processing by SessionsController#show as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:431 conn:1:1 sconn:114726 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cf28bf840 @seconds=1682077863, @increment=1>, "signature"=>{"hash"=><BSON::Binary:0x31600...
+Processing by NotesController#index as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:432 conn:1:2 sconn:114726 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cf28bf840 @seconds=1682077863, @increment=1>, "signature"=>{"hash"=><BSON::Binary:0x31600...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:431 | development.find | SUCCEEDED | 0.086s
+Completed 200 OK in 90ms (Views: 1.0ms | MongoDB: 85.6ms | Allocations: 3123)
+
+
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:432 | development.find | SUCCEEDED | 0.051s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:433 conn:1:2 sconn:114726 | development.find | STARTED | {"find"=>"notes", "filter"=>{"user_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cf3e95728 @seconds=1682077883, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x3...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:433 | development.find | SUCCEEDED | 0.036s
+Completed 200 OK in 102ms (Views: 12.0ms | MongoDB: 87.3ms | Allocations: 5616)
+
+
+Started GET "/notes" for 127.0.0.1 at 2023-04-21 13:51:37 +0200
+Processing by NotesController#index as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:437 conn:1:2 sconn:114726 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cf3e95728 @seconds=1682077883, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x31880...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:437 | development.find | SUCCEEDED | 0.030s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:438 conn:1:2 sconn:114726 | development.find | STARTED | {"find"=>"notes", "filter"=>{"user_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cf4379438 @seconds=1682077898, @increment=2>, "signature"=>{"hash"=><BSON::Binary:0x3...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:438 | development.find | SUCCEEDED | 0.036s
+Completed 200 OK in 81ms (Views: 11.4ms | MongoDB: 66.4ms | Allocations: 4896)
+
+
+Started GET "/notes" for 127.0.0.1 at 2023-04-21 13:52:28 +0200
+Processing by NotesController#index as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:454 conn:1:2 sconn:114726 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cf4379438 @seconds=1682077898, @increment=2>, "signature"=>{"hash"=><BSON::Binary:0x32120...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:454 | development.find | SUCCEEDED | 0.047s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:455 conn:1:2 sconn:114726 | development.find | STARTED | {"find"=>"notes", "filter"=>{"user_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cf4c878e0 @seconds=1682077949, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x3...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:455 | development.find | SUCCEEDED | 0.045s
+Completed 200 OK in 112ms (Views: 17.6ms | MongoDB: 92.0ms | Allocations: 4897)
+
+
+Started GET "/notes" for 127.0.0.1 at 2023-04-21 13:52:33 +0200
+Processing by NotesController#index as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:459 conn:1:2 sconn:114726 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cf4c878e0 @seconds=1682077949, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x32660...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:459 | development.find | SUCCEEDED | 0.034s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:460 conn:1:2 sconn:114726 | development.find | STARTED | {"find"=>"notes", "filter"=>{"user_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cf528f670 @seconds=1682077954, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x3...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:460 | development.find | SUCCEEDED | 0.038s
+Completed 200 OK in 117ms (Views: 41.1ms | MongoDB: 71.8ms | Allocations: 4895)
+
+
+Started GET "/notes" for 127.0.0.1 at 2023-04-21 13:52:44 +0200
+Processing by NotesController#index as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:464 conn:1:2 sconn:114726 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cf528f670 @seconds=1682077954, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x32800...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:464 | development.find | SUCCEEDED | 0.046s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:465 conn:1:2 sconn:114726 | development.find | STARTED | {"find"=>"notes", "filter"=>{"user_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019ceffba288 @seconds=1682077965, @increment=2>, "signature"=>{"hash"=><BSON::Binary:0x3...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:465 | development.find | SUCCEEDED | 0.044s
+Completed 200 OK in 106ms (Views: 11.3ms | MongoDB: 90.8ms | Allocations: 4898)
+
+
+Started GET "/notes" for 127.0.0.1 at 2023-04-21 13:53:01 +0200
+Processing by NotesController#index as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:469 conn:1:2 sconn:114726 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019ceffba288 @seconds=1682077965, @increment=2>, "signature"=>{"hash"=><BSON::Binary:0x33000...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:469 | development.find | SUCCEEDED | 0.046s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:470 conn:1:2 sconn:114726 | development.find | STARTED | {"find"=>"notes", "filter"=>{"user_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cf2a64c90 @seconds=1682077982, @increment=2>, "signature"=>{"hash"=><BSON::Binary:0x3...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:470 | development.find | SUCCEEDED | 0.049s
+Completed 200 OK in 109ms (Views: 10.2ms | MongoDB: 95.5ms | Allocations: 4898)
+
+
+Started GET "/notes" for 127.0.0.1 at 2023-04-21 13:53:29 +0200
+Processing by NotesController#index as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:480 conn:1:2 sconn:114726 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cf2a64c90 @seconds=1682077982, @increment=2>, "signature"=>{"hash"=><BSON::Binary:0x33160...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:480 | development.find | SUCCEEDED | 0.054s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:481 conn:1:2 sconn:114726 | development.find | STARTED | {"find"=>"notes", "filter"=>{"user_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cf3e84f18 @seconds=1682078009, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x3...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:481 | development.find | SUCCEEDED | 0.036s
+Completed 200 OK in 104ms (Views: 9.9ms | MongoDB: 89.7ms | Allocations: 4896)
+
+
+Started GET "/notes" for 127.0.0.1 at 2023-04-21 13:53:33 +0200
+Processing by NotesController#index as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:485 conn:1:2 sconn:114726 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cf3e84f18 @seconds=1682078009, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x33500...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:485 | development.find | SUCCEEDED | 0.080s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:486 conn:1:2 sconn:114726 | development.find | STARTED | {"find"=>"notes", "filter"=>{"user_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cf42d4bb8 @seconds=1682078014, @increment=2>, "signature"=>{"hash"=><BSON::Binary:0x3...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:486 | development.find | SUCCEEDED | 0.042s
+Completed 200 OK in 136ms (Views: 10.6ms | MongoDB: 121.4ms | Allocations: 4895)
+
+
+Started GET "/notes" for 127.0.0.1 at 2023-04-21 13:53:54 +0200
+Processing by NotesController#index as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:493 conn:1:2 sconn:114726 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cf42d4bb8 @seconds=1682078014, @increment=2>, "signature"=>{"hash"=><BSON::Binary:0x33640...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:493 | development.find | SUCCEEDED | 0.040s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:494 conn:1:2 sconn:114726 | development.find | STARTED | {"find"=>"notes", "filter"=>{"user_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cf4715ee8 @seconds=1682078034, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x3...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:494 | development.find | SUCCEEDED | 0.039s
+Completed 200 OK in 92ms (Views: 8.9ms | MongoDB: 78.9ms | Allocations: 4895)
+
+
+Started GET "/notes" for 127.0.0.1 at 2023-04-21 13:54:07 +0200
+Processing by NotesController#index as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:498 conn:1:2 sconn:114726 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cf4715ee8 @seconds=1682078034, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x33880...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:498 | development.find | SUCCEEDED | 0.047s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:499 conn:1:2 sconn:114726 | development.find | STARTED | {"find"=>"notes", "filter"=>{"user_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cf4ae4308 @seconds=1682078048, @increment=2>, "signature"=>{"hash"=><BSON::Binary:0x3...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:499 | development.find | SUCCEEDED | 0.042s
+Completed 200 OK in 116ms (Views: 22.8ms | MongoDB: 88.9ms | Allocations: 4895)
+
+
+Started GET "/notes" for 127.0.0.1 at 2023-04-21 13:54:55 +0200
+Processing by NotesController#index as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:515 conn:1:2 sconn:114726 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cf4ae4308 @seconds=1682078048, @increment=2>, "signature"=>{"hash"=><BSON::Binary:0x34100...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:515 | development.find | SUCCEEDED | 0.295s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:516 conn:1:2 sconn:114726 | development.find | STARTED | {"find"=>"notes", "filter"=>{"user_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cefbfbac0 @seconds=1682078096, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x3...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:516 | development.find | SUCCEEDED | 0.045s
+Completed 200 OK in 354ms (Views: 9.4ms | MongoDB: 339.9ms | Allocations: 4899)
+
+
+Started GET "/notes" for 127.0.0.1 at 2023-04-21 13:54:59 +0200
+Processing by NotesController#index as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:517 conn:1:2 sconn:114726 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cefbfbac0 @seconds=1682078096, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x34640...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:517 | development.find | SUCCEEDED | 0.144s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:518 conn:1:2 sconn:114726 | development.find | STARTED | {"find"=>"notes", "filter"=>{"user_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cf17610d0 @seconds=1682078099, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x3...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:518 | development.find | SUCCEEDED | 0.043s
+Completed 200 OK in 210ms (Views: 19.5ms | MongoDB: 186.2ms | Allocations: 4896)
+
+
+Started GET "/notes" for 127.0.0.1 at 2023-04-21 13:55:23 +0200
+Processing by NotesController#index as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:528 conn:1:2 sconn:114726 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cf17610d0 @seconds=1682078099, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x34720...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:528 | development.find | SUCCEEDED | 0.041s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:529 conn:1:2 sconn:114726 | development.find | STARTED | {"find"=>"notes", "filter"=>{"user_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cf2c77e88 @seconds=1682078124, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x3...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:529 | development.find | SUCCEEDED | 0.045s
+Completed 200 OK in 99ms (Views: 9.5ms | MongoDB: 86.3ms | Allocations: 4898)
+
+
+Started GET "/notes" for 127.0.0.1 at 2023-04-21 13:55:33 +0200
+Processing by NotesController#index as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:531 conn:1:2 sconn:114726 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cf2c77e88 @seconds=1682078124, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x35020...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:531 | development.find | SUCCEEDED | 0.109s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:532 conn:1:2 sconn:114726 | development.find | STARTED | {"find"=>"notes", "filter"=>{"user_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cf3fc1de0 @seconds=1682078134, @increment=2>, "signature"=>{"hash"=><BSON::Binary:0x3...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:532 | development.find | SUCCEEDED | 0.041s
+Completed 200 OK in 173ms (Views: 18.5ms | MongoDB: 149.7ms | Allocations: 4895)
+
+
+Started GET "/notes" for 127.0.0.1 at 2023-04-21 13:55:57 +0200
+Processing by NotesController#index as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:541 conn:1:2 sconn:114726 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cf3fc1de0 @seconds=1682078134, @increment=2>, "signature"=>{"hash"=><BSON::Binary:0x35160...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:541 | development.find | SUCCEEDED | 0.048s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:542 conn:1:2 sconn:114726 | development.find | STARTED | {"find"=>"notes", "filter"=>{"user_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cf4487398 @seconds=1682078157, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x3...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:542 | development.find | SUCCEEDED | 0.029s
+Completed 200 OK in 89ms (Views: 9.5ms | MongoDB: 77.1ms | Allocations: 4903)
+
+
+Started GET "/notes" for 127.0.0.1 at 2023-04-21 13:56:19 +0200
+Processing by NotesController#index as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:549 conn:1:2 sconn:114726 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cf466ab60 @seconds=1682078158, @increment=1>, "signature"=>{"hash"=><BSON::Binary:0x35740...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:549 | development.find | SUCCEEDED | 0.089s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:550 conn:1:2 sconn:114726 | development.find | STARTED | {"find"=>"notes", "filter"=>{"user_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cf49649d8 @seconds=1682078180, @increment=2>, "signature"=>{"hash"=><BSON::Binary:0x3...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:550 | development.find | SUCCEEDED | 0.078s
+Completed 200 OK in 190ms (Views: 19.9ms | MongoDB: 166.6ms | Allocations: 4898)
+
+
+Started GET "/notes" for 127.0.0.1 at 2023-04-21 13:56:20 +0200
+Processing by NotesController#index as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:551 conn:1:2 sconn:114726 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cf49649d8 @seconds=1682078180, @increment=2>, "signature"=>{"hash"=><BSON::Binary:0x35760...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:551 | development.find | SUCCEEDED | 0.086s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:552 conn:1:2 sconn:114726 | development.find | STARTED | {"find"=>"notes", "filter"=>{"user_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cf4b7c608 @seconds=1682078181, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x3...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:552 | development.find | SUCCEEDED | 0.045s
+Completed 200 OK in 146ms (Views: 12.1ms | MongoDB: 131.5ms | Allocations: 4895)
+
+
+Started GET "/notes" for 127.0.0.1 at 2023-04-21 13:57:00 +0200
+Processing by NotesController#index as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:565 conn:1:2 sconn:114726 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cf4b7c608 @seconds=1682078181, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x35840...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:565 | development.find | SUCCEEDED | 0.155s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:566 conn:1:2 sconn:114726 | development.find | STARTED | {"find"=>"notes", "filter"=>{"user_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cee5773f8 @seconds=1682078220, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x3...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:566 | development.find | SUCCEEDED | 0.060s
+Completed 200 OK in 227ms (Views: 9.2ms | MongoDB: 214.7ms | Allocations: 4898)
+
+
+Started GET "/show" for 127.0.0.1 at 2023-04-21 14:19:25 +0200
+Processing by UsersController#show as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:963 conn:1:2 sconn:114726 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cee5773f8 @seconds=1682078220, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x36280...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:963 | development.find | SUCCEEDED | 0.052s
+Completed 200 OK in 57ms (Views: 1.4ms | MongoDB: 52.2ms | Allocations: 1592)
+
+
+Started GET "/show" for 127.0.0.1 at 2023-04-21 14:20:02 +0200
+Processing by UsersController#show as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:976 conn:1:2 sconn:114726 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cf4a31118 @seconds=1682079566, @increment=1>, "signature"=>{"hash"=><BSON::Binary:0x50060...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:976 | development.find | SUCCEEDED | 0.206s
+Completed 200 OK in 210ms (Views: 1.1ms | MongoDB: 205.9ms | Allocations: 1590)
+
+
+Started GET "/show" for 127.0.0.1 at 2023-04-21 14:20:24 +0200
+Processing by UsersController#show as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:983 conn:1:2 sconn:114726 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cf465d050 @seconds=1682079602, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x50320...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:983 | development.find | SUCCEEDED | 0.030s
+Completed 200 OK in 34ms (Views: 1.2ms | MongoDB: 30.1ms | Allocations: 1592)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-04-21 14:20:26 +0200
+Started GET "/show" for 127.0.0.1 at 2023-04-21 14:20:26 +0200
+Processing by SessionsController#show as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:984 conn:1:2 sconn:114726 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cf0679740 @seconds=1682079624, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x50440...
+Processing by UsersController#show as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:985 conn:1:1 sconn:114726 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cf0679740 @seconds=1682079624, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x50440...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:984 | development.find | SUCCEEDED | 0.038s
+Completed 200 OK in 42ms (Views: 1.2ms | MongoDB: 37.6ms | Allocations: 3078)
+
+
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:985 | development.find | SUCCEEDED | 0.044s
+Completed 200 OK in 48ms (Views: 0.9ms | MongoDB: 43.9ms | Allocations: 2341)
+
+
+Started GET "/show" for 127.0.0.1 at 2023-04-21 14:21:14 +0200
+Processing by UsersController#show as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1001 conn:1:1 sconn:114726 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cf1d87608 @seconds=1682079627, @increment=2>, "signature"=>{"hash"=><BSON::Binary:0x51000...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1001 | development.find | SUCCEEDED | 0.047s
+Completed 200 OK in 51ms (Views: 1.3ms | MongoDB: 46.8ms | Allocations: 1590)
+
+
+Started GET "/show" for 127.0.0.1 at 2023-04-21 14:21:27 +0200
+Processing by UsersController#show as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1005 conn:1:1 sconn:114726 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cf3f7cf10 @seconds=1682079675, @increment=1>, "signature"=>{"hash"=><BSON::Binary:0x51220...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1005 | development.find | SUCCEEDED | 0.049s
+Completed 200 OK in 53ms (Views: 1.1ms | MongoDB: 49.5ms | Allocations: 1590)
+
+
+Started GET "/show" for 127.0.0.1 at 2023-04-21 14:21:44 +0200
+Processing by UsersController#show as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1012 conn:1:1 sconn:114726 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cf0cd1930 @seconds=1682079688, @increment=2>, "signature"=>{"hash"=><BSON::Binary:0x51440...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1012 | development.find | SUCCEEDED | 0.047s
+Completed 200 OK in 51ms (Views: 1.1ms | MongoDB: 46.5ms | Allocations: 1590)
+
+
+Started GET "/show" for 127.0.0.1 at 2023-04-21 14:21:55 +0200
+Processing by UsersController#show as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1016 conn:1:1 sconn:114726 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cf4393dd8 @seconds=1682079705, @increment=2>, "signature"=>{"hash"=><BSON::Binary:0x51600...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1016 | development.find | SUCCEEDED | 0.058s
+Completed 200 OK in 62ms (Views: 0.9ms | MongoDB: 58.2ms | Allocations: 1593)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-04-21 14:21:58 +0200
+Started GET "/show" for 127.0.0.1 at 2023-04-21 14:21:58 +0200
+Processing by SessionsController#show as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1017 conn:1:1 sconn:114726 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cf47dcb10 @seconds=1682079716, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x51700...
+Processing by UsersController#show as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1018 conn:1:2 sconn:114726 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cf47dcb10 @seconds=1682079716, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x51700...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1017 | development.find | SUCCEEDED | 0.048s
+Completed 200 OK in 52ms (Views: 1.2ms | MongoDB: 47.6ms | Allocations: 3256)
+
+
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1018 | development.find | SUCCEEDED | 0.040s
+Completed 200 OK in 43ms (Views: 1.0ms | MongoDB: 39.7ms | Allocations: 2310)
+
+
+Started GET "/show" for 127.0.0.1 at 2023-04-21 14:22:02 +0200
+Processing by UsersController#show as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1022 conn:1:2 sconn:114726 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cf4a29e40 @seconds=1682079718, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x51860...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1022 | development.find | SUCCEEDED | 0.039s
+Completed 200 OK in 46ms (Views: 2.9ms | MongoDB: 38.9ms | Allocations: 1592)
+
+
+Started GET "/show" for 127.0.0.1 at 2023-04-21 14:22:12 +0200
+Processing by UsersController#show as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1026 conn:1:2 sconn:114726 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cf4b0f490 @seconds=1682079722, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x52020...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1026 | development.find | SUCCEEDED | 0.100s
+Completed 200 OK in 104ms (Views: 1.3ms | MongoDB: 99.9ms | Allocations: 1590)
+
+
+Started GET "/show" for 127.0.0.1 at 2023-04-21 14:22:27 +0200
+Processing by UsersController#show as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1030 conn:1:2 sconn:114726 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cf4c67978 @seconds=1682079732, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x52220...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1030 | development.find | SUCCEEDED | 0.049s
+Completed 200 OK in 53ms (Views: 1.0ms | MongoDB: 49.1ms | Allocations: 1591)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2023-04-21 14:25:37 +0200
+Processing by SessionsController#destroy as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1088 conn:1:2 sconn:114726 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cf5201898 @seconds=1682079747, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x54160...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1088 | development.find | SUCCEEDED | 0.044s
+Completed 200 OK in 47ms (Views: 0.2ms | MongoDB: 43.6ms | Allocations: 1440)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-04-21 14:33:16 +0200
+Processing by SessionsController#create as HTML
+  Parameters: {"email"=>"m@m.com", "password"=>"[FILTERED]", "session"=>{"email"=>"m@m.com", "password"=>"[FILTERED]"}}
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1227 conn:1:2 sconn:114726 | development.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"m@m.com"}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cf489ef08 @seconds=1682079938, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x58820 type=generic data=0x0e29f09d84...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1227 | development.find | SUCCEEDED | 0.059s
+Completed 200 OK in 281ms (Views: 0.1ms | MongoDB: 59.2ms | Allocations: 1911)
+
+
+Started GET "/notes" for 127.0.0.1 at 2023-04-21 14:33:16 +0200
+Processing by NotesController#index as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1228 conn:1:2 sconn:114726 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cf3e02c70 @seconds=1682080397, @increment=1>, "signature"=>{"hash"=><BSON::Binary:0x58880...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1228 | development.find | SUCCEEDED | 0.038s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1229 conn:1:2 sconn:114726 | development.find | STARTED | {"find"=>"notes", "filter"=>{"user_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cf3e02c70 @seconds=1682080397, @increment=1>, "signature"=>{"hash"=><BSON::Binary:0x5...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1229 | development.find | SUCCEEDED | 0.061s
+Completed 200 OK in 109ms (Views: 8.3ms | MongoDB: 98.5ms | Allocations: 4888)
+
+
+Started GET "/show" for 127.0.0.1 at 2023-04-21 14:33:18 +0200
+Processing by UsersController#show as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1230 conn:1:2 sconn:114726 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cf3e02c70 @seconds=1682080397, @increment=1>, "signature"=>{"hash"=><BSON::Binary:0x58880...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1230 | development.find | SUCCEEDED | 0.040s
+Completed 200 OK in 47ms (Views: 3.1ms | MongoDB: 39.5ms | Allocations: 1590)
+
+
+Started GET "/show" for 127.0.0.1 at 2023-04-21 14:33:45 +0200
+Processing by UsersController#show as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1240 conn:1:2 sconn:114726 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cf42ef670 @seconds=1682080399, @increment=2>, "signature"=>{"hash"=><BSON::Binary:0x59240...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1240 | development.find | SUCCEEDED | 0.048s
+Completed 200 OK in 52ms (Views: 0.9ms | MongoDB: 48.5ms | Allocations: 1590)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-04-21 14:33:49 +0200
+Started GET "/show" for 127.0.0.1 at 2023-04-21 14:33:49 +0200
+Processing by SessionsController#show as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1241 conn:1:2 sconn:114726 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cf4608820 @seconds=1682080426, @increment=1>, "signature"=>{"hash"=><BSON::Binary:0x59360...
+Processing by UsersController#show as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1242 conn:1:1 sconn:114726 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cf4608820 @seconds=1682080426, @increment=1>, "signature"=>{"hash"=><BSON::Binary:0x59360...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1241 | development.find | SUCCEEDED | 0.063s
+Completed 200 OK in 67ms (Views: 1.2ms | MongoDB: 63.3ms | Allocations: 3250)
+
+
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1242 | development.find | SUCCEEDED | 0.058s
+Completed 200 OK in 62ms (Views: 1.0ms | MongoDB: 57.8ms | Allocations: 2321)
+
+
+Started GET "/show" for 127.0.0.1 at 2023-04-21 14:35:41 +0200
+Processing by UsersController#show as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1276 conn:1:1 sconn:114726 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cf491f248 @seconds=1682080430, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x60540...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1276 | development.find | SUCCEEDED | 0.045s
+Completed 200 OK in 49ms (Views: 0.8ms | MongoDB: 45.0ms | Allocations: 1593)
+
+
+Started GET "/show" for 127.0.0.1 at 2023-04-21 14:41:19 +0200
+Processing by UsersController#show as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1379 conn:1:1 sconn:114726 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cf29a4058 @seconds=1682080542, @increment=2>, "signature"=>{"hash"=><BSON::Binary:0x64000...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1379 | development.find | SUCCEEDED | 0.050s
+Completed 200 OK in 54ms (Views: 1.2ms | MongoDB: 49.8ms | Allocations: 1592)
+
+
+Started GET "/show" for 127.0.0.1 at 2023-04-21 14:41:56 +0200
+Processing by UsersController#show as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1390 conn:1:1 sconn:114726 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cf4155940 @seconds=1682080880, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x64380...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1390 | development.find | SUCCEEDED | 0.059s
+Completed 200 OK in 63ms (Views: 1.1ms | MongoDB: 59.2ms | Allocations: 1591)
+
+
+Started GET "/show" for 127.0.0.1 at 2023-04-21 14:42:29 +0200
+Processing by UsersController#show as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1402 conn:1:1 sconn:114726 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cf45e25d0 @seconds=1682080916, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x64820...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1402 | development.find | SUCCEEDED | 0.077s
+Completed 200 OK in 85ms (Views: 3.3ms | MongoDB: 77.4ms | Allocations: 1590)
+
+
+Started GET "/show" for 127.0.0.1 at 2023-04-21 14:42:52 +0200
+Processing by UsersController#show as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1409 conn:1:1 sconn:114726 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cf4b05710 @seconds=1682080950, @increment=2>, "signature"=>{"hash"=><BSON::Binary:0x65080...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1409 | development.find | SUCCEEDED | 0.050s
+Completed 200 OK in 54ms (Views: 1.0ms | MongoDB: 50.5ms | Allocations: 1593)
+
+
+Started GET "/show" for 127.0.0.1 at 2023-04-21 14:44:13 +0200
+Processing by UsersController#show as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1434 conn:1:1 sconn:114726 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cf4f29f80 @seconds=1682080972, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x65940...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1434 | development.find | SUCCEEDED | 0.039s
+Completed 200 OK in 47ms (Views: 3.2ms | MongoDB: 39.0ms | Allocations: 1592)
+
+
+Started GET "/show" for 127.0.0.1 at 2023-04-21 14:45:44 +0200
+Processing by UsersController#show as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1462 conn:1:1 sconn:114726 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cf2c00e00 @seconds=1682081053, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x66900...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1462 | development.find | SUCCEEDED | 0.050s
+Completed 200 OK in 54ms (Views: 1.2ms | MongoDB: 49.6ms | Allocations: 1592)
+
+

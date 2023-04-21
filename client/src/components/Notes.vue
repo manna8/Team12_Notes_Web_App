@@ -12,6 +12,21 @@
         </div>
       </div>
     </div>
+
+    <br>
+
+    <div class="row ms-auto">
+      <div class="col">
+        <div  class="d-grid">
+          <div class="btn-group" role="group" aria-label="Basic outlined example">
+            <button type="button" class="btn btn-dark btn-outline-warning">Your notes</button>
+            <button type="button" class="btn btn-dark btn-outline-warning">Notes shared with you</button>
+            <button type="button" class="btn btn-dark btn-outline-warning">Notes you are sharing</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <br>
     <div class="row ms-auto overflow-auto" style="height: 500px">
       <div class="col h-100 d-inline-block">

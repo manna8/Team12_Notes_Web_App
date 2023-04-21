@@ -1,5 +1,6 @@
 <template>
   <div>
+
     <div class="overflow-auto">
       <div class="row row-cols-1 row-cols-md-3 g-4" v-if="notes.length !== 0" style="width: auto; height: auto">
         <ul v-for="note in notes" v-bind:key="note.title">

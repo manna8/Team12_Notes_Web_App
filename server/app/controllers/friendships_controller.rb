@@ -14,7 +14,7 @@ class FriendshipsController < ApplicationController
   end
 
   def friends
-    @friends = Friendship.where("(sender_id = ? OR receiver_id = ?) AND status = ?", params[:id], params[:id], "accepted")
+    @friends = Friendship.where("(sender_id = ? OR receiver_id = ?) AND status = ?", @current_user[:id], @current_user[:id], "accepted")
     render json: @friends[:name]
   end
   def sent_friend_requests

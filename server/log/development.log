@@ -20567,3 +20567,10 @@ Completed 200 OK in 361ms (Views: 1.1ms | MongoDB: 135.4ms | Allocations: 5219)
 
 MONGODB | Server description for ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 changed from 'primary' to 'primary' [awaited].
 MONGODB | There was a change in the members of the 'ReplicaSetWithPrimary' topology.
+Started GET "/show" for 127.0.0.1 at 2023-04-21 16:16:05 +0200
+Processing by UsersController#show as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:957 conn:2:4 sconn:116907 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x000001cf2b734550 @seconds=1682086354, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x69460...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:957 | development.find | SUCCEEDED | 0.044s
+Completed 200 OK in 56ms (Views: 1.8ms | MongoDB: 44.4ms | Allocations: 7585)
+
+

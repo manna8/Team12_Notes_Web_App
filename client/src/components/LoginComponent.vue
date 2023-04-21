@@ -50,31 +50,27 @@ export default {
   },
   methods: {
     login() {
-      if (this.input.password === "") {
-        this.passwordValid = false;
-      } else {
-        this.passwordValid = true;
-      }
+      this.passwordValid = this.input.password !== "";
 
-      if (this.input.username === "") {
-        this.usernameValid = false;
-      } else {
-        this.usernameValid = true;
-      }
+      this.usernameValid = this.input.username !== "";
 
       if (this.usernameValid && this.passwordValid) {
         axios.post(config.loginURL, {
           "email": this.input.username,
           "password": this.input.password
         }, {withCredentials: true})
-            .then(() => this.$router.push({path: '/notes'}))
-            .catch(err => console.log(err.message));
+            .then(() => {
+              this.$router.push({path: '/notes'})
 
-        const myCookie = Cookies.get('jwt');
-        console.log(myCookie);
+              const myCookie = Cookies.get('jwt');
+              console.log(myCookie);
 
-        this.$store.commit('login');
-        console.log(this.$store.state.loggedIn);
+              this.$store.commit('login');
+              console.log(this.$store.state.loggedIn);})
+            .catch((error) => {
+              console.log(error.message);
+              alert('User with provided credentials does not exist!');
+            });
 
       } else if (this.input.password !== ""){
         this.passwordValid = false;

@@ -4,7 +4,7 @@
       <h2 class="text-center text-warning"> Hello {{ userDetails.name }}!</h2>
       <h5 class="text-center text-black">{{ userDetails.email }}</h5>
       <div class="text-center p-1 m-1" >
-        <button class="btn btn-sm btn-danger">Delete account</button>
+        <button class="btn btn-sm btn-danger" @click="deleteUser">Delete account</button>
       </div>
     </div>
 
@@ -97,8 +97,6 @@ export default {
         axios.post(config.updateUserURL + this.userDetails._id.$oid, {
           "name": this.input.newUsername,
           "email": this.input.newEmail,
-          // "password": "1",
-          // "password_confirmation": "1"
         },{withCredentials: true})
             .then(res => console.log(res))
             .catch(err => console.log(err))
@@ -117,13 +115,18 @@ export default {
     },
 
     checkPasswordValidity() {
-      if (this.input.newPassword !== this.input.newPasswordRepeat) {
-        this.passwordsMatch = false;
-      } else {
-        this.passwordsMatch = true;
-      }
+      this.passwordsMatch = this.input.newPassword === this.input.newPasswordRepeat;
     },
 
+    deleteUser() {
+      const id = this.userDetails._id.$oid;
+
+      axios.delete(config.updateUserURL + id, {withCredentials: true})
+          .then(() => this.$router.push({path: '/'}))
+          .then(() => this.$store.commit('logout'))
+          .catch(err => console.log(err.message));
+
+    },
   },
 
   mounted() {

@@ -35,6 +35,10 @@ class UsersController < ApplicationController
   end
 
   def destroy
+    @notes = Note.where(:user_id => @user[:id])
+    @notes.destroy
+    @collections= NotesCollection.where(:user_id => @user[:id])
+    @collections.destroy
     @user.destroy
     render json: { message: 'User deleted successfully.' }, status: :ok
   end

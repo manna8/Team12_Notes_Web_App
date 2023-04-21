@@ -1,7 +1,7 @@
 <template>
   <div id="profile">
     <div class="container my-3 border bg-light mx-auto  border-warning rounded">
-      <h2 class="text-center text-warning"> Hello {{ userDetails.name }}!</h2>
+      <h2 class="text-center text-black"> Hello {{ userDetails.name }}!</h2>
       <h5 class="text-center text-black">{{ userDetails.email }}</h5>
       <div class="text-center p-1 m-1" >
         <button class="btn btn-sm btn-danger" @click="deleteUser">Delete account</button>

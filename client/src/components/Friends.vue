@@ -21,7 +21,7 @@
                 <li class="list-group-item">
                   <h5>{{ friend.name }}</h5>
                   <div class="container justify-content-end">
-                    <button class="btn btn-danger btn-sm" type="button" @click="removeFriend(friend._id)">Remove friend</button>
+                    <button class="btn btn-danger btn-sm" type="button" @click="removeFriend()">Remove friend</button>
                   </div>
                 </li>
 
@@ -72,6 +72,9 @@
 </template>
 
 <script>
+import axios from "axios";
+import config from "../../config/config";
+
 export default {
   name: "Friends",
 
@@ -81,9 +84,9 @@ export default {
         email: "",
       },
       emailValid: true,
-      friendsList: [{_id: 1, name: 'Thomas'}, {_id: 2, name: 'Lidia'}],
-      sentFriendRequests: [{_id: 3, name: 'SuperChica29'}],
-      pendingFriendRequests: [{_id: 4, name: 'Mom'}],
+      friendsList: [],
+      sentFriendRequests: [],
+      pendingFriendRequests: [],
     }
   },
   methods: {
@@ -93,14 +96,19 @@ export default {
       } else {
         this.emailValid = true;
 
-        //axios.post()
-        this.$router.go(0);
+        axios.post(config.addFriendURL, {
+          "email": this.input.email,
+        }, {withCredentials: true})
+            .then(() => this.$router.go(0))
+            .catch(err => console.log(err.message));
       }
     },
-    removeFriend(id) {
-      //axios.post()
-      console.log("Removed friend with id:", id)
-      this.$router.go(0);
+    removeFriend() {
+      axios.delete(config.addFriendURL, {
+        "email": this.input.email,
+      }, {withCredentials: true})
+          .then(() => this.$router.go(0))
+          .catch(err => console.log(err.message));
     },
     acceptFriend(id) {
       //axios.post()

@@ -5,13 +5,13 @@
       <h2 class="text-center text-warning">Register!</h2>
 
       <div class="form-floating mb-3 d-flex flex-column align-items-start">
-        <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com" v-model="input.username">
+        <input type="text" class="form-control" id="floatingInput" placeholder="Enter username" v-model="input.username">
         <label for="floatingInput">Username</label>
         <p class="text-warning text-opacity-75" v-if="!usernameValid">Please provide an username!</p>
       </div>
 
       <div class="form-floating mb-3 d-flex flex-column align-items-start">
-        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" v-model="input.email">
+        <input type="email" class="form-control" id="floatingInput" placeholder="Enter email" v-model="input.email">
         <label for="floatingInput">Email address</label>
         <p class="text-warning text-opacity-75" v-if="!emailValid">Please provide an email!</p>
       </div>

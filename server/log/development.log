@@ -20092,3 +20092,424 @@ MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1462 | developmen
 Completed 200 OK in 54ms (Views: 1.2ms | MongoDB: 49.6ms | Allocations: 1592)
 
 
+Started GET "/show" for 127.0.0.1 at 2023-04-21 14:50:44 +0200
+Processing by UsersController#show as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1553 conn:1:1 sconn:114726 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cf45e9b28 @seconds=1682081145, @increment=2>, "signature"=>{"hash"=><BSON::Binary:0x74140...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1553 | development.find | SUCCEEDED | 0.041s
+Completed 200 OK in 59ms (Views: 2.1ms | MongoDB: 41.0ms | Allocations: 8187)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-04-21 14:52:58 +0200
+Started GET "/show" for 127.0.0.1 at 2023-04-21 14:52:58 +0200
+Processing by UsersController#show as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1594 conn:1:1 sconn:114726 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019ceed3d718 @seconds=1682081448, @increment=1>, "signature"=>{"hash"=><BSON::Binary:0x75540...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1594 | development.find | SUCCEEDED | 0.058s
+Completed 200 OK in 62ms (Views: 1.0ms | MongoDB: 58.4ms | Allocations: 4414)
+
+
+Processing by SessionsController#show as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1595 conn:1:1 sconn:114726 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cf489f0e8 @seconds=1682081579, @increment=2>, "signature"=>{"hash"=><BSON::Binary:0x75600...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1595 | development.find | SUCCEEDED | 0.041s
+Completed 200 OK in 46ms (Views: 1.3ms | MongoDB: 41.1ms | Allocations: 1962)
+
+
+Started GET "/show" for 127.0.0.1 at 2023-04-21 14:54:22 +0200
+Processing by UsersController#show as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1622 conn:1:1 sconn:114726 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cf489f0e8 @seconds=1682081579, @increment=2>, "signature"=>{"hash"=><BSON::Binary:0x75600...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1622 | development.find | SUCCEEDED | 0.040s
+Completed 200 OK in 44ms (Views: 0.9ms | MongoDB: 40.1ms | Allocations: 1612)
+
+
+Started GET "/show" for 127.0.0.1 at 2023-04-21 14:55:35 +0200
+Processing by UsersController#show as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1644 conn:1:1 sconn:114726 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cf1de0438 @seconds=1682081662, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x77260...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1644 | development.find | SUCCEEDED | 0.106s
+Completed 200 OK in 110ms (Views: 1.1ms | MongoDB: 106.0ms | Allocations: 1609)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-04-21 14:55:39 +0200
+Started GET "/show" for 127.0.0.1 at 2023-04-21 14:55:39 +0200
+Processing by SessionsController#show as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1646 conn:1:1 sconn:114726 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cf40d6690 @seconds=1682081736, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x77400...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1646 | development.find | SUCCEEDED | 0.040s
+Completed 200 OK in 44ms (Views: 0.9ms | MongoDB: 40.3ms | Allocations: 1930)
+
+
+Processing by UsersController#show as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1647 conn:1:1 sconn:114726 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cf41f4428 @seconds=1682081739, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x77440...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1647 | development.find | SUCCEEDED | 0.036s
+Completed 200 OK in 40ms (Views: 0.8ms | MongoDB: 35.9ms | Allocations: 1602)
+
+
+Started POST "/users/64178a304d883733548e78e9" for 127.0.0.1 at 2023-04-21 14:55:45 +0200
+Processing by UsersController#update as HTML
+  Parameters: {"name"=>"maja", "email"=>"m@m.com", "id"=>"64178a304d883733548e78e9", "user"=>{"name"=>"maja", "email"=>"m@m.com"}}
+[31mUnpermitted parameters: :id, :user. Context: { controller: UsersController, action: update, request: #<ActionDispatch::Request:0x0000019cf43a80d0>, params: {"name"=>"maja", "email"=>"m@m.com", "controller"=>"users", "action"=>"update", "id"=>"64178a304d883733548e78e9", "user"=>{"name"=>"maja", "email"=>"m@m.com"}} }[0m
+Completed 500 Internal Server Error in 3ms (MongoDB: 0.0ms | Allocations: 1675)
+
+
+  
+NoMethodError (undefined method `update' for nil:NilClass
+
+    if @user.update(user_params)
+            ^^^^^^^):
+  
+app/controllers/users_controller.rb:22:in `update'
+Started GET "/login" for 127.0.0.1 at 2023-04-21 14:55:45 +0200
+Started GET "/show" for 127.0.0.1 at 2023-04-21 14:55:45 +0200
+Processing by SessionsController#show as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1650 conn:1:1 sconn:114726 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cf41f4428 @seconds=1682081739, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x77440...
+Processing by UsersController#show as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1651 conn:1:2 sconn:114726 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cf41f4428 @seconds=1682081739, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x77440...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1650 | development.find | SUCCEEDED | 0.047s
+Completed 200 OK in 53ms (Views: 1.5ms | MongoDB: 47.1ms | Allocations: 3453)
+
+
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1651 | development.find | SUCCEEDED | 0.043s
+Completed 200 OK in 47ms (Views: 0.7ms | MongoDB: 43.4ms | Allocations: 2508)
+
+
+Started GET "/show" for 127.0.0.1 at 2023-04-21 14:57:26 +0200
+Processing by UsersController#show as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1682 conn:1:2 sconn:114726 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019ceee18188 @seconds=1682081746, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x79100...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1682 | development.find | SUCCEEDED | 0.038s
+Completed 200 OK in 42ms (Views: 1.1ms | MongoDB: 38.4ms | Allocations: 1609)
+
+
+Started POST "/users/64178a304d883733548e78e9" for 127.0.0.1 at 2023-04-21 14:57:33 +0200
+Processing by UsersController#update as HTML
+  Parameters: {"name"=>"maja", "email"=>"m@m.com", "id"=>"64178a304d883733548e78e9", "user"=>{"name"=>"maja", "email"=>"m@m.com"}}
+[31mUnpermitted parameters: :id, :user. Context: { controller: UsersController, action: update, request: #<ActionDispatch::Request:0x0000019cf0cd05f8>, params: {"name"=>"maja", "email"=>"m@m.com", "controller"=>"users", "action"=>"update", "id"=>"64178a304d883733548e78e9", "user"=>{"name"=>"maja", "email"=>"m@m.com"}} }[0m
+Completed 500 Internal Server Error in 2ms (MongoDB: 0.0ms | Allocations: 1553)
+
+
+  
+NoMethodError (undefined method `update' for nil:NilClass
+
+    if @user.update(user_params)
+            ^^^^^^^):
+  
+app/controllers/users_controller.rb:22:in `update'
+Started GET "/login" for 127.0.0.1 at 2023-04-21 14:57:33 +0200
+Started GET "/show" for 127.0.0.1 at 2023-04-21 14:57:33 +0200
+Processing by SessionsController#show as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1686 conn:1:2 sconn:114726 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cf408cdd8 @seconds=1682081846, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x79660...
+Processing by UsersController#show as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1687 conn:1:1 sconn:114726 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cf408cdd8 @seconds=1682081846, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x79660...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1686 | development.find | SUCCEEDED | 0.045s
+Completed 200 OK in 50ms (Views: 1.0ms | MongoDB: 45.4ms | Allocations: 3076)
+
+
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1687 | development.find | SUCCEEDED | 0.065s
+Completed 200 OK in 69ms (Views: 1.0ms | MongoDB: 65.3ms | Allocations: 2347)
+
+
+Started GET "/show" for 127.0.0.1 at 2023-04-21 14:59:23 +0200
+Processing by UsersController#show as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1721 conn:1:1 sconn:114726 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cf6692410 @seconds=1682081854, @increment=2>, "signature"=>{"hash"=><BSON::Binary:0x80860...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1721 | development.find | SUCCEEDED | 0.073s
+Completed 200 OK in 77ms (Views: 0.9ms | MongoDB: 73.5ms | Allocations: 1609)
+
+
+Started POST "/users/64178a304d883733548e78e9" for 127.0.0.1 at 2023-04-21 14:59:25 +0200
+Processing by UsersController#update as HTML
+  Parameters: {"name"=>"m", "email"=>"m@m.com", "id"=>"64178a304d883733548e78e9", "user"=>{"name"=>"m", "email"=>"m@m.com"}}
+[31mUnpermitted parameters: :id, :user. Context: { controller: UsersController, action: update, request: #<ActionDispatch::Request:0x0000019cf69a2ce0>, params: {"name"=>"m", "email"=>"m@m.com", "controller"=>"users", "action"=>"update", "id"=>"64178a304d883733548e78e9", "user"=>{"name"=>"m", "email"=>"m@m.com"}} }[0m
+Completed 500 Internal Server Error in 2ms (MongoDB: 0.0ms | Allocations: 1515)
+
+
+  
+NoMethodError (undefined method `update' for nil:NilClass
+
+    if @user.update(user_params)
+            ^^^^^^^):
+  
+app/controllers/users_controller.rb:22:in `update'
+Started GET "/login" for 127.0.0.1 at 2023-04-21 14:59:25 +0200
+Started GET "/show" for 127.0.0.1 at 2023-04-21 14:59:25 +0200
+Processing by SessionsController#show as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1722 conn:1:1 sconn:114726 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cf6982508 @seconds=1682081964, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x81320...
+Processing by UsersController#show as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1723 conn:1:2 sconn:114726 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cf6982508 @seconds=1682081964, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x81320...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1722 | development.find | SUCCEEDED | 0.044s
+Completed 200 OK in 48ms (Views: 1.0ms | MongoDB: 44.3ms | Allocations: 3112)
+
+
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1723 | development.find | SUCCEEDED | 0.036s
+Completed 200 OK in 39ms (Views: 1.0ms | MongoDB: 35.6ms | Allocations: 2348)
+
+
+Started GET "/show" for 127.0.0.1 at 2023-04-21 14:59:31 +0200
+Processing by UsersController#show as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1725 conn:1:2 sconn:114726 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cf4ef1e00 @seconds=1682081966, @increment=1>, "signature"=>{"hash"=><BSON::Binary:0x81500...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1725 | development.find | SUCCEEDED | 0.041s
+Completed 200 OK in 45ms (Views: 1.4ms | MongoDB: 40.7ms | Allocations: 1609)
+
+
+Started POST "/users/64178a304d883733548e78e9" for 127.0.0.1 at 2023-04-21 14:59:33 +0200
+Processing by UsersController#update as HTML
+  Parameters: {"name"=>"m", "email"=>"m@m.com", "id"=>"64178a304d883733548e78e9", "user"=>{"name"=>"m", "email"=>"m@m.com"}}
+[31mUnpermitted parameters: :id, :user. Context: { controller: UsersController, action: update, request: #<ActionDispatch::Request:0x0000019cf5e915b8>, params: {"name"=>"m", "email"=>"m@m.com", "controller"=>"users", "action"=>"update", "id"=>"64178a304d883733548e78e9", "user"=>{"name"=>"m", "email"=>"m@m.com"}} }[0m
+Completed 500 Internal Server Error in 2ms (MongoDB: 0.0ms | Allocations: 1516)
+
+
+  
+NoMethodError (undefined method `update' for nil:NilClass
+
+    if @user.update(user_params)
+            ^^^^^^^):
+  
+app/controllers/users_controller.rb:22:in `update'
+Started GET "/show" for 127.0.0.1 at 2023-04-21 14:59:45 +0200
+Processing by UsersController#show as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1731 conn:1:2 sconn:114726 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000019cf5fbf1d8 @seconds=1682081972, @increment=2>, "signature"=>{"hash"=><BSON::Binary:0x82100...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:1731 | development.find | SUCCEEDED | 0.050s
+Completed 200 OK in 53ms (Views: 1.1ms | MongoDB: 49.7ms | Allocations: 1610)
+
+
+Started POST "/users/64178a304d883733548e78e9" for 127.0.0.1 at 2023-04-21 15:00:14 +0200
+Processing by UsersController#update as HTML
+  Parameters: {"name"=>"maja", "email"=>"m@m.com", "id"=>"64178a304d883733548e78e9", "user"=>{"name"=>"maja", "email"=>"m@m.com"}}
+[31mUnpermitted parameters: :id, :user. Context: { controller: UsersController, action: update, request: #<ActionDispatch::Request:0x000001d4f18ec020>, params: {"name"=>"maja", "email"=>"m@m.com", "controller"=>"users", "action"=>"update", "id"=>"64178a304d883733548e78e9", "user"=>{"name"=>"maja", "email"=>"m@m.com"}} }[0m
+Completed 500 Internal Server Error in 2ms (MongoDB: 0.0ms | Allocations: 1782)
+
+
+  
+NoMethodError (undefined method `update' for nil:NilClass
+
+    if @user.update(user_params)
+            ^^^^^^^):
+  
+app/controllers/users_controller.rb:22:in `update'
+Started GET "/show" for 127.0.0.1 at 2023-04-21 15:00:59 +0200
+Processing by UsersController#show as HTML
+MONGODB | Topology type 'unknown' initializing.
+MONGODB | Topology type 'Unknown' changed to type 'ReplicaSetNoPrimary'.
+MONGODB | Server ac-mspcz06-shard-00-00.bsbwlz3.mongodb.net:27017 initializing.
+MONGODB | Server ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 initializing.
+MONGODB | Server ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 initializing.
+MONGODB | Waiting for up to 5.00 seconds for servers to be scanned: #<Cluster topology=ReplicaSetNoPrimary[ac-mspcz06-shard-00-00.bsbwlz3.mongodb.net:27017,ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017,ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017,name=atlas-kjem2r-shard-0] servers=[#<Server address=ac-mspcz06-shard-00-00.bsbwlz3.mongodb.net:27017 UNKNOWN>,#<Server address=ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 UNKNOWN>,#<Server address=ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 UNKNOWN>]>
+MONGODB | Server description for ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 changed from 'unknown' to 'primary'.
+MONGODB | Topology type 'ReplicaSetNoPrimary' changed to type 'ReplicaSetWithPrimary'.
+MONGODB | Server description for ac-mspcz06-shard-00-00.bsbwlz3.mongodb.net:27017 changed from 'unknown' to 'secondary'.
+MONGODB | There was a change in the members of the 'ReplicaSetWithPrimary' topology.
+MONGODB | Server description for ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 changed from 'unknown' to 'secondary'.
+MONGODB | There was a change in the members of the 'ReplicaSetWithPrimary' topology.
+MONGODB | Server description for ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 changed from 'primary' to 'primary'.
+MONGODB | There was a change in the members of the 'ReplicaSetWithPrimary' topology.
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:10 conn:1:1 sconn:115947 | admin.saslStart | STARTED | {}
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:10 | admin.saslStart | SUCCEEDED | 0.051s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:11 conn:1:1 sconn:115947 | admin.saslContinue | STARTED | {}
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:11 | admin.saslContinue | SUCCEEDED | 0.062s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:12 conn:1:1 sconn:115947 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "lsid"=>{"id"=><BSON::Binary:0x17640 type=uuid data=0x87375e56dce54f84...>}}
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:12 | development.find | SUCCEEDED | 0.056s
+Completed 200 OK in 1509ms (Views: 2.7ms | MongoDB: 169.1ms | Allocations: 33270)
+
+
+Started POST "/users/64178a304d883733548e78e9" for 127.0.0.1 at 2023-04-21 15:01:08 +0200
+Processing by UsersController#update as HTML
+  Parameters: {"name"=>"m", "email"=>"m@m.com", "id"=>"64178a304d883733548e78e9", "user"=>{"name"=>"m", "email"=>"m@m.com"}}
+[31mUnpermitted parameters: :id, :user. Context: { controller: UsersController, action: update, request: #<ActionDispatch::Request:0x000001d4f178c798>, params: {"name"=>"m", "email"=>"m@m.com", "controller"=>"users", "action"=>"update", "id"=>"64178a304d883733548e78e9", "user"=>{"name"=>"m", "email"=>"m@m.com"}} }[0m
+Completed 500 Internal Server Error in 2ms (MongoDB: 0.0ms | Allocations: 1554)
+
+
+  
+NoMethodError (undefined method `update' for nil:NilClass
+
+    if @user.update(user_params)
+            ^^^^^^^):
+  
+app/controllers/users_controller.rb:22:in `update'
+MONGODB | Server description for ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 changed from 'primary' to 'primary'.
+MONGODB | There was a change in the members of the 'ReplicaSetWithPrimary' topology.
+MONGODB | Server description for ac-mspcz06-shard-00-00.bsbwlz3.mongodb.net:27017 changed from 'secondary' to 'secondary'.
+MONGODB | There was a change in the members of the 'ReplicaSetWithPrimary' topology.
+MONGODB | Server description for ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 changed from 'secondary' to 'secondary'.
+MONGODB | There was a change in the members of the 'ReplicaSetWithPrimary' topology.
+Started GET "/show" for 127.0.0.1 at 2023-04-21 15:06:06 +0200
+Started GET "/login" for 127.0.0.1 at 2023-04-21 15:06:06 +0200
+Processing by SessionsController#show as HTML
+Processing by UsersController#show as HTML
+MONGODB | Topology type 'unknown' initializing.
+MONGODB | Topology type 'Unknown' changed to type 'ReplicaSetNoPrimary'.
+MONGODB | Server ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 initializing.
+MONGODB | Server ac-mspcz06-shard-00-00.bsbwlz3.mongodb.net:27017 initializing.
+MONGODB | Server ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 initializing.
+MONGODB | Waiting for up to 5.00 seconds for servers to be scanned: #<Cluster topology=ReplicaSetNoPrimary[ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017,ac-mspcz06-shard-00-00.bsbwlz3.mongodb.net:27017,ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017,name=atlas-kjem2r-shard-0] servers=[#<Server address=ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 UNKNOWN>,#<Server address=ac-mspcz06-shard-00-00.bsbwlz3.mongodb.net:27017 UNKNOWN>,#<Server address=ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 UNKNOWN>]>
+MONGODB | Server description for ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 changed from 'unknown' to 'primary'.
+MONGODB | Topology type 'ReplicaSetNoPrimary' changed to type 'ReplicaSetWithPrimary'.
+MONGODB | Server description for ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 changed from 'unknown' to 'secondary'.
+MONGODB | There was a change in the members of the 'ReplicaSetWithPrimary' topology.
+MONGODB | Waiting for up to 4.49 seconds for servers to be scanned: #<Cluster topology=ReplicaSetWithPrimary[ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017,ac-mspcz06-shard-00-00.bsbwlz3.mongodb.net:27017,ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017,name=atlas-kjem2r-shard-0,v=1,e=7fffffff000000000000004d] servers=[#<Server address=ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 PRIMARY replica_set=atlas-kjem2r-shard-0 pool=#<ConnectionPool size=0 (0-20) used=0 avail=0 pending=0>>,#<Server address=ac-mspcz06-shard-00-00.bsbwlz3.mongodb.net:27017 UNKNOWN>,#<Server address=ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 SECONDARY replica_set=atlas-kjem2r-shard-0 pool=#<ConnectionPool size=0 (0-20) used=0 avail=0 pending=0>>]>
+MONGODB | Server description for ac-mspcz06-shard-00-00.bsbwlz3.mongodb.net:27017 changed from 'unknown' to 'secondary'.
+MONGODB | There was a change in the members of the 'ReplicaSetWithPrimary' topology.
+MONGODB | Server description for ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 changed from 'primary' to 'primary'.
+MONGODB | There was a change in the members of the 'ReplicaSetWithPrimary' topology.
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:11 conn:1:2 sconn:116013 | admin.saslStart | STARTED | {}
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:12 conn:1:1 sconn:116027 | admin.saslStart | STARTED | {}
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:11 | admin.saslStart | SUCCEEDED | 0.043s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:13 conn:1:2 sconn:116013 | admin.saslContinue | STARTED | {}
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:12 | admin.saslStart | SUCCEEDED | 0.044s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:14 conn:1:1 sconn:116027 | admin.saslContinue | STARTED | {}
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:14 | admin.saslContinue | SUCCEEDED | 0.040s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:15 conn:1:1 sconn:116027 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "lsid"=>{"id"=><BSON::Binary:0x17600 type=uuid data=0x039956ecce434a74...>}}
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:13 | admin.saslContinue | SUCCEEDED | 0.043s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:16 conn:1:2 sconn:116013 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "lsid"=>{"id"=><BSON::Binary:0x17620 type=uuid data=0xa54cc590b59542f8...>}}
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:16 | development.find | SUCCEEDED | 0.043s
+Completed 200 OK in 953ms (Views: 1.6ms | MongoDB: 129.2ms | Allocations: 38748)
+
+
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:15 | development.find | SUCCEEDED | 0.045s
+Completed 200 OK in 969ms (Views: 1.0ms | MongoDB: 128.2ms | Allocations: 40040)
+
+
+Started POST "/users/64178a304d883733548e78e9" for 127.0.0.1 at 2023-04-21 15:06:13 +0200
+Processing by UsersController#update as HTML
+  Parameters: {"name"=>"maja", "email"=>"m@m.com", "id"=>"64178a304d883733548e78e9", "user"=>{"name"=>"maja", "email"=>"m@m.com"}}
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:17 conn:1:1 sconn:116027 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x000001cf26fb0620 @seconds=1682082368, @increment=2>, "signature"=>{"hash"=><BSON::Binary:0x17740...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:17 | development.find | SUCCEEDED | 0.035s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:18 conn:1:1 sconn:116027 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x000001cf27197060 @seconds=1682082373, @increment=5>, "signature"=>{"hash"=><BSON::Binary:0x17760...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:18 | development.find | SUCCEEDED | 0.043s
+[31mUnpermitted parameters: :id, :user. Context: { controller: UsersController, action: update, request: #<ActionDispatch::Request:0x000001cf271376d8>, params: {"name"=>"maja", "email"=>"m@m.com", "controller"=>"users", "action"=>"update", "id"=>"64178a304d883733548e78e9", "user"=>{"name"=>"maja", "email"=>"m@m.com"}} }[0m
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:19 conn:1:1 sconn:116027 | development.find | STARTED | {"find"=>"users", "filter"=>{"name"=>"maja", "_id"=>{"$ne"=>BSON::ObjectId('64178a304d883733548e78e9')}}, "limit"=>1, "projection"=>{"_id"=>1}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x000001cf27197060 @seconds=1682082...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:19 | development.find | SUCCEEDED | 0.049s
+Completed 500 Internal Server Error in 196ms (MongoDB: 128.3ms | Allocations: 21797)
+
+
+  
+NameError (undefined local variable or method `user' for #<UsersController:0x00000000008b38>
+
+      render json: { errors: user.errors.full_messages }, status: :unprocessable_entity
+                             ^^^^
+Did you mean?  @user):
+  
+app/controllers/users_controller.rb:33:in `update'
+MONGODB | Server description for ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 changed from 'primary' to 'primary'.
+MONGODB | There was a change in the members of the 'ReplicaSetWithPrimary' topology.
+MONGODB | Server description for ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 changed from 'secondary' to 'secondary'.
+MONGODB | There was a change in the members of the 'ReplicaSetWithPrimary' topology.
+MONGODB | Server description for ac-mspcz06-shard-00-00.bsbwlz3.mongodb.net:27017 changed from 'secondary' to 'secondary'.
+MONGODB | There was a change in the members of the 'ReplicaSetWithPrimary' topology.
+Started POST "/users/64178a304d883733548e78e9" for 127.0.0.1 at 2023-04-21 15:06:43 +0200
+Processing by UsersController#update as HTML
+  Parameters: {"name"=>"maja", "email"=>"m@m.com", "id"=>"64178a304d883733548e78e9", "user"=>{"name"=>"maja", "email"=>"m@m.com"}}
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:29 conn:1:1 sconn:116027 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x000001cf27197060 @seconds=1682082373, @increment=5>, "signature"=>{"hash"=><BSON::Binary:0x17760...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:29 | development.find | SUCCEEDED | 0.055s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:30 conn:1:1 sconn:116027 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x000001cf28bae8e0 @seconds=1682082406, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x23400...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:30 | development.find | SUCCEEDED | 0.044s
+[31mUnpermitted parameters: :id, :user. Context: { controller: UsersController, action: update, request: #<ActionDispatch::Request:0x000001cf289677d0>, params: {"name"=>"maja", "email"=>"m@m.com", "controller"=>"users", "action"=>"update", "id"=>"64178a304d883733548e78e9", "user"=>{"name"=>"maja", "email"=>"m@m.com"}} }[0m
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:31 conn:1:1 sconn:116027 | development.find | STARTED | {"find"=>"users", "filter"=>{"name"=>"maja", "_id"=>{"$ne"=>BSON::ObjectId('64178a304d883733548e78e9')}}, "limit"=>1, "projection"=>{"_id"=>1}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x000001cf28bae8e0 @seconds=1682082...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:31 | development.find | SUCCEEDED | 0.046s
+Completed 422 Unprocessable Entity in 734ms (Views: 0.2ms | MongoDB: 145.1ms | Allocations: 301668)
+
+
+Started GET "/show" for 127.0.0.1 at 2023-04-21 15:08:09 +0200
+Processing by UsersController#show as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:59 conn:1:1 sconn:116027 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x000001cf28bae8e0 @seconds=1682082406, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x23400...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:59 | development.find | SUCCEEDED | 0.053s
+Completed 200 OK in 57ms (Views: 1.1ms | MongoDB: 52.8ms | Allocations: 1726)
+
+
+Started POST "/users/64178a304d883733548e78e9" for 127.0.0.1 at 2023-04-21 15:08:13 +0200
+Processing by UsersController#update as HTML
+  Parameters: {"name"=>"m", "email"=>"m@m.com", "id"=>"64178a304d883733548e78e9", "user"=>{"name"=>"m", "email"=>"m@m.com"}}
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:60 conn:1:1 sconn:116027 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x000001cf28128538 @seconds=1682082489, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x24660...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:60 | development.find | SUCCEEDED | 0.046s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:61 conn:1:1 sconn:116027 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x000001cf2b890e80 @seconds=1682082494, @increment=1>, "signature"=>{"hash"=><BSON::Binary:0x24680...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:61 | development.find | SUCCEEDED | 0.042s
+[31mUnpermitted parameters: :id, :user. Context: { controller: UsersController, action: update, request: #<ActionDispatch::Request:0x000001cf2b87b3f0>, params: {"name"=>"m", "email"=>"m@m.com", "controller"=>"users", "action"=>"update", "id"=>"64178a304d883733548e78e9", "user"=>{"name"=>"m", "email"=>"m@m.com"}} }[0m
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:62 conn:1:1 sconn:116027 | development.update | STARTED | {"update"=>"users", "ordered"=>true, "updates"=>[{"q"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "u"=>{"$set"=>{"role"=>"user", "friend_ids"=>[], "updated_at"=>2023-04-21 13:08:13.9226196 UTC}}}], "$db"=>"development", "$clusterTime"=>{"clu...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:62 | development.update | SUCCEEDED | 0.056s
+Completed 200 OK in 155ms (Views: 0.1ms | MongoDB: 143.8ms | Allocations: 5669)
+
+
+Started POST "/users/64178a304d883733548e78e9" for 127.0.0.1 at 2023-04-21 15:08:19 +0200
+Processing by UsersController#update as HTML
+  Parameters: {"name"=>"maja", "email"=>"m@m.com", "id"=>"64178a304d883733548e78e9", "user"=>{"name"=>"maja", "email"=>"m@m.com"}}
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:66 conn:1:1 sconn:116027 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x000001cf2b8ebdd0 @seconds=1682082494, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x24900...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:66 | development.find | SUCCEEDED | 0.096s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:67 conn:1:1 sconn:116027 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x000001cf2b968fd8 @seconds=1682082500, @increment=2>, "signature"=>{"hash"=><BSON::Binary:0x24920...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:67 | development.find | SUCCEEDED | 0.043s
+[31mUnpermitted parameters: :id, :user. Context: { controller: UsersController, action: update, request: #<ActionDispatch::Request:0x000001cf2b9533e0>, params: {"name"=>"maja", "email"=>"m@m.com", "controller"=>"users", "action"=>"update", "id"=>"64178a304d883733548e78e9", "user"=>{"name"=>"maja", "email"=>"m@m.com"}} }[0m
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:68 conn:1:1 sconn:116027 | development.find | STARTED | {"find"=>"users", "filter"=>{"name"=>"maja", "_id"=>{"$ne"=>BSON::ObjectId('64178a304d883733548e78e9')}}, "limit"=>1, "projection"=>{"_id"=>1}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x000001cf2b968fd8 @seconds=1682082...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:68 | development.find | SUCCEEDED | 0.089s
+Completed 422 Unprocessable Entity in 243ms (Views: 0.3ms | MongoDB: 228.6ms | Allocations: 5137)
+
+
+Started GET "/show" for 127.0.0.1 at 2023-04-21 15:08:44 +0200
+Processing by UsersController#show as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:75 conn:1:1 sconn:116027 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x000001cf2b9a9588 @seconds=1682082500, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x25200...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:75 | development.find | SUCCEEDED | 0.038s
+Completed 200 OK in 41ms (Views: 1.0ms | MongoDB: 37.6ms | Allocations: 1605)
+
+
+Started POST "/users/64178a304d883733548e78e9" for 127.0.0.1 at 2023-04-21 15:08:50 +0200
+Processing by UsersController#update as HTML
+  Parameters: {"name"=>"maja", "email"=>"m@m.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "id"=>"64178a304d883733548e78e9", "user"=>{"name"=>"maja", "email"=>"m@m.com"}}
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:79 conn:1:1 sconn:116027 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x000001cf2ba79300 @seconds=1682082525, @increment=2>, "signature"=>{"hash"=><BSON::Binary:0x25400...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:79 | development.find | SUCCEEDED | 0.080s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:80 conn:1:1 sconn:116027 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x000001cf2bb09130 @seconds=1682082531, @increment=1>, "signature"=>{"hash"=><BSON::Binary:0x25420...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:80 | development.find | SUCCEEDED | 0.058s
+[31mUnpermitted parameters: :id, :user. Context: { controller: UsersController, action: update, request: #<ActionDispatch::Request:0x000001cf2baf3678>, params: {"name"=>"maja", "email"=>"m@m.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "controller"=>"users", "action"=>"update", "id"=>"64178a304d883733548e78e9", "user"=>{"name"=>"maja", "email"=>"m@m.com"}} }[0m
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:81 conn:1:1 sconn:116027 | development.find | STARTED | {"find"=>"users", "filter"=>{"name"=>"maja", "_id"=>{"$ne"=>BSON::ObjectId('64178a304d883733548e78e9')}}, "limit"=>1, "projection"=>{"_id"=>1}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x000001cf2bb20ad8 @seconds=1682082...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:81 | development.find | SUCCEEDED | 0.047s
+Completed 422 Unprocessable Entity in 398ms (Views: 0.3ms | MongoDB: 184.9ms | Allocations: 5265)
+
+
+MONGODB | Error running awaited hello on ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017: Mongo::Error::SocketTimeoutError: Errno::ETIMEDOUT: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond. - Took more than 20 seconds to receive data (select call timed out) (for 15.236.189.229:27017 (ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017, TLS)) (on ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017)
+MONGODB | Error running awaited hello on ac-mspcz06-shard-00-00.bsbwlz3.mongodb.net:27017: Mongo::Error::SocketTimeoutError: Errno::ETIMEDOUT: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond. - Took more than 20 seconds to receive data (select call timed out) (for 13.37.253.144:27017 (ac-mspcz06-shard-00-00.bsbwlz3.mongodb.net:27017, TLS)) (on ac-mspcz06-shard-00-00.bsbwlz3.mongodb.net:27017)
+MONGODB | Error running awaited hello on ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017: Mongo::Error::SocketTimeoutError: Errno::ETIMEDOUT: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond. - Took more than 20 seconds to receive data (select call timed out) (for 13.36.193.74:27017 (ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017, TLS)) (on ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017)
+MONGODB | Error checking ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017: Mongo::Error::SocketTimeoutError: Errno::ETIMEDOUT: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond. - Took more than 10 seconds to receive data (select call timed out) (for 15.236.189.229:27017 (ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017, TLS)) (on ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017, sconn:116027)
+MONGODB | Server description for ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 changed from 'primary' to 'unknown'.
+MONGODB | Topology type 'ReplicaSetWithPrimary' changed to type 'ReplicaSetNoPrimary'.
+MONGODB | Server description for ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 changed from 'unknown' to 'primary'.
+MONGODB | Topology type 'ReplicaSetNoPrimary' changed to type 'ReplicaSetWithPrimary'.
+MONGODB | Error checking ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017: Mongo::Error::SocketTimeoutError: Errno::ETIMEDOUT: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond. - Took more than 10 seconds to receive data (select call timed out) (for 13.36.193.74:27017 (ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017, TLS)) (on ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017, sconn:112087)
+MONGODB | Server description for ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 changed from 'secondary' to 'unknown'.
+MONGODB | There was a change in the members of the 'ReplicaSetWithPrimary' topology.
+MONGODB | Error checking ac-mspcz06-shard-00-00.bsbwlz3.mongodb.net:27017: Mongo::Error::SocketTimeoutError: Errno::ETIMEDOUT: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond. - Took more than 10 seconds to receive data (select call timed out) (for 13.37.253.144:27017 (ac-mspcz06-shard-00-00.bsbwlz3.mongodb.net:27017, TLS)) (on ac-mspcz06-shard-00-00.bsbwlz3.mongodb.net:27017, sconn:116013)
+MONGODB | Server description for ac-mspcz06-shard-00-00.bsbwlz3.mongodb.net:27017 changed from 'secondary' to 'unknown'.
+MONGODB | There was a change in the members of the 'ReplicaSetWithPrimary' topology.
+MONGODB | Server description for ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 changed from 'unknown' to 'secondary'.
+MONGODB | There was a change in the members of the 'ReplicaSetWithPrimary' topology.
+MONGODB | Server description for ac-mspcz06-shard-00-00.bsbwlz3.mongodb.net:27017 changed from 'unknown' to 'secondary'.
+MONGODB | There was a change in the members of the 'ReplicaSetWithPrimary' topology.
+MONGODB | Server description for ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 changed from 'primary' to 'primary'.
+MONGODB | There was a change in the members of the 'ReplicaSetWithPrimary' topology.
+MONGODB | Server description for ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 changed from 'secondary' to 'secondary'.
+MONGODB | There was a change in the members of the 'ReplicaSetWithPrimary' topology.
+MONGODB | Server description for ac-mspcz06-shard-00-00.bsbwlz3.mongodb.net:27017 changed from 'secondary' to 'secondary'.
+MONGODB | There was a change in the members of the 'ReplicaSetWithPrimary' topology.
+Started GET "/show" for 127.0.0.1 at 2023-04-21 15:32:42 +0200
+Processing by UsersController#show as HTML
+MONGODB | Server description for ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 changed from 'primary' to 'primary'.
+MONGODB | There was a change in the members of the 'ReplicaSetWithPrimary' topology.
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:164 conn:2:3 sconn:116400 | admin.saslStart | STARTED | {}
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:164 | admin.saslStart | SUCCEEDED | 0.044s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:165 conn:2:3 sconn:116400 | admin.saslContinue | STARTED | {}
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:165 | admin.saslContinue | SUCCEEDED | 0.046s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:166 conn:2:3 sconn:116400 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x000001cf2bb505f8 @seconds=1682082532, @increment=1>, "signature"=>{"hash"=><BSON::Binary:0x28600...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:166 | development.find | SUCCEEDED | 0.044s
+Completed 200 OK in 361ms (Views: 1.0ms | MongoDB: 133.5ms | Allocations: 4211)
+
+
+MONGODB | Server description for ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 changed from 'primary' to 'primary'.
+MONGODB | There was a change in the members of the 'ReplicaSetWithPrimary' topology.
+Started POST "/users/" for 127.0.0.1 at 2023-04-21 15:32:47 +0200
+Processing by UsersController#create as HTML
+  Parameters: {"name"=>"maja", "email"=>"m@m.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "user"=>{"name"=>"maja", "email"=>"m@m.com"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x000001cf2c9d55d8>, params: {"name"=>"maja", "email"=>"m@m.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "controller"=>"users", "action"=>"create", "user"=>{"name"=>"maja", "email"=>"m@m.com"}} }[0m
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:170 conn:2:3 sconn:116400 | development.find | STARTED | {"find"=>"users", "filter"=>{"name"=>"maja"}, "limit"=>1, "projection"=>{"_id"=>1}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x000001cf2c938828 @seconds=1682083963, @increment=1>, "signature"=>{"hash"=><BSON::Binary:0x28...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:170 | development.find | SUCCEEDED | 0.276s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:171 conn:2:3 sconn:116400 | development.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"m@m.com"}, "limit"=>1, "projection"=>{"_id"=>1}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x000001cf2c9e5640 @seconds=1682083969, @increment=2>, "signature"=>{"hash"=><BSON::Binary:...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:171 | development.find | SUCCEEDED | 0.089s
+Completed 422 Unprocessable Entity in 560ms (Views: 0.1ms | MongoDB: 365.0ms | Allocations: 4176)
+
+
+Started GET "/show" for 127.0.0.1 at 2023-04-21 15:32:53 +0200
+Processing by UsersController#show as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:172 conn:2:3 sconn:116400 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x000001cf2c9e5640 @seconds=1682083969, @increment=2>, "signature"=>{"hash"=><BSON::Binary:0x28840...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:172 | development.find | SUCCEEDED | 0.047s
+Completed 200 OK in 50ms (Views: 0.8ms | MongoDB: 46.6ms | Allocations: 1605)
+
+

@@ -93,6 +93,27 @@ export default {
     changeUserDetails() {
       this.checkPasswordValidity();
 
+      if (this.passwordsMatch && this.input.newPassword === "") {
+        axios.post(config.updateUserURL + this.userDetails._id.$oid, {
+          "name": this.input.newUsername,
+          "email": this.input.newEmail,
+          "password": "1",
+          "password_confirmation": "1"
+        },{withCredentials: true})
+            .then(res => console.log(res))
+            .catch(err => console.log(err))
+
+        // this.$router.go(0);
+      } else {
+        axios.post(config.updateUserURL + this.userDetails._id.$oid, {
+          "name": this.input.newUsername,
+          "email": this.input.newEmail,
+          "password": "1",
+          "password_confirmation": "1"
+        },{withCredentials: true})
+            .then(res => console.log(res))
+            .catch(err => console.log(err))
+      }
     },
 
     checkPasswordValidity() {

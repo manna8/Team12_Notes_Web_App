@@ -1,11 +1,19 @@
 class UsersController < ApplicationController
 
-  before_action :authenticate_user!, only: [:show]
+  before_action :authenticate_user!, only: [:show, :update, :destroy]
+  before_action :authorize_admin!, only:[:all_users]
+  before_action :set_user, only: %i[update destroy ]
+
+
   include ActionController::Cookies
   def show
     render json: { user: current_user }
   end
 
+  def all_users
+    @users = User.all
+    render json:@users
+  end
   def create
     user = User.new(user_params)
     if user.save
@@ -27,15 +35,13 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    cookies.delete(:jwt, domain: '.127.0.0.1', path: "/", secure: true, httponly: true, expires: Time.at(0), same_site: :none)
-    @current_user = nil
-    # puts @current_user
-    render json: { message: 'Logged out successfully.' }, status: :ok
+    @user.destroy
+    render json: { message: 'User deleted successfully.' }, status: :ok
   end
 
   private
 
-  def set_note
+  def set_user
     @user = User.find(params[:id])
   end
   def user_params

@@ -15,16 +15,15 @@ Rails.application.routes.draw do
   # get 'users/get' => 'users#get'
   resources :notes
   post 'create_note', to: 'notes#create'
-  get 'all_notes', to: 'notes#all_notes'
-  post '/notes/:id', to: 'notes#update'
-  resources :users, only: [:create, :show]
+  resources :users
+  post '/users/:id', to: 'users#update'
+  delete '/users/:id', to: 'users#destroy'
+  get 'all_users', to: 'users#all_users'
   post 'login', to: 'sessions#create'
   get 'login', to: 'sessions#show'
   delete 'logout', to: 'sessions#destroy'
   post 'register', to: 'users#create'
   get 'show', to: 'users#show'
-  post '/users/:id', to: 'users#update'
-  post '/users/:id', to: 'users#update'
 
 
 

@@ -12500,3 +12500,43 @@ MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:263 | development
 Completed 200 OK in 104ms (Views: 5.4ms | MongoDB: 94.4ms | Allocations: 4643)
 
 
+Started GET "/login" for 127.0.0.1 at 2023-04-21 14:33:22 +0200
+Started GET "/notes_collections" for 127.0.0.1 at 2023-04-21 14:33:22 +0200
+Processing by NotesCollectionsController#index as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:282 conn:1:1 sconn:115342 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('641719ab4d883718309cd0fd')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000013e4513d308 @seconds=1682080335, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x40000...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:282 | development.find | SUCCEEDED | 0.071s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:283 conn:1:1 sconn:115342 | development.find | STARTED | {"find"=>"notes_collections", "filter"=>{}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000013e426ab6f8 @seconds=1682080405, @increment=1>, "signature"=>{"hash"=><BSON::Binary:0x45140 type=generic data=0x25de31cab71433d8...
+Processing by SessionsController#show as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:283 | development.find | SUCCEEDED | 0.035s
+Completed 200 OK in 136ms (Views: 12.0ms | MongoDB: 106.6ms | Allocations: 23958)
+
+
+MONGODB | Server description for ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 changed from 'primary' to 'primary'.
+MONGODB | There was a change in the members of the 'ReplicaSetWithPrimary' topology.
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:285 conn:1:2 sconn:115588 | admin.saslStart | STARTED | {}
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:285 | admin.saslStart | SUCCEEDED | 0.044s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:286 conn:1:2 sconn:115588 | admin.saslContinue | STARTED | {}
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:286 | admin.saslContinue | SUCCEEDED | 0.046s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:287 conn:1:2 sconn:115588 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('641719ab4d883718309cd0fd')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000013e426ab6f8 @seconds=1682080405, @increment=1>, "signature"=>{"hash"=><BSON::Binary:0x45140...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:287 | development.find | SUCCEEDED | 0.044s
+Completed 200 OK in 336ms (Views: 0.7ms | MongoDB: 133.7ms | Allocations: 8974)
+
+
+MONGODB | Server description for ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 changed from 'primary' to 'primary' [awaited].
+MONGODB | There was a change in the members of the 'ReplicaSetWithPrimary' topology.
+Started GET "/login" for 127.0.0.1 at 2023-04-21 14:37:05 +0200
+Started GET "/notes_collections" for 127.0.0.1 at 2023-04-21 14:37:05 +0200
+Processing by SessionsController#show as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:354 conn:1:2 sconn:115588 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('641719ab4d883718309cd0fd')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000013e428ae860 @seconds=1682080405, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x47960...
+Processing by NotesCollectionsController#index as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:355 conn:1:1 sconn:115342 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('641719ab4d883718309cd0fd')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000013e428ae860 @seconds=1682080405, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x47960...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:354 | development.find | SUCCEEDED | 0.051s
+Completed 200 OK in 55ms (Views: 0.6ms | MongoDB: 50.7ms | Allocations: 3160)
+
+
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:355 | development.find | SUCCEEDED | 0.046s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:356 conn:1:1 sconn:115342 | development.find | STARTED | {"find"=>"notes_collections", "filter"=>{}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000013e44204a30 @seconds=1682080625, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x48020 type=generic data=0x9ad43245cf8c719a...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:356 | development.find | SUCCEEDED | 0.041s
+Completed 200 OK in 99ms (Views: 6.3ms | MongoDB: 87.6ms | Allocations: 6846)
+
+

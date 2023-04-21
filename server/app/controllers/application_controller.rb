@@ -9,7 +9,6 @@ class ApplicationController < ActionController::API
       begin
         decoded_token = decode_token(jwt_token)
         user_id = decoded_token["user_id"]["$oid"]
-
         @current_user = User.find_by(id: user_id)
         if @current_user[:role] == "admin"
           @is_admin = true

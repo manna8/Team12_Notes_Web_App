@@ -68,9 +68,9 @@ class FriendshipsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def friendship_params
-      params.require(:friendship).permit(:email)
+      params.permit(:email)
     end
   def status_update_params
-    params.require(:status)
+    params.permit(:status)
   end
 end

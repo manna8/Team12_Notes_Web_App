@@ -38,7 +38,6 @@ class NotesController < ApplicationController
   # POST /notes.json
   def create
     @note = Note.new(note_params)
-    puts note_params
     @note.user = User.find_by(:id => @current_user[:id])
 
     if @note.save

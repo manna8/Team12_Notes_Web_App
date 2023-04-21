@@ -51,7 +51,6 @@ export default {
   methods: {
     login() {
       this.passwordValid = this.input.password !== "";
-
       this.usernameValid = this.input.username !== "";
 
       if (this.usernameValid && this.passwordValid) {
@@ -66,10 +65,26 @@ export default {
               console.log(myCookie);
 
               this.$store.commit('login');
-              console.log(this.$store.state.loggedIn);})
+              console.log(this.$store.state.loggedIn);
+
+              this.$swal({
+                position: 'top-end',
+                icon: 'success',
+                title: 'Logged in successfully',
+                showConfirmButton: false,
+                timer: 1000
+              });
+
+            })
             .catch((error) => {
               console.log(error.message);
-              alert('User with provided credentials does not exist!');
+              this.$swal({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'User with provided credentials does not exist!',
+                confirmButtonColor: '#ffc90b',
+              });
+
             });
 
       } else if (this.input.password !== ""){

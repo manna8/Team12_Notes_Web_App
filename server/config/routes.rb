@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :friendships
   resources :notes_collections
 
   mount Rswag::Ui::Engine => '/api-docs'
@@ -22,7 +23,8 @@ Rails.application.routes.draw do
   delete 'logout', to: 'sessions#destroy'
   post 'register', to: 'users#create'
   get 'show', to: 'users#show'
-
+  post '/users/:id', to: 'users#update'
+  post '/users/:id', to: 'users#update'
 
 
 

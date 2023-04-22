@@ -27,6 +27,10 @@ class FriendshipsController < ApplicationController
     friendship_ids = friends.pluck(:id)
     sent_data = friend_users.zip(friendship_ids).map { |name, id| { name: name, friendship_id: id } }
     render json: sent_data
+
+    # user = User.find_by(id: @current_user.id)
+    # friends = user.friend_ids
+    # render json: friends
   end
   def sent_friend_requests
     # sent = Friendship.where(sender_id: @current_user.id, :status => "pending").first
@@ -86,14 +90,9 @@ class FriendshipsController < ApplicationController
       user.friend_ids.push(@friendship[:sender_id])
       user.save
       end
-    if status_update_params[:status] == "revoked"
-      user = User.find_by(id: @friendship[:sender_id])
-      user.friend_ids.pull(@friendship[:receiver_id])
-      user.save
-      user = User.find_by(id: @friendship[:receiver_id])
-      user.friend_ids.pull(@friendship[:sender_id])
-      user.save
-    end
+    # if status_update_params[:status] == "revoked"
+    #
+    # end
 
 
     if @friendship.update(status_update_params)
@@ -107,6 +106,13 @@ class FriendshipsController < ApplicationController
   # DELETE /friendships/1.json
   def destroy
     @friendship.destroy
+
+    user = User.find_by(id: @friendship[:sender_id])
+    user.friend_ids.pull(@friendship[:receiver_id])
+    user.save
+    user = User.find_by(id: @friendship[:receiver_id])
+    user.friend_ids.pull(@friendship[:sender_id])
+    user.save
   end
 
   private

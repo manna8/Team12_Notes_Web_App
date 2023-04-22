@@ -18,10 +18,14 @@ class FriendshipsController < ApplicationController
     # render json: @friends[:name]
 
     #friends = Friendship.where("(sender_id = ? OR receiver_id = ?) AND status = ?", @current_user.id, @current_user.id, "accepted")
-    friends = Friendship.where("(sender_id = :user_id OR receiver_id = :user_id) AND status = :status", { user_id: @current_user.id, status: "accepted"})
-    sent_users = User.in(id: frieneds.pluck(:receiver_id)).pluck(:name)
+    #friends = Friendship.where("(sender_id = :user_id OR receiver_id = :user_id) AND status = :status", { user_id: @current_user.id, status: "accepted"})
+    #friends = Friendship.where(status: "accepted").or({sender_id: @current_user.id}, {receiver_id: @current_user.id})
+    #friends = Friendship.where(status: "accepted").where("sender_id = :user_id OR receiver_id = :user_id", user_id: @current_user.id)
+    friends =Friendship.where(status: "accepted", :$or => [{sender_id: @current_user.id}, {receiver_id: @current_user.id}])
+    puts friends.pluck(:receiver_id)
+    friend_users = User.in(id: friends.pluck(:receiver_id)).pluck(:name)
     friendship_ids = friends.pluck(:id)
-    sent_data = sent_users.zip(friendship_ids).map { |name, id| { name: name, friendship_id: id } }
+    sent_data = friend_users.zip(friendship_ids).map { |name, id| { name: name, friendship_id: id } }
     render json: sent_data
   end
   def sent_friend_requests
@@ -74,6 +78,24 @@ class FriendshipsController < ApplicationController
   # PATCH/PUT /friendships/1
   # PATCH/PUT /friendships/1.json
   def update
+    if status_update_params[:status] == "accepted"
+      user = User.find_by(id: @friendship[:sender_id])
+      user.friend_ids.push(@friendship[:receiver_id])
+      user.save
+      user = User.find_by(id: @friendship[:receiver_id])
+      user.friend_ids.push(@friendship[:sender_id])
+      user.save
+      end
+    if status_update_params[:status] == "revoked"
+      user = User.find_by(id: @friendship[:sender_id])
+      user.friend_ids.pull(@friendship[:receiver_id])
+      user.save
+      user = User.find_by(id: @friendship[:receiver_id])
+      user.friend_ids.pull(@friendship[:sender_id])
+      user.save
+    end
+
+
     if @friendship.update(status_update_params)
       render json: {message:"Friendship request status updated"}, status: :ok
     else

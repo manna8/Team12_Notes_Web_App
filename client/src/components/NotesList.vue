@@ -1,6 +1,5 @@
 <template>
   <div>
-
     <div class="overflow-auto">
       <div class="row row-cols-1 row-cols-md-3 g-4" v-if="notes.length !== 0" style="width: auto; height: auto">
         <ul v-for="note in notes" v-bind:key="note.title">
@@ -22,7 +21,6 @@
       </div>
     </div>
   </div>
-
 </template>
 
 <script>
@@ -31,6 +29,7 @@ import config from "../../config/config";
 
 export default {
   name: "NotesList",
+
   props: {
     id: String,
     title: String,
@@ -62,8 +61,8 @@ export default {
         return "http://localhost:8080/assets/background4.png";
       }
     }
-
   },
+
   mounted() {
     this.getNotes();
   }

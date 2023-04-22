@@ -16,11 +16,11 @@
           </h2>
           <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
             <div class="accordion-body" v-if="friendsList.length !== 0">
-              <ul class="list-group" v-for="friend in friendsList" v-bind:key="friend._id">
+              <ul class="list-group" v-for="friend in friendsList" v-bind:key="friend.friendship_id">
                 <li class="list-group-item">
                   <h5>{{ friend.name }}</h5>
                   <div class="container justify-content-end">
-                    <button class="btn btn-danger btn-sm" type="button" @click="removeFriend()">Remove friend</button>
+                    <button class="btn btn-danger btn-sm" type="button" @click="removeFriend(friend.friendship_id)">Remove friend</button>
                   </div>
                 </li>
               </ul>
@@ -38,12 +38,12 @@
           </h2>
           <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
             <div class="accordion-body">
-              <ul class="list-group" v-for="friend in receivedFriendRequests" v-bind:key="friend._id">
+              <ul class="list-group" v-for="friend in receivedFriendRequests" v-bind:key="friend.friendship_id">
                 <li class="list-group-item">
                   <h5>{{ friend.name }}</h5>
                   <div class="container">
-                    <button class="btn btn-success btn-sm" type="button" @click="acceptFriend(friend._id)">Accept</button>
-                    <button class="btn btn-danger btn-sm" type="button" @click="declineFriend(friend._id)">Decline</button>
+                    <button class="btn btn-success btn-sm" type="button" @click="acceptFriend(friend.friendship_id)">Accept</button>
+                    <button class="btn btn-danger btn-sm" type="button" @click="declineFriend(friend.friendship_id)">Decline</button>
                   </div>
                 </li>
               </ul>
@@ -90,19 +90,19 @@ export default {
   },
   methods: {
     async getFriends() {
-      // const res = await axios.get(config.getFriendsURL, {withCredentials: true})
-      //     .then(() => {
-      //       console.log(res.data);
-      //       this.friendsList = res.data;
-      //     })
-      //     .catch(err => console.log(err));
+      const res = await axios.get(config.getFriendsURL, {withCredentials: true});
+      this.friendsList = res.data;
+      console.log(this.friendsList);
     },
     async getReceivedFriends() {
-      const res = await axios.get(config.getReceivedFriendsURL, {withCredentials: true})
-          .then(() => console.log('jeej'))
-          .catch(err => console.log(err));
-
-      console.log(res.data);
+      const res = await axios.get(config.getReceivedFriendsURL, {withCredentials: true});
+      this.receivedFriendRequests = res.data;
+      console.log(this.receivedFriendRequests);
+    },
+    async getPendingFriends() {
+      const res = await axios.get(config.getPendingFriendsURL, {withCredentials: true});
+      this.sentFriendRequests = res.data;
+      console.log(this.sentFriendRequests);
     },
     addFriend() {
       if (this.input.email === "") {
@@ -113,32 +113,79 @@ export default {
         axios.post(config.addFriendURL, {
           "email": this.input.email,
         }, {withCredentials: true})
-            .then(() => this.$router.go(0))
+            .then(() => {
+              this.$router.go(0);
+
+              this.$swal({
+                position: 'top-end',
+                icon: 'success',
+                title: 'Request sent successfully!',
+                showConfirmButton: false,
+                timer: 1000
+              });
+            })
             .catch(err => console.log(err.message));
       }
     },
-    removeFriend() {
-      axios.delete(config.addFriendURL, {
-        "email": this.input.email,
-      }, {withCredentials: true})
-          .then(() => this.$router.go(0))
-          .catch(err => console.log(err.message));
+    removeFriend(id) {
+      this.$swal({
+        title: 'Remove a friend?',
+        text: "Are you sure? You won't be able to revert this!",
+        type: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, remove!',
+        cancelButtonText: 'No, cancel!',
+        buttonsStyling: true
+      }).then((isConfirm) => {
+        if(isConfirm.value) {
+          axios.delete(config.removeFriendURL + id.$oid, {withCredentials: true})
+              .then(() => this.$router.go(0))
+              .catch(err => console.log(err.message));
+        }
+      });
     },
     acceptFriend(id) {
-      //axios.post()
-      console.log("Accepted invitation from friend with id:", id)
-      this.$router.go(0);
+      axios.put(config.answerFriendRequestURL + id.$oid, {
+        "status": "accepted",
+      }, {withCredentials: true})
+          .then(() => {
+            this.$router.go(0);
+
+            this.$swal({
+              position: 'top-end',
+              icon: 'success',
+              title: 'Friends request accepted!',
+              showConfirmButton: false,
+              timer: 1000
+            });
+          })
+          .catch(err => console.log(err.message));
     },
     declineFriend(id) {
-      //axios.post()
-      console.log("Declined invitation from friend with id:", id)
-      this.$router.go(0);
+      axios.put(config.answerFriendRequestURL + id.$oid, {
+        "status": "declined",
+      }, {withCredentials: true})
+          .then(() => {
+            this.$router.go(0);
+
+            this.$swal({
+              position: 'top-end',
+              icon: 'success',
+              title: 'Friends request declined!',
+              showConfirmButton: false,
+              timer: 1000
+            });
+          })
+          .catch(err => console.log(err.message));
     }
   },
 
   mounted() {
     this.getFriends();
     this.getReceivedFriends();
+    this.getPendingFriends();
   }
 
 }

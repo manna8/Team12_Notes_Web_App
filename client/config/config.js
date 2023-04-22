@@ -17,6 +17,9 @@ const config = {
     addFriendURL: "http://127.0.0.1:3000/friendships",
     getFriendsURL: "http://127.0.0.1:3000/friends",
     getReceivedFriendsURL: "http://127.0.0.1:3000/friends/received",
+    answerFriendRequestURL: "http://127.0.0.1:3000/friendships/",
+    removeFriendURL: "http://127.0.0.1:3000/friendships/",
+    getPendingFriendsURL: "http://127.0.0.1:3000/friends/sent",
 };
 
 module.exports = config;

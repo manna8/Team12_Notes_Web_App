@@ -24196,3 +24196,27 @@ Completed 500 Internal Server Error in 124ms (MongoDB: 117.7ms | Allocations: 62
 TypeError (no implicit conversion of Symbol into Integer):
   
 app/controllers/friendships_controller.rb:28:in `received_friend_requests'
+Started GET "/friends" for 127.0.0.1 at 2023-04-22 11:06:31 +0200
+Started GET "/friends/received" for 127.0.0.1 at 2023-04-22 11:06:31 +0200
+Processing by FriendshipsController#friends as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:355 conn:1:1 sconn:130888 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x000001bd462fe6f8 @seconds=1682153646, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x26960...
+Processing by FriendshipsController#received_friend_requests as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:356 conn:1:2 sconn:130895 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x000001bd462fe6f8 @seconds=1682153646, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x26960...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:355 | development.find | SUCCEEDED | 0.044s
+Completed 500 Internal Server Error in 49ms (MongoDB: 44.0ms | Allocations: 3192)
+
+
+  
+ArgumentError (Criteria#where requires zero or one arguments (given 4)):
+  
+app/controllers/friendships_controller.rb:17:in `friends'
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:356 | development.find | SUCCEEDED | 0.038s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:357 conn:1:2 sconn:130895 | development.find | STARTED | {"find"=>"friendships", "filter"=>{"receiver_id"=>BSON::ObjectId('64178a304d883733548e78e9'), "status"=>"pending"}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x000001bd43d8a9d0 @seconds=1682154392, @increment=3>, "signatu...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:357 | development.find | SUCCEEDED | 0.128s
+Completed 500 Internal Server Error in 270ms (MongoDB: 166.2ms | Allocations: 61879)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/friendships_controller.rb:28:in `received_friend_requests'

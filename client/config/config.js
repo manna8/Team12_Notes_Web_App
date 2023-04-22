@@ -14,7 +14,9 @@ const config = {
     deleteCollectionURL: "http://127.0.0.1:3000/notes_collections/",
     getUserInfoURL: "http://127.0.0.1:3000/show",
     updateUserURL: "http://127.0.0.1:3000/users/",
-    addFriendURL: "http://127.0.0.1:3000/friendships"
+    addFriendURL: "http://127.0.0.1:3000/friendships",
+    getFriendsURL: "http://127.0.0.1:3000/friends",
+    getReceivedFriendsURL: "http://127.0.0.1:3000/friends/received",
 };
 
 module.exports = config;

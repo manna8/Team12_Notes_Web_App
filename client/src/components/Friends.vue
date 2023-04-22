@@ -7,7 +7,6 @@
         </div>
         <p class="text-warning text-opacity-75" v-if="!emailValid">Please provide an username!</p>
       </form>
-
       <div class="accordion" id="accordionExample">
         <div class="accordion-item">
           <h2 class="accordion-header">
@@ -16,7 +15,7 @@
             </button>
           </h2>
           <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
-            <div class="accordion-body">
+            <div class="accordion-body" v-if="friendsList.length !== 0">
               <ul class="list-group" v-for="friend in friendsList" v-bind:key="friend._id">
                 <li class="list-group-item">
                   <h5>{{ friend.name }}</h5>
@@ -24,8 +23,10 @@
                     <button class="btn btn-danger btn-sm" type="button" @click="removeFriend()">Remove friend</button>
                   </div>
                 </li>
-
               </ul>
+            </div>
+            <div class="accordion-body" v-else>
+              <h5>You don't have any friends yet sucker!</h5>
             </div>
           </div>
         </div>
@@ -37,7 +38,7 @@
           </h2>
           <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
             <div class="accordion-body">
-              <ul class="list-group" v-for="friend in pendingFriendRequests" v-bind:key="friend._id">
+              <ul class="list-group" v-for="friend in receivedFriendRequests" v-bind:key="friend._id">
                 <li class="list-group-item">
                   <h5>{{ friend.name }}</h5>
                   <div class="container">
@@ -66,9 +67,7 @@
           </div>
         </div>
       </div>
-
   </div>
-
 </template>
 
 <script>
@@ -86,10 +85,23 @@ export default {
       emailValid: true,
       friendsList: [],
       sentFriendRequests: [],
-      pendingFriendRequests: [],
+      receivedFriendRequests: [],
     }
   },
   methods: {
+    async getFriends() {
+      const res = await axios.get(config.getFriendsURL, {withCredentials: true})
+          .then(() => {
+            console.log(res.data);
+            this.friendsList = res.data;
+          })
+          .catch(err => console.log(err));
+    },
+    async getReceivedFriends() {
+      const res = await axios.get(config.getReceivedFriendsURL, {withCredentials: true})
+          .then(() => this.receivedFriendRequests = res.data)
+          .catch(err => console.log(err));
+    },
     addFriend() {
       if (this.input.email === "") {
         this.emailValid = false;
@@ -120,6 +132,11 @@ export default {
       console.log("Declined invitation from friend with id:", id)
       this.$router.go(0);
     }
+  },
+
+  mounted() {
+    this.getFriends();
+    this.getReceivedFriends();
   }
 
 }

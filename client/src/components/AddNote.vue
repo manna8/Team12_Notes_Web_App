@@ -33,7 +33,6 @@
       </div>
     </form>
   </div>
-
 </template>
 
 <script>
@@ -57,6 +56,7 @@ export default {
       },
     };
   },
+
   methods: {
     addNote() {
       if (this.titleValid() && this.descValid()) {
@@ -117,13 +117,13 @@ export default {
         return true;
       }
     },
-
     async getCollections() {
       const res = await axios.get(config.getCollectionsURL, {withCredentials: true});
       this.collections = res.data;
       console.log(this.collections);
     },
   },
+
     mounted() {
       this.getCollections();
     }

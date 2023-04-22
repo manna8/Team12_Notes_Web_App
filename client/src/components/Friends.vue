@@ -90,17 +90,19 @@ export default {
   },
   methods: {
     async getFriends() {
-      const res = await axios.get(config.getFriendsURL, {withCredentials: true})
-          .then(() => {
-            console.log(res.data);
-            this.friendsList = res.data;
-          })
-          .catch(err => console.log(err));
+      // const res = await axios.get(config.getFriendsURL, {withCredentials: true})
+      //     .then(() => {
+      //       console.log(res.data);
+      //       this.friendsList = res.data;
+      //     })
+      //     .catch(err => console.log(err));
     },
     async getReceivedFriends() {
       const res = await axios.get(config.getReceivedFriendsURL, {withCredentials: true})
-          .then(() => this.receivedFriendRequests = res.data)
+          .then(() => console.log('jeej'))
           .catch(err => console.log(err));
+
+      console.log(res.data);
     },
     addFriend() {
       if (this.input.email === "") {

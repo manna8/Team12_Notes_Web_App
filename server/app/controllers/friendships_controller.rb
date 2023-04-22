@@ -14,27 +14,54 @@ class FriendshipsController < ApplicationController
   end
 
   def friends
-    @friends = Friendship.where("(sender_id = ? OR receiver_id = ?) AND status = ?", @current_user[:id], @current_user[:id], "accepted")
-    render json: @friends[:name]
+    # @friends = Friendship.where("(sender_id = ? OR receiver_id = ?) AND status = ?", @current_user.id, @current_user.id, "accepted")
+    # render json: @friends[:name]
+
+    #friends = Friendship.where("(sender_id = ? OR receiver_id = ?) AND status = ?", @current_user.id, @current_user.id, "accepted")
+    friends = Friendship.where("(sender_id = :user_id OR receiver_id = :user_id) AND status = :status", { user_id: @current_user.id, status: "accepted"})
+    sent_users = User.in(id: frieneds.pluck(:receiver_id)).pluck(:name)
+    friendship_ids = friends.pluck(:id)
+    sent_data = sent_users.zip(friendship_ids).map { |name, id| { name: name, friendship_id: id } }
+    render json: sent_data
   end
   def sent_friend_requests
-    sent = Friendship.where(sender_id: @current_user[:id], :status => "pending")
-    sent_users = User.where(:id => sent[:receiver_id])
-    render json: sent_users[:name]
+    # sent = Friendship.where(sender_id: @current_user.id, :status => "pending").first
+    # sent_users = User.where(:id => sent.receiver_id).first
+    # render json: sent_users.name
+
+    # sent_friendships = Friendship.where(sender_id: @current_user.id, status: "pending")
+    # sent_users = User.in(id: sent_friendships.pluck(:receiver_id)).pluck(:name)
+    # render json: sent_users
+
+    sent_friendships = Friendship.where(sender_id: @current_user.id, status: "pending")
+    sent_users = User.in(id: sent_friendships.pluck(:receiver_id)).pluck(:name)
+    friendship_ids = sent_friendships.pluck(:id)
+    sent_data = sent_users.zip(friendship_ids).map { |name, id| { name: name, friendship_id: id } }
+    render json: sent_data
+
+
+
+
   end
 
   def received_friend_requests
-    sent = Friendship.where(:receiver_id => @current_user[:id], :status => "pending")
-    received_users = User.where(:id => sent[:sender_id])
-    render json: received_users[:name]
+    # sent = Friendship.where(:receiver_id => @current_user[:id], :status => "pending")
+    # received_users = User.where(:id => sent[:sender_id])
+    # render json: received_users[:name]
+
+    received_friendships = Friendship.where(receiver_id: @current_user.id, status: "pending")
+    received_users = User.in(id: received_friendships.pluck(:sender_id)).pluck(:name)
+    friendship_ids = received_friendships.pluck(:id)
+    sent_data = received_users.zip(friendship_ids).map { |name, id| { name: name, friendship_id: id } }
+    render json: sent_data
   end
   # POST /friendships
   # POST /friendships.json
   def create
-    receiver = User.where(:email => friendship_params[:email])
 
-    @friendship = Friendship.new(:sender_id => @current_user[:id],
-                                 :receiver_id =>receiver[:id],
+    @receiver = User.where(:email => params[:email]).first
+    @friendship = Friendship.new(:sender_id => @current_user.id,
+                                 :receiver_id =>@receiver.id,
                                  :status => "pending")
 
     if @friendship.save

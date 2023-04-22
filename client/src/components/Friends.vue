@@ -133,8 +133,8 @@ export default {
         text: "Are you sure? You won't be able to revert this!",
         type: 'warning',
         showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
+        confirmButtonColor: '#d33',
+        cancelButtonColor: '#3085d6',
         confirmButtonText: 'Yes, remove!',
         cancelButtonText: 'No, cancel!',
         buttonsStyling: true

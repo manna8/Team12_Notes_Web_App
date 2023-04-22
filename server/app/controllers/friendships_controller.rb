@@ -21,16 +21,19 @@ class FriendshipsController < ApplicationController
     #friends = Friendship.where("(sender_id = :user_id OR receiver_id = :user_id) AND status = :status", { user_id: @current_user.id, status: "accepted"})
     #friends = Friendship.where(status: "accepted").or({sender_id: @current_user.id}, {receiver_id: @current_user.id})
     #friends = Friendship.where(status: "accepted").where("sender_id = :user_id OR receiver_id = :user_id", user_id: @current_user.id)
-    friends =Friendship.where(status: "accepted", :$or => [{sender_id: @current_user.id}, {receiver_id: @current_user.id}])
-    puts friends.pluck(:receiver_id)
-    friend_users = User.in(id: friends.pluck(:receiver_id)).pluck(:name)
-    friendship_ids = friends.pluck(:id)
-    sent_data = friend_users.zip(friendship_ids).map { |name, id| { name: name, friendship_id: id } }
+    # friends =Friendship.where(status: "accepted", :$or => [{sender_id: @current_user.id}, {receiver_id: @current_user.id}])
+    # puts friends.pluck(:receiver_id)
+    # friend_users = User.in(id: friends.pluck(:receiver_id)).pluck(:name)
+    # friendship_ids = friends.pluck(:id)
+    # sent_data = friend_users.zip(friendship_ids).map { |name, id| { name: name, friendship_id: id } }
+    # render json: sent_data
+    accepted_friendships =Friendship.where(status: "accepted", :$or => [{sender_id: @current_user.id}, {receiver_id: @current_user.id}])
+    user = User.find_by(id: @current_user.id)
+    friends_ids = user.friend_ids
+    friendship_ids = accepted_friendships.pluck(:id)
+    friends = User.in(id: friends_ids).pluck(:name)
+    sent_data = friends.zip(friendship_ids).map { |name, id| { name: name, friendship_id: id } }
     render json: sent_data
-
-    # user = User.find_by(id: @current_user.id)
-    # friends = user.friend_ids
-    # render json: friends
   end
   def sent_friend_requests
     # sent = Friendship.where(sender_id: @current_user.id, :status => "pending").first
@@ -108,10 +111,10 @@ class FriendshipsController < ApplicationController
     @friendship.destroy
 
     user = User.find_by(id: @friendship[:sender_id])
-    user.friend_ids.pull(@friendship[:receiver_id])
+    user.pull(friend_ids: @friendship[:receiver_id])
     user.save
     user = User.find_by(id: @friendship[:receiver_id])
-    user.friend_ids.pull(@friendship[:sender_id])
+    user.pull(friend_ids: @friendship[:sender_id])
     user.save
   end
 

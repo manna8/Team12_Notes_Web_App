@@ -25288,3 +25288,1038 @@ MONGODB | Server description for ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:2701
 MONGODB | There was a change in the members of the 'ReplicaSetWithPrimary' topology.
 MONGODB | Server description for ac-mspcz06-shard-00-00.bsbwlz3.mongodb.net:27017 changed from 'secondary' to 'secondary'.
 MONGODB | There was a change in the members of the 'ReplicaSetWithPrimary' topology.
+Started GET "/friends" for 127.0.0.1 at 2023-04-22 14:01:41 +0200
+Started GET "/friends/received" for 127.0.0.1 at 2023-04-22 14:01:41 +0200
+Started GET "/login" for 127.0.0.1 at 2023-04-22 14:01:41 +0200
+Started GET "/friends/sent" for 127.0.0.1 at 2023-04-22 14:01:41 +0200
+Processing by FriendshipsController#friends as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3120 conn:1:3 sconn:133269 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5d491278 @seconds=1682164885, @increment=2>, "signature"=>{"hash"=><BSON::Binary:0x19178...
+Processing by FriendshipsController#received_friend_requests as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3121 conn:1:1 sconn:131166 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5d491278 @seconds=1682164885, @increment=2>, "signature"=>{"hash"=><BSON::Binary:0x19178...
+Processing by SessionsController#show as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3122 conn:1:2 sconn:131181 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5d491278 @seconds=1682164885, @increment=2>, "signature"=>{"hash"=><BSON::Binary:0x19178...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3120 | development.find | SUCCEEDED | 0.039s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3123 conn:1:3 sconn:133269 | development.find | STARTED | {"find"=>"friendships", "filter"=>{"status"=>"accepted", "$or"=>[{"sender_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, {"receiver_id"=>BSON::ObjectId('64178a304d883733548e78e9')}]}, "projection"=>{"receiver_id"=>true}, "$db"=>"development", "$clu...
+Processing by FriendshipsController#sent_friend_requests as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3122 | development.find | SUCCEEDED | 0.036s
+Completed 200 OK in 44ms (Views: 0.6ms | MongoDB: 35.9ms | Allocations: 3975)
+
+
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3121 | development.find | SUCCEEDED | 0.053s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3124 conn:1:1 sconn:131166 | development.find | STARTED | {"find"=>"friendships", "filter"=>{"receiver_id"=>BSON::ObjectId('64178a304d883733548e78e9'), "status"=>"pending"}, "projection"=>{"sender_id"=>true}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5a67bb68 @seconds=...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3123 | development.find | SUCCEEDED | 0.040s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3125 conn:1:3 sconn:133269 | development.find | STARTED | {"find"=>"friendships", "filter"=>{"status"=>"accepted", "$or"=>[{"sender_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, {"receiver_id"=>BSON::ObjectId('64178a304d883733548e78e9')}]}, "projection"=>{"receiver_id"=>true}, "$db"=>"development", "$clu...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3124 | development.find | SUCCEEDED | 0.041s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3126 conn:1:1 sconn:131166 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>{"$in"=>[BSON::ObjectId('6441658ded69891744d64547')]}}, "projection"=>{"name"=>true}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5a67bb68 @seconds=1682164901, @increment=2>, "s...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3125 | development.find | SUCCEEDED | 0.044s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3127 conn:1:3 sconn:133269 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>{"$in"=>[BSON::ObjectId('64178a304d883733548e78e9')]}}, "projection"=>{"name"=>true}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5a67bb68 @seconds=1682164901, @increment=2>, "s...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3126 | development.find | SUCCEEDED | 0.044s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3128 conn:1:1 sconn:131166 | development.find | STARTED | {"find"=>"friendships", "filter"=>{"receiver_id"=>BSON::ObjectId('64178a304d883733548e78e9'), "status"=>"pending"}, "projection"=>{"_id"=>true}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5a67bb68 @seconds=168216...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3127 | development.find | SUCCEEDED | 0.044s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3129 conn:1:3 sconn:133269 | development.find | STARTED | {"find"=>"friendships", "filter"=>{"status"=>"accepted", "$or"=>[{"sender_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, {"receiver_id"=>BSON::ObjectId('64178a304d883733548e78e9')}]}, "projection"=>{"_id"=>true}, "$db"=>"development", "$clusterTime...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3128 | development.find | SUCCEEDED | 0.047s
+Completed 200 OK in 198ms (Views: 0.2ms | MongoDB: 183.9ms | Allocations: 15191)
+
+
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3129 | development.find | SUCCEEDED | 0.045s
+Completed 200 OK in 229ms (Views: 0.2ms | MongoDB: 212.6ms | Allocations: 17366)
+
+
+MONGODB | Server description for ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 changed from 'primary' to 'primary'.
+MONGODB | There was a change in the members of the 'ReplicaSetWithPrimary' topology.
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3131 conn:1:4 sconn:133286 | admin.saslStart | STARTED | {}
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3131 | admin.saslStart | SUCCEEDED | 0.042s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3132 conn:1:4 sconn:133286 | admin.saslContinue | STARTED | {}
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3132 | admin.saslContinue | SUCCEEDED | 0.045s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3133 conn:1:4 sconn:133286 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5a67bb68 @seconds=1682164901, @increment=2>, "signature"=>{"hash"=><BSON::Binary:0x19184...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3133 | development.find | SUCCEEDED | 0.045s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3134 conn:1:4 sconn:133286 | development.find | STARTED | {"find"=>"friendships", "filter"=>{"sender_id"=>BSON::ObjectId('64178a304d883733548e78e9'), "status"=>"pending"}, "projection"=>{"receiver_id"=>true}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5a67bb68 @seconds=...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3134 | development.find | SUCCEEDED | 0.044s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3135 conn:1:4 sconn:133286 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>{"$in"=>[BSON::ObjectId('641726ca4d88377c80a4c98a'), BSON::ObjectId('6441658ded69891744d64547')]}}, "projection"=>{"name"=>true}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5a6...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3135 | development.find | SUCCEEDED | 0.042s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3137 conn:1:4 sconn:133286 | development.find | STARTED | {"find"=>"friendships", "filter"=>{"sender_id"=>BSON::ObjectId('64178a304d883733548e78e9'), "status"=>"pending"}, "projection"=>{"_id"=>true}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5a67bb68 @seconds=16821649...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3137 | development.find | SUCCEEDED | 0.045s
+Completed 200 OK in 488ms (Views: 0.3ms | MongoDB: 262.2ms | Allocations: 19613)
+
+
+MONGODB | Server description for ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 changed from 'primary' to 'primary'.
+MONGODB | There was a change in the members of the 'ReplicaSetWithPrimary' topology.
+Started PUT "/friendships/6443cc1fed698916b47bd8f4" for 127.0.0.1 at 2023-04-22 14:01:54 +0200
+Processing by FriendshipsController#update as HTML
+  Parameters: {"status"=>"accepted", "id"=>"6443cc1fed698916b47bd8f4", "friendship"=>{"status"=>"accepted"}}
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3141 conn:1:4 sconn:133286 | development.find | STARTED | {"find"=>"friendships", "filter"=>{"_id"=>BSON::ObjectId('6443cc1fed698916b47bd8f4')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5ee1ea10 @seconds=1682164901, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3141 | development.find | SUCCEEDED | 0.050s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3142 conn:1:4 sconn:133286 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5ef1bdc8 @seconds=1682164914, @increment=2>, "signature"=>{"hash"=><BSON::Binary:0x19220...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3142 | development.find | SUCCEEDED | 0.043s
+[31mUnpermitted parameters: :id, :friendship. Context: { controller: FriendshipsController, action: update, request: #<ActionDispatch::Request:0x0000023b5eeb9420>, params: {"status"=>"accepted", "controller"=>"friendships", "action"=>"update", "id"=>"6443cc1fed698916b47bd8f4", "friendship"=>{"status"=>"accepted"}} }[0m
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3143 conn:1:4 sconn:133286 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('6441658ded69891744d64547')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5ef1bdc8 @seconds=1682164914, @increment=2>, "signature"=>{"hash"=><BSON::Binary:0x19220...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3143 | development.find | SUCCEEDED | 0.043s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3144 conn:1:4 sconn:133286 | development.update | STARTED | {"update"=>"users", "ordered"=>true, "updates"=>[{"q"=>{"_id"=>BSON::ObjectId('6441658ded69891744d64547')}, "u"=>{"$set"=>{"friend_ids"=>[BSON::ObjectId('64178a304d883733548e78e9'), BSON::ObjectId('6441658ded69891744d64547'), BSON::ObjectId('6441658de...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3144 | development.update | SUCCEEDED | 0.057s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3145 conn:1:4 sconn:133286 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5eff5708 @seconds=1682164915, @increment=2>, "signature"=>{"hash"=><BSON::Binary:0x19228...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3145 | development.find | SUCCEEDED | 0.045s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3146 conn:1:4 sconn:133286 | development.update | STARTED | {"update"=>"users", "ordered"=>true, "updates"=>[{"q"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "u"=>{"$set"=>{"friend_ids"=>[BSON::ObjectId('6441658ded69891744d64547'), BSON::ObjectId('6441658ded69891744d64547'), BSON::ObjectId('6441658de...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3146 | development.update | SUCCEEDED | 0.056s
+[31mUnpermitted parameters: :id, :friendship. Context: { controller: FriendshipsController, action: update, request: #<ActionDispatch::Request:0x0000023b5eeb9420>, params: {"status"=>"accepted", "controller"=>"friendships", "action"=>"update", "id"=>"6443cc1fed698916b47bd8f4", "friendship"=>{"status"=>"accepted"}} }[0m
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3147 conn:1:4 sconn:133286 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "limit"=>1, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5f607380 @seconds=1682164915, @increment=3>, "signature"=>{"hash"=><BSON::Bi...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3147 | development.find | SUCCEEDED | 0.043s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3148 conn:1:4 sconn:133286 | development.update | STARTED | {"update"=>"friendships", "ordered"=>true, "updates"=>[{"q"=>{"_id"=>BSON::ObjectId('6443cc1fed698916b47bd8f4')}, "u"=>{"$set"=>{"status"=>"accepted", "updated_at"=>2023-04-22 12:01:55.3211483 UTC}}}], "$db"=>"development", "$clusterTime"=>{"clusterTi...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3148 | development.update | SUCCEEDED | 0.058s
+Completed 200 OK in 423ms (Views: 0.2ms | MongoDB: 395.0ms | Allocations: 13780)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-04-22 14:01:55 +0200
+Started GET "/friends/sent" for 127.0.0.1 at 2023-04-22 14:01:55 +0200
+Started GET "/friends/received" for 127.0.0.1 at 2023-04-22 14:01:55 +0200
+Started GET "/friends" for 127.0.0.1 at 2023-04-22 14:01:55 +0200
+Processing by SessionsController#show as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3149 conn:1:4 sconn:133286 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5f652ba0 @seconds=1682164915, @increment=5>, "signature"=>{"hash"=><BSON::Binary:0x19244...
+Processing by FriendshipsController#sent_friend_requests as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3150 conn:1:3 sconn:133269 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5f652ba0 @seconds=1682164915, @increment=5>, "signature"=>{"hash"=><BSON::Binary:0x19244...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3149 | development.find | SUCCEEDED | 0.041s
+Completed 200 OK in 45ms (Views: 0.6ms | MongoDB: 40.9ms | Allocations: 3633)
+
+
+Processing by FriendshipsController#received_friend_requests as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3151 conn:1:4 sconn:133286 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5fae4470 @seconds=1682164915, @increment=6>, "signature"=>{"hash"=><BSON::Binary:0x19250...
+Processing by FriendshipsController#friends as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3152 conn:1:1 sconn:131166 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5fae4470 @seconds=1682164915, @increment=6>, "signature"=>{"hash"=><BSON::Binary:0x19250...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3150 | development.find | SUCCEEDED | 0.050s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3153 conn:1:3 sconn:133269 | development.find | STARTED | {"find"=>"friendships", "filter"=>{"sender_id"=>BSON::ObjectId('64178a304d883733548e78e9'), "status"=>"pending"}, "projection"=>{"receiver_id"=>true}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5fae4470 @seconds=...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3151 | development.find | SUCCEEDED | 0.044s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3154 conn:1:4 sconn:133286 | development.find | STARTED | {"find"=>"friendships", "filter"=>{"receiver_id"=>BSON::ObjectId('64178a304d883733548e78e9'), "status"=>"pending"}, "projection"=>{"sender_id"=>true}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5fae4470 @seconds=...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3152 | development.find | SUCCEEDED | 0.048s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3155 conn:1:1 sconn:131166 | development.find | STARTED | {"find"=>"friendships", "filter"=>{"status"=>"accepted", "$or"=>[{"sender_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, {"receiver_id"=>BSON::ObjectId('64178a304d883733548e78e9')}]}, "projection"=>{"receiver_id"=>true}, "$db"=>"development", "$clu...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3153 | development.find | SUCCEEDED | 0.044s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3156 conn:1:3 sconn:133269 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>{"$in"=>[BSON::ObjectId('641726ca4d88377c80a4c98a'), BSON::ObjectId('6441658ded69891744d64547')]}}, "projection"=>{"name"=>true}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5fa...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3154 | development.find | SUCCEEDED | 0.041s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3157 conn:1:4 sconn:133286 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>{"$in"=>[]}}, "projection"=>{"name"=>true}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5fae4470 @seconds=1682164915, @increment=6>, "signature"=>{"hash"=><BSON::Binary:0x192500...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3155 | development.find | SUCCEEDED | 0.043s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3158 conn:1:1 sconn:131166 | development.find | STARTED | {"find"=>"friendships", "filter"=>{"status"=>"accepted", "$or"=>[{"sender_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, {"receiver_id"=>BSON::ObjectId('64178a304d883733548e78e9')}]}, "projection"=>{"receiver_id"=>true}, "$db"=>"development", "$clu...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3156 | development.find | SUCCEEDED | 0.043s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3159 conn:1:3 sconn:133269 | development.find | STARTED | {"find"=>"friendships", "filter"=>{"sender_id"=>BSON::ObjectId('64178a304d883733548e78e9'), "status"=>"pending"}, "projection"=>{"_id"=>true}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5fae4470 @seconds=16821649...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3158 | development.find | SUCCEEDED | 0.043s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3160 conn:1:1 sconn:131166 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>{"$in"=>[BSON::ObjectId('64178a304d883733548e78e9'), BSON::ObjectId('64178a304d883733548e78e9')]}}, "projection"=>{"name"=>true}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5fa...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3159 | development.find | SUCCEEDED | 0.044s
+Completed 200 OK in 193ms (Views: 0.2ms | MongoDB: 180.5ms | Allocations: 15939)
+
+
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3160 | development.find | SUCCEEDED | 0.043s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3161 conn:1:1 sconn:131166 | development.find | STARTED | {"find"=>"friendships", "filter"=>{"status"=>"accepted", "$or"=>[{"sender_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, {"receiver_id"=>BSON::ObjectId('64178a304d883733548e78e9')}]}, "projection"=>{"_id"=>true}, "$db"=>"development", "$clusterTime...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3161 | development.find | SUCCEEDED | 0.043s
+Completed 200 OK in 237ms (Views: 0.3ms | MongoDB: 220.6ms | Allocations: 14296)
+
+
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3157 | development.find | SUCCEEDED | 0.308s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3162 conn:1:4 sconn:133286 | development.find | STARTED | {"find"=>"friendships", "filter"=>{"receiver_id"=>BSON::ObjectId('64178a304d883733548e78e9'), "status"=>"pending"}, "projection"=>{"_id"=>true}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5fae4470 @seconds=168216...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3162 | development.find | SUCCEEDED | 0.044s
+Completed 200 OK in 451ms (Views: 0.2ms | MongoDB: 437.3ms | Allocations: 17631)
+
+
+Started GET "/friends/sent" for 127.0.0.1 at 2023-04-22 14:02:01 +0200
+Started GET "/friends/received" for 127.0.0.1 at 2023-04-22 14:02:01 +0200
+Started GET "/login" for 127.0.0.1 at 2023-04-22 14:02:01 +0200
+Started GET "/friends" for 127.0.0.1 at 2023-04-22 14:02:01 +0200
+Processing by FriendshipsController#sent_friend_requests as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3165 conn:1:4 sconn:133286 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5fae4470 @seconds=1682164915, @increment=6>, "signature"=>{"hash"=><BSON::Binary:0x19250...
+Processing by FriendshipsController#received_friend_requests as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3166 conn:1:1 sconn:131166 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5fae4470 @seconds=1682164915, @increment=6>, "signature"=>{"hash"=><BSON::Binary:0x19250...
+Processing by SessionsController#show as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3167 conn:1:3 sconn:133269 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5fae4470 @seconds=1682164915, @increment=6>, "signature"=>{"hash"=><BSON::Binary:0x19250...
+Processing by FriendshipsController#friends as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3168 conn:1:2 sconn:131181 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5fae4470 @seconds=1682164915, @increment=6>, "signature"=>{"hash"=><BSON::Binary:0x19250...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3166 | development.find | SUCCEEDED | 0.037s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3169 conn:1:1 sconn:131166 | development.find | STARTED | {"find"=>"friendships", "filter"=>{"receiver_id"=>BSON::ObjectId('64178a304d883733548e78e9'), "status"=>"pending"}, "projection"=>{"sender_id"=>true}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5fe07b70 @seconds=...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3165 | development.find | SUCCEEDED | 0.047s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3170 conn:1:4 sconn:133286 | development.find | STARTED | {"find"=>"friendships", "filter"=>{"sender_id"=>BSON::ObjectId('64178a304d883733548e78e9'), "status"=>"pending"}, "projection"=>{"receiver_id"=>true}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5fe07b70 @seconds=...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3167 | development.find | SUCCEEDED | 0.052s
+Completed 200 OK in 58ms (Views: 0.7ms | MongoDB: 51.5ms | Allocations: 6589)
+
+
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3169 | development.find | SUCCEEDED | 0.041s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3171 conn:1:1 sconn:131166 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>{"$in"=>[]}}, "projection"=>{"name"=>true}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5fe07b70 @seconds=1682164921, @increment=1>, "signature"=>{"hash"=><BSON::Binary:0x192800...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3168 | development.find | SUCCEEDED | 0.043s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3172 conn:1:2 sconn:131181 | development.find | STARTED | {"find"=>"friendships", "filter"=>{"status"=>"accepted", "$or"=>[{"sender_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, {"receiver_id"=>BSON::ObjectId('64178a304d883733548e78e9')}]}, "projection"=>{"receiver_id"=>true}, "$db"=>"development", "$clu...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3170 | development.find | SUCCEEDED | 0.053s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3173 conn:1:4 sconn:133286 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>{"$in"=>[BSON::ObjectId('641726ca4d88377c80a4c98a'), BSON::ObjectId('6441658ded69891744d64547')]}}, "projection"=>{"name"=>true}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5fe...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3173 | development.find | SUCCEEDED | 0.313s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3174 conn:1:4 sconn:133286 | development.find | STARTED | {"find"=>"friendships", "filter"=>{"sender_id"=>BSON::ObjectId('64178a304d883733548e78e9'), "status"=>"pending"}, "projection"=>{"_id"=>true}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5ffce170 @seconds=16821649...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3171 | development.find | SUCCEEDED | 0.329s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3175 conn:1:1 sconn:131166 | development.find | STARTED | {"find"=>"friendships", "filter"=>{"receiver_id"=>BSON::ObjectId('64178a304d883733548e78e9'), "status"=>"pending"}, "projection"=>{"_id"=>true}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5ffce170 @seconds=168216...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3172 | development.find | SUCCEEDED | 0.325s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3176 conn:1:2 sconn:131181 | development.find | STARTED | {"find"=>"friendships", "filter"=>{"status"=>"accepted", "$or"=>[{"sender_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, {"receiver_id"=>BSON::ObjectId('64178a304d883733548e78e9')}]}, "projection"=>{"receiver_id"=>true}, "$db"=>"development", "$clu...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3176 | development.find | SUCCEEDED | 0.039s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3178 conn:1:2 sconn:131181 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>{"$in"=>[BSON::ObjectId('64178a304d883733548e78e9'), BSON::ObjectId('64178a304d883733548e78e9')]}}, "projection"=>{"name"=>true}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5ff...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3174 | development.find | SUCCEEDED | 0.045s
+Completed 200 OK in 478ms (Views: 0.3ms | MongoDB: 457.9ms | Allocations: 19577)
+
+
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3175 | development.find | SUCCEEDED | 0.042s
+Completed 200 OK in 468ms (Views: 0.1ms | MongoDB: 449.6ms | Allocations: 18722)
+
+
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3178 | development.find | SUCCEEDED | 0.043s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3179 conn:1:2 sconn:131181 | development.find | STARTED | {"find"=>"friendships", "filter"=>{"status"=>"accepted", "$or"=>[{"sender_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, {"receiver_id"=>BSON::ObjectId('64178a304d883733548e78e9')}]}, "projection"=>{"_id"=>true}, "$db"=>"development", "$clusterTime...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3179 | development.find | SUCCEEDED | 0.045s
+Completed 200 OK in 518ms (Views: 0.2ms | MongoDB: 493.9ms | Allocations: 17342)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-04-22 14:02:36 +0200
+Started GET "/friends" for 127.0.0.1 at 2023-04-22 14:02:36 +0200
+Started GET "/friends/received" for 127.0.0.1 at 2023-04-22 14:02:36 +0200
+Started GET "/friends/sent" for 127.0.0.1 at 2023-04-22 14:02:36 +0200
+Processing by SessionsController#show as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3189 conn:1:2 sconn:131181 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5ffce170 @seconds=1682164921, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x19282...
+Processing by FriendshipsController#friends as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3190 conn:1:1 sconn:131166 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5ffce170 @seconds=1682164921, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x19282...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3189 | development.find | SUCCEEDED | 0.044s
+Completed 200 OK in 51ms (Views: 0.9ms | MongoDB: 43.9ms | Allocations: 3583)
+
+
+Processing by FriendshipsController#received_friend_requests as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3191 conn:1:2 sconn:131181 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5bb688f0 @seconds=1682164955, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x19330...
+Processing by FriendshipsController#sent_friend_requests as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3192 conn:1:4 sconn:133286 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5bb688f0 @seconds=1682164955, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x19330...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3190 | development.find | SUCCEEDED | 0.046s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3193 conn:1:1 sconn:131166 | development.find | STARTED | {"find"=>"friendships", "filter"=>{"status"=>"accepted", "$or"=>[{"sender_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, {"receiver_id"=>BSON::ObjectId('64178a304d883733548e78e9')}]}, "projection"=>{"receiver_id"=>true}, "$db"=>"development", "$clu...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3191 | development.find | SUCCEEDED | 0.042s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3194 conn:1:2 sconn:131181 | development.find | STARTED | {"find"=>"friendships", "filter"=>{"receiver_id"=>BSON::ObjectId('64178a304d883733548e78e9'), "status"=>"pending"}, "projection"=>{"sender_id"=>true}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5bb688f0 @seconds=...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3192 | development.find | SUCCEEDED | 0.050s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3195 conn:1:4 sconn:133286 | development.find | STARTED | {"find"=>"friendships", "filter"=>{"sender_id"=>BSON::ObjectId('64178a304d883733548e78e9'), "status"=>"pending"}, "projection"=>{"receiver_id"=>true}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5bb688f0 @seconds=...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3193 | development.find | SUCCEEDED | 0.044s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3196 conn:1:1 sconn:131166 | development.find | STARTED | {"find"=>"friendships", "filter"=>{"status"=>"accepted", "$or"=>[{"sender_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, {"receiver_id"=>BSON::ObjectId('64178a304d883733548e78e9')}]}, "projection"=>{"receiver_id"=>true}, "$db"=>"development", "$clu...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3194 | development.find | SUCCEEDED | 0.043s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3197 conn:1:2 sconn:131181 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>{"$in"=>[]}}, "projection"=>{"name"=>true}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5bb688f0 @seconds=1682164955, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x193300...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3196 | development.find | SUCCEEDED | 0.041s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3198 conn:1:1 sconn:131166 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>{"$in"=>[BSON::ObjectId('641726ca4d88377c80a4c98a'), BSON::ObjectId('64178a304d883733548e78e9')]}}, "projection"=>{"name"=>true}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5bb...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3195 | development.find | SUCCEEDED | 0.044s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3199 conn:1:4 sconn:133286 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>{"$in"=>[BSON::ObjectId('6441658ded69891744d64547')]}}, "projection"=>{"name"=>true}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5bb688f0 @seconds=1682164955, @increment=3>, "s...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3197 | development.find | SUCCEEDED | 0.043s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3200 conn:1:2 sconn:131181 | development.find | STARTED | {"find"=>"friendships", "filter"=>{"receiver_id"=>BSON::ObjectId('64178a304d883733548e78e9'), "status"=>"pending"}, "projection"=>{"_id"=>true}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5bb688f0 @seconds=168216...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3198 | development.find | SUCCEEDED | 0.044s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3201 conn:1:1 sconn:131166 | development.find | STARTED | {"find"=>"friendships", "filter"=>{"status"=>"accepted", "$or"=>[{"sender_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, {"receiver_id"=>BSON::ObjectId('64178a304d883733548e78e9')}]}, "projection"=>{"_id"=>true}, "$db"=>"development", "$clusterTime...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3199 | development.find | SUCCEEDED | 0.043s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3202 conn:1:4 sconn:133286 | development.find | STARTED | {"find"=>"friendships", "filter"=>{"sender_id"=>BSON::ObjectId('64178a304d883733548e78e9'), "status"=>"pending"}, "projection"=>{"_id"=>true}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5bb688f0 @seconds=16821649...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3200 | development.find | SUCCEEDED | 0.044s
+Completed 200 OK in 189ms (Views: 0.2ms | MongoDB: 172.8ms | Allocations: 16015)
+
+
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3201 | development.find | SUCCEEDED | 0.044s
+Completed 200 OK in 237ms (Views: 0.2ms | MongoDB: 218.9ms | Allocations: 19373)
+
+
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:3202 | development.find | SUCCEEDED | 0.043s
+Completed 200 OK in 195ms (Views: 0.2ms | MongoDB: 179.5ms | Allocations: 16242)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-04-22 15:29:55 +0200
+Started GET "/friends" for 127.0.0.1 at 2023-04-22 15:29:55 +0200
+Started GET "/friends/received" for 127.0.0.1 at 2023-04-22 15:29:55 +0200
+Started GET "/friends/sent" for 127.0.0.1 at 2023-04-22 15:29:55 +0200
+Processing by SessionsController#show as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4766 conn:1:4 sconn:133286 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5bb688f0 @seconds=1682164955, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x19330...
+Processing by FriendshipsController#friends as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4767 conn:1:1 sconn:131166 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5bb688f0 @seconds=1682164955, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x19330...
+Processing by FriendshipsController#received_friend_requests as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4768 conn:1:2 sconn:131181 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5bb688f0 @seconds=1682164955, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x19330...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4766 | development.find | SUCCEEDED | 0.049s
+Completed 200 OK in 56ms (Views: 0.8ms | MongoDB: 48.9ms | Allocations: 5543)
+
+
+Processing by FriendshipsController#sent_friend_requests as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4769 conn:1:4 sconn:133286 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5fb1f020 @seconds=1682170195, @increment=2>, "signature"=>{"hash"=><BSON::Binary:0x25624...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4767 | development.find | SUCCEEDED | 0.039s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4770 conn:1:1 sconn:131166 | development.find | STARTED | {"find"=>"friendships", "filter"=>{"status"=>"accepted", "$or"=>[{"sender_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, {"receiver_id"=>BSON::ObjectId('64178a304d883733548e78e9')}]}, "projection"=>{"receiver_id"=>true}, "$db"=>"development", "$clu...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4768 | development.find | SUCCEEDED | 0.044s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4771 conn:1:2 sconn:131181 | development.find | STARTED | {"find"=>"friendships", "filter"=>{"receiver_id"=>BSON::ObjectId('64178a304d883733548e78e9'), "status"=>"pending"}, "projection"=>{"sender_id"=>true}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5fb1f020 @seconds=...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4769 | development.find | SUCCEEDED | 0.048s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4772 conn:1:4 sconn:133286 | development.find | STARTED | {"find"=>"friendships", "filter"=>{"sender_id"=>BSON::ObjectId('64178a304d883733548e78e9'), "status"=>"pending"}, "projection"=>{"receiver_id"=>true}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5fb1f020 @seconds=...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4770 | development.find | SUCCEEDED | 0.044s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4773 conn:1:1 sconn:131166 | development.find | STARTED | {"find"=>"friendships", "filter"=>{"status"=>"accepted", "$or"=>[{"sender_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, {"receiver_id"=>BSON::ObjectId('64178a304d883733548e78e9')}]}, "projection"=>{"receiver_id"=>true}, "$db"=>"development", "$clu...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4771 | development.find | SUCCEEDED | 0.043s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4774 conn:1:2 sconn:131181 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>{"$in"=>[]}}, "projection"=>{"name"=>true}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5fb1f020 @seconds=1682170195, @increment=2>, "signature"=>{"hash"=><BSON::Binary:0x256240...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4772 | development.find | SUCCEEDED | 0.041s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4775 conn:1:4 sconn:133286 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>{"$in"=>[BSON::ObjectId('6441658ded69891744d64547')]}}, "projection"=>{"name"=>true}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5fb1f020 @seconds=1682170195, @increment=2>, "s...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4773 | development.find | SUCCEEDED | 0.051s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4776 conn:1:1 sconn:131166 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>{"$in"=>[BSON::ObjectId('641726ca4d88377c80a4c98a'), BSON::ObjectId('64178a304d883733548e78e9')]}}, "projection"=>{"name"=>true}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5fb...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4774 | development.find | SUCCEEDED | 0.044s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4777 conn:1:2 sconn:131181 | development.find | STARTED | {"find"=>"friendships", "filter"=>{"receiver_id"=>BSON::ObjectId('64178a304d883733548e78e9'), "status"=>"pending"}, "projection"=>{"_id"=>true}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5fb1f020 @seconds=168217...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4777 | development.find | SUCCEEDED | 0.042s
+Completed 200 OK in 188ms (Views: 0.2ms | MongoDB: 172.8ms | Allocations: 14495)
+
+
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4776 | development.find | SUCCEEDED | 0.045s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4778 conn:1:1 sconn:131166 | development.find | STARTED | {"find"=>"friendships", "filter"=>{"status"=>"accepted", "$or"=>[{"sender_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, {"receiver_id"=>BSON::ObjectId('64178a304d883733548e78e9')}]}, "projection"=>{"_id"=>true}, "$db"=>"development", "$clusterTime...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4775 | development.find | SUCCEEDED | 0.059s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4779 conn:1:4 sconn:133286 | development.find | STARTED | {"find"=>"friendships", "filter"=>{"sender_id"=>BSON::ObjectId('64178a304d883733548e78e9'), "status"=>"pending"}, "projection"=>{"_id"=>true}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5fb1f020 @seconds=16821701...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4779 | development.find | SUCCEEDED | 0.039s
+Completed 200 OK in 208ms (Views: 0.3ms | MongoDB: 186.7ms | Allocations: 15537)
+
+
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4778 | development.find | SUCCEEDED | 0.042s
+Completed 200 OK in 248ms (Views: 0.2ms | MongoDB: 221.0ms | Allocations: 20024)
+
+
+Started DELETE "/friendships/6442f5184d88374620da1e5b" for 127.0.0.1 at 2023-04-22 15:29:58 +0200
+Processing by FriendshipsController#destroy as HTML
+  Parameters: {"id"=>"6442f5184d88374620da1e5b"}
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4781 conn:1:1 sconn:131166 | development.find | STARTED | {"find"=>"friendships", "filter"=>{"_id"=>BSON::ObjectId('6442f5184d88374620da1e5b')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5fb1f020 @seconds=1682170195, @increment=2>, "signature"=>{"hash"=><BSON::Binary:0...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4781 | development.find | SUCCEEDED | 0.050s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4782 conn:1:1 sconn:131166 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5fd2f900 @seconds=1682170197, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x25642...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4782 | development.find | SUCCEEDED | 0.042s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4783 conn:1:1 sconn:131166 | development.delete | STARTED | {"delete"=>"friendships", "ordered"=>true, "deletes"=>[{"q"=>{"_id"=>BSON::ObjectId('6442f5184d88374620da1e5b')}, "limit"=>1}], "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5fd2f900 @seconds=1682170197, @increment=...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4783 | development.delete | SUCCEEDED | 0.044s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4784 conn:1:1 sconn:131166 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5fdb74e0 @seconds=1682170198, @increment=1>, "signature"=>{"hash"=><BSON::Binary:0x25648...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4784 | development.find | SUCCEEDED | 0.043s
+Completed 500 Internal Server Error in 198ms (MongoDB: 178.9ms | Allocations: 8395)
+
+
+  
+NoMethodError (undefined method `pull' for [BSON::ObjectId('6441658ded69891744d64547'), BSON::ObjectId('6441658ded69891744d64547'), BSON::ObjectId('6441658ded69891744d64547'), BSON::ObjectId('6441658ded69891744d64547'), BSON::ObjectId('6441658ded69891744d64547'), BSON::ObjectId('6441658ded69891744d64547'), BSON::ObjectId('6441658ded69891744d64547'), BSON::ObjectId('6441658ded69891744d64547'), BSON::ObjectId('6441658ded69891744d64547'), BSON::ObjectId('6441658ded69891744d64547'), BSON::ObjectId('6441658ded69891744d64547'), BSON::ObjectId('641726ca4d88377c80a4c98a')]:Array
+
+    user.friend_ids.pull(@friendship[:receiver_id])
+                   ^^^^^):
+  
+app/controllers/friendships_controller.rb:111:in `destroy'
+Started GET "/login" for 127.0.0.1 at 2023-04-22 15:33:34 +0200
+Started GET "/friends" for 127.0.0.1 at 2023-04-22 15:33:34 +0200
+Started GET "/friends/received" for 127.0.0.1 at 2023-04-22 15:33:34 +0200
+Started GET "/friends/sent" for 127.0.0.1 at 2023-04-22 15:33:34 +0200
+Processing by FriendshipsController#friends as HTML
+Processing by FriendshipsController#received_friend_requests as HTML
+Processing by FriendshipsController#sent_friend_requests as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4850 conn:1:1 sconn:131166 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5fdb74e0 @seconds=1682170198, @increment=1>, "signature"=>{"hash"=><BSON::Binary:0x25648...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4851 conn:1:4 sconn:133286 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5fdb74e0 @seconds=1682170198, @increment=1>, "signature"=>{"hash"=><BSON::Binary:0x25648...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4852 conn:1:2 sconn:131181 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5fdb74e0 @seconds=1682170198, @increment=1>, "signature"=>{"hash"=><BSON::Binary:0x25648...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4852 | development.find | SUCCEEDED | 0.037s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4850 | development.find | SUCCEEDED | 0.040s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4853 conn:1:1 sconn:131166 | development.find | STARTED | {"find"=>"friendships", "filter"=>{"sender_id"=>BSON::ObjectId('64178a304d883733548e78e9'), "status"=>"pending"}, "projection"=>{"receiver_id"=>true}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5d4a2c30 @seconds=...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4854 conn:1:2 sconn:131181 | development.find | STARTED | {"find"=>"friendships", "filter"=>{"status"=>"accepted", "$or"=>[{"sender_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, {"receiver_id"=>BSON::ObjectId('64178a304d883733548e78e9')}]}, "projection"=>{"receiver_id"=>true}, "$db"=>"development", "$clu...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4851 | development.find | SUCCEEDED | 0.053s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4855 conn:1:4 sconn:133286 | development.find | STARTED | {"find"=>"friendships", "filter"=>{"receiver_id"=>BSON::ObjectId('64178a304d883733548e78e9'), "status"=>"pending"}, "projection"=>{"sender_id"=>true}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5d4a2c30 @seconds=...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4854 | development.find | SUCCEEDED | 0.036s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4856 conn:1:2 sconn:131181 | development.find | STARTED | {"find"=>"friendships", "filter"=>{"status"=>"accepted", "$or"=>[{"sender_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, {"receiver_id"=>BSON::ObjectId('64178a304d883733548e78e9')}]}, "projection"=>{"receiver_id"=>true}, "$db"=>"development", "$clu...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4855 | development.find | SUCCEEDED | 0.044s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4857 conn:1:4 sconn:133286 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>{"$in"=>[]}}, "projection"=>{"name"=>true}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5d4a2c30 @seconds=1682170416, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x264620...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4853 | development.find | SUCCEEDED | 0.052s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4858 conn:1:1 sconn:131166 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>{"$in"=>[BSON::ObjectId('6441658ded69891744d64547')]}}, "projection"=>{"name"=>true}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5d4a2c30 @seconds=1682170416, @increment=3>, "s...
+Processing by SessionsController#show as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4859 conn:1:3 sconn:133269 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5d4a2c30 @seconds=1682170416, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x26462...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4856 | development.find | SUCCEEDED | 0.044s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4860 conn:1:2 sconn:131181 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>{"$in"=>[BSON::ObjectId('64178a304d883733548e78e9')]}}, "projection"=>{"name"=>true}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5d4a2c30 @seconds=1682170416, @increment=3>, "s...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4859 | development.find | SUCCEEDED | 0.038s
+Completed 200 OK in 41ms (Views: 0.7ms | MongoDB: 37.7ms | Allocations: 3884)
+
+
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4857 | development.find | SUCCEEDED | 0.045s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4861 conn:1:4 sconn:133286 | development.find | STARTED | {"find"=>"friendships", "filter"=>{"receiver_id"=>BSON::ObjectId('64178a304d883733548e78e9'), "status"=>"pending"}, "projection"=>{"_id"=>true}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5d4a2c30 @seconds=168217...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4858 | development.find | SUCCEEDED | 0.042s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4862 conn:1:1 sconn:131166 | development.find | STARTED | {"find"=>"friendships", "filter"=>{"sender_id"=>BSON::ObjectId('64178a304d883733548e78e9'), "status"=>"pending"}, "projection"=>{"_id"=>true}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5d4a2c30 @seconds=16821704...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4860 | development.find | SUCCEEDED | 0.044s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4863 conn:1:2 sconn:131181 | development.find | STARTED | {"find"=>"friendships", "filter"=>{"status"=>"accepted", "$or"=>[{"sender_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, {"receiver_id"=>BSON::ObjectId('64178a304d883733548e78e9')}]}, "projection"=>{"_id"=>true}, "$db"=>"development", "$clusterTime...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4862 | development.find | SUCCEEDED | 0.039s
+Completed 200 OK in 204ms (Views: 0.2ms | MongoDB: 170.5ms | Allocations: 36927)
+
+
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4861 | development.find | SUCCEEDED | 0.042s
+Completed 200 OK in 205ms (Views: 0.1ms | MongoDB: 183.7ms | Allocations: 37612)
+
+
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4863 | development.find | SUCCEEDED | 0.043s
+Completed 200 OK in 238ms (Views: 0.2ms | MongoDB: 207.4ms | Allocations: 38927)
+
+
+Started DELETE "/friendships/6443cc1fed698916b47bd8f4" for 127.0.0.1 at 2023-04-22 15:33:39 +0200
+Processing by FriendshipsController#destroy as HTML
+  Parameters: {"id"=>"6443cc1fed698916b47bd8f4"}
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4865 conn:1:2 sconn:131181 | development.find | STARTED | {"find"=>"friendships", "filter"=>{"_id"=>BSON::ObjectId('6443cc1fed698916b47bd8f4')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5dd89948 @seconds=1682170417, @increment=1>, "signature"=>{"hash"=><BSON::Binary:0...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4865 | development.find | SUCCEEDED | 0.035s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4866 conn:1:2 sconn:131181 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5ed4e5e0 @seconds=1682170419, @increment=2>, "signature"=>{"hash"=><BSON::Binary:0x26486...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4866 | development.find | SUCCEEDED | 0.042s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4867 conn:1:2 sconn:131181 | development.delete | STARTED | {"delete"=>"friendships", "ordered"=>true, "deletes"=>[{"q"=>{"_id"=>BSON::ObjectId('6443cc1fed698916b47bd8f4')}, "limit"=>1}], "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5ed4e5e0 @seconds=1682170419, @increment=...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4867 | development.delete | SUCCEEDED | 0.044s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4868 conn:1:2 sconn:131181 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('6441658ded69891744d64547')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5ed84bb8 @seconds=1682170419, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x26490...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4868 | development.find | SUCCEEDED | 0.044s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4869 conn:1:2 sconn:131181 | development.update | STARTED | {"update"=>"users", "ordered"=>true, "updates"=>[{"q"=>{"_id"=>BSON::ObjectId('6441658ded69891744d64547')}, "u"=>{"$pull"=>{"friend_ids"=>BSON::ObjectId('64178a304d883733548e78e9')}}}], "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Tim...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4869 | development.update | SUCCEEDED | 0.045s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4870 conn:1:2 sconn:131181 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5ede5ff8 @seconds=1682170419, @increment=4>, "signature"=>{"hash"=><BSON::Binary:0x26498...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4870 | development.find | SUCCEEDED | 0.045s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4871 conn:1:2 sconn:131181 | development.update | STARTED | {"update"=>"users", "ordered"=>true, "updates"=>[{"q"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "u"=>{"$pull"=>{"friend_ids"=>BSON::ObjectId('6441658ded69891744d64547')}}}], "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Tim...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4871 | development.update | SUCCEEDED | 0.045s
+No template found for FriendshipsController#destroy, rendering head :no_content
+Completed 204 No Content in 334ms (MongoDB: 299.8ms | Allocations: 21954)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-04-22 15:33:40 +0200
+Started GET "/friends" for 127.0.0.1 at 2023-04-22 15:33:40 +0200
+Started GET "/friends/received" for 127.0.0.1 at 2023-04-22 15:33:40 +0200
+Started GET "/friends/sent" for 127.0.0.1 at 2023-04-22 15:33:40 +0200
+Processing by SessionsController#show as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4872 conn:1:2 sconn:131181 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5f071268 @seconds=1682170419, @increment=5>, "signature"=>{"hash"=><BSON::Binary:0x26512...
+Processing by FriendshipsController#friends as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4873 conn:1:4 sconn:133286 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5f071268 @seconds=1682170419, @increment=5>, "signature"=>{"hash"=><BSON::Binary:0x26512...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4872 | development.find | SUCCEEDED | 0.041s
+Completed 200 OK in 47ms (Views: 0.8ms | MongoDB: 41.0ms | Allocations: 3458)
+
+
+Processing by FriendshipsController#received_friend_requests as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4874 conn:1:2 sconn:131181 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5faa51a8 @seconds=1682170419, @increment=6>, "signature"=>{"hash"=><BSON::Binary:0x26518...
+Processing by FriendshipsController#sent_friend_requests as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4875 conn:1:1 sconn:131166 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5faa51a8 @seconds=1682170419, @increment=6>, "signature"=>{"hash"=><BSON::Binary:0x26518...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4873 | development.find | SUCCEEDED | 0.044s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4876 conn:1:4 sconn:133286 | development.find | STARTED | {"find"=>"friendships", "filter"=>{"status"=>"accepted", "$or"=>[{"sender_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, {"receiver_id"=>BSON::ObjectId('64178a304d883733548e78e9')}]}, "projection"=>{"receiver_id"=>true}, "$db"=>"development", "$clu...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4874 | development.find | SUCCEEDED | 0.051s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4877 conn:1:2 sconn:131181 | development.find | STARTED | {"find"=>"friendships", "filter"=>{"receiver_id"=>BSON::ObjectId('64178a304d883733548e78e9'), "status"=>"pending"}, "projection"=>{"sender_id"=>true}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5faa51a8 @seconds=...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4876 | development.find | SUCCEEDED | 0.041s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4878 conn:1:4 sconn:133286 | development.find | STARTED | {"find"=>"friendships", "filter"=>{"status"=>"accepted", "$or"=>[{"sender_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, {"receiver_id"=>BSON::ObjectId('64178a304d883733548e78e9')}]}, "projection"=>{"receiver_id"=>true}, "$db"=>"development", "$clu...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4875 | development.find | SUCCEEDED | 0.046s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4879 conn:1:1 sconn:131166 | development.find | STARTED | {"find"=>"friendships", "filter"=>{"sender_id"=>BSON::ObjectId('64178a304d883733548e78e9'), "status"=>"pending"}, "projection"=>{"receiver_id"=>true}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5faa51a8 @seconds=...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4877 | development.find | SUCCEEDED | 0.038s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4880 conn:1:2 sconn:131181 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>{"$in"=>[]}}, "projection"=>{"name"=>true}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5fc2e308 @seconds=1682170420, @increment=1>, "signature"=>{"hash"=><BSON::Binary:0x265220...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4878 | development.find | SUCCEEDED | 0.043s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4881 conn:1:4 sconn:133286 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>{"$in"=>[]}}, "projection"=>{"name"=>true}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5fc2e308 @seconds=1682170420, @increment=1>, "signature"=>{"hash"=><BSON::Binary:0x265220...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4879 | development.find | SUCCEEDED | 0.039s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4882 conn:1:1 sconn:131166 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>{"$in"=>[BSON::ObjectId('6441658ded69891744d64547')]}}, "projection"=>{"name"=>true}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5fc2e308 @seconds=1682170420, @increment=1>, "s...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4880 | development.find | SUCCEEDED | 0.042s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4883 conn:1:2 sconn:131181 | development.find | STARTED | {"find"=>"friendships", "filter"=>{"receiver_id"=>BSON::ObjectId('64178a304d883733548e78e9'), "status"=>"pending"}, "projection"=>{"_id"=>true}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5fc2e308 @seconds=168217...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4881 | development.find | SUCCEEDED | 0.043s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4884 conn:1:4 sconn:133286 | development.find | STARTED | {"find"=>"friendships", "filter"=>{"status"=>"accepted", "$or"=>[{"sender_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, {"receiver_id"=>BSON::ObjectId('64178a304d883733548e78e9')}]}, "projection"=>{"_id"=>true}, "$db"=>"development", "$clusterTime...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4882 | development.find | SUCCEEDED | 0.042s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4885 conn:1:1 sconn:131166 | development.find | STARTED | {"find"=>"friendships", "filter"=>{"sender_id"=>BSON::ObjectId('64178a304d883733548e78e9'), "status"=>"pending"}, "projection"=>{"_id"=>true}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5fc2e308 @seconds=16821704...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4883 | development.find | SUCCEEDED | 0.045s
+Completed 200 OK in 191ms (Views: 0.2ms | MongoDB: 176.8ms | Allocations: 15823)
+
+
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4884 | development.find | SUCCEEDED | 0.043s
+Completed 200 OK in 233ms (Views: 0.1ms | MongoDB: 214.5ms | Allocations: 18963)
+
+
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4885 | development.find | SUCCEEDED | 0.041s
+Completed 200 OK in 190ms (Views: 0.1ms | MongoDB: 168.5ms | Allocations: 15922)
+
+
+Started POST "/friendships" for 127.0.0.1 at 2023-04-22 15:34:21 +0200
+Processing by FriendshipsController#create as HTML
+  Parameters: {"email"=>"a@a.pl", "friendship"=>{}}
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4898 conn:1:1 sconn:131166 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5fccdc00 @seconds=1682170420, @increment=2>, "signature"=>{"hash"=><BSON::Binary:0x26574...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4898 | development.find | SUCCEEDED | 0.044s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4899 conn:1:1 sconn:131166 | development.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"a@a.pl"}, "limit"=>1, "sort"=>{"_id"=>1}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5fef98d0 @seconds=1682170461, @increment=1>, "signature"=>{"hash"=><BSON::Binary:0x26576...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4899 | development.find | SUCCEEDED | 0.044s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4900 conn:1:1 sconn:131166 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('641726ca4d88377c80a4c98a')}, "limit"=>1, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5fef98d0 @seconds=1682170461, @increment=1>, "signature"=>{"hash"=><BSON::Bi...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4900 | development.find | SUCCEEDED | 0.043s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4901 conn:1:1 sconn:131166 | development.insert | STARTED | {"insert"=>"friendships", "ordered"=>true, "documents"=>[{"_id"=>BSON::ObjectId('6443e25e4d88373040cfebdc'), "sender_id"=>BSON::ObjectId('64178a304d883733548e78e9'), "receiver_id"=>BSON::ObjectId('641726ca4d88377c80a4c98a'), "status"=>"pending", "upda...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4901 | development.insert | SUCCEEDED | 0.058s
+Completed 201 Created in 202ms (Views: 0.2ms | MongoDB: 189.2ms | Allocations: 6988)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-04-22 15:34:23 +0200
+Started GET "/friends" for 127.0.0.1 at 2023-04-22 15:34:23 +0200
+Started GET "/friends/received" for 127.0.0.1 at 2023-04-22 15:34:23 +0200
+Started GET "/friends/sent" for 127.0.0.1 at 2023-04-22 15:34:23 +0200
+Processing by SessionsController#show as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4902 conn:1:1 sconn:131166 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b60141fc0 @seconds=1682170461, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x26586...
+Processing by FriendshipsController#friends as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4903 conn:1:4 sconn:133286 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b60141fc0 @seconds=1682170461, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x26586...
+Processing by FriendshipsController#received_friend_requests as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4904 conn:1:2 sconn:131181 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b60141fc0 @seconds=1682170461, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x26586...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4902 | development.find | SUCCEEDED | 0.039s
+Completed 200 OK in 43ms (Views: 0.5ms | MongoDB: 38.6ms | Allocations: 4432)
+
+
+Processing by FriendshipsController#sent_friend_requests as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4905 conn:1:1 sconn:131166 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b6029d1d0 @seconds=1682170463, @increment=2>, "signature"=>{"hash"=><BSON::Binary:0x26594...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4903 | development.find | SUCCEEDED | 0.043s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4906 conn:1:4 sconn:133286 | development.find | STARTED | {"find"=>"friendships", "filter"=>{"status"=>"accepted", "$or"=>[{"sender_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, {"receiver_id"=>BSON::ObjectId('64178a304d883733548e78e9')}]}, "projection"=>{"receiver_id"=>true}, "$db"=>"development", "$clu...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4904 | development.find | SUCCEEDED | 0.047s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4907 conn:1:2 sconn:131181 | development.find | STARTED | {"find"=>"friendships", "filter"=>{"receiver_id"=>BSON::ObjectId('64178a304d883733548e78e9'), "status"=>"pending"}, "projection"=>{"sender_id"=>true}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b6029d1d0 @seconds=...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4905 | development.find | SUCCEEDED | 0.035s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4908 conn:1:1 sconn:131166 | development.find | STARTED | {"find"=>"friendships", "filter"=>{"sender_id"=>BSON::ObjectId('64178a304d883733548e78e9'), "status"=>"pending"}, "projection"=>{"receiver_id"=>true}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b6029d1d0 @seconds=...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4907 | development.find | SUCCEEDED | 0.042s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4909 conn:1:2 sconn:131181 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>{"$in"=>[]}}, "projection"=>{"name"=>true}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b6029d1d0 @seconds=1682170463, @increment=2>, "signature"=>{"hash"=><BSON::Binary:0x265940...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4906 | development.find | SUCCEEDED | 0.059s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4910 conn:1:4 sconn:133286 | development.find | STARTED | {"find"=>"friendships", "filter"=>{"status"=>"accepted", "$or"=>[{"sender_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, {"receiver_id"=>BSON::ObjectId('64178a304d883733548e78e9')}]}, "projection"=>{"receiver_id"=>true}, "$db"=>"development", "$clu...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4908 | development.find | SUCCEEDED | 0.041s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4911 conn:1:1 sconn:131166 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>{"$in"=>[BSON::ObjectId('6441658ded69891744d64547'), BSON::ObjectId('641726ca4d88377c80a4c98a')]}}, "projection"=>{"name"=>true}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b602...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4909 | development.find | SUCCEEDED | 0.036s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4912 conn:1:2 sconn:131181 | development.find | STARTED | {"find"=>"friendships", "filter"=>{"receiver_id"=>BSON::ObjectId('64178a304d883733548e78e9'), "status"=>"pending"}, "projection"=>{"_id"=>true}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b6029d1d0 @seconds=168217...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4910 | development.find | SUCCEEDED | 0.050s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4914 conn:1:4 sconn:133286 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>{"$in"=>[]}}, "projection"=>{"name"=>true}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b6029d1d0 @seconds=1682170463, @increment=2>, "signature"=>{"hash"=><BSON::Binary:0x265940...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4911 | development.find | SUCCEEDED | 0.047s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4915 conn:1:1 sconn:131166 | development.find | STARTED | {"find"=>"friendships", "filter"=>{"sender_id"=>BSON::ObjectId('64178a304d883733548e78e9'), "status"=>"pending"}, "projection"=>{"_id"=>true}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b6029d1d0 @seconds=16821704...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4912 | development.find | SUCCEEDED | 0.045s
+Completed 200 OK in 189ms (Views: 0.2ms | MongoDB: 171.4ms | Allocations: 15474)
+
+
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4914 | development.find | SUCCEEDED | 0.045s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4916 conn:1:4 sconn:133286 | development.find | STARTED | {"find"=>"friendships", "filter"=>{"status"=>"accepted", "$or"=>[{"sender_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, {"receiver_id"=>BSON::ObjectId('64178a304d883733548e78e9')}]}, "projection"=>{"_id"=>true}, "$db"=>"development", "$clusterTime...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4915 | development.find | SUCCEEDED | 0.043s
+Completed 200 OK in 195ms (Views: 0.3ms | MongoDB: 166.3ms | Allocations: 15742)
+
+
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4916 | development.find | SUCCEEDED | 0.044s
+Completed 200 OK in 263ms (Views: 0.1ms | MongoDB: 240.6ms | Allocations: 20134)
+
+
+Started GET "/friends/received" for 127.0.0.1 at 2023-04-22 15:34:38 +0200
+Started GET "/friends/sent" for 127.0.0.1 at 2023-04-22 15:34:38 +0200
+Started GET "/friends" for 127.0.0.1 at 2023-04-22 15:34:38 +0200
+Started GET "/login" for 127.0.0.1 at 2023-04-22 15:34:38 +0200
+Processing by FriendshipsController#received_friend_requests as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4921 conn:1:4 sconn:133286 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5d49bd18 @seconds=1682170463, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x26634...
+Processing by FriendshipsController#sent_friend_requests as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4922 conn:1:1 sconn:131166 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5d49bd18 @seconds=1682170463, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x26634...
+Processing by FriendshipsController#friends as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4923 conn:1:2 sconn:131181 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5d49bd18 @seconds=1682170463, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x26634...
+Processing by SessionsController#show as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4924 conn:1:3 sconn:133269 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5d49bd18 @seconds=1682170463, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x26634...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4922 | development.find | SUCCEEDED | 0.041s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4925 conn:1:1 sconn:131166 | development.find | STARTED | {"find"=>"friendships", "filter"=>{"sender_id"=>BSON::ObjectId('64178a304d883733548e78e9'), "status"=>"pending"}, "projection"=>{"receiver_id"=>true}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5db37758 @seconds=...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4921 | development.find | SUCCEEDED | 0.055s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4926 conn:1:4 sconn:133286 | development.find | STARTED | {"find"=>"friendships", "filter"=>{"receiver_id"=>BSON::ObjectId('64178a304d883733548e78e9'), "status"=>"pending"}, "projection"=>{"sender_id"=>true}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5db37758 @seconds=...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4926 | development.find | SUCCEEDED | 0.042s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4927 conn:1:4 sconn:133286 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>{"$in"=>[]}}, "projection"=>{"name"=>true}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5db37758 @seconds=1682170478, @increment=2>, "signature"=>{"hash"=><BSON::Binary:0x266420...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4925 | development.find | SUCCEEDED | 0.045s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4928 conn:1:1 sconn:131166 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>{"$in"=>[BSON::ObjectId('6441658ded69891744d64547')]}}, "projection"=>{"name"=>true}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5db37758 @seconds=1682170478, @increment=2>, "s...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4928 | development.find | SUCCEEDED | 0.040s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4929 conn:1:1 sconn:131166 | development.find | STARTED | {"find"=>"friendships", "filter"=>{"sender_id"=>BSON::ObjectId('64178a304d883733548e78e9'), "status"=>"pending"}, "projection"=>{"_id"=>true}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5db37758 @seconds=16821704...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4927 | development.find | SUCCEEDED | 0.043s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4930 conn:1:4 sconn:133286 | development.find | STARTED | {"find"=>"friendships", "filter"=>{"receiver_id"=>BSON::ObjectId('64178a304d883733548e78e9'), "status"=>"pending"}, "projection"=>{"_id"=>true}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5db37758 @seconds=168217...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4929 | development.find | SUCCEEDED | 0.043s
+Completed 200 OK in 191ms (Views: 0.2ms | MongoDB: 168.0ms | Allocations: 12185)
+
+
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4930 | development.find | SUCCEEDED | 0.040s
+Completed 200 OK in 202ms (Views: 0.1ms | MongoDB: 180.4ms | Allocations: 14153)
+
+
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4924 | development.find | SUCCEEDED | 0.300s
+Completed 200 OK in 304ms (Views: 0.6ms | MongoDB: 299.8ms | Allocations: 10950)
+
+
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4923 | development.find | SUCCEEDED | 0.310s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4931 conn:1:2 sconn:131181 | development.find | STARTED | {"find"=>"friendships", "filter"=>{"status"=>"accepted", "$or"=>[{"sender_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, {"receiver_id"=>BSON::ObjectId('64178a304d883733548e78e9')}]}, "projection"=>{"receiver_id"=>true}, "$db"=>"development", "$clu...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4931 | development.find | SUCCEEDED | 0.041s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4932 conn:1:2 sconn:131181 | development.find | STARTED | {"find"=>"friendships", "filter"=>{"status"=>"accepted", "$or"=>[{"sender_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, {"receiver_id"=>BSON::ObjectId('64178a304d883733548e78e9')}]}, "projection"=>{"receiver_id"=>true}, "$db"=>"development", "$clu...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4932 | development.find | SUCCEEDED | 0.044s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4933 conn:1:2 sconn:131181 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>{"$in"=>[BSON::ObjectId('641726ca4d88377c80a4c98a')]}}, "projection"=>{"name"=>true}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5db37758 @seconds=1682170478, @increment=2>, "s...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4933 | development.find | SUCCEEDED | 0.042s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4934 conn:1:2 sconn:131181 | development.find | STARTED | {"find"=>"friendships", "filter"=>{"status"=>"accepted", "$or"=>[{"sender_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, {"receiver_id"=>BSON::ObjectId('64178a304d883733548e78e9')}]}, "projection"=>{"_id"=>true}, "$db"=>"development", "$clusterTime...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4934 | development.find | SUCCEEDED | 0.044s
+Completed 200 OK in 501ms (Views: 0.2ms | MongoDB: 481.3ms | Allocations: 18327)
+
+
+Started DELETE "/friendships/6443e25e4d88373040cfebdc" for 127.0.0.1 at 2023-04-22 15:34:51 +0200
+Processing by FriendshipsController#destroy as HTML
+  Parameters: {"id"=>"6443e25e4d88373040cfebdc"}
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4939 conn:1:2 sconn:131181 | development.find | STARTED | {"find"=>"friendships", "filter"=>{"_id"=>BSON::ObjectId('6443e25e4d88373040cfebdc')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5edb4ca0 @seconds=1682170478, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4939 | development.find | SUCCEEDED | 0.037s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4940 conn:1:2 sconn:131181 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5fa4f7f8 @seconds=1682170491, @increment=2>, "signature"=>{"hash"=><BSON::Binary:0x26664...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4940 | development.find | SUCCEEDED | 0.043s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4941 conn:1:2 sconn:131181 | development.delete | STARTED | {"delete"=>"friendships", "ordered"=>true, "deletes"=>[{"q"=>{"_id"=>BSON::ObjectId('6443e25e4d88373040cfebdc')}, "limit"=>1}], "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5fa4f7f8 @seconds=1682170491, @increment=...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4941 | development.delete | SUCCEEDED | 0.045s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4942 conn:1:2 sconn:131181 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5f069608 @seconds=1682170491, @increment=4>, "signature"=>{"hash"=><BSON::Binary:0x26670...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4942 | development.find | SUCCEEDED | 0.044s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4943 conn:1:2 sconn:131181 | development.update | STARTED | {"update"=>"users", "ordered"=>true, "updates"=>[{"q"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "u"=>{"$pull"=>{"friend_ids"=>BSON::ObjectId('641726ca4d88377c80a4c98a')}}}], "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Tim...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4943 | development.update | SUCCEEDED | 0.045s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4944 conn:1:2 sconn:131181 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('641726ca4d88377c80a4c98a')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5f6514a8 @seconds=1682170492, @increment=1>, "signature"=>{"hash"=><BSON::Binary:0x26674...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4944 | development.find | SUCCEEDED | 0.044s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4945 conn:1:2 sconn:131181 | development.update | STARTED | {"update"=>"users", "ordered"=>true, "updates"=>[{"q"=>{"_id"=>BSON::ObjectId('641726ca4d88377c80a4c98a')}, "u"=>{"$pull"=>{"friend_ids"=>BSON::ObjectId('64178a304d883733548e78e9')}}}], "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Tim...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4945 | development.update | SUCCEEDED | 0.044s
+No template found for FriendshipsController#destroy, rendering head :no_content
+Completed 204 No Content in 320ms (MongoDB: 302.9ms | Allocations: 9201)
+
+
+Started GET "/friends/received" for 127.0.0.1 at 2023-04-22 15:34:53 +0200
+Started GET "/friends/sent" for 127.0.0.1 at 2023-04-22 15:34:53 +0200
+Started GET "/friends" for 127.0.0.1 at 2023-04-22 15:34:53 +0200
+Started GET "/login" for 127.0.0.1 at 2023-04-22 15:34:53 +0200
+Processing by FriendshipsController#received_friend_requests as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4946 conn:1:2 sconn:131181 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5f0c30b8 @seconds=1682170492, @increment=2>, "signature"=>{"hash"=><BSON::Binary:0x26688...
+Processing by FriendshipsController#sent_friend_requests as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4947 conn:1:3 sconn:133269 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5f0c30b8 @seconds=1682170492, @increment=2>, "signature"=>{"hash"=><BSON::Binary:0x26688...
+Processing by FriendshipsController#friends as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4948 conn:1:4 sconn:133286 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5f0c30b8 @seconds=1682170492, @increment=2>, "signature"=>{"hash"=><BSON::Binary:0x26688...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4946 | development.find | SUCCEEDED | 0.047s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4949 conn:1:2 sconn:131181 | development.find | STARTED | {"find"=>"friendships", "filter"=>{"receiver_id"=>BSON::ObjectId('64178a304d883733548e78e9'), "status"=>"pending"}, "projection"=>{"sender_id"=>true}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5fb6d748 @seconds=...
+Processing by SessionsController#show as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4950 conn:1:1 sconn:131166 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5fb6d748 @seconds=1682170493, @increment=1>, "signature"=>{"hash"=><BSON::Binary:0x26694...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4947 | development.find | SUCCEEDED | 0.049s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4951 conn:1:3 sconn:133269 | development.find | STARTED | {"find"=>"friendships", "filter"=>{"sender_id"=>BSON::ObjectId('64178a304d883733548e78e9'), "status"=>"pending"}, "projection"=>{"receiver_id"=>true}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5fb6d748 @seconds=...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4948 | development.find | SUCCEEDED | 0.053s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4952 conn:1:4 sconn:133286 | development.find | STARTED | {"find"=>"friendships", "filter"=>{"status"=>"accepted", "$or"=>[{"sender_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, {"receiver_id"=>BSON::ObjectId('64178a304d883733548e78e9')}]}, "projection"=>{"receiver_id"=>true}, "$db"=>"development", "$clu...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4949 | development.find | SUCCEEDED | 0.042s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4953 conn:1:2 sconn:131181 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>{"$in"=>[]}}, "projection"=>{"name"=>true}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5fb6d748 @seconds=1682170493, @increment=1>, "signature"=>{"hash"=><BSON::Binary:0x266940...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4950 | development.find | SUCCEEDED | 0.042s
+Completed 200 OK in 46ms (Views: 0.6ms | MongoDB: 42.0ms | Allocations: 5414)
+
+
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4951 | development.find | SUCCEEDED | 0.044s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4954 conn:1:3 sconn:133269 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>{"$in"=>[BSON::ObjectId('6441658ded69891744d64547')]}}, "projection"=>{"name"=>true}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5fb6d748 @seconds=1682170493, @increment=1>, "s...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4953 | development.find | SUCCEEDED | 0.041s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4955 conn:1:2 sconn:131181 | development.find | STARTED | {"find"=>"friendships", "filter"=>{"receiver_id"=>BSON::ObjectId('64178a304d883733548e78e9'), "status"=>"pending"}, "projection"=>{"_id"=>true}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5fb6d748 @seconds=168217...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4952 | development.find | SUCCEEDED | 0.044s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4956 conn:1:4 sconn:133286 | development.find | STARTED | {"find"=>"friendships", "filter"=>{"status"=>"accepted", "$or"=>[{"sender_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, {"receiver_id"=>BSON::ObjectId('64178a304d883733548e78e9')}]}, "projection"=>{"receiver_id"=>true}, "$db"=>"development", "$clu...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4954 | development.find | SUCCEEDED | 0.042s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4957 conn:1:3 sconn:133269 | development.find | STARTED | {"find"=>"friendships", "filter"=>{"sender_id"=>BSON::ObjectId('64178a304d883733548e78e9'), "status"=>"pending"}, "projection"=>{"_id"=>true}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5fb6d748 @seconds=16821704...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4955 | development.find | SUCCEEDED | 0.043s
+Completed 200 OK in 190ms (Views: 0.2ms | MongoDB: 174.1ms | Allocations: 16735)
+
+
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4956 | development.find | SUCCEEDED | 0.056s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4958 conn:1:4 sconn:133286 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>{"$in"=>[]}}, "projection"=>{"name"=>true}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5fb6d748 @seconds=1682170493, @increment=1>, "signature"=>{"hash"=><BSON::Binary:0x266940...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4957 | development.find | SUCCEEDED | 0.045s
+Completed 200 OK in 196ms (Views: 0.5ms | MongoDB: 180.7ms | Allocations: 17389)
+
+
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4958 | development.find | SUCCEEDED | 0.044s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4959 conn:1:4 sconn:133286 | development.find | STARTED | {"find"=>"friendships", "filter"=>{"status"=>"accepted", "$or"=>[{"sender_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, {"receiver_id"=>BSON::ObjectId('64178a304d883733548e78e9')}]}, "projection"=>{"_id"=>true}, "$db"=>"development", "$clusterTime...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:4959 | development.find | SUCCEEDED | 0.044s
+Completed 200 OK in 259ms (Views: 0.2ms | MongoDB: 241.0ms | Allocations: 17990)
+
+
+Started GET "/show" for 127.0.0.1 at 2023-04-22 15:39:15 +0200
+Processing by UsersController#show as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5040 conn:1:4 sconn:133286 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5fd3ee78 @seconds=1682170493, @increment=2>, "signature"=>{"hash"=><BSON::Binary:0x26698...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5040 | development.find | SUCCEEDED | 0.046s
+Completed 200 OK in 55ms (Views: 0.9ms | MongoDB: 46.2ms | Allocations: 7590)
+
+
+Started GET "/friends" for 127.0.0.1 at 2023-04-22 15:39:21 +0200
+Started GET "/friends/received" for 127.0.0.1 at 2023-04-22 15:39:21 +0200
+Started GET "/friends/sent" for 127.0.0.1 at 2023-04-22 15:39:21 +0200
+Processing by FriendshipsController#friends as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5042 conn:1:4 sconn:133286 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5eef0498 @seconds=1682170756, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x27542...
+Processing by FriendshipsController#sent_friend_requests as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5043 conn:1:3 sconn:133269 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5eef0498 @seconds=1682170756, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x27542...
+Processing by FriendshipsController#received_friend_requests as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5044 conn:1:2 sconn:131181 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5eef0498 @seconds=1682170756, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x27542...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5043 | development.find | SUCCEEDED | 0.047s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5042 | development.find | SUCCEEDED | 0.054s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5045 conn:1:4 sconn:133286 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5fa9eda8 @seconds=1682170760, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x27548...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5044 | development.find | SUCCEEDED | 0.046s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5046 conn:1:2 sconn:131181 | development.find | STARTED | {"find"=>"friendships", "filter"=>{"sender_id"=>BSON::ObjectId('64178a304d883733548e78e9'), "status"=>"pending"}, "projection"=>{"receiver_id"=>true}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5fa9eda8 @seconds=...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5047 conn:1:3 sconn:133269 | development.find | STARTED | {"find"=>"friendships", "filter"=>{"receiver_id"=>BSON::ObjectId('64178a304d883733548e78e9'), "status"=>"pending"}, "projection"=>{"sender_id"=>true}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5fa9eda8 @seconds=...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5045 | development.find | SUCCEEDED | 0.042s
+Completed 200 OK in 104ms (Views: 0.2ms | MongoDB: 96.3ms | Allocations: 13890)
+
+
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5047 | development.find | SUCCEEDED | 0.043s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5048 conn:1:3 sconn:133269 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>{"$in"=>[]}}, "projection"=>{"name"=>true}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5fba7f60 @seconds=1682170761, @increment=1>, "signature"=>{"hash"=><BSON::Binary:0x275520...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5046 | development.find | SUCCEEDED | 0.044s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5049 conn:1:2 sconn:131181 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>{"$in"=>[BSON::ObjectId('6441658ded69891744d64547')]}}, "projection"=>{"name"=>true}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5fba7f60 @seconds=1682170761, @increment=1>, "s...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5048 | development.find | SUCCEEDED | 0.039s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5050 conn:1:3 sconn:133269 | development.find | STARTED | {"find"=>"friendships", "filter"=>{"receiver_id"=>BSON::ObjectId('64178a304d883733548e78e9'), "status"=>"pending"}, "projection"=>{"_id"=>true}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5fba7f60 @seconds=168217...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5049 | development.find | SUCCEEDED | 0.051s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5051 conn:1:2 sconn:131181 | development.find | STARTED | {"find"=>"friendships", "filter"=>{"sender_id"=>BSON::ObjectId('64178a304d883733548e78e9'), "status"=>"pending"}, "projection"=>{"_id"=>true}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5fba7f60 @seconds=16821707...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5050 | development.find | SUCCEEDED | 0.043s
+Completed 200 OK in 203ms (Views: 0.2ms | MongoDB: 171.3ms | Allocations: 16975)
+
+
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5051 | development.find | SUCCEEDED | 0.044s
+Completed 200 OK in 221ms (Views: 0.2ms | MongoDB: 186.3ms | Allocations: 19069)
+
+
+Started POST "/friendships" for 127.0.0.1 at 2023-04-22 15:39:36 +0200
+Processing by FriendshipsController#create as HTML
+  Parameters: {"email"=>"a@a.pl", "friendship"=>{}}
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5057 conn:1:2 sconn:131181 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5fba7f60 @seconds=1682170761, @increment=1>, "signature"=>{"hash"=><BSON::Binary:0x27552...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5057 | development.find | SUCCEEDED | 0.051s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5058 conn:1:2 sconn:131181 | development.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"a@a.pl"}, "limit"=>1, "sort"=>{"_id"=>1}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5fd5db98 @seconds=1682170776, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x27582...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5058 | development.find | SUCCEEDED | 0.045s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5059 conn:1:2 sconn:131181 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('641726ca4d88377c80a4c98a')}, "limit"=>1, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5fd5db98 @seconds=1682170776, @increment=3>, "signature"=>{"hash"=><BSON::Bi...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5059 | development.find | SUCCEEDED | 0.045s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5060 conn:1:2 sconn:131181 | development.insert | STARTED | {"insert"=>"friendships", "ordered"=>true, "documents"=>[{"_id"=>BSON::ObjectId('6443e3984d88373040cfebdd'), "sender_id"=>BSON::ObjectId('64178a304d883733548e78e9'), "receiver_id"=>BSON::ObjectId('641726ca4d88377c80a4c98a'), "status"=>"pending", "upda...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5060 | development.insert | SUCCEEDED | 0.047s
+Completed 201 Created in 212ms (Views: 0.2ms | MongoDB: 188.1ms | Allocations: 20007)
+
+
+Started GET "/friends" for 127.0.0.1 at 2023-04-22 15:39:38 +0200
+Started GET "/login" for 127.0.0.1 at 2023-04-22 15:39:38 +0200
+Started GET "/friends/received" for 127.0.0.1 at 2023-04-22 15:39:38 +0200
+Started GET "/friends/sent" for 127.0.0.1 at 2023-04-22 15:39:38 +0200
+Processing by FriendshipsController#friends as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5061 conn:1:2 sconn:131181 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b6020de68 @seconds=1682170776, @increment=4>, "signature"=>{"hash"=><BSON::Binary:0x27600...
+Processing by SessionsController#show as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5062 conn:1:3 sconn:133269 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b6020de68 @seconds=1682170776, @increment=4>, "signature"=>{"hash"=><BSON::Binary:0x27600...
+Processing by FriendshipsController#received_friend_requests as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5063 conn:1:4 sconn:133286 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b6020de68 @seconds=1682170776, @increment=4>, "signature"=>{"hash"=><BSON::Binary:0x27600...
+Processing by FriendshipsController#sent_friend_requests as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5064 conn:1:1 sconn:131166 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b6020de68 @seconds=1682170776, @increment=4>, "signature"=>{"hash"=><BSON::Binary:0x27600...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5061 | development.find | SUCCEEDED | 0.049s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5065 conn:1:2 sconn:131181 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b60577248 @seconds=1682170778, @increment=2>, "signature"=>{"hash"=><BSON::Binary:0x27610...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5062 | development.find | SUCCEEDED | 0.044s
+Completed 200 OK in 50ms (Views: 0.7ms | MongoDB: 44.3ms | Allocations: 5893)
+
+
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5063 | development.find | SUCCEEDED | 0.046s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5066 conn:1:4 sconn:133286 | development.find | STARTED | {"find"=>"friendships", "filter"=>{"receiver_id"=>BSON::ObjectId('64178a304d883733548e78e9'), "status"=>"pending"}, "projection"=>{"sender_id"=>true}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b60577248 @seconds=...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5064 | development.find | SUCCEEDED | 0.052s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5067 conn:1:1 sconn:131166 | development.find | STARTED | {"find"=>"friendships", "filter"=>{"sender_id"=>BSON::ObjectId('64178a304d883733548e78e9'), "status"=>"pending"}, "projection"=>{"receiver_id"=>true}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b60577248 @seconds=...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5065 | development.find | SUCCEEDED | 0.043s
+Completed 200 OK in 102ms (Views: 0.2ms | MongoDB: 92.2ms | Allocations: 11326)
+
+
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5067 | development.find | SUCCEEDED | 0.043s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5068 conn:1:1 sconn:131166 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>{"$in"=>[BSON::ObjectId('6441658ded69891744d64547'), BSON::ObjectId('641726ca4d88377c80a4c98a')]}}, "projection"=>{"name"=>true}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b605...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5066 | development.find | SUCCEEDED | 0.051s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5069 conn:1:4 sconn:133286 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>{"$in"=>[]}}, "projection"=>{"name"=>true}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b60577248 @seconds=1682170778, @increment=2>, "signature"=>{"hash"=><BSON::Binary:0x276100...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5068 | development.find | SUCCEEDED | 0.042s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5070 conn:1:1 sconn:131166 | development.find | STARTED | {"find"=>"friendships", "filter"=>{"sender_id"=>BSON::ObjectId('64178a304d883733548e78e9'), "status"=>"pending"}, "projection"=>{"_id"=>true}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5cdc80e0 @seconds=16821707...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5069 | development.find | SUCCEEDED | 0.040s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5071 conn:1:4 sconn:133286 | development.find | STARTED | {"find"=>"friendships", "filter"=>{"receiver_id"=>BSON::ObjectId('64178a304d883733548e78e9'), "status"=>"pending"}, "projection"=>{"_id"=>true}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5cdc80e0 @seconds=168217...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5070 | development.find | SUCCEEDED | 0.044s
+Completed 200 OK in 194ms (Views: 0.2ms | MongoDB: 181.4ms | Allocations: 12252)
+
+
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5071 | development.find | SUCCEEDED | 0.043s
+Completed 200 OK in 205ms (Views: 0.1ms | MongoDB: 180.5ms | Allocations: 14177)
+
+
+Started GET "/friends/received" for 127.0.0.1 at 2023-04-22 15:39:53 +0200
+Processing by FriendshipsController#received_friend_requests as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5076 conn:1:4 sconn:133286 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5cfc1518 @seconds=1682170778, @increment=4>, "signature"=>{"hash"=><BSON::Binary:0x27632...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5076 | development.find | SUCCEEDED | 0.048s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5077 conn:1:4 sconn:133286 | development.find | STARTED | {"find"=>"friendships", "filter"=>{"receiver_id"=>BSON::ObjectId('64178a304d883733548e78e9'), "status"=>"pending"}, "projection"=>{"sender_id"=>true}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5d8ec6d8 @seconds=...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5077 | development.find | SUCCEEDED | 0.041s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5078 conn:1:4 sconn:133286 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>{"$in"=>[]}}, "projection"=>{"name"=>true}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5d8ec6d8 @seconds=1682170793, @increment=1>, "signature"=>{"hash"=><BSON::Binary:0x276340...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5078 | development.find | SUCCEEDED | 0.045s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5079 conn:1:4 sconn:133286 | development.find | STARTED | {"find"=>"friendships", "filter"=>{"receiver_id"=>BSON::ObjectId('64178a304d883733548e78e9'), "status"=>"pending"}, "projection"=>{"_id"=>true}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5d8ec6d8 @seconds=168217...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5079 | development.find | SUCCEEDED | 0.044s
+Completed 200 OK in 189ms (Views: 0.1ms | MongoDB: 177.5ms | Allocations: 5380)
+
+
+Started GET "/friends" for 127.0.0.1 at 2023-04-22 15:39:58 +0200
+Processing by FriendshipsController#friends as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5082 conn:1:4 sconn:133286 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5d8ec6d8 @seconds=1682170793, @increment=1>, "signature"=>{"hash"=><BSON::Binary:0x27634...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5082 | development.find | SUCCEEDED | 0.045s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5083 conn:1:4 sconn:133286 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5db86ba0 @seconds=1682170798, @increment=2>, "signature"=>{"hash"=><BSON::Binary:0x27652...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5083 | development.find | SUCCEEDED | 0.044s
+Completed 200 OK in 95ms (Views: 0.2ms | MongoDB: 89.1ms | Allocations: 2592)
+
+
+Started POST "/friendships" for 127.0.0.1 at 2023-04-22 15:40:20 +0200
+Processing by FriendshipsController#create as HTML
+  Parameters: {"email"=>"m@m.com", "friendship"=>{}}
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5090 conn:1:4 sconn:133286 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5db86ba0 @seconds=1682170798, @increment=2>, "signature"=>{"hash"=><BSON::Binary:0x27652...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5090 | development.find | SUCCEEDED | 0.047s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5091 conn:1:4 sconn:133286 | development.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"m@m.com"}, "limit"=>1, "sort"=>{"_id"=>1}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5ed86788 @seconds=1682170819, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x2768...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5091 | development.find | SUCCEEDED | 0.043s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5092 conn:1:4 sconn:133286 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "limit"=>1, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5ee27778 @seconds=1682170820, @increment=2>, "signature"=>{"hash"=><BSON::Bi...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5092 | development.find | SUCCEEDED | 0.044s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5093 conn:1:4 sconn:133286 | development.insert | STARTED | {"insert"=>"friendships", "ordered"=>true, "documents"=>[{"_id"=>BSON::ObjectId('6443e3c44d88373040cfebde'), "sender_id"=>BSON::ObjectId('64178a304d883733548e78e9'), "receiver_id"=>BSON::ObjectId('64178a304d883733548e78e9'), "status"=>"pending", "upda...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5093 | development.insert | SUCCEEDED | 0.042s
+Completed 201 Created in 189ms (Views: 0.2ms | MongoDB: 177.0ms | Allocations: 6761)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-04-22 15:40:20 +0200
+Started GET "/friends" for 127.0.0.1 at 2023-04-22 15:40:20 +0200
+Started GET "/friends/sent" for 127.0.0.1 at 2023-04-22 15:40:20 +0200
+Started GET "/friends/received" for 127.0.0.1 at 2023-04-22 15:40:20 +0200
+Processing by SessionsController#show as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5094 conn:1:4 sconn:133286 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5efef808 @seconds=1682170820, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x27692...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5094 | development.find | SUCCEEDED | 0.041s
+Completed 200 OK in 47ms (Views: 1.8ms | MongoDB: 40.7ms | Allocations: 2114)
+
+
+Processing by FriendshipsController#friends as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5096 conn:1:4 sconn:133286 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5f072208 @seconds=1682170820, @increment=4>, "signature"=>{"hash"=><BSON::Binary:0x27696...
+Processing by FriendshipsController#sent_friend_requests as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5097 conn:1:1 sconn:131166 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5f072208 @seconds=1682170820, @increment=4>, "signature"=>{"hash"=><BSON::Binary:0x27696...
+Processing by FriendshipsController#received_friend_requests as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5098 conn:1:2 sconn:131181 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5f072208 @seconds=1682170820, @increment=4>, "signature"=>{"hash"=><BSON::Binary:0x27696...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5096 | development.find | SUCCEEDED | 0.051s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5099 conn:1:4 sconn:133286 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5f072208 @seconds=1682170820, @increment=4>, "signature"=>{"hash"=><BSON::Binary:0x27696...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5097 | development.find | SUCCEEDED | 0.051s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5100 conn:1:1 sconn:131166 | development.find | STARTED | {"find"=>"friendships", "filter"=>{"sender_id"=>BSON::ObjectId('64178a304d883733548e78e9'), "status"=>"pending"}, "projection"=>{"receiver_id"=>true}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5f072208 @seconds=...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5098 | development.find | SUCCEEDED | 0.043s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5101 conn:1:2 sconn:131181 | development.find | STARTED | {"find"=>"friendships", "filter"=>{"receiver_id"=>BSON::ObjectId('64178a304d883733548e78e9'), "status"=>"pending"}, "projection"=>{"sender_id"=>true}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5f072208 @seconds=...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5101 | development.find | SUCCEEDED | 0.039s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5102 conn:1:2 sconn:131181 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>{"$in"=>[BSON::ObjectId('64178a304d883733548e78e9')]}}, "projection"=>{"name"=>true}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5f072208 @seconds=1682170820, @increment=4>, "s...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5100 | development.find | SUCCEEDED | 0.043s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5103 conn:1:1 sconn:131166 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>{"$in"=>[BSON::ObjectId('6441658ded69891744d64547'), BSON::ObjectId('64178a304d883733548e78e9')]}}, "projection"=>{"name"=>true}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5f0...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5099 | development.find | SUCCEEDED | 0.060s
+Completed 200 OK in 130ms (Views: 0.2ms | MongoDB: 110.8ms | Allocations: 10991)
+
+
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5103 | development.find | SUCCEEDED | 0.040s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5104 conn:1:1 sconn:131166 | development.find | STARTED | {"find"=>"friendships", "filter"=>{"sender_id"=>BSON::ObjectId('64178a304d883733548e78e9'), "status"=>"pending"}, "projection"=>{"_id"=>true}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5fc0cb90 @seconds=16821708...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5102 | development.find | SUCCEEDED | 0.045s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5105 conn:1:2 sconn:131181 | development.find | STARTED | {"find"=>"friendships", "filter"=>{"receiver_id"=>BSON::ObjectId('64178a304d883733548e78e9'), "status"=>"pending"}, "projection"=>{"_id"=>true}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5fc0cb90 @seconds=168217...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5104 | development.find | SUCCEEDED | 0.042s
+Completed 200 OK in 196ms (Views: 0.3ms | MongoDB: 176.6ms | Allocations: 13197)
+
+
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5105 | development.find | SUCCEEDED | 0.040s
+Completed 200 OK in 188ms (Views: 0.2ms | MongoDB: 168.6ms | Allocations: 12465)
+
+
+Started PUT "/friendships/6443e3c44d88373040cfebde" for 127.0.0.1 at 2023-04-22 15:40:23 +0200
+Processing by FriendshipsController#update as HTML
+  Parameters: {"status"=>"accepted", "id"=>"6443e3c44d88373040cfebde", "friendship"=>{"status"=>"accepted"}}
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5106 conn:1:2 sconn:131181 | development.find | STARTED | {"find"=>"friendships", "filter"=>{"_id"=>BSON::ObjectId('6443e3c44d88373040cfebde')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5fc0cb90 @seconds=1682170820, @increment=5>, "signature"=>{"hash"=><BSON::Binary:0...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5106 | development.find | SUCCEEDED | 0.039s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5107 conn:1:2 sconn:131181 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5fcbe390 @seconds=1682170823, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x27716...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5107 | development.find | SUCCEEDED | 0.044s
+[31mUnpermitted parameters: :id, :friendship. Context: { controller: FriendshipsController, action: update, request: #<ActionDispatch::Request:0x0000023b5fc64b38>, params: {"status"=>"accepted", "controller"=>"friendships", "action"=>"update", "id"=>"6443e3c44d88373040cfebde", "friendship"=>{"status"=>"accepted"}} }[0m
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5108 conn:1:2 sconn:131181 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5fcbe390 @seconds=1682170823, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x27716...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5108 | development.find | SUCCEEDED | 0.044s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5109 conn:1:2 sconn:131181 | development.update | STARTED | {"update"=>"users", "ordered"=>true, "updates"=>[{"q"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "u"=>{"$set"=>{"friend_ids"=>[BSON::ObjectId('641726ca4d88377c80a4c98a'), BSON::ObjectId('64178a304d883733548e78e9')], "updated_at"=>2023-04-22...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5109 | development.update | SUCCEEDED | 0.043s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5110 conn:1:2 sconn:131181 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5fd35648 @seconds=1682170823, @increment=4>, "signature"=>{"hash"=><BSON::Binary:0x27722...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5110 | development.find | SUCCEEDED | 0.043s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5111 conn:1:2 sconn:131181 | development.update | STARTED | {"update"=>"users", "ordered"=>true, "updates"=>[{"q"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "u"=>{"$set"=>{"friend_ids"=>[BSON::ObjectId('641726ca4d88377c80a4c98a'), BSON::ObjectId('64178a304d883733548e78e9'), BSON::ObjectId('64178a304...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5111 | development.update | SUCCEEDED | 0.057s
+[31mUnpermitted parameters: :id, :friendship. Context: { controller: FriendshipsController, action: update, request: #<ActionDispatch::Request:0x0000023b5fc64b38>, params: {"status"=>"accepted", "controller"=>"friendships", "action"=>"update", "id"=>"6443e3c44d88373040cfebde", "friendship"=>{"status"=>"accepted"}} }[0m
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5112 conn:1:2 sconn:131181 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "limit"=>1, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5fd5ee30 @seconds=1682170823, @increment=5>, "signature"=>{"hash"=><BSON::Bi...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5112 | development.find | SUCCEEDED | 0.044s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5113 conn:1:2 sconn:131181 | development.update | STARTED | {"update"=>"friendships", "ordered"=>true, "updates"=>[{"q"=>{"_id"=>BSON::ObjectId('6443e3c44d88373040cfebde')}, "u"=>{"$set"=>{"status"=>"accepted", "updated_at"=>2023-04-22 13:40:24.0914349 UTC}}}], "$db"=>"development", "$clusterTime"=>{"clusterTi...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5113 | development.update | SUCCEEDED | 0.057s
+Completed 200 OK in 396ms (Views: 0.2ms | MongoDB: 370.1ms | Allocations: 13391)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-04-22 15:40:24 +0200
+Started GET "/friends/received" for 127.0.0.1 at 2023-04-22 15:40:24 +0200
+Started GET "/friends/sent" for 127.0.0.1 at 2023-04-22 15:40:24 +0200
+Started GET "/friends" for 127.0.0.1 at 2023-04-22 15:40:24 +0200
+Processing by SessionsController#show as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5114 conn:1:2 sconn:131181 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5fddc038 @seconds=1682170824, @increment=1>, "signature"=>{"hash"=><BSON::Binary:0x27742...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5114 | development.find | SUCCEEDED | 0.041s
+Completed 200 OK in 48ms (Views: 0.8ms | MongoDB: 41.2ms | Allocations: 2169)
+
+
+Processing by FriendshipsController#received_friend_requests as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5115 conn:1:2 sconn:131181 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b60004040 @seconds=1682170824, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x27746...
+Processing by FriendshipsController#sent_friend_requests as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5116 conn:1:1 sconn:131166 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b60004040 @seconds=1682170824, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x27746...
+Processing by FriendshipsController#friends as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5117 conn:1:4 sconn:133286 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b60004040 @seconds=1682170824, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x27746...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5115 | development.find | SUCCEEDED | 0.050s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5118 conn:1:2 sconn:131181 | development.find | STARTED | {"find"=>"friendships", "filter"=>{"receiver_id"=>BSON::ObjectId('64178a304d883733548e78e9'), "status"=>"pending"}, "projection"=>{"sender_id"=>true}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b60004040 @seconds=...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5116 | development.find | SUCCEEDED | 0.042s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5119 conn:1:1 sconn:131166 | development.find | STARTED | {"find"=>"friendships", "filter"=>{"sender_id"=>BSON::ObjectId('64178a304d883733548e78e9'), "status"=>"pending"}, "projection"=>{"receiver_id"=>true}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b60004040 @seconds=...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5117 | development.find | SUCCEEDED | 0.052s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5120 conn:1:4 sconn:133286 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b60004040 @seconds=1682170824, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x27746...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5119 | development.find | SUCCEEDED | 0.037s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5121 conn:1:1 sconn:131166 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>{"$in"=>[BSON::ObjectId('6441658ded69891744d64547')]}}, "projection"=>{"name"=>true}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b60004040 @seconds=1682170824, @increment=3>, "s...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5118 | development.find | SUCCEEDED | 0.042s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5122 conn:1:2 sconn:131181 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>{"$in"=>[]}}, "projection"=>{"name"=>true}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b60004040 @seconds=1682170824, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x277460...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5122 | development.find | SUCCEEDED | 0.039s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5123 conn:1:2 sconn:131181 | development.find | STARTED | {"find"=>"friendships", "filter"=>{"receiver_id"=>BSON::ObjectId('64178a304d883733548e78e9'), "status"=>"pending"}, "projection"=>{"_id"=>true}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b60004040 @seconds=168217...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5120 | development.find | SUCCEEDED | 0.058s
+Completed 200 OK in 122ms (Views: 3.7ms | MongoDB: 109.5ms | Allocations: 9187)
+
+
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5121 | development.find | SUCCEEDED | 0.042s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5124 conn:1:1 sconn:131166 | development.find | STARTED | {"find"=>"friendships", "filter"=>{"sender_id"=>BSON::ObjectId('64178a304d883733548e78e9'), "status"=>"pending"}, "projection"=>{"_id"=>true}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b60004040 @seconds=16821708...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5123 | development.find | SUCCEEDED | 0.042s
+Completed 200 OK in 191ms (Views: 0.3ms | MongoDB: 171.7ms | Allocations: 13813)
+
+
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5124 | development.find | SUCCEEDED | 0.050s
+Completed 200 OK in 196ms (Views: 0.2ms | MongoDB: 171.1ms | Allocations: 13188)
+
+
+Started GET "/friends" for 127.0.0.1 at 2023-04-22 15:40:33 +0200
+Processing by FriendshipsController#friends as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5128 conn:1:1 sconn:131166 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b60004040 @seconds=1682170824, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x27746...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5128 | development.find | SUCCEEDED | 0.049s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5129 conn:1:1 sconn:131166 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5cf35ab8 @seconds=1682170833, @increment=2>, "signature"=>{"hash"=><BSON::Binary:0x27764...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5129 | development.find | SUCCEEDED | 0.045s
+Completed 200 OK in 101ms (Views: 0.2ms | MongoDB: 94.5ms | Allocations: 2639)
+
+
+Started GET "/friends" for 127.0.0.1 at 2023-04-22 15:42:31 +0200
+Processing by FriendshipsController#friends as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5166 conn:1:1 sconn:131166 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5cf35ab8 @seconds=1682170833, @increment=2>, "signature"=>{"hash"=><BSON::Binary:0x27764...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5166 | development.find | SUCCEEDED | 0.050s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5167 conn:1:1 sconn:131166 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5fc06a38 @seconds=1682170953, @increment=1>, "signature"=>{"hash"=><BSON::Binary:0x28424...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5167 | development.find | SUCCEEDED | 0.044s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5168 conn:1:1 sconn:131166 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>[BSON::ObjectId('641726ca4d88377c80a4c98a'), BSON::ObjectId('64178a304d883733548e78e9'), BSON::ObjectId('64178a304d883733548e78e9')]}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x000002...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5168 | development.find | SUCCEEDED | 0.044s
+Completed 404 Not Found in 730ms (MongoDB: 137.9ms | Allocations: 295006)
+
+
+  
+Mongoid::Errors::DocumentNotFound (
+message:
+  Document not found for class User with attributes {:id=>[BSON::ObjectId('641726ca4d88377c80a4c98a'), BSON::ObjectId('64178a304d883733548e78e9'), BSON::ObjectId('64178a304d883733548e78e9')]}.
+summary:
+  When calling User.find_by with a hash of attributes, all attributes provided must match a document in the database or this error will be raised.
+resolution:
+  Search for attributes that are in the database or set the Mongoid.raise_not_found_error configuration option to false, which will cause nil to be returned instead of raising this error.):
+  
+app/controllers/friendships_controller.rb:34:in `friends'
+Started GET "/friends" for 127.0.0.1 at 2023-04-22 15:43:41 +0200
+Processing by FriendshipsController#friends as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5190 conn:1:1 sconn:131166 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b5fbe5158 @seconds=1682170953, @increment=2>, "signature"=>{"hash"=><BSON::Binary:0x28426...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5190 | development.find | SUCCEEDED | 0.046s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5191 conn:1:1 sconn:131166 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b640cf2a0 @seconds=1682171023, @increment=2>, "signature"=>{"hash"=><BSON::Binary:0x29064...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5191 | development.find | SUCCEEDED | 0.044s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5192 conn:1:1 sconn:131166 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>{"$in"=>[BSON::ObjectId('641726ca4d88377c80a4c98a'), BSON::ObjectId('64178a304d883733548e78e9'), BSON::ObjectId('64178a304d883733548e78e9')]}}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5192 | development.find | SUCCEEDED | 0.044s
+Completed 200 OK in 150ms (Views: 4.7ms | MongoDB: 134.3ms | Allocations: 10620)
+
+
+Started GET "/friends" for 127.0.0.1 at 2023-04-22 15:44:56 +0200
+Processing by FriendshipsController#friends as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5216 conn:1:1 sconn:131166 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b640cf2a0 @seconds=1682171023, @increment=2>, "signature"=>{"hash"=><BSON::Binary:0x29064...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5216 | development.find | SUCCEEDED | 0.047s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5217 conn:1:1 sconn:131166 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b656a39a0 @seconds=1682171098, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x29678...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5217 | development.find | SUCCEEDED | 0.044s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5218 conn:1:1 sconn:131166 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>{"$in"=>[BSON::ObjectId('641726ca4d88377c80a4c98a'), BSON::ObjectId('64178a304d883733548e78e9'), BSON::ObjectId('64178a304d883733548e78e9')]}}, "projection"=>{"name"=>true}, "$db"=>"development", "$clusterTime"=>{"c...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5218 | development.find | SUCCEEDED | 0.043s
+Completed 200 OK in 149ms (Views: 0.3ms | MongoDB: 134.3ms | Allocations: 9915)
+
+
+Started GET "/friends" for 127.0.0.1 at 2023-04-22 15:46:29 +0200
+Processing by FriendshipsController#friends as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5246 conn:1:1 sconn:131166 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b656a39a0 @seconds=1682171098, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x29678...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5246 | development.find | SUCCEEDED | 0.051s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5247 conn:1:1 sconn:131166 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b666e8dd8 @seconds=1682171191, @increment=2>, "signature"=>{"hash"=><BSON::Binary:0x30310...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5247 | development.find | SUCCEEDED | 0.036s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5248 conn:1:1 sconn:131166 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>{"$in"=>[BSON::ObjectId('641726ca4d88377c80a4c98a'), BSON::ObjectId('64178a304d883733548e78e9'), BSON::ObjectId('64178a304d883733548e78e9')]}}, "projection"=>{"name"=>true}, "$db"=>"development", "$clusterTime"=>{"c...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5248 | development.find | SUCCEEDED | 0.044s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5249 conn:1:1 sconn:131166 | development.find | STARTED | {"find"=>"friendships", "filter"=>{"status"=>"accepted", "$or"=>[{"sender_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, {"receiver_id"=>BSON::ObjectId('64178a304d883733548e78e9')}]}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Ti...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5249 | development.find | SUCCEEDED | 0.044s
+Completed 200 OK in 200ms (Views: 3.9ms | MongoDB: 175.0ms | Allocations: 17794)
+
+
+Started GET "/friends" for 127.0.0.1 at 2023-04-22 15:47:09 +0200
+Processing by FriendshipsController#friends as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5262 conn:1:1 sconn:131166 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b666e8dd8 @seconds=1682171191, @increment=2>, "signature"=>{"hash"=><BSON::Binary:0x30310...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5262 | development.find | SUCCEEDED | 0.041s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5263 conn:1:1 sconn:131166 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b648dbf70 @seconds=1682171231, @increment=2>, "signature"=>{"hash"=><BSON::Binary:0x30884...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5263 | development.find | SUCCEEDED | 0.037s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5264 conn:1:1 sconn:131166 | development.find | STARTED | {"find"=>"friendships", "filter"=>{"status"=>"accepted", "$or"=>[{"sender_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, {"receiver_id"=>BSON::ObjectId('64178a304d883733548e78e9')}]}, "projection"=>{"_id"=>true}, "$db"=>"development", "$clusterTime...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5264 | development.find | SUCCEEDED | 0.044s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5265 conn:1:1 sconn:131166 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>{"$in"=>[BSON::ObjectId('641726ca4d88377c80a4c98a'), BSON::ObjectId('64178a304d883733548e78e9'), BSON::ObjectId('64178a304d883733548e78e9')]}}, "projection"=>{"name"=>true}, "$db"=>"development", "$clusterTime"=>{"c...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5265 | development.find | SUCCEEDED | 0.043s
+Completed 200 OK in 190ms (Views: 0.2ms | MongoDB: 165.2ms | Allocations: 17183)
+
+
+Started GET "/friends" for 127.0.0.1 at 2023-04-22 15:48:23 +0200
+Processing by FriendshipsController#friends as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5288 conn:1:1 sconn:131166 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b62834f10 @seconds=1682171231, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x30886...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5288 | development.find | SUCCEEDED | 0.050s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5289 conn:1:1 sconn:131166 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b658a4808 @seconds=1682171305, @increment=1>, "signature"=>{"hash"=><BSON::Binary:0x31502...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5289 | development.find | SUCCEEDED | 0.038s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5290 conn:1:1 sconn:131166 | development.find | STARTED | {"find"=>"friendships", "filter"=>{"status"=>"accepted", "$or"=>[{"sender_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, {"receiver_id"=>BSON::ObjectId('64178a304d883733548e78e9')}]}, "projection"=>{"_id"=>true}, "$db"=>"development", "$clusterTime...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5290 | development.find | SUCCEEDED | 0.044s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5291 conn:1:1 sconn:131166 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>{"$in"=>[BSON::ObjectId('641726ca4d88377c80a4c98a'), BSON::ObjectId('64178a304d883733548e78e9'), BSON::ObjectId('64178a304d883733548e78e9')]}}, "projection"=>{"name"=>true}, "$db"=>"development", "$clusterTime"=>{"c...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5291 | development.find | SUCCEEDED | 0.044s
+Completed 500 Internal Server Error in 201ms (MongoDB: 175.9ms | Allocations: 19869)
+
+
+  
+NoMethodError (undefined method `json' for #<FriendshipsController:0x00000000099d40>
+
+    render json sent_data
+           ^^^^
+Did you mean?  JSON):
+  
+app/controllers/friendships_controller.rb:36:in `friends'
+Started GET "/friends" for 127.0.0.1 at 2023-04-22 15:48:35 +0200
+Processing by FriendshipsController#friends as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5295 conn:1:1 sconn:131166 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b658a4808 @seconds=1682171305, @increment=1>, "signature"=>{"hash"=><BSON::Binary:0x31502...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5295 | development.find | SUCCEEDED | 0.050s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5296 conn:1:1 sconn:131166 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b62d013e0 @seconds=1682171317, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x32088...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5296 | development.find | SUCCEEDED | 0.052s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5297 conn:1:1 sconn:131166 | development.find | STARTED | {"find"=>"friendships", "filter"=>{"status"=>"accepted", "$or"=>[{"sender_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, {"receiver_id"=>BSON::ObjectId('64178a304d883733548e78e9')}]}, "projection"=>{"_id"=>true}, "$db"=>"development", "$clusterTime...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5297 | development.find | SUCCEEDED | 0.044s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5298 conn:1:1 sconn:131166 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>{"$in"=>[BSON::ObjectId('641726ca4d88377c80a4c98a'), BSON::ObjectId('64178a304d883733548e78e9'), BSON::ObjectId('64178a304d883733548e78e9')]}}, "projection"=>{"name"=>true}, "$db"=>"development", "$clusterTime"=>{"c...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5298 | development.find | SUCCEEDED | 0.043s
+Completed 200 OK in 213ms (Views: 0.3ms | MongoDB: 189.9ms | Allocations: 17222)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-04-22 15:48:48 +0200
+Started GET "/friends" for 127.0.0.1 at 2023-04-22 15:48:48 +0200
+Started GET "/friends/sent" for 127.0.0.1 at 2023-04-22 15:48:48 +0200
+Started GET "/friends/received" for 127.0.0.1 at 2023-04-22 15:48:48 +0200
+Processing by SessionsController#show as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5303 conn:1:1 sconn:131166 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b62d013e0 @seconds=1682171317, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x32088...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5303 | development.find | SUCCEEDED | 0.041s
+Completed 200 OK in 46ms (Views: 1.2ms | MongoDB: 41.2ms | Allocations: 2613)
+
+
+Processing by FriendshipsController#friends as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5304 conn:1:1 sconn:131166 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b6304f1c8 @seconds=1682171328, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x32110...
+Processing by FriendshipsController#sent_friend_requests as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5305 conn:1:2 sconn:131181 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b6304f1c8 @seconds=1682171328, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x32110...
+Processing by FriendshipsController#received_friend_requests as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5306 conn:1:4 sconn:133286 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b6304f1c8 @seconds=1682171328, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x32110...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5304 | development.find | SUCCEEDED | 0.047s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5308 conn:1:1 sconn:131166 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b6304f1c8 @seconds=1682171328, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x32110...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5305 | development.find | SUCCEEDED | 0.055s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5309 conn:1:2 sconn:131181 | development.find | STARTED | {"find"=>"friendships", "filter"=>{"sender_id"=>BSON::ObjectId('64178a304d883733548e78e9'), "status"=>"pending"}, "projection"=>{"receiver_id"=>true}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b6304f1c8 @seconds=...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5306 | development.find | SUCCEEDED | 0.050s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5310 conn:1:4 sconn:133286 | development.find | STARTED | {"find"=>"friendships", "filter"=>{"receiver_id"=>BSON::ObjectId('64178a304d883733548e78e9'), "status"=>"pending"}, "projection"=>{"sender_id"=>true}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b6304f1c8 @seconds=...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5308 | development.find | SUCCEEDED | 0.041s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5311 conn:1:1 sconn:131166 | development.find | STARTED | {"find"=>"friendships", "filter"=>{"status"=>"accepted", "$or"=>[{"sender_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, {"receiver_id"=>BSON::ObjectId('64178a304d883733548e78e9')}]}, "projection"=>{"_id"=>true}, "$db"=>"development", "$clusterTime...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5309 | development.find | SUCCEEDED | 0.042s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5312 conn:1:2 sconn:131181 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>{"$in"=>[BSON::ObjectId('6441658ded69891744d64547')]}}, "projection"=>{"name"=>true}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b6304f1c8 @seconds=1682171328, @increment=3>, "s...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5310 | development.find | SUCCEEDED | 0.042s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5313 conn:1:4 sconn:133286 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>{"$in"=>[]}}, "projection"=>{"name"=>true}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b6304f1c8 @seconds=1682171328, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x321100...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5311 | development.find | SUCCEEDED | 0.040s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5314 conn:1:1 sconn:131166 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>{"$in"=>[BSON::ObjectId('641726ca4d88377c80a4c98a'), BSON::ObjectId('64178a304d883733548e78e9'), BSON::ObjectId('64178a304d883733548e78e9')]}}, "projection"=>{"name"=>true}, "$db"=>"development", "$clusterTime"=>{"c...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5312 | development.find | SUCCEEDED | 0.043s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5315 conn:1:2 sconn:131181 | development.find | STARTED | {"find"=>"friendships", "filter"=>{"sender_id"=>BSON::ObjectId('64178a304d883733548e78e9'), "status"=>"pending"}, "projection"=>{"_id"=>true}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b6304f1c8 @seconds=16821713...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5313 | development.find | SUCCEEDED | 0.042s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5316 conn:1:4 sconn:133286 | development.find | STARTED | {"find"=>"friendships", "filter"=>{"receiver_id"=>BSON::ObjectId('64178a304d883733548e78e9'), "status"=>"pending"}, "projection"=>{"_id"=>true}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b6304f1c8 @seconds=168217...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5314 | development.find | SUCCEEDED | 0.044s
+Completed 200 OK in 189ms (Views: 0.3ms | MongoDB: 172.3ms | Allocations: 16586)
+
+
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5315 | development.find | SUCCEEDED | 0.045s
+Completed 200 OK in 197ms (Views: 0.3ms | MongoDB: 185.2ms | Allocations: 15950)
+
+
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5316 | development.find | SUCCEEDED | 0.044s
+Completed 200 OK in 192ms (Views: 0.3ms | MongoDB: 178.2ms | Allocations: 15284)
+
+
+Started GET "/show" for 127.0.0.1 at 2023-04-22 15:48:56 +0200
+Processing by UsersController#show as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5318 conn:1:4 sconn:133286 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b6304f1c8 @seconds=1682171328, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x32110...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5318 | development.find | SUCCEEDED | 0.043s
+Completed 200 OK in 46ms (Views: 0.7ms | MongoDB: 42.8ms | Allocations: 2060)
+
+
+Started GET "/friends/sent" for 127.0.0.1 at 2023-04-22 15:48:59 +0200
+Started GET "/friends/received" for 127.0.0.1 at 2023-04-22 15:48:59 +0200
+Started GET "/friends" for 127.0.0.1 at 2023-04-22 15:48:59 +0200
+Processing by FriendshipsController#sent_friend_requests as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5321 conn:1:4 sconn:133286 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b644fab18 @seconds=1682171336, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x32152...
+Processing by FriendshipsController#received_friend_requests as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5322 conn:1:2 sconn:131181 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b644fab18 @seconds=1682171336, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x32152...
+Processing by FriendshipsController#friends as HTML
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5323 conn:1:1 sconn:131166 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b644fab18 @seconds=1682171336, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x32152...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5321 | development.find | SUCCEEDED | 0.041s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5324 conn:1:4 sconn:133286 | development.find | STARTED | {"find"=>"friendships", "filter"=>{"sender_id"=>BSON::ObjectId('64178a304d883733548e78e9'), "status"=>"pending"}, "projection"=>{"receiver_id"=>true}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b64604360 @seconds=...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5322 | development.find | SUCCEEDED | 0.053s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5325 conn:1:2 sconn:131181 | development.find | STARTED | {"find"=>"friendships", "filter"=>{"receiver_id"=>BSON::ObjectId('64178a304d883733548e78e9'), "status"=>"pending"}, "projection"=>{"sender_id"=>true}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b64604360 @seconds=...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5323 | development.find | SUCCEEDED | 0.049s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5326 conn:1:1 sconn:131166 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b64604360 @seconds=1682171339, @increment=1>, "signature"=>{"hash"=><BSON::Binary:0x32158...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5324 | development.find | SUCCEEDED | 0.044s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5327 conn:1:4 sconn:133286 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>{"$in"=>[BSON::ObjectId('6441658ded69891744d64547')]}}, "projection"=>{"name"=>true}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b64604360 @seconds=1682171339, @increment=1>, "s...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5325 | development.find | SUCCEEDED | 0.044s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5328 conn:1:2 sconn:131181 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>{"$in"=>[]}}, "projection"=>{"name"=>true}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b64604360 @seconds=1682171339, @increment=1>, "signature"=>{"hash"=><BSON::Binary:0x321580...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5326 | development.find | SUCCEEDED | 0.043s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5329 conn:1:1 sconn:131166 | development.find | STARTED | {"find"=>"friendships", "filter"=>{"status"=>"accepted", "$or"=>[{"sender_id"=>BSON::ObjectId('64178a304d883733548e78e9')}, {"receiver_id"=>BSON::ObjectId('64178a304d883733548e78e9')}]}, "projection"=>{"_id"=>true}, "$db"=>"development", "$clusterTime...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5327 | development.find | SUCCEEDED | 0.044s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5330 conn:1:4 sconn:133286 | development.find | STARTED | {"find"=>"friendships", "filter"=>{"sender_id"=>BSON::ObjectId('64178a304d883733548e78e9'), "status"=>"pending"}, "projection"=>{"_id"=>true}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b64604360 @seconds=16821713...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5328 | development.find | SUCCEEDED | 0.044s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5331 conn:1:2 sconn:131181 | development.find | STARTED | {"find"=>"friendships", "filter"=>{"receiver_id"=>BSON::ObjectId('64178a304d883733548e78e9'), "status"=>"pending"}, "projection"=>{"_id"=>true}, "$db"=>"development", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023b64604360 @seconds=168217...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5329 | development.find | SUCCEEDED | 0.045s
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5332 conn:1:1 sconn:131166 | development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>{"$in"=>[BSON::ObjectId('641726ca4d88377c80a4c98a'), BSON::ObjectId('64178a304d883733548e78e9'), BSON::ObjectId('64178a304d883733548e78e9')]}}, "projection"=>{"name"=>true}, "$db"=>"development", "$clusterTime"=>{"c...
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5330 | development.find | SUCCEEDED | 0.045s
+Completed 200 OK in 184ms (Views: 0.3ms | MongoDB: 172.7ms | Allocations: 15936)
+
+
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5331 | development.find | SUCCEEDED | 0.044s
+Completed 200 OK in 195ms (Views: 0.2ms | MongoDB: 184.8ms | Allocations: 15295)
+
+
+MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:5332 | development.find | SUCCEEDED | 0.043s
+Completed 200 OK in 191ms (Views: 0.2ms | MongoDB: 179.8ms | Allocations: 14713)
+
+

@@ -109,14 +109,21 @@ export default {
                 timer: 1000
               });
             })
-            .catch(err => console.log(err))
-      } else {
+            .catch((error) => {
+              this.$swal({
+                icon: 'error',
+                title: 'Ooops...',
+                text: error.response.data.errors[0],
+                confirmButtonColor: '#ffc90b',
+              });
+            });
+      } else if (this.passwordsMatch){
         axios.post(config.updateUserURL + this.userDetails._id.$oid, {
           "name": this.input.newUsername,
           "email": this.input.newEmail,
-           "password": this.input.newPassword,
-           "password_confirmation": this.input.newPassword
-        },{withCredentials: true})
+          "password": this.input.newPassword,
+          "password_confirmation": this.input.newPasswordRepeat
+        }, {withCredentials: true})
             .then(() => {
               this.$router.go(0);
 
@@ -128,7 +135,14 @@ export default {
                 timer: 1000
               });
             })
-            .catch(err => console.log(err))
+            .catch((error) => {
+              this.$swal({
+                icon: 'error',
+                title: 'Ooops...',
+                text: error.response.data.errors[0],
+                confirmButtonColor: '#ffc90b',
+              });
+            });
       }
 
     },
@@ -144,6 +158,12 @@ export default {
         title: 'Delete your account?',
         text: "Are you sure? You won't be able to revert this!",
         type: 'warning',
+        backdrop: `
+          rgba(255, 184, 0, 0.3)
+          url("../assets/sad.gif")
+          left top
+          no-repeat
+        `,
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',

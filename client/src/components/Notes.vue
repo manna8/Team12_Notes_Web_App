@@ -19,9 +19,9 @@
       <div class="col">
         <div  class="d-grid">
           <div class="btn-group" role="group" aria-label="Basic outlined example">
-            <button type="button" class="btn btn-dark btn-outline-warning">Your notes</button>
-            <button type="button" class="btn btn-dark btn-outline-warning">Notes shared with you</button>
-            <button type="button" class="btn btn-dark btn-outline-warning">Notes you are sharing</button>
+            <button type="button" class="btn btn-dark btn-outline-warning text-white">Your notes</button>
+            <button type="button" class="btn btn-dark btn-outline-warning text-white">Notes shared with you</button>
+            <button type="button" class="btn btn-dark btn-outline-warning text-white">Notes you are sharing</button>
           </div>
         </div>
       </div>

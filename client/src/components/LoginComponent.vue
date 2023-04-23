@@ -77,11 +77,10 @@ export default {
 
             })
             .catch((error) => {
-              console.log(error.message);
               this.$swal({
                 icon: 'error',
-                title: 'Oops...',
-                text: 'User with provided credentials does not exist!',
+                title: 'Ooops...',
+                text: error.response.data.message,
                 confirmButtonColor: '#ffc90b',
               });
 

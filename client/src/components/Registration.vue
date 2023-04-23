@@ -70,8 +70,24 @@ export default {
           "email": this.input.email,
           "password": this.input.password,
           "password_confirmation": this.input.password_v2
-        }).then(() => this.$router.push({path: '/login'}))
-        .catch(err => console.log(err.message));
+        }).then(() => {
+          this.$router.push({path: '/login'});
+          this.$swal({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Registered successfully',
+            showConfirmButton: false,
+            timer: 1000
+          });
+        })
+            .catch((error) => {
+              this.$swal({
+                icon: 'error',
+                title: 'Ooops...',
+                text: error.response.data.errors[0],
+                confirmButtonColor: '#ffc90b',
+              });
+            });
       }
     },
     checkValidity() {

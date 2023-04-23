@@ -38,7 +38,7 @@
 <script>
 import axios from "axios";
 import config from "../../config/config";
-import { BlobServiceClient, StorageSharedKeyCredential } from '@azure/storage-blob';
+// import { BlobServiceClient, StorageSharedKeyCredential } from '@azure/storage-blob';
 // import { BlobServiceClient } from '@azure/storage-blob';
 
 export default {
@@ -61,7 +61,7 @@ export default {
 
   methods: {
     addNote() {
-      this.uploadImage();
+      // this.uploadImage();
 
       if (this.titleValid() && this.descValid()) {
         console.log(this.input.selectedCollection);
@@ -82,41 +82,41 @@ export default {
 
     async uploadImage() {
       // Create a BlobServiceClient object using your access key
-      const accountName = 'notesapp3';
-      const accountKey = 'q9bYYEIUH+2zKnwWgwj1Eif1WOCOY2eiWN9M9QpcrbXUJGNa2VMUXUVlIgLrsEE4Jzd4bP8ApyDH+AStN7j3Lw==';
-      // const connectionString = 'DefaultEndpointsProtocol=https;AccountName=notesapp3;AccountKey=q9bYYEIUH+2zKnwWgwj1Eif1WOCOY2eiWN9M9QpcrbXUJGNa2VMUXUVlIgLrsEE4Jzd4bP8ApyDH+AStN7j3Lw==;EndpointSuffix=core.windows.net';
-
-      const sharedKeyCredential = new StorageSharedKeyCredential(accountName, accountKey);
-
-      const blobServiceClient = new BlobServiceClient(
-          `https://${accountName}.blob.core.windows.net`,
-          sharedKeyCredential
-      );
-
-
-      // const blobServiceClient = BlobServiceClient.fromConnectionString(connectionString);
-
-      // Get a reference to the container where you want to store the images
-      const containerName = 'notes-images';
-      const containerClient = blobServiceClient.getContainerClient(containerName);
-
-      // Generate a unique name for the image file
-      const fileName = `${Date.now()}-${this.selectedFile.name}`;
-
-      // Get a block blob client and upload the image file to Blob Storage
+      // const accountName = 'notesapp3';
+      // const accountKey = 'q9bYYEIUH+2zKnwWgwj1Eif1WOCOY2eiWN9M9QpcrbXUJGNa2VMUXUVlIgLrsEE4Jzd4bP8ApyDH+AStN7j3Lw==';
+      // // const connectionString = 'DefaultEndpointsProtocol=https;AccountName=notesapp3;AccountKey=q9bYYEIUH+2zKnwWgwj1Eif1WOCOY2eiWN9M9QpcrbXUJGNa2VMUXUVlIgLrsEE4Jzd4bP8ApyDH+AStN7j3Lw==;EndpointSuffix=core.windows.net';
+      //
+      // const sharedKeyCredential = new StorageSharedKeyCredential(accountName, accountKey);
+      //
+      // const blobServiceClient = new BlobServiceClient(
+      //     `https://${accountName}.blob.core.windows.net`,
+      //     sharedKeyCredential
+      // );
+      //
+      //
+      // // const blobServiceClient = BlobServiceClient.fromConnectionString(connectionString);
+      //
+      // // Get a reference to the container where you want to store the images
+      // const containerName = 'notes-images';
+      // const containerClient = blobServiceClient.getContainerClient(containerName);
+      //
+      // // Generate a unique name for the image file
+      // const fileName = `${Date.now()}-${this.selectedFile.name}`;
+      //
+      // // Get a block blob client and upload the image file to Blob Storage
+      // // const blockBlobClient = containerClient.getBlockBlobClient(fileName);
+      // // await blockBlobClient.uploadData(this.selectedFile);
+      //
+      // const blob = new Blob([this.selectedFile], { type: this.selectedFile.type });
+      //
+      // // Get a block blob client and upload the image file to Blob Storage
       // const blockBlobClient = containerClient.getBlockBlobClient(fileName);
-      // await blockBlobClient.uploadData(this.selectedFile);
-
-      const blob = new Blob([this.selectedFile], { type: this.selectedFile.type });
-
-      // Get a block blob client and upload the image file to Blob Storage
-      const blockBlobClient = containerClient.getBlockBlobClient(fileName);
-      await blockBlobClient.uploadData(blob);
-
-      // Save the URL to your database or use it to display the image on your app
-      this.input.selectedImageURL = blockBlobClient.url;
-
-      console.log(blockBlobClient.url);
+      // await blockBlobClient.uploadData(blob);
+      //
+      // // Save the URL to your database or use it to display the image on your app
+      // this.input.selectedImageURL = blockBlobClient.url;
+      //
+      // console.log(blockBlobClient.url);
 
     },
 

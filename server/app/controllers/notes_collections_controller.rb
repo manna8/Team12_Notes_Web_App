@@ -34,6 +34,7 @@ class NotesCollectionsController < ApplicationController
       user = User.find_by(id: shared[:id])
       users_shared[:name] = user.name
     end
+    render json: users_shared
   end
   def all_collections
     @notes_collections = NotesCollection.all

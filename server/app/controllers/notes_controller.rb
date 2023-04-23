@@ -36,7 +36,8 @@ class NotesController < ApplicationController
     users_shared.each do |shared|
       user = User.find_by(id: shared[:id])
       users_shared[:name] = user.name
-      end
+    end
+    render json: users_shared
   end
   def show
     if @note[:user_id] == @current_user[:id] or @is_admin

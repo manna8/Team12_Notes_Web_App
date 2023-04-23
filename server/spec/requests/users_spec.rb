@@ -11,12 +11,19 @@ require 'rails_helper'
 # end
 include ActionController::Cookies
 RSpec.describe UsersController, type: :controller do
+
   describe "GET #show" do
     context "when user is authenticated" do
-      let(:user) { create(:user) }
+      let(:user) { create(:user, password:  'password') }
 
       it "returns the current user's details" do
 
+        # session = SessionsController.new
+        # session.post :create
+        old_controller = @controller
+        @controller = SessionsController.new
+        post :create, params: { email: user.email, password:  'password'}
+        @controller = old_controller
         get :show
         expect(response).to have_http_status(:ok)
         expect(response.body).to eq({ user: user }.to_json)
@@ -37,10 +44,13 @@ RSpec.describe UsersController, type: :controller do
       #   attributes_for(:user, name: Faker::Name.name, email: Faker::Internet.email, password: "password")
       # end
 
-      let(:user) { create(:user, password: 'password' ) }
+      #let(:user) { create(:user, password: 'password' ) }
       it "creates a new user and returns a success message" do
 
-        post :create, params: user
+        post :create, params: {name: :user.name,
+                               email: :user.email,
+                               password: "password",
+                               password_confirmation: "password"}
 
         expect(response).to have_http_status(:created)
         expect(response.body).to eq({ message: "User created successfully." }.to_json)
@@ -49,7 +59,10 @@ RSpec.describe UsersController, type: :controller do
       end
 
       it "sets the JWT cookie" do
-        post :create, params: user
+        post :create, params: {name: user.name,
+                                         email: user.name,
+                                         password: user.password,
+                                         password_confirmation: user.password}
         expect(cookies["jwt"]).not_to be_nil
       end
     end

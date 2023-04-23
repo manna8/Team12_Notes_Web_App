@@ -87,7 +87,7 @@ class FriendshipsController < ApplicationController
 
     @receiver = User.where(:email => params[:email]).first
     if @receiver.nil?
-      render json: {message:"User does not exists"}, status: :unprocessable_entity
+      render json: {message:"User does not exist"}, status: :unprocessable_entity
       return
     end
     if Friendship.where(sender_id: @current_user.id, receiver_id: @receiver.id).exists? ||

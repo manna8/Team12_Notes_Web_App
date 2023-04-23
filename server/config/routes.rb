@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   get 'notes_shared_with_me', to: 'notes#shared_with_me_notes'
   post '/notes/:id', to: 'notes#update'
   post '/notes/:id/sharing', to: 'notes#sharing_update'
+  get '/notes/:id/shared_with' , to: 'notes#shared_users'
 
 
   resources :notes_collections

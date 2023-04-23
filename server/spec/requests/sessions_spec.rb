@@ -77,13 +77,15 @@ RSpec.describe SessionsController, type: :controller do
     end
 
     context "with invalid password" do
+      let(:user) { create(:user, password: 'password' ) }
       it "returns an unauthorized message" do
-        post :create, params: { email: 'test@example.com', password: 'wrongpassword' }
+        post :create, params: { email: user.email, password: 'wrongpassword' }
         expect(response).to have_http_status(:unauthorized)
         expect(cookies['jwt']).to be_nil
       end
     end
     context "with invalid password" do
+      let(:user) { create(:user, password: 'password') }
       it "returns an unauthorized message" do
         post :create, params: { email: 'wrong@mail', password: 'password' }
         expect(response).to have_http_status(:unauthorized)
@@ -94,13 +96,13 @@ RSpec.describe SessionsController, type: :controller do
 
   describe "GET show" do
     context "when user is authenticated" do
-      let(:user) { create(:user) }
+      let(:user) { create(:user, password: 'password') }
 
       it "returns the current user's information" do
 
+        post :create, params: { email: user.email, password: 'password' }
 
         get :show
-
         expect(response).to have_http_status(:ok)
         expect(JSON.parse(response.body)['email']).to eq(user.email)
       end
@@ -116,9 +118,10 @@ RSpec.describe SessionsController, type: :controller do
 
   describe "DELETE destroy" do
     context "when user is authenticated" do
-      let(:user) { create(:user) }
+      let(:user) { create(:user, password: 'password') }
 
       it "deletes the JWT cookie and logs out the user" do
+        post :create, params: { email: user.email, password: 'password' }
         delete :destroy
         expect(response).to have_http_status(:ok)
         expect(response.cookies['jwt']).to be_nil

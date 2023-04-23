@@ -32,14 +32,14 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <div class="container" v-if="friendsList.length !== 0">
-              <ul class="list-group" v-for="friend in friendsList" v-bind:key="friend.name">
+            <div class="container" v-if="friendsListWithId.length !== 0">
+              <ul class="list-group" v-for="friend in friendsListWithId" v-bind:key="friend.name">
                 <li class="list-group-item">
 
                   <div class="input-group">
 
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" :value="friend" :id="friend.name" v-model="friendsToShare">
+                        <input class="form-check-input" type="checkbox" :value="friend.id.$oid" :id="friend.name" v-model="friendsToShare">
                         <label class="form-check-label" for="flexCheckDefault">
                           <h5>{{ friend.name }}</h5>
                         </label>
@@ -80,6 +80,7 @@ export default {
     return {
       notes: [],
       friendsList: [],
+      friendsListWithId: [],
       sharedNoteId: null,
       friendsToShare: []
     };
@@ -111,8 +112,18 @@ export default {
       this.friendsList = res.data;
       console.log(this.friendsList);
     },
+    async getFriendsWithId() {
+      const res = await axios.get(config.getFriendsWithIdURL, {withCredentials: true});
+      this.friendsListWithId = res.data;
+      console.log(this.friendsList);
+    },
     shareNote() {
       console.log(this.friendsToShare);
+
+      axios.post(config.updateSharingNotesURL + this.sharedNoteId.$oid + '/sharing_update', this.friendsToShare, {withCredentials: true})
+          .then(() => console.log('Hurraa!'))
+          .catch(err => console.log(err));
+
       this.friendsToShare = [];
       this.sharedNoteId = null;
     }
@@ -121,6 +132,7 @@ export default {
   mounted() {
     this.getNotes();
     this.getFriends();
+    this.getFriendsWithId();
     console.log(this.friendsList);
   }
 }

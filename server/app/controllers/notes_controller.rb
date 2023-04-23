@@ -1,5 +1,5 @@
 class NotesController < ApplicationController
-  before_action :set_note, only: %i[ show update destroy ]
+  before_action :set_note, only: [ :show, :update, :destroy ]
   before_action :authenticate_user!
   before_action :authorize_admin!, only:[:all_notes]
   # GET /notes
@@ -16,6 +16,15 @@ class NotesController < ApplicationController
     end
   end
 
+  def my_shared_notes
+    notes = Note.where(user_id: @current_user[:id]).where.not(shared_with: [])
+    render json: notes
+  end
+
+  def shared_with_me_notes
+    notes = Note.where(:shared_with.in => [@current_user[:id]])
+    render json: notes
+  end
 
   def show
     if @note[:user_id] == @current_user[:id] or @is_admin
@@ -59,6 +68,15 @@ class NotesController < ApplicationController
   def update
     if @note.update(note_params)
       render json: { message: 'Note updated successfully.'}, status: :ok
+    else
+      render json: @note.errors, status: :unprocessable_entity
+    end
+  end
+
+  def sharing_update
+    note = Note.find(params[:id])
+    if note.update(shared_with: params[:shared_with])
+      render json: { message: 'Sharing updated successfully.'}, status: :ok
     else
       render json: @note.errors, status: :unprocessable_entity
     end

@@ -15,6 +15,16 @@ Rails.application.routes.draw do
   # get 'users/get' => 'users#get'
   resources :notes
   post 'create_note', to: 'notes#create'
+  get  'notes_sharing', to: 'notes#my_shared_notes'
+  get 'notes_shared_with_me', to: 'notes#shared_with_me_notes'
+  post '/notes/:id', to: 'notes#update'
+  post '/notes/:id/sharing', to: 'notes#sharing_update'
+
+
+  resources :notes_collections
+  post '/notes_collection/:id/sharing', to: 'notes_collections#sharing_update'
+  get  'notes_collections_sharing', to: 'notes_collections#my_shared_collections'
+  get 'notes_collections_shared_with_me', to: 'notes_collections#shared_with_me_collections'
 
   resources :users
   post '/users/:id', to: 'users#update'

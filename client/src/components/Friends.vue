@@ -124,7 +124,18 @@ export default {
                 timer: 1000
               });
             })
-            .catch(err => console.log(err.message));
+            .catch(err => {
+              console.log(err.response.data.message)
+              if (err.response) {
+                this.$swal({
+                  icon: 'error',
+                  title: err.response.data.message,
+                  showConfirmButton: false,
+                  timer: 1500
+                });
+              }
+            });
+
       }
     },
     removeFriend(id) {

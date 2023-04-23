@@ -35,7 +35,7 @@ class NotesController < ApplicationController
     users_shared = users_ids.map{|id| {name: "", id: id } }
     users_shared.each do |shared|
       user = User.find_by(id: shared[:id])
-      users_shared[:name] = user.name
+      shared[:name] = user.name
     end
     render json: users_shared
   end

@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-  before_action :authenticate_user!, only: [:show, :update, :destroy]
+  before_action :authenticate_user!, only: [:show, :update, :destroy, :friends]
   before_action :authorize_admin!, only:[:all_users]
   before_action :set_user, only: %i[update destroy]
 
@@ -8,6 +8,17 @@ class UsersController < ApplicationController
   include ActionController::Cookies
   def show
     render json: { user: current_user }
+  end
+
+  def friends
+    friends_id  = User.find_by(:id => @current_user[:id]).friend_ids
+
+    friends =  friends_id.map{|id| {name: "", id: id } }
+    friends.each do |shared|
+      user = User.find_by(id: shared[:id])
+      shared[:name] = user.name
+    end
+    render json: friends
   end
 
   def all_users

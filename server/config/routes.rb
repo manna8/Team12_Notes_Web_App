@@ -18,12 +18,12 @@ Rails.application.routes.draw do
   get  'notes_sharing', to: 'notes#my_shared_notes'
   get 'notes_shared_with_me', to: 'notes#shared_with_me_notes'
   post '/notes/:id', to: 'notes#update'
-  post '/notes/:id/sharing', to: 'notes#sharing_update'
+  post '/notes/:id/sharing_update', to: 'notes#sharing_update'
   get '/notes/:id/shared_with' , to: 'notes#shared_users'
 
 
   resources :notes_collections
-  post '/notes_collection/:id/sharing', to: 'notes_collections#sharing_update'
+  post '/notes_collection/:id/sharing_update', to: 'notes_collections#sharing_update'
   get  'notes_collections_sharing', to: 'notes_collections#my_shared_collections'
   get 'notes_collections_shared_with_me', to: 'notes_collections#shared_with_me_collections'
   get '/notes_collection/:id/shared_with' , to: 'notes_collections#shared_users'
@@ -34,6 +34,7 @@ Rails.application.routes.draw do
   get 'all_users', to: 'users#all_users'
   get 'show', to: 'users#show'
   post 'register', to: 'users#create'
+  get "friends_with_id", to: "users#friends"
 
   post 'login', to: 'sessions#create'
   get 'login', to: 'sessions#show'
@@ -43,5 +44,6 @@ Rails.application.routes.draw do
   get 'friends/sent', to: "friendships#sent_friend_requests"
   get 'friends/received', to: "friendships#received_friend_requests"
   get "friends", to: "friendships#friends"
+
 
 end

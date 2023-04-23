@@ -38,6 +38,8 @@
 <script>
 import axios from "axios";
 import config from "../../config/config";
+import { BlobServiceClient, StorageSharedKeyCredential } from '@azure/storage-blob';
+// import { BlobServiceClient } from '@azure/storage-blob';
 
 export default {
   name: "AddNote",
@@ -51,7 +53,7 @@ export default {
         description: "",
         fileName: "",
         selectedImageURL: "",
-        selectedImageData: null,
+        selectedFile : null,
         selectedCollection: ""
       },
     };
@@ -59,6 +61,8 @@ export default {
 
   methods: {
     addNote() {
+      this.uploadImage();
+
       if (this.titleValid() && this.descValid()) {
         console.log(this.input.selectedCollection);
 
@@ -72,50 +76,55 @@ export default {
       }
     },
     async uploadFile(event) {
-      const file = event.target.files[0];
-      const accessToken = 'sl.Bcp1GgNyV7HKbbYCJlmIN-0-sA7Cnc8Ev0TEYQ3KNjpnrFs5lCQedHpHUDsYYRA7J6UcrDYPxTdDvKdL7gccMw9DgIba0-DTKbovKx052Cuyqz7ty2WrgQ0vNWM9O9xzFQJqUksg9CDG';
-      const url = 'https://content.dropboxapi.com/2/files/upload';
-      const headers = {
-        'Authorization': `Bearer ${accessToken}`,
-        'Content-Type': 'application/octet-stream',
-        'Dropbox-API-Arg': JSON.stringify({
-          path: `/mindnote/${file.name}`,
-          mode: 'add',
-          autorename: false,
-          mute: false,
-          strict_conflict: false
-        })
-      };
-      const response = await axios.post(url, file, { headers });
-      console.log(response.data);
 
-      const sharingUrl = 'https://api.dropboxapi.com/2/sharing/create_shared_link_with_settings';
-      const sharingHeaders = {
-        'Authorization': `Bearer ${accessToken}`,
-        'Content-Type': 'application/json'
-      };
-      const sharingData = {
-        path: response.data.path_display
-      };
-      const sharingResponse = await axios.post(sharingUrl, sharingData, { headers: sharingHeaders });
-
-      // Use the shared link URL in your application
-      const imageUrl = sharingResponse.data.url;
-      this.input.selectedImageURL = imageUrl;
+      this.selectedFile = event.target.files[0];
     },
+
+    async uploadImage() {
+      // Create a BlobServiceClient object using your access key
+      const accountName = 'notesapp3';
+      const accountKey = 'q9bYYEIUH+2zKnwWgwj1Eif1WOCOY2eiWN9M9QpcrbXUJGNa2VMUXUVlIgLrsEE4Jzd4bP8ApyDH+AStN7j3Lw==';
+      // const connectionString = 'DefaultEndpointsProtocol=https;AccountName=notesapp3;AccountKey=q9bYYEIUH+2zKnwWgwj1Eif1WOCOY2eiWN9M9QpcrbXUJGNa2VMUXUVlIgLrsEE4Jzd4bP8ApyDH+AStN7j3Lw==;EndpointSuffix=core.windows.net';
+
+      const sharedKeyCredential = new StorageSharedKeyCredential(accountName, accountKey);
+
+      const blobServiceClient = new BlobServiceClient(
+          `https://${accountName}.blob.core.windows.net`,
+          sharedKeyCredential
+      );
+
+
+      // const blobServiceClient = BlobServiceClient.fromConnectionString(connectionString);
+
+      // Get a reference to the container where you want to store the images
+      const containerName = 'notes-images';
+      const containerClient = blobServiceClient.getContainerClient(containerName);
+
+      // Generate a unique name for the image file
+      const fileName = `${Date.now()}-${this.selectedFile.name}`;
+
+      // Get a block blob client and upload the image file to Blob Storage
+      // const blockBlobClient = containerClient.getBlockBlobClient(fileName);
+      // await blockBlobClient.uploadData(this.selectedFile);
+
+      const blob = new Blob([this.selectedFile], { type: this.selectedFile.type });
+
+      // Get a block blob client and upload the image file to Blob Storage
+      const blockBlobClient = containerClient.getBlockBlobClient(fileName);
+      await blockBlobClient.uploadData(blob);
+
+      // Save the URL to your database or use it to display the image on your app
+      this.input.selectedImageURL = blockBlobClient.url;
+
+      console.log(blockBlobClient.url);
+
+    },
+
     titleValid() {
-      if (this.input.title === "") {
-        return false;
-      } else {
-        return true;
-      }
+      return this.input.title !== "";
     },
     descValid() {
-      if (this.input.description === "") {
-        return false;
-      } else {
-        return true;
-      }
+      return this.input.description !== "";
     },
     async getCollections() {
       const res = await axios.get(config.getCollectionsURL, {withCredentials: true});

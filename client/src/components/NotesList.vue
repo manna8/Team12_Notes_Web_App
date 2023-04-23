@@ -5,7 +5,7 @@
         <ul v-for="note in notes" v-bind:key="note.title">
           <div class="col">
           <div class="card" style="max-width: 18rem">
-            <img src="../assets/background4.png" class="card-img-top" alt="image :/">
+            <img :src="getImageURL(note)" class="card-img-top" alt="image :/">
             <div class="card-body">
               <h5 class="note-title">{{ note.title }}</h5>
               <p class="note-text">{{ note.description }}</p>
@@ -17,7 +17,9 @@
         </ul>
       </div>
       <div class="container p-3 my-3 border mx-auto mb-3 mt-5 border-dark rounded" v-else>
-        <h3>You don't have any notes yet!</h3>
+        <div class="text-center">
+          <h3>You don't have any notes yet!</h3>
+        </div>
       </div>
     </div>
   </div>
@@ -55,11 +57,14 @@ export default {
     },
     getImageURL(note) {
       console.log(note);
-      if (note.photo_url === "" || note.photo_url === null) {
-        return note.photo_url;
-      } else {
-        return "http://localhost:8080/assets/background4.png";
-      }
+      // if (note.photo_url === "" || note.photo_url === null) {
+      //   return note.photo_url;
+      // } else {
+      //   return "http://localhost:8080/assets/background4.png";
+      // }
+
+      return require('../assets/background2.png');
+
     }
   },
 

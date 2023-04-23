@@ -20,6 +20,7 @@ const config = {
     answerFriendRequestURL: "http://127.0.0.1:3000/friendships/",
     removeFriendURL: "http://127.0.0.1:3000/friendships/",
     getPendingFriendsURL: "http://127.0.0.1:3000/friends/sent",
+    getSharingNotesURL: "http://127.0.0.1:3000/notes_sharing"
 };
 
 module.exports = config;

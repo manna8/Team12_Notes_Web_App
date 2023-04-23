@@ -11,7 +11,7 @@
               <p class="note-text">{{ note.description }}</p>
               <router-link :to="'/notes/' + note._id.$oid" class="btn btn-outline-warning">Details</router-link>
               <button class="btn btn-outline-dark" @click="deleteNote(note._id)">Delete note</button>
-              <button class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Share note</button>
+              <button class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#staticBackdrop" @click="sharedNoteId = note._id">Share note</button>
             </div>
           </div>
           </div>
@@ -36,14 +36,14 @@
               <ul class="list-group" v-for="friend in friendsList" v-bind:key="friend.name">
                 <li class="list-group-item">
 
-
                   <div class="input-group">
 
                     <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                      <label class="form-check-label" for="flexCheckDefault">
-                        <h5>{{ friend.name }}</h5>
-                      </label>
+                        <input class="form-check-input" type="checkbox" :value="friend" :id="friend.name" v-model="friendsToShare">
+                        <label class="form-check-label" for="flexCheckDefault">
+                          <h5>{{ friend.name }}</h5>
+                        </label>
+
                     </div>
                   </div>
                 </li>
@@ -54,8 +54,8 @@
             </div>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Share</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" @click="sharedNoteId=null; friendsToShare=[]">Close</button>
+            <button type="button" class="btn btn-warning" @click="shareNote()">Share</button>
           </div>
         </div>
       </div>
@@ -79,7 +79,9 @@ export default {
   data() {
     return {
       notes: [],
-      friendsList: []
+      friendsList: [],
+      sharedNoteId: null,
+      friendsToShare: []
     };
   },
 
@@ -109,6 +111,11 @@ export default {
       this.friendsList = res.data;
       console.log(this.friendsList);
     },
+    shareNote() {
+      console.log(this.friendsToShare);
+      this.friendsToShare = [];
+      this.sharedNoteId = null;
+    }
   },
 
   mounted() {

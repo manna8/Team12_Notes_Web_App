@@ -44,6 +44,7 @@
                   <div class="container">
                     <button class="btn btn-success btn-sm" type="button" @click="acceptFriend(friend.friendship_id)">Accept</button>
                     <button class="btn btn-danger btn-sm" type="button" @click="declineFriend(friend.friendship_id)">Decline</button>
+                    <button class="btn btn-danger btn-sm" type="button" @click="blockFriend(friend.friendship_id)">Block</button>
                   </div>
                 </li>
               </ul>
@@ -175,8 +176,14 @@ export default {
           .catch(err => console.log(err.message));
     },
     declineFriend(id) {
+      axios.delete(config.removeFriendURL + id.$oid, {withCredentials: true})
+          .then(() => this.$router.go(0))
+          .catch(err => console.log(err.message));
+
+    },
+    blockFriend(id) {
       axios.put(config.answerFriendRequestURL + id.$oid, {
-        "status": "declined",
+        "status": "blocked",
       }, {withCredentials: true})
           .then(() => {
             this.$router.go(0);

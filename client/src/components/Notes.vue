@@ -19,9 +19,9 @@
       <div class="col">
         <div  class="d-grid">
           <div class="btn-group" role="group" aria-label="Basic outlined example">
-            <button type="button" class="btn btn-dark btn-outline-warning text-white">Your notes</button>
-            <button type="button" class="btn btn-dark btn-outline-warning text-white">Notes shared with you</button>
-            <button type="button" class="btn btn-dark btn-outline-warning text-white">Notes you are sharing</button>
+            <button type="button" class="btn btn-dark btn-outline-warning text-white" @click="toggleUserNotes">Your notes</button>
+            <button type="button" class="btn btn-dark btn-outline-warning text-white" @click="toggleSharedNotes">Notes shared with you</button>
+            <button type="button" class="btn btn-dark btn-outline-warning text-white" @click="toggleSharingNotes">Notes you are sharing</button>
           </div>
         </div>
       </div>
@@ -30,7 +30,7 @@
     <br>
     <div class="row ms-auto overflow-auto" style="height: 500px">
       <div class="col h-100 d-inline-block">
-        <div>
+        <div v-if="showUserNotes">
           <NotesList></NotesList>
         </div>
       </div>
@@ -48,11 +48,50 @@ export default {
 
   data() {
     return {
-
+      showUserNotes: true,
+      showSharedWithUserNotes: false,
+      showSharingNotes: false
     };
   },
   components: {
     NotesList,
+  },
+  methods: {
+    toggleUserNotes() {
+      this.showUserNotes = !this.showUserNotes;
+
+      if (this.showSharedWithUserNotes) {
+        this.showSharedWithUserNotes = false;
+      }
+
+      if (this.showSharingNotes) {
+        this.showSharingNotes = false;
+      }
+    },
+
+    toggleSharedNotes() {
+      this.showSharedWithUserNotes = !this.showSharedWithUserNotes;
+
+      if (this.showUserNotes) {
+        this.showUserNotes = false;
+      }
+
+      if (this.showSharingNotes) {
+        this.showSharingNotes = false;
+      }
+    },
+
+    toggleSharingNotes() {
+      this.showSharingNotes = !this.showSharingNotes;
+
+      if (this.showUserNotes) {
+        this.showUserNotes = false;
+      }
+
+      if (this.showSharedWithUserNotes) {
+        this.showSharedWithUserNotes = false;
+      }
+    }
   }
 }
 </script>

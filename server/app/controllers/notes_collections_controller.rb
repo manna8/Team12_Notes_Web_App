@@ -13,6 +13,15 @@ class NotesCollectionsController < ApplicationController
     end
   end
 
+  def my_shared_collections
+    collections = NotesCollection.where(user_id: @current_user[:id]).where.not(shared_with: [])
+    render json: collections
+  end
+
+  def shared_with_me_collections
+    collections = NotesCollection.where(:shared_with.in => [@current_user[:id]])
+    render json: collections
+  end
   def all_collections
     @notes_collections = NotesCollection.all
     render json:@notes_collections
@@ -61,6 +70,16 @@ class NotesCollectionsController < ApplicationController
       render :show, status: :ok, location: @notes_collection
     else
       render json: @notes_collection.errors, status: :unprocessable_entity
+    end
+  end
+
+
+  def sharing_update
+    notes_collection = NotesCollection.find(params[:id])
+    if notes_collection.update(shared_with: params[:shared_with])
+      render json: { message: 'Sharing updated successfully.'}, status: :ok
+    else
+      render json: @note.errors, status: :unprocessable_entity
     end
   end
 

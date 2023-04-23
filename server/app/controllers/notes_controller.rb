@@ -16,7 +16,14 @@ class NotesController < ApplicationController
     end
   end
 
+  def my_shared_notes
+    @notes = Note.where(user_id: @current_user[:id], :shared_with.ne => [])
+    render json: @notes
+  end
 
+  def shared_with_me_notes
+    @notes = Note.where(:shared_with.in => [@current_user[:id]])
+  end
   def show
     if @note[:user_id] == @current_user[:id] or @is_admin
     render json:@note

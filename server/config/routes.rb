@@ -15,6 +15,8 @@ Rails.application.routes.draw do
   # get 'users/get' => 'users#get'
   resources :notes
   post 'create_note', to: 'notes#create'
+  get  'notes/sharing', to: 'notes#my_shared_notes'
+  get 'notes/shared_with_me', to: 'notes#shared_with_me_notes'
 
   resources :users
   post '/users/:id', to: 'users#update'

@@ -27,13 +27,23 @@ class FriendshipsController < ApplicationController
     # friendship_ids = friends.pluck(:id)
     # sent_data = friend_users.zip(friendship_ids).map { |name, id| { name: name, friendship_id: id } }
     # render json: sent_data
-    accepted_friendships =Friendship.where(status: "accepted", :$or => [{sender_id: @current_user.id}, {receiver_id: @current_user.id}])
-    user = User.find_by(id: @current_user.id)
-    friends_ids = user.friend_ids
-    friendship_ids = accepted_friendships.pluck(:id)
-    friends = User.in(id: friends_ids).pluck(:name)
-    sent_data = friends.zip(friendship_ids).map { |name, id| { name: name, friendship_id: id } }
-    render json: sent_data
+
+    friends_id  = Friendship.where(status: "accepted", sender_id: @current_user.id).pluck(:id, :receiver_id) +
+                  Friendship.where(status: "accepted", receiver_id: @current_user.id).pluck(:id, :sender_id)
+
+    # friendship_ids  = Friendship.where(status: "accepted", sender_id: @current_user.id).pluck(:id) +
+    #   Friendship.where(status: "accepted", receiver_id: @current_user.id).pluck(:id)
+    friends = friends_id.map{|id, name| {name: name, friendship_id: id } }
+    friends.each do |friend|
+      user = User.find_by(id: friend[:name])
+      friend[:name] = user.name
+    end
+    #friends_id.map{|id, name| {name: name, friendship_id: id } }
+    #accepted_friendships = accep_friendships+acc_friends
+    # friendship_ids = accepted_friendships.pluck(:id)
+    # friends_names = User.in(id: friends_id).pluck(:name)
+    # sent_data = friends_names.zip(friendship_ids).map { |name, id| { name: name, friendship_id: id } }
+    render json: friends
   end
   def sent_friend_requests
     # sent = Friendship.where(sender_id: @current_user.id, :status => "pending").first
@@ -69,8 +79,23 @@ class FriendshipsController < ApplicationController
   # POST /friendships
   # POST /friendships.json
   def create
+    if params[:email] == @current_user.email
+      render json: {message:"You can't send request to yourself"}, status: :unprocessable_entity
+      return
+    end
+
 
     @receiver = User.where(:email => params[:email]).first
+    if @receiver.nil?
+      render json: {message:"User does not exists"}, status: :unprocessable_entity
+      return
+    end
+    if Friendship.where(sender_id: @current_user.id, receiver_id: @receiver.id).exists? ||
+      Friendship.where(sender_id:@receiver.id , receiver_id: @current_user.id).exists?
+      render json: {message:"There is already a friendship request"}, status: :unprocessable_entity
+      return
+    end
+
     @friendship = Friendship.new(:sender_id => @current_user.id,
                                  :receiver_id =>@receiver.id,
                                  :status => "pending")

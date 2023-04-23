@@ -120,7 +120,7 @@ export default {
     shareNote() {
       console.log(this.friendsToShare);
 
-      axios.post(config.updateSharingNotesURL + this.sharedNoteId.$oid + '/sharing_update', this.friendsToShare, {withCredentials: true})
+      axios.post(config.updateSharingNotesURL + this.sharedNoteId.$oid + '/sharing_update', {'friendsToShare': this.friendsToShare}, {withCredentials: true})
           .then(() => console.log('Hurraa!'))
           .catch(err => console.log(err));
 

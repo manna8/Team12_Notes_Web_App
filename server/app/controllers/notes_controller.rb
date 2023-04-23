@@ -26,6 +26,18 @@ class NotesController < ApplicationController
     render json: notes
   end
 
+
+  def shared_users
+    note = Note.find(params[:id])
+
+    users_ids  = note.shared_with
+
+    users_shared = users_ids.map{|id| {name: "", id: id } }
+    users_shared.each do |shared|
+      user = User.find_by(id: shared[:id])
+      users_shared[:name] = user.name
+      end
+  end
   def show
     if @note[:user_id] == @current_user[:id] or @is_admin
     render json:@note
@@ -54,10 +66,7 @@ class NotesController < ApplicationController
       else
         render json: { errors: user.errors.full_messages }, status: :unprocessable_entity
       end
-    # render :show, status: :created, location: @note
-    #     else
-    #       render json: @note.errors, status: :unprocessable_entity
-    #     end
+
     end
 
 

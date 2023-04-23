@@ -55,7 +55,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" @click="sharedNoteId=null; friendsToShare=[]">Close</button>
-            <button type="button" class="btn btn-warning" @click="shareNote()">Share</button>
+            <button type="button" class="btn btn-warning" data-bs-dismiss="modal" @click="shareNote()">Share</button>
           </div>
         </div>
       </div>
@@ -120,7 +120,7 @@ export default {
     shareNote() {
       console.log(this.friendsToShare);
 
-      axios.post(config.updateSharingNotesURL + this.sharedNoteId.$oid + '/sharing_update', {'friendsToShare': this.friendsToShare}, {withCredentials: true})
+      axios.post(config.updateSharingNotesURL + this.sharedNoteId.$oid + '/sharing_update', {'shared_with': this.friendsToShare}, {withCredentials: true})
           .then(() => console.log('Hurraa!'))
           .catch(err => console.log(err));
 

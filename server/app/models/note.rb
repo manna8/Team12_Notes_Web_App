@@ -9,5 +9,5 @@ class Note
   belongs_to :notes_collection, optional: true
 
   field :shared_with, type: Array, default: []
-  #has_many :user, foreign_key: :sender_id, class_name: 'User'
+
 end

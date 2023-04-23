@@ -32,7 +32,6 @@ class NotesController < ApplicationController
 
     users_ids  = note.shared_with
 
-
     users_shared = users_ids.map{|id| {name: "", id: id } }
     users_shared.each do |shared|
       user = User.find_by(id: shared[:id])
@@ -67,10 +66,7 @@ class NotesController < ApplicationController
       else
         render json: { errors: user.errors.full_messages }, status: :unprocessable_entity
       end
-    # render :show, status: :created, location: @note
-    #     else
-    #       render json: @note.errors, status: :unprocessable_entity
-    #     end
+
     end
 
 

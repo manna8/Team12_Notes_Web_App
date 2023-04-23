@@ -22,6 +22,19 @@ class NotesCollectionsController < ApplicationController
     collections = NotesCollection.where(:shared_with.in => [@current_user[:id]])
     render json: collections
   end
+
+
+  def shared_users
+    collection = NotesCollection.find(params[:id])
+
+    users_ids  = collection.shared_with
+
+    users_shared = users_ids.map{|id| {name: "", id: id } }
+    users_shared.each do |shared|
+      user = User.find_by(id: shared[:id])
+      users_shared[:name] = user.name
+    end
+  end
   def all_collections
     @notes_collections = NotesCollection.all
     render json:@notes_collections

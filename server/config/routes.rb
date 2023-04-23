@@ -26,6 +26,7 @@ Rails.application.routes.draw do
   post '/notes_collection/:id/sharing', to: 'notes_collections#sharing_update'
   get  'notes_collections_sharing', to: 'notes_collections#my_shared_collections'
   get 'notes_collections_shared_with_me', to: 'notes_collections#shared_with_me_collections'
+  get '/notes_collection/:id/shared_with' , to: 'notes_collections#shared_users'
 
   resources :users
   post '/users/:id', to: 'users#update'

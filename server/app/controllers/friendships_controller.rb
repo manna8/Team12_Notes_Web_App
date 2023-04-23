@@ -14,45 +14,18 @@ class FriendshipsController < ApplicationController
   end
 
   def friends
-    # @friends = Friendship.where("(sender_id = ? OR receiver_id = ?) AND status = ?", @current_user.id, @current_user.id, "accepted")
-    # render json: @friends[:name]
-
-    #friends = Friendship.where("(sender_id = ? OR receiver_id = ?) AND status = ?", @current_user.id, @current_user.id, "accepted")
-    #friends = Friendship.where("(sender_id = :user_id OR receiver_id = :user_id) AND status = :status", { user_id: @current_user.id, status: "accepted"})
-    #friends = Friendship.where(status: "accepted").or({sender_id: @current_user.id}, {receiver_id: @current_user.id})
-    #friends = Friendship.where(status: "accepted").where("sender_id = :user_id OR receiver_id = :user_id", user_id: @current_user.id)
-    # friends =Friendship.where(status: "accepted", :$or => [{sender_id: @current_user.id}, {receiver_id: @current_user.id}])
-    # puts friends.pluck(:receiver_id)
-    # friend_users = User.in(id: friends.pluck(:receiver_id)).pluck(:name)
-    # friendship_ids = friends.pluck(:id)
-    # sent_data = friend_users.zip(friendship_ids).map { |name, id| { name: name, friendship_id: id } }
-    # render json: sent_data
-
     friends_id  = Friendship.where(status: "accepted", sender_id: @current_user.id).pluck(:id, :receiver_id) +
                   Friendship.where(status: "accepted", receiver_id: @current_user.id).pluck(:id, :sender_id)
 
-    # friendship_ids  = Friendship.where(status: "accepted", sender_id: @current_user.id).pluck(:id) +
-    #   Friendship.where(status: "accepted", receiver_id: @current_user.id).pluck(:id)
     friends = friends_id.map{|id, name| {name: name, friendship_id: id } }
     friends.each do |friend|
       user = User.find_by(id: friend[:name])
       friend[:name] = user.name
     end
-    #friends_id.map{|id, name| {name: name, friendship_id: id } }
-    #accepted_friendships = accep_friendships+acc_friends
-    # friendship_ids = accepted_friendships.pluck(:id)
-    # friends_names = User.in(id: friends_id).pluck(:name)
-    # sent_data = friends_names.zip(friendship_ids).map { |name, id| { name: name, friendship_id: id } }
+
     render json: friends
   end
   def sent_friend_requests
-    # sent = Friendship.where(sender_id: @current_user.id, :status => "pending").first
-    # sent_users = User.where(:id => sent.receiver_id).first
-    # render json: sent_users.name
-
-    # sent_friendships = Friendship.where(sender_id: @current_user.id, status: "pending")
-    # sent_users = User.in(id: sent_friendships.pluck(:receiver_id)).pluck(:name)
-    # render json: sent_users
 
     sent_friendships = Friendship.where(sender_id: @current_user.id, status: "pending")
     sent_users = User.in(id: sent_friendships.pluck(:receiver_id)).pluck(:name)
@@ -60,15 +33,9 @@ class FriendshipsController < ApplicationController
     sent_data = sent_users.zip(friendship_ids).map { |name, id| { name: name, friendship_id: id } }
     render json: sent_data
 
-
-
-
   end
 
   def received_friend_requests
-    # sent = Friendship.where(:receiver_id => @current_user[:id], :status => "pending")
-    # received_users = User.where(:id => sent[:sender_id])
-    # render json: received_users[:name]
 
     received_friendships = Friendship.where(receiver_id: @current_user.id, status: "pending")
     received_users = User.in(id: received_friendships.pluck(:sender_id)).pluck(:name)
@@ -118,9 +85,6 @@ class FriendshipsController < ApplicationController
       user.friend_ids.push(@friendship[:sender_id])
       user.save
       end
-    # if status_update_params[:status] == "revoked"
-    #
-    # end
 
 
     if @friendship.update(status_update_params)

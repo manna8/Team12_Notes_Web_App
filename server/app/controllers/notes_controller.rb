@@ -5,13 +5,11 @@ class NotesController < ApplicationController
   # GET /notes
   # GET /notes.json
   def index
-  # .where(:country => 'canada')
-  #   @notes = Note.find(:all, :conditions => { :user_id => @current_user[:id] })
+
     if @is_admin
       all_notes
     else
       @notes = Note.where(:user_id => @current_user[:id])
-      #@notes = Note.all
       render json: @notes
     end
   end
@@ -41,9 +39,9 @@ class NotesController < ApplicationController
   end
   def show
     if @note[:user_id] == @current_user[:id] or @is_admin
-    render json:@note
+      render json:@note
     else
-      render json: { error: 'Not authenticated' }, status: :unauthorized
+      render json: { error: 'Not authorized' }, status: :unauthorized
     end
   end
 
@@ -65,7 +63,7 @@ class NotesController < ApplicationController
     if @note.save
         render json: { message: 'Note created successfully.' }, status: :created
       else
-        render json: { errors: user.errors.full_messages }, status: :unprocessable_entity
+        render json: { errors: @note.errors.full_messages }, status: :unprocessable_entity
       end
 
     end
@@ -79,7 +77,7 @@ class NotesController < ApplicationController
     if @note.update(note_params)
       render json: { message: 'Note updated successfully.'}, status: :ok
     else
-      render json: @note.errors, status: :unprocessable_entity
+      render json:{errors: @note.errors.full_messages }, status: :unprocessable_entity
     end
   end
 
@@ -89,16 +87,18 @@ class NotesController < ApplicationController
     if note.update(shared_with: params[:shared_with].map { |id| BSON::ObjectId.from_string(id) })
       render json: { message: 'Sharing updated successfully.'}, status: :ok
     else
-      render json: @note.errors, status: :unprocessable_entity
+      render json: { errors: note.errors.full_messages } , status: :unprocessable_entity
     end
   end
 
   # DELETE /notes/1
   # DELETE /notes/1.json
   def destroy
-    @note.destroy
-    render json: { message: 'Note deleted successfully.' }, status: :ok
-
+    if  @note.destroy
+      render json: { message: 'Note deleted successfully.' }, status: :ok
+    else
+      render json: { errors: @note.errors.full_messages }, status: :unprocessable_entity
+    end
   end
 
   private

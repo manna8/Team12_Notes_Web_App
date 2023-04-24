@@ -1,13 +1,18 @@
 class UsersController < ApplicationController
 
   before_action :authenticate_user!, only: [:show, :update, :destroy, :friends]
-  before_action :authorize_admin!, only:[:all_users]
+  before_action :authorize_admin!, only:[:all_users, :show_user_with_id]
   before_action :set_user, only: %i[update destroy]
 
 
   include ActionController::Cookies
   def show
-    render json: { user: current_user }
+    render json: { user: @current_user }
+  end
+
+  def show_user_with_id
+    user = User.find(params[:id])
+    render json: user
   end
 
   def friends
@@ -28,8 +33,6 @@ class UsersController < ApplicationController
   def create
     user = User.new(user_params)
     if user.save
-      jwt = encode_token(user_id: user.id)
-      cookies[:jwt] = { value: jwt, httponly: true }
       render json: { message: 'User created successfully.' }, status: :created
     else
       render json: { errors: user.errors.full_messages }, status: :unprocessable_entity
@@ -47,11 +50,15 @@ class UsersController < ApplicationController
 
   def destroy
     @notes = Note.where(:user_id => @user[:id])
-    @notes.destroy
+
     @collections= NotesCollection.where(:user_id => @user[:id])
-    @collections.destroy
-    @user.destroy
-    render json: { message: 'User deleted successfully.' }, status: :ok
+
+
+    if @notes.destroy && @collections.destroy && @user.destroy
+      render json: { message: 'User deleted successfully.' }, status: :ok
+    else
+      render json: { errors: @user.errors.full_messages }, status: :unprocessable_entity
+    end
   end
 
   private

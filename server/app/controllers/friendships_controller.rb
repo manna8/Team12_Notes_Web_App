@@ -1,7 +1,7 @@
 class FriendshipsController < ApplicationController
   before_action :set_friendship, only: %i[ show update destroy ]
   before_action :authenticate_user!
-  before_action :authorize_admin!, only:[:index]
+  before_action :authorize_admin!, only:[:index, :show]
   # GET /friendships
   # GET /friendships.json
   def index
@@ -11,6 +11,7 @@ class FriendshipsController < ApplicationController
   # GET /friendships/1
   # GET /friendships/1.json
   def show
+    render json:@friendship
   end
 
   def friends
@@ -53,6 +54,7 @@ class FriendshipsController < ApplicationController
 
 
     @receiver = User.where(:email => params[:email]).first
+
     if @receiver.nil?
       render json: {message:"User does not exist"}, status: :unprocessable_entity
       return

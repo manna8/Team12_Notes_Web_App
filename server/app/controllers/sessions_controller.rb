@@ -25,9 +25,11 @@ class SessionsController < ApplicationController
 
 
   def destroy
-    cookies.delete(:jwt, domain: '.127.0.0.1', path: "/", secure: true, httponly: true, expires: Time.at(0), same_site: :none)
-    @current_user = nil
-    # puts @current_user
-    render json: { message: 'Logged out successfully.' }, status: :ok
+    if cookies.delete(:jwt, domain: '.127.0.0.1', path: "/", secure: true, httponly: true, expires: Time.at(0), same_site: :none)
+      @current_user = nil
+      render json: { message: 'Logged out successfully.' }, status: :ok
+    else
+      render json: { message: 'Unable to logout' }, status: :unprocessable_entity
+    end
   end
 end

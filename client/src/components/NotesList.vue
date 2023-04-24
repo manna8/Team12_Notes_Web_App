@@ -4,14 +4,14 @@
       <div class="row row-cols-1 row-cols-md-3 g-4" v-if="notes.length !== 0" style="width: auto; height: auto">
         <ul v-for="note in notes" v-bind:key="note.title">
           <div class="col">
-          <div class="card" style="max-width: 18rem">
+          <div class="card" style="max-width: 15rem">
             <img :src="getImageURL(note)" class="card-img-top" alt="image :/">
             <div class="card-body">
               <h5 class="note-title">{{ note.title }}</h5>
               <p class="note-text">{{ note.description }}</p>
               <router-link :to="'/notes/' + note._id.$oid" class="btn btn-outline-warning">Details</router-link>
               <button class="btn btn-outline-dark" @click="deleteNote(note._id)">Delete note</button>
-              <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#staticBackdrop" @click="sharedNoteId = note._id">Share note</button>
+              <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#staticBackdrop" @click="getSharedFriends(note._id)">Share note</button>
             </div>
           </div>
           </div>
@@ -39,7 +39,7 @@
                   <div class="input-group">
 
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" :value="friend.id.$oid" :id="friend.name" v-model="friendsToShare">
+                        <input class="form-check-input" type="checkbox" :value="friend.id.$oid" :id="friend.name" v-model="friendsToShare" :checked="noteAlreadyShared(friend.id.$oid)">
                         <label class="form-check-label" for="flexCheckDefault">
                           <h5>{{ friend.name }}</h5>
                         </label>
@@ -82,7 +82,8 @@ export default {
       friendsList: [],
       friendsListWithId: [],
       sharedNoteId: null,
-      friendsToShare: []
+      friendsToShare: [],
+      sharedFriendsList: []
     };
   },
 
@@ -117,6 +118,13 @@ export default {
       this.friendsListWithId = res.data;
       console.log(this.friendsList);
     },
+    async getSharedFriends(id) {
+      this.sharedNoteId = id;
+
+      const res = await axios.get(config.getSharedFriendsURL  + this.sharedNoteId.$oid + '/shared_with', {withCredentials: true});
+      this.sharedFriendsList = res.data;
+      console.log(this.sharedFriendsList);
+    },
     shareNote() {
       console.log(this.friendsToShare);
 
@@ -125,7 +133,14 @@ export default {
           .catch(err => console.log(err));
 
       this.friendsToShare = [];
+      this.sharedFriendsList = [];
       this.sharedNoteId = null;
+    },
+    noteAlreadyShared(id) {
+      if (this.sharedFriendsList.some(friend => friend.id.$oid === id)) {
+        return true;
+      }
+      return false;
     }
   },
 

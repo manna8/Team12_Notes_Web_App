@@ -32,12 +32,13 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
+
+
             <div class="container" v-if="friendsListWithId.length !== 0">
               <ul class="list-group" v-for="friend in friendsListWithId" v-bind:key="friend.name">
                 <li class="list-group-item">
 
                   <div class="input-group">
-
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" :value="friend.id.$oid" :id="friend.name" v-model="friendsToShare" :checked="noteAlreadyShared(friend.id.$oid)">
                         <label class="form-check-label" for="flexCheckDefault">
@@ -79,11 +80,11 @@ export default {
   data() {
     return {
       notes: [],
-      friendsList: [],
       friendsListWithId: [],
       sharedNoteId: null,
       friendsToShare: [],
-      sharedFriendsList: []
+      sharedFriendsList: [],
+
     };
   },
 
@@ -96,27 +97,19 @@ export default {
     async getNotes() {
       const res = await axios.get(config.getNotesURL, {withCredentials: true});
       this.notes = res.data;
-      console.log(this.notes);
     },
     getImageURL(note) {
-      console.log(note);
-      // if (note.photo_url === "" || note.photo_url === null) {
-      //   return note.photo_url;
-      // } else {
-      //   return "http://localhost:8080/assets/background4.png";
-      // }
-
-      return require('../assets/background2.png');
-    },
-    async getFriends() {
-      const res = await axios.get(config.getFriendsURL, {withCredentials: true});
-      this.friendsList = res.data;
-      console.log(this.friendsList);
+      if (note.photo !== null) {
+        let img = new Image();
+        img.src = 'data:image/png;base64,' + note.photo;
+        return img.src;
+      } else {
+        return require('../assets/background2.png');
+      }
     },
     async getFriendsWithId() {
       const res = await axios.get(config.getFriendsWithIdURL, {withCredentials: true});
       this.friendsListWithId = res.data;
-      console.log(this.friendsList);
     },
     async getSharedFriends(id) {
       this.sharedNoteId = id;
@@ -124,9 +117,10 @@ export default {
       const res = await axios.get(config.getSharedFriendsURL  + this.sharedNoteId.$oid + '/shared_with', {withCredentials: true});
       this.sharedFriendsList = res.data;
       console.log(this.sharedFriendsList);
+
+      this.getUnsharedFriends();
     },
     shareNote() {
-      console.log(this.friendsToShare);
 
       axios.post(config.updateSharingNotesURL + this.sharedNoteId.$oid + '/sharing_update', {'shared_with': this.friendsToShare}, {withCredentials: true})
           .then(() => console.log('Hurraa!'))
@@ -146,9 +140,7 @@ export default {
 
   mounted() {
     this.getNotes();
-    this.getFriends();
     this.getFriendsWithId();
-    console.log(this.friendsList);
   }
 }
 </script>

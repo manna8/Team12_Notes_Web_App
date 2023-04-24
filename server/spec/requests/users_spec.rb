@@ -47,8 +47,8 @@ RSpec.describe UsersController, type: :controller do
       #let(:user) { create(:user, password: 'password' ) }
       it "creates a new user and returns a success message" do
 
-        post :create, params: {name: :user.name,
-                               email: :user.email,
+        post :create, params: {name: Faker::Internet.name,
+                               email: Faker::Internet.email,
                                password: "password",
                                password_confirmation: "password"}
 
@@ -59,8 +59,8 @@ RSpec.describe UsersController, type: :controller do
       end
 
       it "sets the JWT cookie" do
-        post :create, params: {name: user.name,
-                                         email: user.name,
+        post :create, params: {name: Faker::Internet.name,
+                                         email: Faker::Internet.email,
                                          password: user.password,
                                          password_confirmation: user.password}
         expect(cookies["jwt"]).not_to be_nil

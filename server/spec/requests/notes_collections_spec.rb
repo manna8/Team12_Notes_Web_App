@@ -16,26 +16,35 @@ RSpec.describe "/notes_collections", type: :request do
   # This should return the minimal set of attributes required to create a valid
   # NotesCollection. As you add validations to NotesCollection, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
-  }
+  # let(:valid_attributes) {
+  #   skip("Add a hash of attributes valid for your model")
+  # }
+  #
+  # let(:invalid_attributes) {
+  #   skip("Add a hash of attributes invalid for your model")
+  # }
+  #
+  # # This should return the minimal set of values that should be in the headers
+  # # in order to pass any filters (e.g. authentication) defined in
+  # # NotesCollectionsController, or in your router and rack
+  # # middleware. Be sure to keep this updated too.
+  # let(:valid_headers) {
+  #   {}
+  # }
 
-  let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
-  }
 
-  # This should return the minimal set of values that should be in the headers
-  # in order to pass any filters (e.g. authentication) defined in
-  # NotesCollectionsController, or in your router and rack
-  # middleware. Be sure to keep this updated too.
-  let(:valid_headers) {
-    {}
-  }
+
 
   describe "GET /index" do
+    let(:user) { create(:user, password:  'password') }
+    old_controller = @controller
+    @controller = SessionsController.new
+    post :create, params: { email: user.email, password:  'password'}
+    @controller = old_controller
+    let(:notes_collection) { create(:notes_collection) }
     it "renders a successful response" do
-      NotesCollection.create! valid_attributes
-      get notes_collections_url, headers: valid_headers, as: :json
+
+      get notes_collections_url
       expect(response).to be_successful
     end
   end

@@ -22,7 +22,9 @@ const config = {
     getPendingFriendsURL: "http://127.0.0.1:3000/friends/sent",
     getSharingNotesURL: "http://127.0.0.1:3000/notes_sharing",
     updateSharingNotesURL: "http://127.0.0.1:3000/notes/",
-    getFriendsWithIdURL: "http://127.0.0.1:3000/friends_with_id"
+    getFriendsWithIdURL: "http://127.0.0.1:3000/friends_with_id",
+    getSharedNotesURL: "http://127.0.0.1:3000/notes_shared_with_me",
+    getSharedFriendsURL: "http://127.0.0.1:3000/notes/",
 };
 
 module.exports = config;

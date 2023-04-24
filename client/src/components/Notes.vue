@@ -19,7 +19,7 @@
       <div class="col">
         <div  class="d-grid">
           <div class="btn-group" role="group" aria-label="Basic outlined example">
-            <button type="button" class="btn btn-dark btn-outline-white text-white" @click="toggleUserNotes">Your notes</button>
+            <button type="button" class="btn btn-dark btn-outline-white text-white toggle-black-button" @click="toggleUserNotes">Your notes</button>
             <button type="button" class="btn btn-dark btn-outline-white text-white" @click="toggleSharedNotes">Notes shared with you</button>
             <button type="button" class="btn btn-dark btn-outline-white text-white" @click="toggleSharingNotes">Notes you are sharing</button>
           </div>
@@ -33,6 +33,12 @@
         <div v-if="showUserNotes">
           <NotesList></NotesList>
         </div>
+        <div v-if="showSharingNotes">
+          <SharingNotesList></SharingNotesList>
+        </div>
+        <div v-if="showSharedWithUserNotes">
+          <SharedNotesList></SharedNotesList>
+        </div>
       </div>
     </div>
 
@@ -42,6 +48,8 @@
 
 <script>
 import NotesList from "@/components/NotesList.vue";
+import SharingNotesList from "@/components/SharingNotesList.vue";
+import SharedNotesList from "@/components/SharedNotesList.vue";
 
 export default {
   name: "Notes",
@@ -55,6 +63,8 @@ export default {
   },
   components: {
     NotesList,
+    SharingNotesList,
+    SharedNotesList
   },
   methods: {
     toggleUserNotes() {

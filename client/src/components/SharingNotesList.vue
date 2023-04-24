@@ -11,7 +11,7 @@
                 <p class="note-text">{{ note.description }}</p>
                 <router-link :to="'/notes/' + note._id.$oid" class="btn btn-outline-warning">Details</router-link>
                 <button class="btn btn-outline-dark" @click="deleteNote(note._id)">Delete note</button>
-                <button class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Share note</button>
+                <button class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#staticBackdrop" @click="getSharedFriends(note._id)">Share note</button>
               </div>
             </div>
           </div>
@@ -55,7 +55,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Share</button>
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Share</button>
           </div>
         </div>
       </div>
@@ -73,7 +73,8 @@ export default {
   data() {
     return {
       notes: [],
-      friendsList: []
+      friendsList: [],
+      sharedWithList: []
     };
   },
 
@@ -83,10 +84,32 @@ export default {
       this.notes = res.data;
       console.log(this.notes);
     },
+    getImageURL(note) {
+      console.log(note);
+      // if (note.photo_url === "" || note.photo_url === null) {
+      //   return note.photo_url;
+      // } else {
+      //   return "http://localhost:8080/assets/background4.png";
+      // }
+
+      return require('../assets/background2.png');
+    },
+    deleteNote(id) {
+      axios.delete(config.deleteNotesURL + id.$oid, {withCredentials: true})
+          .then(() => this.getNotes())
+          .catch(err => console.log(err.message));
+    },
+    async getFriendsWithId() {
+      const res = await axios.get(config.getFriendsWithIdURL, {withCredentials: true});
+      this.friendsList = res.data;
+      console.log(this.friendsList);
+    },
   },
 
   mounted() {
     this.getNotes();
+    this.getFriendsWithId();
+    // console.log(this.notes);
   }
 }
 </script>

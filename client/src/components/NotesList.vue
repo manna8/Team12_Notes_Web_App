@@ -11,7 +11,7 @@
               <p class="note-text">{{ note.description }}</p>
               <router-link :to="'/notes/' + note._id.$oid" class="btn btn-outline-warning">Details</router-link>
               <button class="btn btn-outline-dark" @click="deleteNote(note._id)">Delete note</button>
-              <button class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#staticBackdrop" @click="sharedNoteId = note._id">Share note</button>
+              <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#staticBackdrop" @click="sharedNoteId = note._id">Share note</button>
             </div>
           </div>
           </div>

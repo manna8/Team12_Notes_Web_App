@@ -85,7 +85,8 @@ class NotesController < ApplicationController
 
   def sharing_update
     note = Note.find(params[:id])
-    if note.update(shared_with: params[:shared_with])
+
+    if note.update(shared_with: params[:shared_with].map { |id| BSON::ObjectId.from_string(id) })
       render json: { message: 'Sharing updated successfully.'}, status: :ok
     else
       render json: @note.errors, status: :unprocessable_entity

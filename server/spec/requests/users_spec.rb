@@ -101,9 +101,10 @@ RSpec.describe UsersController, type: :controller do
         @controller = old_controller
       end
       it "returns the current user's details" do
-        post :destroy, params: { id: user.id}
+        expect {
+          delete :destroy, params: { id: user.id}
+        }.to change(User, :count).by(-1)
         expect(response).to have_http_status(:ok)
-
       end
 
     end

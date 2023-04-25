@@ -19,9 +19,9 @@
       <div class="col">
         <div  class="d-grid">
           <div class="btn-group" role="group" aria-label="Basic outlined example">
-            <button type="button" class="btn btn-dark btn-outline-white text-white toggle-black-button" @click="toggleUserNotes">Your notes</button>
-            <button type="button" class="btn btn-dark btn-outline-white text-white" @click="toggleSharedNotes">Notes shared with you</button>
-            <button type="button" class="btn btn-dark btn-outline-white text-white" @click="toggleSharingNotes">Notes you are sharing</button>
+            <button type="button" class="btn btn-dark btn-outline-white text-white" :class="{ active: showUserNotes }" @click="toggleUserNotes">Your notes</button>
+            <button type="button" class="btn btn-dark btn-outline-white text-white" :class="{ active: showSharedWithUserNotes  }" @click="toggleSharedNotes">Notes shared with you</button>
+            <button type="button" class="btn btn-dark btn-outline-white text-white" :class="{ active: showSharingNotes  }" @click="toggleSharingNotes">Notes you are sharing</button>
           </div>
         </div>
       </div>
@@ -58,7 +58,7 @@ export default {
     return {
       showUserNotes: true,
       showSharedWithUserNotes: false,
-      showSharingNotes: false
+      showSharingNotes: false,
     };
   },
   components: {

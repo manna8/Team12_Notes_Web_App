@@ -15,11 +15,11 @@
       </div>
 
       <div class="mb-3 d-flex flex-column align-items-start" v-if="collections.length !== 0">
-        <div>Selected collection: {{ input.selectedCollection }}</div>
+        <div>Selected collection: </div>
 
         <select v-model="input.selectedCollection">
           <option></option>
-          <option v-for="collection in collections" :key="collection.title">{{ collection.title }}</option>
+          <option v-for="collection in collections" :value ="collection._id" :key="collection._id">{{ collection.title }}</option>
         </select>
       </div>
 
@@ -38,8 +38,6 @@
 <script>
 import axios from "axios";
 import config from "../../config/config";
-// import { BlobServiceClient, StorageSharedKeyCredential } from '@azure/storage-blob';
-// import { BlobServiceClient } from '@azure/storage-blob';
 
 export default {
   name: "AddNote",
@@ -55,26 +53,43 @@ export default {
         selectedImageURL: "",
         selectedFile : null,
         encodedFile: null,
-        selectedCollection: ""
+        selectedCollection: null
       },
     };
   },
 
   methods: {
     addNote() {
-      // this.uploadImage();
+      const formData = new FormData();
+      formData.append('image', this.input.encodedFile);
+
+      if (this.input.selectedCollection !== null) {
+        this.input.selectedCollection = this.input.selectedCollection.$oid;
+      }
 
       if (this.titleValid() && this.descValid()) {
-        console.log(this.input.selectedCollection);
+        if (this.input.encodedFile !== null) {
+          axios.post(config.addNoteURL, {
+            "title": this.input.title,
+            "description": this.input.description,
+            "notes_collection_id": this.input.selectedCollection,
+            "photo": this.input.encodedFile.split(',')[1] // Get the base64 string from the encoded file
+          }, {withCredentials: true})
+              .then(() => this.$router.push({path: '/notes'}))
+              .catch(err => console.log(err.message));
+        } else {
+          axios.post(config.addNoteURL, {
+            "title": this.input.title,
+            "description": this.input.description,
+            "notes_collection_id": this.input.selectedCollection,
+            "photo": {} // Get the base64 string from the encoded file
+          }, {withCredentials: true})
+              .then(() => this.$router.push({path: '/notes'}))
+              .catch(err => console.log(err.message));
+        }
 
-        axios.post(config.addNoteURL, {
-          "title": this.input.title,
-          "description": this.input.description,
-          "photo_url": this.input.selectedImageURL
-        }, {withCredentials: true})
-            .then(() => this.$router.push({path: '/notes'}))
-            .catch(err => console.log(err.message));
       }
+
     },
     async uploadFile(event) {
       this.selectedFile = event.target.files[0];
@@ -82,23 +97,11 @@ export default {
       const reader = new FileReader();
       reader.readAsDataURL(this.selectedFile);
 
-      reader.onload = () => {
-        this.file = reader.result;
-      }
-    },
-
-    uploadImage() {
-      const formData = new FormData();
-      formData.append('image', this.file);
-
-      axios.post('/api/images', formData, {
-        headers: {
-          'Content-Type': 'multipart/form-data'
-        }
-      }).then(response => {
-        console.log(response);
-      }).catch(error => {
-        console.log(error);
+      await new Promise((resolve) => {
+        reader.onload = () => {
+          this.input.encodedFile = reader.result;
+          resolve();
+        };
       });
     },
 

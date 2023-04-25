@@ -34,6 +34,3 @@ html, body {
     --bs-accordion-active-color: black;
 }
 
-.toggle-black-button:active:focus {
-    box-shadow: 0 0 0 0.2rem rgb(255, 201, 11);
-}

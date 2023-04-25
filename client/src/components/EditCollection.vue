@@ -13,12 +13,8 @@
               <li class="list-group-item">
                 <h4 class="text-warning">{{ note.title }}</h4>
                 <p class="text-white">{{ note.description }}</p>
-                <div v-if="inCollection(note._id)">
-                  <button class="btn btn-outline-warning">Remove from collection</button>
-                </div>
-                <div v-else>
-                  <button class="btn btn-outline-warning">Add to collection</button>
-                </div>
+                <button class="btn btn-outline-warning">Remove from collection</button>
+
 
               </li>
             </div>
@@ -55,23 +51,19 @@ export default {
   methods: {
     async getCollection() {
       const res = await axios.get(config.getCollectionURL + this.id, {withCredentials: true});
-      this.collection = res.data;
+      this.collection = res.data.notes_collection;
+      this.notes = res.data.notes;
 
       console.log(this.collection);
+      console.log(this.notes);
     },
-    async getNotes() {
-      const res = await axios.get(config.getNotesURL, {withCredentials: true});
-      this.notes = res.data;
-    },
-    inCollection(id) {
-      console.log(id);
-    }
+
 
   },
   created() {
     this.id = this.$route.params.id;
     this.getCollection();
-    this.getNotes();
+    // this.getNotes();
   }
 }
 </script>

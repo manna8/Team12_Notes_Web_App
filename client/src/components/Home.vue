@@ -7,7 +7,7 @@
           Welcome to MindNote!
         </h2>
 
-      <div class="container p-3 my-3 border bg-secondary-subtle mx-auto mb-3 mt-5 border-warning rounded" style="width: 700px; height: auto">
+      <div class="container p-3 my-3 border bg-secondary-subtle mx-auto mb-3 mt-5 border-warning rounded" style="max-width: 700px; height: auto">
         <p>Welcome home to MindNote, your personal space for organizing your thoughts and ideas! We're thrilled to have you back and can't wait to see all the amazing notes you'll create. Whether you're jotting down a quick reminder or drafting a complex project plan, MindNote is here to help you keep everything in one place.
 
           With MindNote, you can easily create, edit, and organize notes in a way that makes sense to you. By using collections, you can customize MindNote to fit your unique workflow. And with our seamless syncing across devices, you can access your notes from anywhere, at any time.

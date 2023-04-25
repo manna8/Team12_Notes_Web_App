@@ -7,4 +7,6 @@ class NotesCollection
 
   belongs_to :user
   has_many :note
+
+  validates :title, presence: true
 end

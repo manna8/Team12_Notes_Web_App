@@ -76,5 +76,9 @@ group :development do
   gem 'shoulda-matchers'
 
   gem 'mongoid-rspec'
+
+  group :test do
+    gem 'database_cleaner-mongoid'
+  end
 end
 

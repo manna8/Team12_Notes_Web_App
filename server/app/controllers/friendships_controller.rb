@@ -9,6 +9,7 @@ class FriendshipsController < ApplicationController
   # GET /friendships.json
   def index
     @friendships = Friendship.all
+    render json: @friendships
   end
 
   # GET /friendships/1

@@ -1,7 +1,7 @@
 class NotesController < ApplicationController
   #before_action :set_note, only: [ :show, :update, :destroy, :shared_users, :check_if_admin_or_owner ]
   before_action :authenticate_user!
-  before_action :authorize_admin!, only:[:all_notes]
+  before_action :authorize_admin!, only:[:render_all_notes]
 
   before_action :check_if_admin_or_owner, only: [:show, :shared_users, :update, :sharing_update, :destroy]
   # GET /notes

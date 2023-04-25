@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-  before_action :authenticate_user!, only: [:show, :update, :destroy, :friends]
+  before_action :authenticate_user!, only: [:all_users, :show, :update, :destroy, :friends ]
   before_action :authorize_admin!, only:[:all_users, :show_user_with_id]
   #before_action :set_user, only: %i[update destroy show_user_with_id]
 
@@ -88,7 +88,7 @@ class UsersController < ApplicationController
 
   def check_if_admin_or_owner
     @user = User.find(params[:id])
-    unless @user[:user_id] == @current_user[:id] or @is_admin
+    unless @user[:id] == @current_user[:id] or @is_admin
       render json: { error: 'Not authorized' }, status: :unauthorized
     end
   end

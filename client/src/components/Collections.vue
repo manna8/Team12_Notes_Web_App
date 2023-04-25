@@ -14,7 +14,21 @@
           </div>
         </div>
       </div>
+
+      <div class="row ms-auto">
+        <div class="col">
+          <div  class="d-grid">
+            <div class="btn-group" role="group" aria-label="Basic outlined example">
+              <button type="button" class="btn btn-dark btn-outline-white text-white" :class="{ active: showUserCollections }" @click="toggleUserNotes">Your collection</button>
+              <button type="button" class="btn btn-dark btn-outline-white text-white" :class="{ active: showSharedWithUserCollections  }" @click="toggleSharedNotes">Collections shared with you</button>
+              <button type="button" class="btn btn-dark btn-outline-white text-white" :class="{ active: showSharingCollections  }" @click="toggleSharingNotes">Collections you are sharing</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <br>
+
       <div class="row ms-auto overflow-auto" style="height: 500px">
         <div class="col h-100 d-inline-block">
           <CollectionsList />

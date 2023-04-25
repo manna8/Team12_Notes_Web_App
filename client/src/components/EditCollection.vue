@@ -8,15 +8,14 @@
     <div class="row row-cols-1 row-cols-md-3 g-4" v-if="notes.length !== 0" style="width: auto; height: auto">
       <ul v-for="note in notes" v-bind:key="note.title">
         <div class="col">
-          <div class="card" style="max-width: 18rem; background-color: #404040">
+          <div class="card" style="max-width: 18rem">
+            <img :src="getImageURL(note)" class="card-img-top" alt="image :/">
             <div class="card-body">
-              <li class="list-group-item">
-                <h4 class="text-warning">{{ note.title }}</h4>
-                <p class="text-white">{{ note.description }}</p>
-                <button class="btn btn-outline-warning">Remove from collection</button>
-
-
-              </li>
+              <h5 class="note-title">{{ note.title }}</h5>
+              <p class="note-text">{{ note.description }}</p>
+              <router-link :to="'/notes/' + note._id.$oid" class="btn btn-outline-warning">Details</router-link>
+              <button class="btn btn-outline-dark" @click="deleteNote(note._id)">Delete note</button>
+              <button class="btn btn-warning" @click="removeNoteFromCollection(note._id)">Remove from collection</button>
             </div>
           </div>
 
@@ -57,7 +56,27 @@ export default {
       console.log(this.collection);
       console.log(this.notes);
     },
-
+    removeNoteFromCollection(id) {
+      axios.post(config.updateNoteURL + id.$oid, {
+        "notes_collection_id": "",
+      }, {withCredentials: true}).then(res => console.log(res))
+          .then(() => this.$router.go(0))
+          .catch(err => console.log(err.message));
+    },
+    getImageURL(note) {
+      if (note.photo !== null) {
+        let img = new Image();
+        img.src = 'data:image/png;base64,' + note.photo;
+        return img.src;
+      } else {
+        return require('../assets/background2.png');
+      }
+    },
+    deleteNote(id) {
+      axios.delete(config.deleteNotesURL + id.$oid, {withCredentials: true})
+          .then(() => this.getNotes())
+          .catch(err => console.log(err.message));
+    },
 
   },
   created() {

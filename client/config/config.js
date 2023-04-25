@@ -25,6 +25,8 @@ const config = {
     getFriendsWithIdURL: "http://127.0.0.1:3000/friends_with_id",
     getSharedNotesURL: "http://127.0.0.1:3000/notes_shared_with_me",
     getSharedFriendsURL: "http://127.0.0.1:3000/notes/",
+    getSharedFriendsColURL: "http://127.0.0.1:3000/notes_collection/",
+    updateSharingCollectionsURL: "http://127.0.0.1:3000/notes_collection/",
 };
 
 module.exports = config;

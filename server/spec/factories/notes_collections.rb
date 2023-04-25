@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :notes_collection do
-    title { "My Notes Collection" }
-    description { "A collection of my notes" }
+    title { Faker::Lorem.sentence }
+    description { Faker::Lorem.paragraph }
     user
   end
 end

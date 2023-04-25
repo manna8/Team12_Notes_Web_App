@@ -11,4 +11,6 @@ class Note
 
   field :shared_with, type: Array, default: []
 
+
+  validates :title, presence: true
 end

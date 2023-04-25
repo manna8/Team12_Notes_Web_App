@@ -1,20 +1,20 @@
 class NotesController < ApplicationController
-  before_action :set_note, only: [ :show, :update, :destroy ]
+  #before_action :set_note, only: [ :show, :update, :destroy, :shared_users, :check_if_admin_or_owner ]
   before_action :authenticate_user!
   before_action :authorize_admin!, only:[:all_notes]
+
+  before_action :check_if_admin_or_owner, only: [:show, :shared_users, :update, :sharing_update, :destroy]
   # GET /notes
   # GET /notes.json
   def index
-  # .where(:country => 'canada')
-  #   @notes = Note.find(:all, :conditions => { :user_id => @current_user[:id] })
     if @is_admin
-      all_notes
+      render_all_notes
     else
       @notes = Note.where(:user_id => @current_user[:id])
-      #@notes = Note.all
       render json: @notes
     end
   end
+
 
   def my_shared_notes
     notes = Note.where(user_id: @current_user[:id]).where.not(shared_with: [])
@@ -28,26 +28,31 @@ class NotesController < ApplicationController
 
 
   def shared_users
-    note = Note.find(params[:id])
+    # if @note[:user_id] == @current_user[:id] or @is_admin
+      note = Note.find(params[:id])
 
-    users_ids  = note.shared_with
+      users_ids  = note.shared_with
 
-    users_shared = users_ids.map{|id| {name: "", id: id } }
-    users_shared.each do |shared|
-      user = User.find_by(id: shared[:id])
-      shared[:name] = user.name
-    end
-    render json: users_shared
+      users_shared = users_ids.map{|id| {name: "", id: id } }
+      users_shared.each do |shared|
+        user = User.find_by(id: shared[:id])
+        shared[:name] = user.name
+      end
+        render json: users_shared
+      # else
+      #   render json: { error: 'Not authorized' }, status: :unauthorized
+      #end
+
   end
   def show
-    if @note[:user_id] == @current_user[:id] or @is_admin
+    #if @note[:user_id] == @current_user[:id] or @is_admin
     render json:@note
-    else
-      render json: { error: 'Not authenticated' }, status: :unauthorized
-    end
+    # else
+    #   render json: { error: 'Not authorized' }, status: :unauthorized
+    # end
   end
 
-  def all_notes
+  def render_all_notes
     @notes = Note.all
     render json:@notes
   end
@@ -65,21 +70,30 @@ class NotesController < ApplicationController
     if @note.save
         render json: { message: 'Note created successfully.' }, status: :created
       else
-        render json: { errors: user.errors.full_messages }, status: :unprocessable_entity
+        render json: { errors: @note.errors.full_messages }, status: :unprocessable_entity
       end
 
     end
 
+  def create_note_for_user
+    @note = Note.new(note_params)
+    @note.user = User.find_by(:id => params[:id])
 
-
+    if @note.save
+      render json: { message: 'Note created successfully.' }, status: :created
+    else
+      render json: { errors: @note.errors.full_messages }, status: :unprocessable_entity
+    end
+  end
 
   # PATCH/PUT /notes/1
   # PATCH/PUT /notes/1.json
   def update
+
     if @note.update(note_params)
       render json: { message: 'Note updated successfully.'}, status: :ok
     else
-      render json: @note.errors, status: :unprocessable_entity
+      render json:{errors: @note.errors.full_messages }, status: :unprocessable_entity
     end
   end
 
@@ -89,16 +103,18 @@ class NotesController < ApplicationController
     if note.update(shared_with: params[:shared_with].map { |id| BSON::ObjectId.from_string(id) })
       render json: { message: 'Sharing updated successfully.'}, status: :ok
     else
-      render json: @note.errors, status: :unprocessable_entity
+      render json: { errors: note.errors.full_messages } , status: :unprocessable_entity
     end
   end
 
   # DELETE /notes/1
   # DELETE /notes/1.json
   def destroy
-    @note.destroy
-    render json: { message: 'Note deleted successfully.' }, status: :ok
-
+    if  @note.destroy
+      render json: { message: 'Note deleted successfully.' }, status: :ok
+    else
+      render json: { errors: @note.errors.full_messages }, status: :unprocessable_entity
+    end
   end
 
   private
@@ -111,4 +127,11 @@ class NotesController < ApplicationController
     def note_params
       params.require(:note).permit(:title, :description, :photo, :notes_collection_id)
     end
+
+  def check_if_admin_or_owner
+    @note = Note.find(params[:id])
+    unless @note[:user_id] == @current_user[:id] or @is_admin
+      render json: { error: 'Not authorized' }, status: :unauthorized
+    end
+  end
 end

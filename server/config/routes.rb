@@ -29,6 +29,7 @@ Rails.application.routes.draw do
   get '/notes_collection/:id/shared_with' , to: 'notes_collections#shared_users'
 
   resources :users
+  get '/users/:id', to: 'users#show_user_with_id'
   post '/users/:id', to: 'users#update'
   delete '/users/:id', to: 'users#destroy'
   get 'all_users', to: 'users#all_users'

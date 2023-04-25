@@ -1,7 +1,10 @@
 class FriendshipsController < ApplicationController
-  before_action :set_friendship, only: %i[ show update destroy ]
+  #before_action :set_friendship, only: [ :show, :update, :destroy, :check_if_admin_or_in_relation, :check_if_admin_or_receiver ]
   before_action :authenticate_user!
-  before_action :authorize_admin!, only:[:index]
+  before_action :authorize_admin!, only:[:index, :show]
+  before_action :check_if_admin_or_in_relation, only: [:destroy]
+  before_action :check_if_admin_or_receiver, only: [:update]
+
   # GET /friendships
   # GET /friendships.json
   def index
@@ -11,6 +14,7 @@ class FriendshipsController < ApplicationController
   # GET /friendships/1
   # GET /friendships/1.json
   def show
+    render json:@friendship
   end
 
   def friends
@@ -53,6 +57,7 @@ class FriendshipsController < ApplicationController
 
 
     @receiver = User.where(:email => params[:email]).first
+
     if @receiver.nil?
       render json: {message:"User does not exist"}, status: :unprocessable_entity
       return
@@ -119,5 +124,20 @@ class FriendshipsController < ApplicationController
     end
   def status_update_params
     params.permit(:status)
+  end
+
+  def check_if_admin_or_in_relation
+    @friendship = Friendship.find(params[:id])
+    unless @friendship[:sender_id] == @current_user[:id] ||
+      @friendship[:receiver_id] == @current_user[:id] ||
+      @is_admin
+      render json: { error: 'Not authorized' }, status: :unauthorized
+    end
+  end
+  def check_if_admin_or_receiver
+    @friendship = Friendship.find(params[:id])
+    unless @friendship[:receiver_id] == @current_user[:id] || @is_admin
+      render json: { error: 'Not authorized' }, status: :unauthorized
+    end
   end
 end

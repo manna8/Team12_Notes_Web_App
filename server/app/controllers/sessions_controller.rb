@@ -3,7 +3,6 @@ class SessionsController < ApplicationController
   include ActionController::Cookies
   before_action :authenticate_user! , only: [:show, :destroy]
 
-
   def create
     user = User.find_by(:email => params[:email])
     if user && user.authenticate(params[:password])
@@ -17,17 +16,17 @@ class SessionsController < ApplicationController
     render json: { message: 'Invalid email or password.' }, status: :unauthorized
   end
 
-
-
     def show
     render json: @current_user
   end
 
 
   def destroy
-    cookies.delete(:jwt, domain: '.127.0.0.1', path: "/", secure: true, httponly: true, expires: Time.at(0), same_site: :none)
-    @current_user = nil
-    # puts @current_user
-    render json: { message: 'Logged out successfully.' }, status: :ok
+    if cookies.delete(:jwt, domain: '.127.0.0.1', path: "/", secure: true, httponly: true, expires: Time.at(0), same_site: :none)
+      @current_user = nil
+      render json: { message: 'Logged out successfully.' }, status: :ok
+    else
+      render json: { message: 'Unable to logout' }, status: :unprocessable_entity
+    end
   end
 end

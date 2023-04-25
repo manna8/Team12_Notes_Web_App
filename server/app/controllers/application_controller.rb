@@ -1,8 +1,6 @@
 class ApplicationController < ActionController::API
   include ActionController::Cookies
 
-  #before_action :authenticate_user! , only: [:show]
-  #before_action :authenicate_user, only: [:show]
   def authenticate_user!
     jwt_token = cookies[:jwt]
     if jwt_token
@@ -32,11 +30,6 @@ class ApplicationController < ActionController::API
     end
 
 
-  def check_admin
-    if @current_user[:role] != "admin"
-      render json: { error: 'You are not an admin' }, status: :unauthorized
-    end
-  end
   def encode_token(payload)
     JWT.encode(payload, Rails.application.secret_key_base)
   end
@@ -44,8 +37,6 @@ class ApplicationController < ActionController::API
   def decode_token(token)
     JWT.decode(token, Rails.application.secret_key_base)[0]
   end
-
-
 
   def current_user
     @current_user

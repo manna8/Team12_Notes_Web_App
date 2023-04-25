@@ -30,7 +30,6 @@ class ApplicationController < ActionController::API
     end
 
 
-
   def encode_token(payload)
     JWT.encode(payload, Rails.application.secret_key_base)
   end

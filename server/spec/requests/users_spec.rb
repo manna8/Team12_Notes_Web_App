@@ -40,11 +40,7 @@ RSpec.describe UsersController, type: :controller do
 
   describe "POST #create" do
     context "with valid parameters" do
-      # let(:valid_params) do
-      #   attributes_for(:user, name: Faker::Name.name, email: Faker::Internet.email, password: "password")
-      # end
 
-      #let(:user) { create(:user, password: 'password' ) }
       it "creates a new user and returns a success message" do
 
         post :create, params: {name: Faker::Internet.name,
@@ -54,8 +50,7 @@ RSpec.describe UsersController, type: :controller do
 
         expect(response).to have_http_status(:created)
         expect(response.body).to eq({ message: "User created successfully." }.to_json)
-        # expect(User.last.name).to eq(valid_params[:name])
-        # expect(User.last.email).to eq(valid_params[:email])
+
       end
 
       it "sets the JWT cookie" do

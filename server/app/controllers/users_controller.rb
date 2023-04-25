@@ -2,17 +2,16 @@ class UsersController < ApplicationController
 
   before_action :authenticate_user!, only: [:show, :update, :destroy, :friends]
   before_action :authorize_admin!, only:[:all_users, :show_user_with_id]
-  before_action :set_user, only: %i[update destroy]
+  #before_action :set_user, only: %i[update destroy show_user_with_id]
 
-
+  before_action :check_if_admin_or_owner, only: [:update, :destroy, :show_user_with_id]
   include ActionController::Cookies
   def show
     render json: { user: @current_user }
   end
 
   def show_user_with_id
-    user = User.find(params[:id])
-    render json: user
+    render json: @user
   end
 
   def friends
@@ -25,6 +24,20 @@ class UsersController < ApplicationController
     end
     render json: friends
   end
+
+
+  # for admin
+  def user_friends
+    friends_id  = User.find_by(:id => @user[:id]).friend_ids
+
+    friends =  friends_id.map{|id| {name: "", id: id } }
+    friends.each do |shared|
+      user = User.find_by(id: shared[:id])
+      shared[:name] = user.name
+    end
+    render json: friends
+  end
+
 
   def all_users
     @users = User.all
@@ -50,7 +63,6 @@ class UsersController < ApplicationController
 
   def destroy
     @notes = Note.where(:user_id => @user[:id])
-
     @collections= NotesCollection.where(:user_id => @user[:id])
 
 
@@ -74,5 +86,10 @@ class UsersController < ApplicationController
     end
   end
 
-
+  def check_if_admin_or_owner
+    @user = User.find(params[:id])
+    unless @user[:user_id] == @current_user[:id] or @is_admin
+      render json: { error: 'Not authorized' }, status: :unauthorized
+    end
+  end
 end

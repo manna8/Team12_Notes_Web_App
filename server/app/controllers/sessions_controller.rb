@@ -3,7 +3,6 @@ class SessionsController < ApplicationController
   include ActionController::Cookies
   before_action :authenticate_user! , only: [:show, :destroy]
 
-
   def create
     user = User.find_by(:email => params[:email])
     if user && user.authenticate(params[:password])
@@ -16,8 +15,6 @@ class SessionsController < ApplicationController
     rescue Mongoid::Errors::DocumentNotFound
     render json: { message: 'Invalid email or password.' }, status: :unauthorized
   end
-
-
 
     def show
     render json: @current_user

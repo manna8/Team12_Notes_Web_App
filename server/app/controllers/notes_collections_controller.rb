@@ -1,18 +1,20 @@
 class NotesCollectionsController < ApplicationController
-  before_action :set_notes_collection, only: %i[ show update destroy ]
+  #before_action :set_notes_collection, only: [ :show, :update, :destroy, :check_if_admin_or_owner ]
   before_action :authenticate_user!
   before_action :authorize_admin!, only:[:all_collections]
+
+  before_action :check_if_admin_or_owner, only: [:shared_users, :show, :update, :sharing_update, :destroy]
   # GET /notes_collections
   # GET /notes_collections.json
   def index
     if @is_admin
-      all_collections
+      render_all_collections
     else
       @notes_collections = NotesCollection.where(:user_id => @current_user[:id])
       render json: @notes_collections
     end
   end
-  def all_collections
+  def render_all_collections
     @notes_collections = NotesCollection.all
     render json:@notes_collections
   end
@@ -43,12 +45,12 @@ class NotesCollectionsController < ApplicationController
   # GET /notes_collections/1
   # GET /notes_collections/1.json
   def show
-    if @notes_collection[:user_id] == @current_user[:id] or @is_admin
+    # if @notes_collection[:user_id] == @current_user[:id] or @is_admin
       @notes = Note.where(:notes_collection_id => params[:id])
       render json:{ notes_collection: @notes_collection, notes: @notes }
-    else
-      render json: { error: 'Not authorized' }, status: :unauthorized
-    end
+    # else
+    #   render json: { error: 'Not authorized' }, status: :unauthorized
+    # end
   end
 
   # POST /notes_collections
@@ -71,7 +73,26 @@ class NotesCollectionsController < ApplicationController
     else
       render json: { errors: @notes_collection.errors.full_messages }, status: :unprocessable_entity
     end
+  end
 
+  def create_for_user
+    @notes_collection = NotesCollection.new(notes_collection_params)
+
+    @notes_collection.user = User.find_by(:id => params[:id])
+    if @notes_collection.save
+      if params[:note_ids].present?
+        note_ids = params[:note_ids]
+        notes = Note.where(id: note_ids)
+
+        notes.each do |note|
+          note.notes_collection = @notes_collection
+          note.save
+        end
+      end
+      render json: { message: 'Collection created successfully.' }, status: :created
+    else
+      render json: { errors: @notes_collection.errors.full_messages }, status: :unprocessable_entity
+    end
   end
 
   # PATCH/PUT /notes_collections/1
@@ -114,4 +135,12 @@ class NotesCollectionsController < ApplicationController
     def notes_collection_params
       params.require(:notes_collection).permit(:title, :description,  note_ids: [])
     end
+
+
+  def check_if_admin_or_owner
+    @notes_collection = NotesCollection.find(params[:id])
+    unless @notes_collection[:user_id] == @current_user[:id] or @is_admin
+      render json: { error: 'Not authorized' }, status: :unauthorized
+    end
+  end
 end

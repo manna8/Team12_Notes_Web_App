@@ -31,6 +31,12 @@ import config from "../../config/config";
 export default {
   name: "CollectionsList",
 
+  props: {
+    id: String,
+    title: String,
+    description: Number
+  },
+
   data() {
     return {
       collections: []

@@ -15,11 +15,11 @@
       </div>
 
       <div class="mb-3 d-flex flex-column align-items-start" v-if="collections.length !== 0">
-        <div>Selected collection: {{ input.selectedCollection }}</div>
+        <div>Selected collection: </div>
 
         <select v-model="input.selectedCollection">
           <option></option>
-          <option v-for="collection in collections" :key="collection.title">{{ collection.title }}</option>
+          <option v-for="collection in collections" :value ="collection._id" :key="collection._id">{{ collection.title }}</option>
         </select>
       </div>
 
@@ -53,7 +53,7 @@ export default {
         selectedImageURL: "",
         selectedFile : null,
         encodedFile: null,
-        selectedCollection: ""
+        selectedCollection: null
       },
     };
   },
@@ -63,14 +63,31 @@ export default {
       const formData = new FormData();
       formData.append('image', this.input.encodedFile);
 
+      if (this.input.selectedCollection !== null) {
+        this.input.selectedCollection = this.input.selectedCollection.$oid;
+      }
+
       if (this.titleValid() && this.descValid()) {
-        axios.post(config.addNoteURL, {
-          "title": this.input.title,
-          "description": this.input.description,
-          "photo": this.input.encodedFile.split(',')[1] // Get the base64 string from the encoded file
-        }, {withCredentials: true})
-            .then(() => this.$router.push({path: '/notes'}))
-            .catch(err => console.log(err.message));
+        if (this.input.encodedFile !== null) {
+          axios.post(config.addNoteURL, {
+            "title": this.input.title,
+            "description": this.input.description,
+            "notes_collection_id": this.input.selectedCollection,
+            "photo": this.input.encodedFile.split(',')[1] // Get the base64 string from the encoded file
+          }, {withCredentials: true})
+              .then(() => this.$router.push({path: '/notes'}))
+              .catch(err => console.log(err.message));
+        } else {
+          axios.post(config.addNoteURL, {
+            "title": this.input.title,
+            "description": this.input.description,
+            "notes_collection_id": this.input.selectedCollection,
+            "photo": {} // Get the base64 string from the encoded file
+          }, {withCredentials: true})
+              .then(() => this.$router.push({path: '/notes'}))
+              .catch(err => console.log(err.message));
+        }
+
       }
 
     },

@@ -1,6 +1,6 @@
 <template>
   <div id="profile">
-    <div class="container my-3 border bg-light mx-auto  border-warning rounded">
+    <div class="container my-3 border bg-light mx-auto border-warning rounded">
       <h2 class="text-center text-black"> Hello {{ userDetails.name }}!</h2>
       <h5 class="text-center text-black">{{ userDetails.email }}</h5>
       <div class="text-center p-1 m-1" >
@@ -8,7 +8,7 @@
       </div>
     </div>
 
-      <form class="container p-3 border bg-light mx-auto border-warning rounded" style="width: auto; height: auto">
+      <form class="container p-3 border bg-light mx-auto border-warning rounded"  v-bind:style="[isMobile() ? styleMobile : styleWeb]">
         <h3 class="text-center text-warning">Update your profile details:</h3>
 
         <br>
@@ -71,7 +71,15 @@ export default {
         newUsername: "",
         newPassword: "",
         newPasswordRepeat: ""
-      }
+      },
+      styleWeb: {
+        width: '400px',
+        height: 'auto'
+      },
+      styleMobile: {
+        width: '300px',
+        height: 'auto'
+      },
     }
   },
 
@@ -179,6 +187,9 @@ export default {
         }
       });
     },
+    isMobile() {
+      return screen.width < 500;
+    }
 
   },
 

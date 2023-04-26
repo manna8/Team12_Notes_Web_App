@@ -1,7 +1,7 @@
 <template id="login">
  <div id="login">
 
-  <form class="container p-3 my-3 border bg-light mx-auto mb-3 mt-5 border-warning rounded" style="width: 450px; height: 400px" @click.prevent>
+  <form class="container p-3 my-3 border bg-light mx-auto mb-3 mt-5 border-warning rounded" v-bind:style="[isMobile() ? styleMobile : styleWeb]" @click.prevent>
     <h2 class="text-center text-warning">Login!</h2>
 
     <br>
@@ -43,6 +43,14 @@ export default {
       input: {
         username: "",
         password: ""
+      },
+      styleWeb: {
+        width: '400px',
+        height: '350px'
+      },
+      styleMobile: {
+        width: '300px',
+        height: 'auto'
       },
       usernameValid: true,
       passwordValid: true
@@ -90,6 +98,9 @@ export default {
         this.passwordValid = false;
       }
     },
+    isMobile() {
+      return screen.width < 500;
+    }
 
   }
 }

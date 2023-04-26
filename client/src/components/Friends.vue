@@ -1,6 +1,6 @@
 <template>
   <div id="friends">
-      <form class="container p-3 my-3 mx-auto mb-3 mt-5" style="width: 450px; height: auto">
+      <form class="container p-3 my-3 mx-auto mb-3 mt-5"  v-bind:style="[isMobile() ? styleMobile : styleWeb]">
         <div class="input-group mb-3">
           <input type="text" class="form-control" placeholder="Friend's email" aria-label="Friend's email" v-model="input.email">
           <button class="btn btn-warning" type="button" @click="addFriend">Add Friend</button>
@@ -26,7 +26,7 @@
               </ul>
             </div>
             <div class="accordion-body" v-else>
-              <h5>You don't have any friends yet sucker!</h5>
+              <h5>You don't have any friends yet :(</h5>
             </div>
           </div>
         </div>
@@ -37,7 +37,7 @@
             </button>
           </h2>
           <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-            <div class="accordion-body">
+            <div class="accordion-body" v-if="receivedFriendRequests.length !== 0">
               <ul class="list-group" v-for="friend in receivedFriendRequests" v-bind:key="friend.friendship_id">
                 <li class="list-group-item">
                   <h5>{{ friend.name }}</h5>
@@ -49,6 +49,9 @@
                 </li>
               </ul>
             </div>
+            <div class="accordion-body" v-else>
+              <h5>No one sent you a request yet :(</h5>
+            </div>
           </div>
         </div>
         <div class="accordion-item">
@@ -58,12 +61,15 @@
             </button>
           </h2>
           <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-            <div class="accordion-body">
+            <div class="accordion-body" v-if="sentFriendRequests.length !== 0">
               <ul class="list-group" v-for="friend in sentFriendRequests" v-bind:key="friend._id">
                 <li class="list-group-item">
                   <h5>{{ friend.name }}</h5>
                 </li>
               </ul>
+            </div>
+            <div class="accordion-body" v-else>
+              <h5>You didn't send any request yet!</h5>
             </div>
           </div>
         </div>
@@ -82,6 +88,14 @@ export default {
     return {
       input: {
         email: "",
+      },
+      styleWeb: {
+        width: '400px',
+        height: 'auto'
+      },
+      styleMobile: {
+        width: '300px',
+        height: 'auto'
       },
       emailValid: true,
       friendsList: [],
@@ -197,6 +211,9 @@ export default {
             });
           })
           .catch(err => console.log(err.message));
+    },
+    isMobile() {
+      return screen.width < 500;
     }
   },
 

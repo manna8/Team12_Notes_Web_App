@@ -1,11 +1,11 @@
 <template>
 <div>
-  <div class="container p-3 my-3 border bg-light mx-auto mb-3 mt-5 border-warning rounded" style="width: 450px; height: auto">
+  <div class="container p-3 my-3 border bg-light mx-auto mb-3 mt-5 border-warning rounded"  v-bind:style="[isMobile() ? styleMobile : styleWeb]">
     <h1 class="text-center text-warning">{{ collection.title }}</h1>
   </div>
 
   <div class="overflow-auto">
-    <div class="row row-cols-1 row-cols-md-3 g-4" v-if="notes.length !== 0" style="width: auto; height: auto">
+    <div class="row row-cols-1 row-cols-md-3 g-4" v-if="notes.length !== 0"  v-bind:style="[isMobile() ? styleMobile : styleWeb]">
       <ul v-for="note in notes" v-bind:key="note.title">
         <div class="col">
           <div class="card" style="max-width: 18rem">
@@ -44,7 +44,16 @@ export default {
     return {
       id: '',
       collection: [],
-      notes: []
+      notes: [],
+
+      styleWeb: {
+        width: '400px',
+        height: 'auto'
+      },
+      styleMobile: {
+        width: '300px',
+        height: 'auto'
+      },
     }
   },
   methods: {
@@ -77,6 +86,9 @@ export default {
           .then(() => this.getNotes())
           .catch(err => console.log(err.message));
     },
+    isMobile() {
+      return screen.width < 500;
+    }
 
   },
   created() {

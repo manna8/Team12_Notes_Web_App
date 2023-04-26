@@ -5,7 +5,7 @@
       <div class="row ms-auto">
         <div class="col">
           <div  class="d-grid">
-            <form class="container p-3 my-3 mx-auto mb-3 mt-5" style="width: 450px; height: auto">
+            <form class="container p-3 my-3 mx-auto mb-3 mt-5" v-bind:style="[isMobile() ? styleMobile : styleWeb]">
               <div class="input-group mb-3">
                 <input type="text" class="form-control" placeholder="Collection title" aria-label="Collection title" v-model="input.title">
                 <button class="btn btn-warning" type="button" @click="createCollection">Create Collection</button>
@@ -34,7 +34,7 @@
           <div v-if="showUserCollections">
             <CollectionsList />
           </div>
-          <div v-if="showSharingCollection">
+          <div v-if="showSharingCollections">
             <SharingCollectionsList></SharingCollectionsList>
           </div>
           <div v-if="showSharedWithUserCollections">
@@ -64,8 +64,16 @@ export default {
       input: {
         title: ""
       },
+      styleWeb: {
+        width: '400px',
+        height: 'auto'
+      },
+      styleMobile: {
+        width: '300px',
+        height: 'auto'
+      },
       showUserCollections: true,
-      showSharingCollection: false,
+      showSharingCollections: false,
       showSharedWithUserCollections: false,
     }
   },
@@ -90,8 +98,8 @@ export default {
         this.showSharedWithUserCollections = false;
       }
 
-      if (this.showSharingCollection) {
-        this.showSharingCollection = false;
+      if (this.showSharingCollections) {
+        this.showSharingCollections = false;
       }
     },
 
@@ -102,13 +110,13 @@ export default {
         this.showUserCollections = false;
       }
 
-      if (this.showSharingCollection) {
-        this.showSharingCollection = false;
+      if (this.showSharingCollections) {
+        this.showSharingCollections = false;
       }
     },
 
     toggleSharingCollections() {
-      this.showSharingCollection = !this.showSharingCollection;
+      this.showSharingCollections = !this.showSharingCollections;
 
       if (this.showUserCollections) {
         this.showUserCollections = false;
@@ -117,6 +125,9 @@ export default {
       if (this.showSharedWithUserCollections) {
         this.showSharedWithUserCollections = false;
       }
+    },
+    isMobile() {
+      return screen.width < 500;
     }
   }
 }

@@ -120,7 +120,7 @@ export default {
     async getCollections() {
       const res = await axios.get(config.getSharingCollectionsURL, {withCredentials: true});
       this.collections = res.data;
-      console.log(this.collections);
+      // console.log(this.collections);
     },
     async getFriendsWithId() {
       const res = await axios.get(config.getFriendsWithIdURL, {withCredentials: true});

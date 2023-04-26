@@ -10,7 +10,7 @@
       <button type="button" class="btn btn-outline-warning" v-else>
         <router-link class="nav-link" to="/login">Login</router-link>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
+      <div class="collapse navbar-collapse" id="navbarNav" v-if="isLogged">
         <ul class="navbar-nav me-auto mb-2 mb-md-0">
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">

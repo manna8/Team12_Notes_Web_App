@@ -43,14 +43,13 @@ export default {
       console.log(this.notes);
     },
     getImageURL(note) {
-      console.log(note);
-      // if (note.photo_url === "" || note.photo_url === null) {
-      //   return note.photo_url;
-      // } else {
-      //   return "http://localhost:8080/assets/background4.png";
-      // }
-
-      return require('../assets/background2.png');
+      if (note.photo !== null) {
+        let img = new Image();
+        img.src = 'data:image/png;base64,' + note.photo;
+        return img.src;
+      } else {
+        return require('../assets/background2.png');
+      }
     },
   },
 

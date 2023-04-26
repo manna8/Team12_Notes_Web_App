@@ -1,7 +1,7 @@
 <template id="register">
   <div id="register">
 
-    <form class="container p-3 my-3 border bg-light mx-auto mb-3 mt-5 border-warning rounded" style="width: 450px; height: auto" @click.prevent>
+    <form class="container p-3 my-3 border bg-light mx-auto mb-3 mt-5 border-warning rounded" v-bind:style="[isMobile() ? styleMobile : styleWeb]" @click.prevent>
       <h2 class="text-center text-warning">Register!</h2>
 
       <div class="form-floating mb-3 d-flex flex-column align-items-start">
@@ -53,6 +53,14 @@ export default {
         username: "",
         password: "",
         password_v2: ""
+      },
+      styleWeb: {
+        width: '450px',
+        height: 'auto'
+      },
+      styleMobile: {
+        width: '300px',
+        height: 'auto'
       },
       emailValid: true,
       usernameValid: true,
@@ -114,6 +122,9 @@ export default {
       } else {
         this.passwordsMatch = true;
       }
+    },
+    isMobile() {
+      return screen.width < 500;
     }
   }
 }

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <form class="container p-3 my-3 border bg-light mx-auto mb-3 mt-5 border-warning rounded" style="width: 450px; height: auto">
+    <form class="container p-3 my-3 border bg-light mx-auto mb-3 mt-5 border-warning rounded" v-bind:style="[isMobile() ? styleMobile : styleWeb]">
       <h2 class="text-center text-warning">Add new note!</h2>
       <div class="mb-3 d-flex flex-column align-items-start">
         <label for="title">Title</label>
@@ -45,6 +45,15 @@ export default {
   data() {
     return {
       collections: [],
+
+      styleWeb: {
+        width: '400px',
+        height: 'auto'
+      },
+      styleMobile: {
+        width: '300px',
+        height: 'auto'
+      },
 
       input: {
         title: "",
@@ -116,6 +125,9 @@ export default {
       this.collections = res.data;
       console.log(this.collections);
     },
+    isMobile() {
+      return screen.width < 500;
+    }
   },
 
     mounted() {

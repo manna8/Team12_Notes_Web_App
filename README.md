@@ -1,5 +1,5 @@
 # Team12_Notes_Web_App
-Web application for the Web System Development subject. Goal of this project is to create webiste that allows users to create notes and group them into collections 
+Web application for the Web System Development subject. The goal of this project is to create a webiste that allows users to create notes and group them into collections. Additionally, it allows you to add friends and share your notes and collections with them. 
 
 ## Authors:
 <table>

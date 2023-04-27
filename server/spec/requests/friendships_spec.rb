@@ -111,7 +111,7 @@ RSpec.describe "/friendships", type: :request do
         patch friendship_url(friendship),
               params: { friendship: invalid_attributes }, headers: valid_headers, as: :json
         expect(response).to have_http_status(:unprocessable_entity)
-        expect(response.content_type).to match(a_string_including("application/json"))
+        expect(response.content_type).to match(a_string_including("applcation/json"))
       end
     end
   end

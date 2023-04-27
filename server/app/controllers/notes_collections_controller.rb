@@ -138,7 +138,13 @@ class NotesCollectionsController < ApplicationController
 
 
   def check_if_admin_or_owner
-    @notes_collection = NotesCollection.find(params[:id])
+    begin
+      @notes_collection = NotesCollection.find(params[:id])
+    rescue Mongoid::Errors::DocumentNotFound
+      render json: { error: 'Note not found' }, status: :not_found
+      return
+    end
+
     unless @notes_collection[:user_id] == @current_user[:id] or @is_admin
       render json: { error: 'Not authorized' }, status: :unauthorized
     end

@@ -46,6 +46,7 @@ class NotesController < ApplicationController
   end
   def show
     #if @note[:user_id] == @current_user[:id] or @is_admin
+
     render json:@note
     # else
     #   render json: { error: 'Not authorized' }, status: :unauthorized
@@ -118,18 +119,18 @@ class NotesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_note
-      @note = Note.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
     def note_params
       params.require(:note).permit(:title, :description, :photo, :notes_collection_id)
     end
 
   def check_if_admin_or_owner
-    @note = Note.find(params[:id])
+    begin
+      @note = Note.find(params[:id])
+    rescue Mongoid::Errors::DocumentNotFound
+      render json: { error: 'Note not found' }, status: :not_found
+      return
+    end
     unless @note[:user_id] == @current_user[:id] or @is_admin
       render json: { error: 'Not authorized' }, status: :unauthorized
     end

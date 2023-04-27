@@ -1,7 +1,7 @@
 class FriendshipsController < ApplicationController
   #before_action :set_friendship, only: [ :show, :update, :destroy, :check_if_admin_or_in_relation, :check_if_admin_or_receiver ]
   before_action :authenticate_user!
-  before_action :authorize_admin!, only:[:index, :show]
+  before_action :authorize_admin!, only:[:index, :show, :all_friendships_with_names]
   before_action :check_if_admin_or_in_relation, only: [:destroy]
   before_action :check_if_admin_or_receiver, only: [:update]
 
@@ -10,6 +10,24 @@ class FriendshipsController < ApplicationController
   def index
     @friendships = Friendship.all
     render json: @friendships
+  end
+
+
+  def all_friendships_with_names
+    friendships = Friendship.all
+    friendships_names = friendships.map{|friendship| {_id: friendship.id,
+                                                      sender: friendship.sender_id,
+                                                      receiver: friendship.receiver_id,
+                                                      status: friendship.status} }
+    friendships_names.each do |friendship|
+      sender = User.find_by(id: friendship[:sender])
+      receiver = User.find_by(id: friendship[:receiver])
+
+      friendship[:sender] = sender.name
+      friendship[:receiver] = receiver.name
+
+    end
+    render json: friendships_names
   end
 
   # GET /friendships/1
@@ -76,7 +94,7 @@ class FriendshipsController < ApplicationController
     if @friendship.save
       render  json: {message:"Friendship request created"},status: :created
     else
-      render json: @friendship.errors, status: :unprocessable_entity
+      render json: { json: @friendship.errors.full_messages }, status: :unprocessable_entity
     end
   end
 
@@ -96,14 +114,13 @@ class FriendshipsController < ApplicationController
     if @friendship.update(status_update_params)
       render json: {message:"Friendship request status updated"}, status: :ok
     else
-      render json: @friendship.errors, status: :unprocessable_entity
+      render json: {errors:@friendship.errors.full_messages }, status: :unprocessable_entity
     end
   end
 
   # DELETE /friendships/1
   # DELETE /friendships/1.json
   def destroy
-    @friendship.destroy
 
     user = User.find_by(id: @friendship[:sender_id])
     user.pull(friend_ids: @friendship[:receiver_id])
@@ -111,6 +128,12 @@ class FriendshipsController < ApplicationController
     user = User.find_by(id: @friendship[:receiver_id])
     user.pull(friend_ids: @friendship[:sender_id])
     user.save
+
+    if @friendship.destroy
+      render json: {message:"Friendship deleted"}, status: :ok
+    else
+      render json: { errors: @friendship.errors.full_messages }, status: :unprocessable_entity
+    end
   end
 
   private

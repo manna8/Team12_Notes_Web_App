@@ -12,10 +12,10 @@
             <input type="text" id="id" v-model="friendship._id.$oid" disabled>
 
             <label for="from">From: </label>
-            <input type="text" id="from" v-model="friendship.sender_id.$oid"  disabled>
+            <input type="text" id="from" v-model="friendship.sender"  disabled>
 
             <label for="to">To: </label>
-            <input type="text" id="to" v-model="friendship.receiver_id.$oid" disabled>
+            <input type="text" id="to" v-model="friendship.receiver" disabled>
 
             <label for="status">Status: </label>
             <input type="text" id="status" v-model="friendship.status" disabled>
@@ -44,7 +44,7 @@ export default {
   },
   methods: {
     async getFriendships() {
-      const res = await axios.get(config.answerFriendRequestURL, {withCredentials: true});
+      const res = await axios.get(config.getAllFriendshipsURL, {withCredentials: true});
       this.friendships = res.data;
 
       console.log(this.friendships);

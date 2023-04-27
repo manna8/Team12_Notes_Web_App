@@ -45,6 +45,7 @@ Rails.application.routes.draw do
   get 'friends/sent', to: "friendships#sent_friend_requests"
   get 'friends/received', to: "friendships#received_friend_requests"
   get "friends", to: "friendships#friends"
+  get 'friendships_names', to: "friendships#all_friendships_with_names"
 
 
 end

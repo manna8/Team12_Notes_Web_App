@@ -16042,3 +16042,608 @@ MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:167 conn:1:1 scon
 MONGODB | ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 req:167 | test.find | SUCCEEDED | 0.044s
 Filter chain halted as :check_if_admin_or_owner rendered or redirected
 Completed 401 Unauthorized in 92ms (Views: 0.2ms | MongoDB: 87.3ms | Allocations: 1833)
+MONGODB | Topology type 'unknown' initializing.
+MONGODB | Topology type 'Unknown' changed to type 'ReplicaSetNoPrimary'.
+MONGODB | Server ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 initializing.
+MONGODB | Server ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 initializing.
+MONGODB | Server ac-mspcz06-shard-00-00.bsbwlz3.mongodb.net:27017 initializing.
+MONGODB | Waiting for up to 4.99 seconds for servers to be scanned: #<Cluster topology=ReplicaSetNoPrimary[ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017,ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017,ac-mspcz06-shard-00-00.bsbwlz3.mongodb.net:27017,name=atlas-kjem2r-shard-0] servers=[#<Server address=ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 UNKNOWN>,#<Server address=ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 UNKNOWN>,#<Server address=ac-mspcz06-shard-00-00.bsbwlz3.mongodb.net:27017 UNKNOWN>]>
+MONGODB | Server description for ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 changed from 'unknown' to 'secondary'.
+MONGODB | There was a change in the members of the 'ReplicaSetNoPrimary' topology.
+MONGODB | Waiting for up to 4.58 seconds for servers to be scanned: #<Cluster topology=ReplicaSetNoPrimary[ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017,ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017,ac-mspcz06-shard-00-00.bsbwlz3.mongodb.net:27017,name=atlas-kjem2r-shard-0] servers=[#<Server address=ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 UNKNOWN>,#<Server address=ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 SECONDARY replica_set=atlas-kjem2r-shard-0 pool=#<ConnectionPool size=0 (0-20) used=0 avail=0 pending=0>>,#<Server address=ac-mspcz06-shard-00-00.bsbwlz3.mongodb.net:27017 UNKNOWN>]>
+MONGODB | Server description for ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 changed from 'unknown' to 'primary'.
+MONGODB | Topology type 'ReplicaSetNoPrimary' changed to type 'ReplicaSetWithPrimary'.
+MONGODB | Waiting for up to 4.53 seconds for servers to be scanned: #<Cluster topology=ReplicaSetWithPrimary[ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017,ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017,ac-mspcz06-shard-00-00.bsbwlz3.mongodb.net:27017,name=atlas-kjem2r-shard-0,v=1,e=7fffffff000000000000004e] servers=[#<Server address=ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 PRIMARY replica_set=atlas-kjem2r-shard-0 pool=#<ConnectionPool size=0 (0-20) used=0 avail=0 pending=0>>,#<Server address=ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 SECONDARY replica_set=atlas-kjem2r-shard-0 pool=#<ConnectionPool size=0 (0-20) used=0 avail=0 pending=0>>,#<Server address=ac-mspcz06-shard-00-00.bsbwlz3.mongodb.net:27017 UNKNOWN>]>
+MONGODB | Server description for ac-mspcz06-shard-00-00.bsbwlz3.mongodb.net:27017 changed from 'unknown' to 'secondary'.
+MONGODB | There was a change in the members of the 'ReplicaSetWithPrimary' topology.
+MONGODB | Server description for ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 changed from 'primary' to 'primary'.
+MONGODB | There was a change in the members of the 'ReplicaSetWithPrimary' topology.
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:10 conn:1:1 sconn:5620 | admin.saslStart | STARTED | {}
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:10 | admin.saslStart | SUCCEEDED | 0.046s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:11 conn:1:1 sconn:5620 | admin.saslContinue | STARTED | {}
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:11 | admin.saslContinue | SUCCEEDED | 0.043s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:12 conn:1:1 sconn:5620 | test.aggregate | STARTED | {"aggregate"=>"friendships", "pipeline"=>[{"$match"=>{}}, {"$group"=>{"_id"=>1, "n"=>{"$sum"=>1}}}], "cursor"=>{}, "$db"=>"test", "lsid"=>{"id"=><BSON::Binary:0x14840 type=uuid data=0xa243ad4f43734745...>}}
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:12 | test.aggregate | SUCCEEDED | 0.043s
+Overwriting existing field shared_with in class Note.
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:13 conn:1:1 sconn:5620 | test.find | STARTED | {"find"=>"users", "filter"=>{"name"=>"Boyce Crooks"}, "limit"=>1, "projection"=>{"_id"=>1}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x000002300d7c4ce8 @seconds=1682531183, @increment=1>, "signature"=>{"hash"=><BSON::Binary:0x1...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:13 | test.find | SUCCEEDED | 0.045s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:14 conn:1:1 sconn:5620 | test.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"trevor_rodriguez@king-koelpin.org"}, "limit"=>1, "projection"=>{"_id"=>1}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x00000230108d5328 @seconds=1682531184, @increment=2>, "signature"=>{"ha...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:14 | test.find | SUCCEEDED | 0.045s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:15 conn:1:1 sconn:5620 | test.insert | STARTED | {"insert"=>"users", "ordered"=>true, "documents"=>[{"_id"=>BSON::ObjectId('6449636f4d883766f485f6cc'), "role"=>"user", "friend_ids"=>[], "name"=>"Boyce Crooks", "email"=>"trevor_rodriguez@king-koelpin.org", "password_digest"=>"$2a$04$YeBAHO9MVWq3TRP6h...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:15 | test.insert | SUCCEEDED | 0.059s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:16 conn:1:1 sconn:5620 | test.find | STARTED | {"find"=>"users", "filter"=>{"name"=>"Irmgard Kessler DDS"}, "limit"=>1, "projection"=>{"_id"=>1}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x00000230108fcd38 @seconds=1682531184, @increment=3>, "signature"=>{"hash"=><BSON::Bin...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:16 | test.find | SUCCEEDED | 0.043s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:17 conn:1:1 sconn:5620 | test.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"carlos@collins-lowe.io"}, "limit"=>1, "projection"=>{"_id"=>1}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x00000230108fcd38 @seconds=1682531184, @increment=3>, "signature"=>{"hash"=><BSON:...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:17 | test.find | SUCCEEDED | 0.044s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:18 conn:1:1 sconn:5620 | test.insert | STARTED | {"insert"=>"users", "ordered"=>true, "documents"=>[{"_id"=>BSON::ObjectId('6449636f4d883766f485f6cd'), "role"=>"user", "friend_ids"=>[], "name"=>"Irmgard Kessler DDS", "email"=>"carlos@collins-lowe.io", "password_digest"=>"$2a$04$Mo.zv5TTi9B8uhd0QULe4...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:18 | test.insert | SUCCEEDED | 0.045s
+Processing by FriendshipsController#create as HTML
+  Parameters: {"friendship"=>{"receiver_id"=>"6449636f4d883766f485f6cd", "sender_id"=>"6449636f4d883766f485f6cc"}}
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.2ms | MongoDB: 0.0ms | Allocations: 369)
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:19 conn:1:1 sconn:5620 | test.aggregate | STARTED | {"aggregate"=>"friendships", "pipeline"=>[{"$match"=>{}}, {"$group"=>{"_id"=>1, "n"=>{"$sum"=>1}}}], "cursor"=>{}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023010957198 @seconds=1682531184, @increment=4>, "signature"=>{"h...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:19 | test.aggregate | SUCCEEDED | 0.041s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:20 conn:1:1 sconn:5620 | test.aggregate | STARTED | {"aggregate"=>"friendships", "pipeline"=>[{"$match"=>{}}, {"$group"=>{"_id"=>1, "n"=>{"$sum"=>1}}}], "cursor"=>{}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023010957198 @seconds=1682531184, @increment=4>, "signature"=>{"h...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:20 | test.aggregate | SUCCEEDED | 0.039s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:21 conn:1:1 sconn:5620 | test.find | STARTED | {"find"=>"users", "filter"=>{"name"=>"Msgr. Edgardo Schimmel"}, "limit"=>1, "projection"=>{"_id"=>1}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000023010957198 @seconds=1682531184, @increment=4>, "signature"=>{"hash"=><BSON::...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:21 | test.find | SUCCEEDED | 0.042s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:22 conn:1:1 sconn:5620 | test.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"brett@ankunding-bogan.io"}, "limit"=>1, "projection"=>{"_id"=>1}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x00000230120a6a60 @seconds=1682531184, @increment=5>, "signature"=>{"hash"=><BSO...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:22 | test.find | SUCCEEDED | 0.044s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:23 conn:1:1 sconn:5620 | test.insert | STARTED | {"insert"=>"users", "ordered"=>true, "documents"=>[{"_id"=>BSON::ObjectId('6449636f4d883766f485f6ce'), "role"=>"user", "friend_ids"=>[], "name"=>"Msgr. Edgardo Schimmel", "email"=>"brett@ankunding-bogan.io", "password_digest"=>"$2a$04$2lzJWetiZCCtBy8W...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:23 | test.insert | SUCCEEDED | 0.046s
+Processing by FriendshipsController#create as HTML
+  Parameters: {"friendship"=>{"receiver_id"=>"6449636f4d883766f485f6ce", "sender_id"=>"6449636f4d883766f485f6ce"}}
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | MongoDB: 0.0ms | Allocations: 161)
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:24 conn:1:1 sconn:5620 | test.aggregate | STARTED | {"aggregate"=>"friendships", "pipeline"=>[{"$match"=>{}}, {"$group"=>{"_id"=>1, "n"=>{"$sum"=>1}}}], "cursor"=>{}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x00000230120c6338 @seconds=1682531185, @increment=1>, "signature"=>{"h...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:24 | test.aggregate | SUCCEEDED | 0.058s
+MONGODB | Topology type 'unknown' initializing.
+MONGODB | Topology type 'Unknown' changed to type 'ReplicaSetNoPrimary'.
+MONGODB | Server ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 initializing.
+MONGODB | Server ac-mspcz06-shard-00-00.bsbwlz3.mongodb.net:27017 initializing.
+MONGODB | Server ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 initializing.
+MONGODB | Waiting for up to 5.00 seconds for servers to be scanned: #<Cluster topology=ReplicaSetNoPrimary[ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017,ac-mspcz06-shard-00-00.bsbwlz3.mongodb.net:27017,ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017,name=atlas-kjem2r-shard-0] servers=[#<Server address=ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 UNKNOWN>,#<Server address=ac-mspcz06-shard-00-00.bsbwlz3.mongodb.net:27017 UNKNOWN>,#<Server address=ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 UNKNOWN>]>
+MONGODB | Server description for ac-mspcz06-shard-00-00.bsbwlz3.mongodb.net:27017 changed from 'unknown' to 'secondary'.
+MONGODB | There was a change in the members of the 'ReplicaSetNoPrimary' topology.
+MONGODB | Waiting for up to 4.57 seconds for servers to be scanned: #<Cluster topology=ReplicaSetNoPrimary[ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017,ac-mspcz06-shard-00-00.bsbwlz3.mongodb.net:27017,ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017,name=atlas-kjem2r-shard-0] servers=[#<Server address=ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 UNKNOWN>,#<Server address=ac-mspcz06-shard-00-00.bsbwlz3.mongodb.net:27017 SECONDARY replica_set=atlas-kjem2r-shard-0 pool=#<ConnectionPool size=0 (0-20) used=0 avail=0 pending=0>>,#<Server address=ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 UNKNOWN>]>
+MONGODB | Server description for ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 changed from 'unknown' to 'secondary'.
+MONGODB | There was a change in the members of the 'ReplicaSetNoPrimary' topology.
+MONGODB | Waiting for up to 4.55 seconds for servers to be scanned: #<Cluster topology=ReplicaSetNoPrimary[ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017,ac-mspcz06-shard-00-00.bsbwlz3.mongodb.net:27017,ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017,name=atlas-kjem2r-shard-0] servers=[#<Server address=ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 SECONDARY replica_set=atlas-kjem2r-shard-0 pool=#<ConnectionPool size=0 (0-20) used=0 avail=0 pending=0>>,#<Server address=ac-mspcz06-shard-00-00.bsbwlz3.mongodb.net:27017 SECONDARY replica_set=atlas-kjem2r-shard-0 pool=#<ConnectionPool size=0 (0-20) used=0 avail=0 pending=0>>,#<Server address=ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 UNKNOWN>]>
+MONGODB | Server description for ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 changed from 'unknown' to 'primary'.
+MONGODB | Topology type 'ReplicaSetNoPrimary' changed to type 'ReplicaSetWithPrimary'.
+MONGODB | Server description for ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 changed from 'primary' to 'primary'.
+MONGODB | There was a change in the members of the 'ReplicaSetWithPrimary' topology.
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:10 conn:1:1 sconn:5652 | admin.saslStart | STARTED | {}
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:10 | admin.saslStart | SUCCEEDED | 0.044s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:11 conn:1:1 sconn:5652 | admin.saslContinue | STARTED | {}
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:11 | admin.saslContinue | SUCCEEDED | 0.044s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:12 conn:1:1 sconn:5652 | test.aggregate | STARTED | {"aggregate"=>"friendships", "pipeline"=>[{"$match"=>{}}, {"$group"=>{"_id"=>1, "n"=>{"$sum"=>1}}}], "cursor"=>{}, "$db"=>"test", "lsid"=>{"id"=><BSON::Binary:0x14840 type=uuid data=0x29794ad29e4c4755...>}}
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:12 | test.aggregate | SUCCEEDED | 0.045s
+Overwriting existing field shared_with in class Note.
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:13 conn:1:1 sconn:5652 | test.find | STARTED | {"find"=>"users", "filter"=>{"name"=>"Pierre Reynolds"}, "limit"=>1, "projection"=>{"_id"=>1}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x00000220dc4e24c0 @seconds=1682531256, @increment=3>, "signature"=>{"hash"=><BSON::Binary:...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:13 | test.find | SUCCEEDED | 0.045s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:14 conn:1:1 sconn:5652 | test.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"tijuana.hickle@hand.io"}, "limit"=>1, "projection"=>{"_id"=>1}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x00000220dc4e24c0 @seconds=1682531256, @increment=3>, "signature"=>{"hash"=><BSON:...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:14 | test.find | SUCCEEDED | 0.046s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:15 conn:1:1 sconn:5652 | test.insert | STARTED | {"insert"=>"users", "ordered"=>true, "documents"=>[{"_id"=>BSON::ObjectId('644963b84d88371af866f51b'), "role"=>"user", "friend_ids"=>[], "name"=>"Pierre Reynolds", "email"=>"tijuana.hickle@hand.io", "password_digest"=>"$2a$04$JAVykQoQ6YF1nHlQ7l3JAeQ75...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:15 | test.insert | SUCCEEDED | 0.059s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:16 conn:1:1 sconn:5652 | test.find | STARTED | {"find"=>"users", "filter"=>{"name"=>"Danilo Muller"}, "limit"=>1, "projection"=>{"_id"=>1}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x00000220df5cd058 @seconds=1682531257, @increment=2>, "signature"=>{"hash"=><BSON::Binary:0x...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:16 | test.find | SUCCEEDED | 0.042s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:17 conn:1:1 sconn:5652 | test.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"collin@marquardt-barton.biz"}, "limit"=>1, "projection"=>{"_id"=>1}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x00000220df5cd058 @seconds=1682531257, @increment=2>, "signature"=>{"hash"=><...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:17 | test.find | SUCCEEDED | 0.045s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:18 conn:1:1 sconn:5652 | test.insert | STARTED | {"insert"=>"users", "ordered"=>true, "documents"=>[{"_id"=>BSON::ObjectId('644963b84d88371af866f51c'), "role"=>"user", "friend_ids"=>[], "name"=>"Danilo Muller", "email"=>"collin@marquardt-barton.biz", "password_digest"=>"$2a$04$5ljDvt5Exi0vtvmLeMGNyu...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:18 | test.insert | SUCCEEDED | 0.044s
+Processing by FriendshipsController#create as HTML
+  Parameters: {"friendship"=>{"receiver_id"=>"644963b84d88371af866f51c", "sender_id"=>"644963b84d88371af866f51b", "status"=>"pending"}}
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.2ms | MongoDB: 0.0ms | Allocations: 369)
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:19 conn:1:1 sconn:5652 | test.aggregate | STARTED | {"aggregate"=>"friendships", "pipeline"=>[{"$match"=>{}}, {"$group"=>{"_id"=>1, "n"=>{"$sum"=>1}}}], "cursor"=>{}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x00000220df61c360 @seconds=1682531257, @increment=3>, "signature"=>{"h...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:19 | test.aggregate | SUCCEEDED | 0.068s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:20 conn:1:1 sconn:5652 | test.aggregate | STARTED | {"aggregate"=>"friendships", "pipeline"=>[{"$match"=>{}}, {"$group"=>{"_id"=>1, "n"=>{"$sum"=>1}}}], "cursor"=>{}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x00000220df76f000 @seconds=1682531257, @increment=5>, "signature"=>{"h...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:20 | test.aggregate | SUCCEEDED | 0.078s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:21 conn:1:1 sconn:5652 | test.find | STARTED | {"find"=>"users", "filter"=>{"name"=>"Eufemia Ledner"}, "limit"=>1, "projection"=>{"_id"=>1}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x00000220df76f000 @seconds=1682531257, @increment=5>, "signature"=>{"hash"=><BSON::Binary:0...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:21 | test.find | SUCCEEDED | 0.041s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:22 conn:1:1 sconn:5652 | test.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"carmen_rippin@kunze-upton.biz"}, "limit"=>1, "projection"=>{"_id"=>1}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x00000220df76f000 @seconds=1682531257, @increment=5>, "signature"=>{"hash"=...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:22 | test.find | SUCCEEDED | 0.044s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:23 conn:1:1 sconn:5652 | test.insert | STARTED | {"insert"=>"users", "ordered"=>true, "documents"=>[{"_id"=>BSON::ObjectId('644963b84d88371af866f51d'), "role"=>"user", "friend_ids"=>[], "name"=>"Eufemia Ledner", "email"=>"carmen_rippin@kunze-upton.biz", "password_digest"=>"$2a$04$upii/Vha/WP1N5/M8.l...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:23 | test.insert | SUCCEEDED | 0.044s
+Processing by FriendshipsController#create as HTML
+  Parameters: {"friendship"=>{"receiver_id"=>"644963b84d88371af866f51d", "sender_id"=>"644963b84d88371af866f51d"}}
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | MongoDB: 0.0ms | Allocations: 161)
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:24 conn:1:1 sconn:5652 | test.aggregate | STARTED | {"aggregate"=>"friendships", "pipeline"=>[{"$match"=>{}}, {"$group"=>{"_id"=>1, "n"=>{"$sum"=>1}}}], "cursor"=>{}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x00000220e0e6cbb8 @seconds=1682531257, @increment=6>, "signature"=>{"h...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:24 | test.aggregate | SUCCEEDED | 0.044s
+MONGODB | Topology type 'unknown' initializing.
+MONGODB | Topology type 'Unknown' changed to type 'ReplicaSetNoPrimary'.
+MONGODB | Server ac-mspcz06-shard-00-00.bsbwlz3.mongodb.net:27017 initializing.
+MONGODB | Server ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 initializing.
+MONGODB | Server ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 initializing.
+MONGODB | Waiting for up to 5.00 seconds for servers to be scanned: #<Cluster topology=ReplicaSetNoPrimary[ac-mspcz06-shard-00-00.bsbwlz3.mongodb.net:27017,ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017,ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017,name=atlas-kjem2r-shard-0] servers=[#<Server address=ac-mspcz06-shard-00-00.bsbwlz3.mongodb.net:27017 UNKNOWN>,#<Server address=ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 UNKNOWN>,#<Server address=ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 UNKNOWN>]>
+MONGODB | Server description for ac-mspcz06-shard-00-00.bsbwlz3.mongodb.net:27017 changed from 'unknown' to 'secondary'.
+MONGODB | There was a change in the members of the 'ReplicaSetNoPrimary' topology.
+MONGODB | Waiting for up to 4.57 seconds for servers to be scanned: #<Cluster topology=ReplicaSetNoPrimary[ac-mspcz06-shard-00-00.bsbwlz3.mongodb.net:27017,ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017,ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017,name=atlas-kjem2r-shard-0] servers=[#<Server address=ac-mspcz06-shard-00-00.bsbwlz3.mongodb.net:27017 SECONDARY replica_set=atlas-kjem2r-shard-0 pool=#<ConnectionPool size=0 (0-20) used=0 avail=0 pending=0>>,#<Server address=ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 UNKNOWN>,#<Server address=ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 UNKNOWN>]>
+MONGODB | Server description for ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 changed from 'unknown' to 'secondary'.
+MONGODB | There was a change in the members of the 'ReplicaSetNoPrimary' topology.
+MONGODB | Server description for ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 changed from 'unknown' to 'primary'.
+MONGODB | Topology type 'ReplicaSetNoPrimary' changed to type 'ReplicaSetWithPrimary'.
+MONGODB | Server description for ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 changed from 'primary' to 'primary'.
+MONGODB | There was a change in the members of the 'ReplicaSetWithPrimary' topology.
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:10 conn:1:1 sconn:5646 | admin.saslStart | STARTED | {}
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:10 | admin.saslStart | SUCCEEDED | 0.045s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:11 conn:1:1 sconn:5646 | admin.saslContinue | STARTED | {}
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:11 | admin.saslContinue | SUCCEEDED | 0.059s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:12 conn:1:1 sconn:5646 | test.aggregate | STARTED | {"aggregate"=>"friendships", "pipeline"=>[{"$match"=>{}}, {"$group"=>{"_id"=>1, "n"=>{"$sum"=>1}}}], "cursor"=>{}, "$db"=>"test", "lsid"=>{"id"=><BSON::Binary:0x14840 type=uuid data=0x0fbcd5c4d4074edb...>}}
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:12 | test.aggregate | SUCCEEDED | 0.046s
+Overwriting existing field shared_with in class Note.
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:13 conn:1:1 sconn:5646 | test.find | STARTED | {"find"=>"users", "filter"=>{"name"=>"The Hon. Rickie Orn"}, "limit"=>1, "projection"=>{"_id"=>1}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x000001626ad0b240 @seconds=1682531340, @increment=3>, "signature"=>{"hash"=><BSON::Bin...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:13 | test.find | SUCCEEDED | 0.064s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:14 conn:1:1 sconn:5646 | test.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"joanie.kuhn@mckenzie.net"}, "limit"=>1, "projection"=>{"_id"=>1}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x000001626de54158 @seconds=1682531341, @increment=1>, "signature"=>{"hash"=><BSO...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:14 | test.find | SUCCEEDED | 0.045s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:15 conn:1:1 sconn:5646 | test.insert | STARTED | {"insert"=>"users", "ordered"=>true, "documents"=>[{"_id"=>BSON::ObjectId('6449640c4d88375240fae07c'), "role"=>"user", "friend_ids"=>[], "name"=>"The Hon. Rickie Orn", "email"=>"joanie.kuhn@mckenzie.net", "password_digest"=>"$2a$04$l7.v3W4fM8QsabWSrE/...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:15 | test.insert | SUCCEEDED | 0.059s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:16 conn:1:1 sconn:5646 | test.find | STARTED | {"find"=>"users", "filter"=>{"name"=>"Towanda Beahan"}, "limit"=>1, "projection"=>{"_id"=>1}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x000001626de87ad0 @seconds=1682531341, @increment=2>, "signature"=>{"hash"=><BSON::Binary:0...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:16 | test.find | SUCCEEDED | 0.042s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:17 conn:1:1 sconn:5646 | test.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"parker.schmitt@bradtke.info"}, "limit"=>1, "projection"=>{"_id"=>1}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x000001626de87ad0 @seconds=1682531341, @increment=2>, "signature"=>{"hash"=><...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:17 | test.find | SUCCEEDED | 0.046s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:18 conn:1:1 sconn:5646 | test.insert | STARTED | {"insert"=>"users", "ordered"=>true, "documents"=>[{"_id"=>BSON::ObjectId('6449640c4d88375240fae07d'), "role"=>"user", "friend_ids"=>[], "name"=>"Towanda Beahan", "email"=>"parker.schmitt@bradtke.info", "password_digest"=>"$2a$04$BVBejT73JiM1LPojiqytX...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:18 | test.insert | SUCCEEDED | 0.045s
+Processing by FriendshipsController#create as HTML
+  Parameters: {"friendship"=>{"receiver_id"=>"6449640c4d88375240fae07d", "sender_id"=>"6449640c4d88375240fae07c", "status"=>"pending"}}
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.3ms | MongoDB: 0.0ms | Allocations: 369)
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:19 conn:1:1 sconn:5646 | test.aggregate | STARTED | {"aggregate"=>"friendships", "pipeline"=>[{"$match"=>{}}, {"$group"=>{"_id"=>1, "n"=>{"$sum"=>1}}}], "cursor"=>{}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x000001626def2678 @seconds=1682531341, @increment=4>, "signature"=>{"h...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:19 | test.aggregate | SUCCEEDED | 0.051s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:20 conn:1:1 sconn:5646 | test.aggregate | STARTED | {"aggregate"=>"friendships", "pipeline"=>[{"$match"=>{}}, {"$group"=>{"_id"=>1, "n"=>{"$sum"=>1}}}], "cursor"=>{}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x000001626def2678 @seconds=1682531341, @increment=4>, "signature"=>{"h...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:20 | test.aggregate | SUCCEEDED | 0.042s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:21 conn:1:1 sconn:5646 | test.find | STARTED | {"find"=>"users", "filter"=>{"name"=>"Fr. Rossana Moen"}, "limit"=>1, "projection"=>{"_id"=>1}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x000001626e65acf8 @seconds=1682531341, @increment=5>, "signature"=>{"hash"=><BSON::Binary...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:21 | test.find | SUCCEEDED | 0.043s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:22 conn:1:1 sconn:5646 | test.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"karisa.johnson@zieme.co"}, "limit"=>1, "projection"=>{"_id"=>1}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x000001626e65acf8 @seconds=1682531341, @increment=5>, "signature"=>{"hash"=><BSON...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:22 | test.find | SUCCEEDED | 0.045s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:23 conn:1:1 sconn:5646 | test.insert | STARTED | {"insert"=>"users", "ordered"=>true, "documents"=>[{"_id"=>BSON::ObjectId('6449640c4d88375240fae07e'), "role"=>"user", "friend_ids"=>[], "name"=>"Fr. Rossana Moen", "email"=>"karisa.johnson@zieme.co", "password_digest"=>"$2a$04$DVbFK8BvliumLVQNwqZ9tuE...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:23 | test.insert | SUCCEEDED | 0.059s
+Processing by FriendshipsController#create as HTML
+  Parameters: {"friendship"=>{"receiver_id"=>"6449640c4d88375240fae07e", "sender_id"=>"6449640c4d88375240fae07e"}}
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | MongoDB: 0.0ms | Allocations: 161)
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:24 conn:1:1 sconn:5646 | test.aggregate | STARTED | {"aggregate"=>"friendships", "pipeline"=>[{"$match"=>{}}, {"$group"=>{"_id"=>1, "n"=>{"$sum"=>1}}}], "cursor"=>{}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x000001626f6ccc80 @seconds=1682531342, @increment=1>, "signature"=>{"h...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:24 | test.aggregate | SUCCEEDED | 0.043s
+Overwriting existing field shared_with in class Note.
+MONGODB | Topology type 'unknown' initializing.
+MONGODB | Topology type 'Unknown' changed to type 'ReplicaSetNoPrimary'.
+MONGODB | Server ac-mspcz06-shard-00-00.bsbwlz3.mongodb.net:27017 initializing.
+MONGODB | Server ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 initializing.
+MONGODB | Server ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 initializing.
+MONGODB | Waiting for up to 4.99 seconds for servers to be scanned: #<Cluster topology=ReplicaSetNoPrimary[ac-mspcz06-shard-00-00.bsbwlz3.mongodb.net:27017,ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017,ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017,name=atlas-kjem2r-shard-0] servers=[#<Server address=ac-mspcz06-shard-00-00.bsbwlz3.mongodb.net:27017 UNKNOWN>,#<Server address=ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 UNKNOWN>,#<Server address=ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 UNKNOWN>]>
+MONGODB | Server description for ac-mspcz06-shard-00-00.bsbwlz3.mongodb.net:27017 changed from 'unknown' to 'secondary'.
+MONGODB | There was a change in the members of the 'ReplicaSetNoPrimary' topology.
+MONGODB | Server description for ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 changed from 'unknown' to 'primary'.
+MONGODB | Topology type 'ReplicaSetNoPrimary' changed to type 'ReplicaSetWithPrimary'.
+MONGODB | Server description for ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 changed from 'unknown' to 'secondary'.
+MONGODB | There was a change in the members of the 'ReplicaSetWithPrimary' topology.
+MONGODB | Server description for ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 changed from 'primary' to 'primary'.
+MONGODB | There was a change in the members of the 'ReplicaSetWithPrimary' topology.
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:10 conn:1:1 sconn:5697 | admin.saslStart | STARTED | {}
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:10 | admin.saslStart | SUCCEEDED | 0.043s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:11 conn:1:1 sconn:5697 | admin.saslContinue | STARTED | {}
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:11 | admin.saslContinue | SUCCEEDED | 0.044s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:12 conn:1:1 sconn:5697 | test.find | STARTED | {"find"=>"users", "filter"=>{"name"=>"Amb. Theola Collier"}, "limit"=>1, "projection"=>{"_id"=>1}, "$db"=>"test", "lsid"=>{"id"=><BSON::Binary:0x14860 type=uuid data=0xc3cdd1e7712d47ae...>}}
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:12 | test.find | SUCCEEDED | 0.060s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:13 conn:1:1 sconn:5697 | test.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"kenny@mitchell-barrows.org"}, "limit"=>1, "projection"=>{"_id"=>1}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000025fcd6aa5c0 @seconds=1682531439, @increment=1>, "signature"=>{"hash"=><B...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:13 | test.find | SUCCEEDED | 0.043s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:14 conn:1:1 sconn:5697 | test.insert | STARTED | {"insert"=>"users", "ordered"=>true, "documents"=>[{"_id"=>BSON::ObjectId('6449646e4d88373738b2520c'), "role"=>"user", "friend_ids"=>[], "name"=>"Amb. Theola Collier", "email"=>"kenny@mitchell-barrows.org", "password_digest"=>"$2a$04$XWrIvkR7LmxIwdPLV...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:14 | test.insert | SUCCEEDED | 0.045s
+Processing by SessionsController#create as HTML
+  Parameters: {"email"=>"kenny@mitchell-barrows.org", "password"=>"[FILTERED]"}
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:15 conn:1:1 sconn:5697 | test.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"kenny@mitchell-barrows.org"}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000025fcd6c1040 @seconds=1682531439, @increment=2>, "signature"=>{"hash"=><BSON::Binary:0x15140 type=generic data=...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:15 | test.find | SUCCEEDED | 0.043s
+Completed 401 Unauthorized in 47ms (Views: 0.3ms | MongoDB: 43.2ms | Allocations: 1423)
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:16 conn:1:1 sconn:5697 | test.aggregate | STARTED | {"aggregate"=>"friendships", "pipeline"=>[{"$match"=>{}}, {"$group"=>{"_id"=>1, "n"=>{"$sum"=>1}}}], "cursor"=>{}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000025fcd92c208 @seconds=1682531439, @increment=3>, "signature"=>{"h...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:16 | test.aggregate | SUCCEEDED | 0.031s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:17 conn:1:1 sconn:5697 | test.find | STARTED | {"find"=>"users", "filter"=>{"name"=>"Jewell Mayert"}, "limit"=>1, "projection"=>{"_id"=>1}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000025fcd92c208 @seconds=1682531439, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:17 | test.find | SUCCEEDED | 0.042s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:18 conn:1:1 sconn:5697 | test.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"emmett.crist@lesch-west.co"}, "limit"=>1, "projection"=>{"_id"=>1}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000025fcd92c208 @seconds=1682531439, @increment=3>, "signature"=>{"hash"=><B...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:18 | test.find | SUCCEEDED | 0.044s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:19 conn:1:1 sconn:5697 | test.insert | STARTED | {"insert"=>"users", "ordered"=>true, "documents"=>[{"_id"=>BSON::ObjectId('6449646e4d88373738b2520d'), "role"=>"user", "friend_ids"=>[], "name"=>"Jewell Mayert", "email"=>"emmett.crist@lesch-west.co", "password_digest"=>"$2a$04$2UOKy1QaR9bqPZTUotqWhel...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:19 | test.insert | SUCCEEDED | 0.044s
+Processing by FriendshipsController#create as HTML
+  Parameters: {"friendship"=>{"receiver_id"=>"6449646e4d88373738b2520d", "sender_id"=>"6449646e4d88373738b2520c", "status"=>"pending"}}
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.3ms | MongoDB: 0.0ms | Allocations: 239)
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:20 conn:1:1 sconn:5697 | test.aggregate | STARTED | {"aggregate"=>"friendships", "pipeline"=>[{"$match"=>{}}, {"$group"=>{"_id"=>1, "n"=>{"$sum"=>1}}}], "cursor"=>{}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000025fcdab9e40 @seconds=1682531439, @increment=4>, "signature"=>{"h...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:20 | test.aggregate | SUCCEEDED | 0.043s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:21 conn:1:1 sconn:5697 | test.find | STARTED | {"find"=>"users", "filter"=>{"name"=>"Yong Raynor"}, "limit"=>1, "projection"=>{"_id"=>1}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000025fcdab9e40 @seconds=1682531439, @increment=4>, "signature"=>{"hash"=><BSON::Binary:0x15...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:21 | test.find | SUCCEEDED | 0.034s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:22 conn:1:1 sconn:5697 | test.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"olive@wiegand.biz"}, "limit"=>1, "projection"=>{"_id"=>1}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000025fce16b770 @seconds=1682531440, @increment=2>, "signature"=>{"hash"=><BSON::Bina...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:22 | test.find | SUCCEEDED | 0.040s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:23 conn:1:1 sconn:5697 | test.insert | STARTED | {"insert"=>"users", "ordered"=>true, "documents"=>[{"_id"=>BSON::ObjectId('6449646f4d88373738b2520e'), "role"=>"user", "friend_ids"=>[], "name"=>"Yong Raynor", "email"=>"olive@wiegand.biz", "password_digest"=>"$2a$04$VfQI5aM2ZS053a5YEgsYAuv0zstiVCODUJ...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:23 | test.insert | SUCCEEDED | 0.041s
+Processing by SessionsController#create as HTML
+  Parameters: {"email"=>"olive@wiegand.biz", "password"=>"[FILTERED]"}
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:24 conn:1:1 sconn:5697 | test.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"olive@wiegand.biz"}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000025fce1a6b90 @seconds=1682531440, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x15460 type=generic data=0x8d5c93d...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:24 | test.find | SUCCEEDED | 0.045s
+Completed 401 Unauthorized in 48ms (Views: 0.2ms | MongoDB: 44.6ms | Allocations: 895)
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:25 conn:1:1 sconn:5697 | test.aggregate | STARTED | {"aggregate"=>"friendships", "pipeline"=>[{"$match"=>{}}, {"$group"=>{"_id"=>1, "n"=>{"$sum"=>1}}}], "cursor"=>{}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000025fce1a6b90 @seconds=1682531440, @increment=3>, "signature"=>{"h...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:25 | test.aggregate | SUCCEEDED | 0.042s
+Processing by FriendshipsController#create as HTML
+  Parameters: {"friendship"=>{"receiver_id"=>"6449646f4d88373738b2520e", "sender_id"=>"6449646f4d88373738b2520e"}}
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | MongoDB: 0.0ms | Allocations: 120)
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:26 conn:1:1 sconn:5697 | test.aggregate | STARTED | {"aggregate"=>"friendships", "pipeline"=>[{"$match"=>{}}, {"$group"=>{"_id"=>1, "n"=>{"$sum"=>1}}}], "cursor"=>{}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000025fce1a6b90 @seconds=1682531440, @increment=3>, "signature"=>{"h...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:26 | test.aggregate | SUCCEEDED | 0.043s
+Overwriting existing field shared_with in class Note.
+MONGODB | Topology type 'unknown' initializing.
+MONGODB | Topology type 'Unknown' changed to type 'ReplicaSetNoPrimary'.
+MONGODB | Server ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 initializing.
+MONGODB | Server ac-mspcz06-shard-00-00.bsbwlz3.mongodb.net:27017 initializing.
+MONGODB | Server ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 initializing.
+MONGODB | Waiting for up to 4.99 seconds for servers to be scanned: #<Cluster topology=ReplicaSetNoPrimary[ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017,ac-mspcz06-shard-00-00.bsbwlz3.mongodb.net:27017,ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017,name=atlas-kjem2r-shard-0] servers=[#<Server address=ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 UNKNOWN>,#<Server address=ac-mspcz06-shard-00-00.bsbwlz3.mongodb.net:27017 UNKNOWN>,#<Server address=ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 UNKNOWN>]>
+MONGODB | Server description for ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 changed from 'unknown' to 'primary'.
+MONGODB | Topology type 'ReplicaSetNoPrimary' changed to type 'ReplicaSetWithPrimary'.
+MONGODB | Server description for ac-mspcz06-shard-00-00.bsbwlz3.mongodb.net:27017 changed from 'unknown' to 'secondary'.
+MONGODB | There was a change in the members of the 'ReplicaSetWithPrimary' topology.
+MONGODB | Waiting for up to 4.53 seconds for servers to be scanned: #<Cluster topology=ReplicaSetWithPrimary[ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017,ac-mspcz06-shard-00-00.bsbwlz3.mongodb.net:27017,ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017,name=atlas-kjem2r-shard-0,v=1,e=7fffffff000000000000004e] servers=[#<Server address=ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 UNKNOWN>,#<Server address=ac-mspcz06-shard-00-00.bsbwlz3.mongodb.net:27017 SECONDARY replica_set=atlas-kjem2r-shard-0 pool=#<ConnectionPool size=0 (0-20) used=0 avail=0 pending=0>>,#<Server address=ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 PRIMARY replica_set=atlas-kjem2r-shard-0 pool=#<ConnectionPool size=0 (0-20) used=0 avail=0 pending=0>>]>
+MONGODB | Server description for ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 changed from 'unknown' to 'secondary'.
+MONGODB | There was a change in the members of the 'ReplicaSetWithPrimary' topology.
+MONGODB | Server description for ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 changed from 'primary' to 'primary'.
+MONGODB | There was a change in the members of the 'ReplicaSetWithPrimary' topology.
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:10 conn:1:1 sconn:5705 | admin.saslStart | STARTED | {}
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:10 | admin.saslStart | SUCCEEDED | 0.045s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:11 conn:1:1 sconn:5705 | admin.saslContinue | STARTED | {}
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:11 | admin.saslContinue | SUCCEEDED | 0.324s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:12 conn:1:1 sconn:5705 | test.find | STARTED | {"find"=>"users", "filter"=>{"name"=>"The Hon. Leigh Howe"}, "limit"=>1, "projection"=>{"_id"=>1}, "$db"=>"test", "lsid"=>{"id"=><BSON::Binary:0x14860 type=uuid data=0x3c39b0e3ce3947b3...>}}
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:12 | test.find | SUCCEEDED | 0.044s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:13 conn:1:1 sconn:5705 | test.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"lenora@balistreri.name"}, "limit"=>1, "projection"=>{"_id"=>1}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x00000187dd1ef0d0 @seconds=1682531457, @increment=3>, "signature"=>{"hash"=><BSON:...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:13 | test.find | SUCCEEDED | 0.045s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:14 conn:1:1 sconn:5705 | test.insert | STARTED | {"insert"=>"users", "ordered"=>true, "documents"=>[{"_id"=>BSON::ObjectId('644964804d8837755cb06402'), "role"=>"user", "friend_ids"=>[], "name"=>"The Hon. Leigh Howe", "email"=>"lenora@balistreri.name", "password_digest"=>"$2a$04$vCzPi34bRNyfF7BS0lEn3...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:14 | test.insert | SUCCEEDED | 0.059s
+Processing by SessionsController#create as HTML
+  Parameters: {"email"=>"lenora@balistreri.name", "password"=>"[FILTERED]"}
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:15 conn:1:1 sconn:5705 | test.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"lenora@balistreri.name"}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x00000187dd215c08 @seconds=1682531458, @increment=1>, "signature"=>{"hash"=><BSON::Binary:0x15140 type=generic data=0x9c...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:15 | test.find | SUCCEEDED | 0.049s
+Completed 200 OK in 53ms (Views: 0.2ms | MongoDB: 48.5ms | Allocations: 1805)
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:16 conn:1:1 sconn:5705 | test.aggregate | STARTED | {"aggregate"=>"friendships", "pipeline"=>[{"$match"=>{}}, {"$group"=>{"_id"=>1, "n"=>{"$sum"=>1}}}], "cursor"=>{}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x00000187dd215c08 @seconds=1682531458, @increment=1>, "signature"=>{"h...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:16 | test.aggregate | SUCCEEDED | 0.046s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:17 conn:1:1 sconn:5705 | test.find | STARTED | {"find"=>"users", "filter"=>{"name"=>"Gabriela Rath"}, "limit"=>1, "projection"=>{"_id"=>1}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x00000187dd215c08 @seconds=1682531458, @increment=1>, "signature"=>{"hash"=><BSON::Binary:0x...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:17 | test.find | SUCCEEDED | 0.043s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:18 conn:1:1 sconn:5705 | test.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"hallie@yost-cremin.net"}, "limit"=>1, "projection"=>{"_id"=>1}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x00000187dd215c08 @seconds=1682531458, @increment=1>, "signature"=>{"hash"=><BSON:...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:18 | test.find | SUCCEEDED | 0.060s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:19 conn:1:1 sconn:5705 | test.insert | STARTED | {"insert"=>"users", "ordered"=>true, "documents"=>[{"_id"=>BSON::ObjectId('644964814d8837755cb06403'), "role"=>"user", "friend_ids"=>[], "name"=>"Gabriela Rath", "email"=>"hallie@yost-cremin.net", "password_digest"=>"$2a$04$aVg1853GKiGWQ9pG5CzOJuSzPp9...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:19 | test.insert | SUCCEEDED | 0.045s
+Processing by FriendshipsController#create as HTML
+  Parameters: {"friendship"=>{"receiver_id"=>"644964814d8837755cb06403", "sender_id"=>"644964804d8837755cb06402", "status"=>"pending"}}
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:20 conn:1:1 sconn:5705 | test.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('644964804d8837755cb06402')}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x00000187dd61e890 @seconds=1682531458, @increment=2>, "signature"=>{"hash"=><BSON::Binary:0x15240 type=g...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:20 | test.find | SUCCEEDED | 0.057s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:21 conn:1:1 sconn:5705 | test.find | STARTED | {"find"=>"users", "filter"=>{"email"=>nil}, "limit"=>1, "sort"=>{"_id"=>1}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x00000187dd6550e8 @seconds=1682531458, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x15260 type=generi...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:21 | test.find | SUCCEEDED | 0.044s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:22 conn:1:1 sconn:5705 | test.find | STARTED | {"find"=>"friendships", "filter"=>{"sender_id"=>BSON::ObjectId('644964804d8837755cb06402'), "receiver_id"=>BSON::ObjectId('63f358124d88376dcc1d6498')}, "limit"=>1, "projection"=>{"_id"=>1}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timest...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:22 | test.find | SUCCEEDED | 0.076s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:23 conn:1:1 sconn:5705 | test.find | STARTED | {"find"=>"friendships", "filter"=>{"sender_id"=>BSON::ObjectId('63f358124d88376dcc1d6498'), "receiver_id"=>BSON::ObjectId('644964804d8837755cb06402')}, "limit"=>1, "projection"=>{"_id"=>1}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timest...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:23 | test.find | SUCCEEDED | 0.045s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:24 conn:1:1 sconn:5705 | test.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('63f358124d88376dcc1d6498')}, "limit"=>1, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x00000187dd6550e8 @seconds=1682531458, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:24 | test.find | SUCCEEDED | 0.045s
+Completed 422 Unprocessable Entity in 281ms (Views: 1.4ms | MongoDB: 267.4ms | Allocations: 6691)
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:25 conn:1:1 sconn:5705 | test.aggregate | STARTED | {"aggregate"=>"friendships", "pipeline"=>[{"$match"=>{}}, {"$group"=>{"_id"=>1, "n"=>{"$sum"=>1}}}], "cursor"=>{}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x00000187dd6a6538 @seconds=1682531458, @increment=4>, "signature"=>{"h...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:25 | test.aggregate | SUCCEEDED | 0.041s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:26 conn:1:1 sconn:5705 | test.find | STARTED | {"find"=>"users", "filter"=>{"name"=>"Dannie Bins"}, "limit"=>1, "projection"=>{"_id"=>1}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x00000187dd6a6538 @seconds=1682531458, @increment=4>, "signature"=>{"hash"=><BSON::Binary:0x15...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:26 | test.find | SUCCEEDED | 0.040s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:27 conn:1:1 sconn:5705 | test.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"cherly@murray.biz"}, "limit"=>1, "projection"=>{"_id"=>1}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x00000187ddd59218 @seconds=1682531458, @increment=5>, "signature"=>{"hash"=><BSON::Bina...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:27 | test.find | SUCCEEDED | 0.045s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:28 conn:1:1 sconn:5705 | test.insert | STARTED | {"insert"=>"users", "ordered"=>true, "documents"=>[{"_id"=>BSON::ObjectId('644964814d8837755cb06404'), "role"=>"user", "friend_ids"=>[], "name"=>"Dannie Bins", "email"=>"cherly@murray.biz", "password_digest"=>"$2a$04$w02nutlKz02PbYo0naueIOEMA0Jz5bxgYp...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:28 | test.insert | SUCCEEDED | 0.060s
+Processing by SessionsController#create as HTML
+  Parameters: {"email"=>"cherly@murray.biz", "password"=>"[FILTERED]"}
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:29 conn:1:1 sconn:5705 | test.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"cherly@murray.biz"}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x00000187ddd94660 @seconds=1682531458, @increment=6>, "signature"=>{"hash"=><BSON::Binary:0x15480 type=generic data=0x9c0085e...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:29 | test.find | SUCCEEDED | 0.043s
+Completed 200 OK in 47ms (Views: 0.1ms | MongoDB: 43.2ms | Allocations: 1061)
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:30 conn:1:1 sconn:5705 | test.aggregate | STARTED | {"aggregate"=>"friendships", "pipeline"=>[{"$match"=>{}}, {"$group"=>{"_id"=>1, "n"=>{"$sum"=>1}}}], "cursor"=>{}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x00000187ddd94660 @seconds=1682531458, @increment=6>, "signature"=>{"h...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:30 | test.aggregate | SUCCEEDED | 0.043s
+Processing by FriendshipsController#create as HTML
+  Parameters: {"friendship"=>{"receiver_id"=>"644964814d8837755cb06404", "sender_id"=>"644964814d8837755cb06404"}}
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:31 conn:1:1 sconn:5705 | test.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('644964814d8837755cb06404')}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x00000187ddd94660 @seconds=1682531458, @increment=6>, "signature"=>{"hash"=><BSON::Binary:0x15480 type=g...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:31 | test.find | SUCCEEDED | 0.043s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:32 conn:1:1 sconn:5705 | test.find | STARTED | {"find"=>"users", "filter"=>{"email"=>nil}, "limit"=>1, "sort"=>{"_id"=>1}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x00000187ddd94660 @seconds=1682531458, @increment=6>, "signature"=>{"hash"=><BSON::Binary:0x15480 type=generi...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:32 | test.find | SUCCEEDED | 0.046s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:33 conn:1:1 sconn:5705 | test.find | STARTED | {"find"=>"friendships", "filter"=>{"sender_id"=>BSON::ObjectId('644964814d8837755cb06404'), "receiver_id"=>BSON::ObjectId('63f358124d88376dcc1d6498')}, "limit"=>1, "projection"=>{"_id"=>1}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timest...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:33 | test.find | SUCCEEDED | 0.044s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:34 conn:1:1 sconn:5705 | test.find | STARTED | {"find"=>"friendships", "filter"=>{"sender_id"=>BSON::ObjectId('63f358124d88376dcc1d6498'), "receiver_id"=>BSON::ObjectId('644964814d8837755cb06404')}, "limit"=>1, "projection"=>{"_id"=>1}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timest...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:34 | test.find | SUCCEEDED | 0.042s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:35 conn:1:1 sconn:5705 | test.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('63f358124d88376dcc1d6498')}, "limit"=>1, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x00000187ddd94660 @seconds=1682531458, @increment=6>, "signature"=>{"hash"=><BSON::Binary:0x...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:35 | test.find | SUCCEEDED | 0.045s
+Completed 422 Unprocessable Entity in 234ms (Views: 1.2ms | MongoDB: 220.4ms | Allocations: 5665)
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:36 conn:1:1 sconn:5705 | test.aggregate | STARTED | {"aggregate"=>"friendships", "pipeline"=>[{"$match"=>{}}, {"$group"=>{"_id"=>1, "n"=>{"$sum"=>1}}}], "cursor"=>{}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x00000187ddd94660 @seconds=1682531458, @increment=6>, "signature"=>{"h...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:36 | test.aggregate | SUCCEEDED | 0.043s
+Overwriting existing field shared_with in class Note.
+MONGODB | Topology type 'unknown' initializing.
+MONGODB | Topology type 'Unknown' changed to type 'ReplicaSetNoPrimary'.
+MONGODB | Server ac-mspcz06-shard-00-00.bsbwlz3.mongodb.net:27017 initializing.
+MONGODB | Server ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 initializing.
+MONGODB | Server ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 initializing.
+MONGODB | Waiting for up to 4.99 seconds for servers to be scanned: #<Cluster topology=ReplicaSetNoPrimary[ac-mspcz06-shard-00-00.bsbwlz3.mongodb.net:27017,ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017,ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017,name=atlas-kjem2r-shard-0] servers=[#<Server address=ac-mspcz06-shard-00-00.bsbwlz3.mongodb.net:27017 UNKNOWN>,#<Server address=ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 UNKNOWN>,#<Server address=ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 UNKNOWN>]>
+MONGODB | Server description for ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 changed from 'unknown' to 'secondary'.
+MONGODB | There was a change in the members of the 'ReplicaSetNoPrimary' topology.
+MONGODB | Server description for ac-mspcz06-shard-00-00.bsbwlz3.mongodb.net:27017 changed from 'unknown' to 'secondary'.
+MONGODB | There was a change in the members of the 'ReplicaSetNoPrimary' topology.
+MONGODB | Waiting for up to 4.53 seconds for servers to be scanned: #<Cluster topology=ReplicaSetNoPrimary[ac-mspcz06-shard-00-00.bsbwlz3.mongodb.net:27017,ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017,ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017,name=atlas-kjem2r-shard-0] servers=[#<Server address=ac-mspcz06-shard-00-00.bsbwlz3.mongodb.net:27017 SECONDARY replica_set=atlas-kjem2r-shard-0 pool=#<ConnectionPool size=0 (0-20) used=0 avail=0 pending=0>>,#<Server address=ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 UNKNOWN>,#<Server address=ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 SECONDARY replica_set=atlas-kjem2r-shard-0 pool=#<ConnectionPool size=0 (0-20) used=0 avail=0 pending=0>>]>
+MONGODB | Server description for ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 changed from 'unknown' to 'primary'.
+MONGODB | Topology type 'ReplicaSetNoPrimary' changed to type 'ReplicaSetWithPrimary'.
+MONGODB | Server description for ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 changed from 'primary' to 'primary'.
+MONGODB | There was a change in the members of the 'ReplicaSetWithPrimary' topology.
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:10 conn:1:1 sconn:5650 | admin.saslStart | STARTED | {}
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:10 | admin.saslStart | SUCCEEDED | 0.043s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:11 conn:1:1 sconn:5650 | admin.saslContinue | STARTED | {}
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:11 | admin.saslContinue | SUCCEEDED | 0.044s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:12 conn:1:1 sconn:5650 | test.find | STARTED | {"find"=>"users", "filter"=>{"name"=>"Winfred Donnelly DO"}, "limit"=>1, "projection"=>{"_id"=>1}, "$db"=>"test", "lsid"=>{"id"=><BSON::Binary:0x14860 type=uuid data=0x369fa1978df14c1f...>}}
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:12 | test.find | SUCCEEDED | 0.045s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:13 conn:1:1 sconn:5650 | test.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"coy@king.info"}, "limit"=>1, "projection"=>{"_id"=>1}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x00000233a949d700 @seconds=1682531545, @increment=2>, "signature"=>{"hash"=><BSON::Binary:0...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:13 | test.find | SUCCEEDED | 0.045s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:14 conn:1:1 sconn:5650 | test.insert | STARTED | {"insert"=>"users", "ordered"=>true, "documents"=>[{"_id"=>BSON::ObjectId('644964d84d883784a4fea305'), "role"=>"user", "friend_ids"=>[], "name"=>"Winfred Donnelly DO", "email"=>"coy@king.info", "password_digest"=>"$2a$04$UHptXTrXwcGQmytqLwCZfuc6Hx8IYV...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:14 | test.insert | SUCCEEDED | 0.044s
+Processing by SessionsController#create as HTML
+  Parameters: {"email"=>"coy@king.info", "password"=>"[FILTERED]"}
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:15 conn:1:1 sconn:5650 | test.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"coy@king.info"}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x00000233a9503fa0 @seconds=1682531546, @increment=1>, "signature"=>{"hash"=><BSON::Binary:0x15160 type=generic data=0x1cd27ba0ee1...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:15 | test.find | SUCCEEDED | 0.050s
+Completed 200 OK in 54ms (Views: 0.2ms | MongoDB: 50.2ms | Allocations: 1805)
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:16 conn:1:1 sconn:5650 | test.aggregate | STARTED | {"aggregate"=>"friendships", "pipeline"=>[{"$match"=>{}}, {"$group"=>{"_id"=>1, "n"=>{"$sum"=>1}}}], "cursor"=>{}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x00000233a9503fa0 @seconds=1682531546, @increment=1>, "signature"=>{"h...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:16 | test.aggregate | SUCCEEDED | 0.048s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:17 conn:1:1 sconn:5650 | test.find | STARTED | {"find"=>"users", "filter"=>{"name"=>"Walton Strosin"}, "limit"=>1, "projection"=>{"_id"=>1}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x00000233a9503fa0 @seconds=1682531546, @increment=1>, "signature"=>{"hash"=><BSON::Binary:0...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:17 | test.find | SUCCEEDED | 0.042s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:18 conn:1:1 sconn:5650 | test.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"adam.reinger@yost.co"}, "limit"=>1, "projection"=>{"_id"=>1}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x00000233a9503fa0 @seconds=1682531546, @increment=1>, "signature"=>{"hash"=><BSON::B...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:18 | test.find | SUCCEEDED | 0.045s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:19 conn:1:1 sconn:5650 | test.insert | STARTED | {"insert"=>"users", "ordered"=>true, "documents"=>[{"_id"=>BSON::ObjectId('644964d94d883784a4fea306'), "role"=>"user", "friend_ids"=>[], "name"=>"Walton Strosin", "email"=>"adam.reinger@yost.co", "password_digest"=>"$2a$04$ihLmQFnlgpH9fy5tk6rFfus7pepD...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:19 | test.insert | SUCCEEDED | 0.044s
+Processing by FriendshipsController#create as HTML
+  Parameters: {"email"=>"adam.reinger@yost.co"}
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:20 conn:1:1 sconn:5650 | test.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('644964d84d883784a4fea305')}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x00000233a980ccb0 @seconds=1682531546, @increment=2>, "signature"=>{"hash"=><BSON::Binary:0x15260 type=g...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:20 | test.find | SUCCEEDED | 0.043s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:21 conn:1:1 sconn:5650 | test.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"adam.reinger@yost.co"}, "limit"=>1, "sort"=>{"_id"=>1}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x00000233a980ccb0 @seconds=1682531546, @increment=2>, "signature"=>{"hash"=><BSON::Binary:...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:21 | test.find | SUCCEEDED | 0.045s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:22 conn:1:1 sconn:5650 | test.find | STARTED | {"find"=>"friendships", "filter"=>{"sender_id"=>BSON::ObjectId('644964d84d883784a4fea305'), "receiver_id"=>BSON::ObjectId('644964d94d883784a4fea306')}, "limit"=>1, "projection"=>{"_id"=>1}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timest...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:22 | test.find | SUCCEEDED | 0.043s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:23 conn:1:1 sconn:5650 | test.find | STARTED | {"find"=>"friendships", "filter"=>{"sender_id"=>BSON::ObjectId('644964d94d883784a4fea306'), "receiver_id"=>BSON::ObjectId('644964d84d883784a4fea305')}, "limit"=>1, "projection"=>{"_id"=>1}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timest...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:23 | test.find | SUCCEEDED | 0.045s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:24 conn:1:1 sconn:5650 | test.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('644964d94d883784a4fea306')}, "limit"=>1, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x00000233a980ccb0 @seconds=1682531546, @increment=2>, "signature"=>{"hash"=><BSON::Binary:0x...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:24 | test.find | SUCCEEDED | 0.310s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:25 conn:1:1 sconn:5650 | test.insert | STARTED | {"insert"=>"friendships", "ordered"=>true, "documents"=>[{"_id"=>BSON::ObjectId('644964d94d883784a4fea307'), "sender_id"=>BSON::ObjectId('644964d84d883784a4fea305'), "receiver_id"=>BSON::ObjectId('644964d94d883784a4fea306'), "status"=>"pending", "upda...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:25 | test.insert | SUCCEEDED | 0.089s
+Completed 201 Created in 590ms (Views: 0.2ms | MongoDB: 574.7ms | Allocations: 6604)
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:26 conn:1:1 sconn:5650 | test.aggregate | STARTED | {"aggregate"=>"friendships", "pipeline"=>[{"$match"=>{}}, {"$group"=>{"_id"=>1, "n"=>{"$sum"=>1}}}], "cursor"=>{}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x00000233a9901288 @seconds=1682531546, @increment=5>, "signature"=>{"h...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:26 | test.aggregate | SUCCEEDED | 0.044s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:27 conn:1:1 sconn:5650 | test.find | STARTED | {"find"=>"users", "filter"=>{"name"=>"Marti Spinka"}, "limit"=>1, "projection"=>{"_id"=>1}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x00000233a991b3e0 @seconds=1682531546, @increment=6>, "signature"=>{"hash"=><BSON::Binary:0x1...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:27 | test.find | SUCCEEDED | 0.042s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:28 conn:1:1 sconn:5650 | test.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"jude_oconner@dubuque-borer.io"}, "limit"=>1, "projection"=>{"_id"=>1}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x00000233a9e04f28 @seconds=1682531547, @increment=1>, "signature"=>{"hash"=...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:28 | test.find | SUCCEEDED | 0.044s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:29 conn:1:1 sconn:5650 | test.insert | STARTED | {"insert"=>"users", "ordered"=>true, "documents"=>[{"_id"=>BSON::ObjectId('644964da4d883784a4fea308'), "role"=>"user", "friend_ids"=>[], "name"=>"Marti Spinka", "email"=>"jude_oconner@dubuque-borer.io", "password_digest"=>"$2a$04$FCBGGnri8V0X7EGyMfdkw...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:29 | test.insert | SUCCEEDED | 0.060s
+Processing by SessionsController#create as HTML
+  Parameters: {"email"=>"jude_oconner@dubuque-borer.io", "password"=>"[FILTERED]"}
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:30 conn:1:1 sconn:5650 | test.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"jude_oconner@dubuque-borer.io"}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x00000233a9e34340 @seconds=1682531547, @increment=2>, "signature"=>{"hash"=><BSON::Binary:0x15520 type=generic da...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:30 | test.find | SUCCEEDED | 0.045s
+Completed 200 OK in 48ms (Views: 0.2ms | MongoDB: 45.0ms | Allocations: 1060)
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:31 conn:1:1 sconn:5650 | test.aggregate | STARTED | {"aggregate"=>"friendships", "pipeline"=>[{"$match"=>{}}, {"$group"=>{"_id"=>1, "n"=>{"$sum"=>1}}}], "cursor"=>{}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x00000233a9e34340 @seconds=1682531547, @increment=2>, "signature"=>{"h...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:31 | test.aggregate | SUCCEEDED | 0.042s
+Processing by FriendshipsController#create as HTML
+  Parameters: {"friendship"=>{"receiver_id"=>"644964da4d883784a4fea308", "sender_id"=>"644964da4d883784a4fea308"}}
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:32 conn:1:1 sconn:5650 | test.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('644964da4d883784a4fea308')}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x00000233a9e34340 @seconds=1682531547, @increment=2>, "signature"=>{"hash"=><BSON::Binary:0x15520 type=g...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:32 | test.find | SUCCEEDED | 0.044s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:33 conn:1:1 sconn:5650 | test.find | STARTED | {"find"=>"users", "filter"=>{"email"=>nil}, "limit"=>1, "sort"=>{"_id"=>1}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x00000233a9e34340 @seconds=1682531547, @increment=2>, "signature"=>{"hash"=><BSON::Binary:0x15520 type=generi...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:33 | test.find | SUCCEEDED | 0.045s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:34 conn:1:1 sconn:5650 | test.find | STARTED | {"find"=>"friendships", "filter"=>{"sender_id"=>BSON::ObjectId('644964da4d883784a4fea308'), "receiver_id"=>BSON::ObjectId('63f358124d88376dcc1d6498')}, "limit"=>1, "projection"=>{"_id"=>1}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timest...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:34 | test.find | SUCCEEDED | 0.044s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:35 conn:1:1 sconn:5650 | test.find | STARTED | {"find"=>"friendships", "filter"=>{"sender_id"=>BSON::ObjectId('63f358124d88376dcc1d6498'), "receiver_id"=>BSON::ObjectId('644964da4d883784a4fea308')}, "limit"=>1, "projection"=>{"_id"=>1}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timest...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:35 | test.find | SUCCEEDED | 0.044s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:36 conn:1:1 sconn:5650 | test.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('63f358124d88376dcc1d6498')}, "limit"=>1, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x00000233a9e34340 @seconds=1682531547, @increment=2>, "signature"=>{"hash"=><BSON::Binary:0x...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:36 | test.find | SUCCEEDED | 0.044s
+Completed 422 Unprocessable Entity in 234ms (Views: 1.9ms | MongoDB: 220.7ms | Allocations: 5990)
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:37 conn:1:1 sconn:5650 | test.aggregate | STARTED | {"aggregate"=>"friendships", "pipeline"=>[{"$match"=>{}}, {"$group"=>{"_id"=>1, "n"=>{"$sum"=>1}}}], "cursor"=>{}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x00000233a9e34340 @seconds=1682531547, @increment=2>, "signature"=>{"h...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:37 | test.aggregate | SUCCEEDED | 0.043s
+Overwriting existing field shared_with in class Note.
+MONGODB | Topology type 'unknown' initializing.
+MONGODB | Topology type 'Unknown' changed to type 'ReplicaSetNoPrimary'.
+MONGODB | Server ac-mspcz06-shard-00-00.bsbwlz3.mongodb.net:27017 initializing.
+MONGODB | Server ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 initializing.
+MONGODB | Server ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 initializing.
+MONGODB | Waiting for up to 5.00 seconds for servers to be scanned: #<Cluster topology=ReplicaSetNoPrimary[ac-mspcz06-shard-00-00.bsbwlz3.mongodb.net:27017,ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017,ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017,name=atlas-kjem2r-shard-0] servers=[#<Server address=ac-mspcz06-shard-00-00.bsbwlz3.mongodb.net:27017 UNKNOWN>,#<Server address=ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 UNKNOWN>,#<Server address=ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 UNKNOWN>]>
+MONGODB | Server description for ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 changed from 'unknown' to 'secondary'.
+MONGODB | There was a change in the members of the 'ReplicaSetNoPrimary' topology.
+MONGODB | Server description for ac-mspcz06-shard-00-00.bsbwlz3.mongodb.net:27017 changed from 'unknown' to 'secondary'.
+MONGODB | There was a change in the members of the 'ReplicaSetNoPrimary' topology.
+MONGODB | Waiting for up to 4.56 seconds for servers to be scanned: #<Cluster topology=ReplicaSetNoPrimary[ac-mspcz06-shard-00-00.bsbwlz3.mongodb.net:27017,ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017,ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017,name=atlas-kjem2r-shard-0] servers=[#<Server address=ac-mspcz06-shard-00-00.bsbwlz3.mongodb.net:27017 SECONDARY replica_set=atlas-kjem2r-shard-0 pool=#<ConnectionPool size=0 (0-20) used=0 avail=0 pending=0>>,#<Server address=ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 UNKNOWN>,#<Server address=ac-mspcz06-shard-00-02.bsbwlz3.mongodb.net:27017 SECONDARY replica_set=atlas-kjem2r-shard-0 pool=#<ConnectionPool size=0 (0-20) used=0 avail=0 pending=0>>]>
+MONGODB | Server description for ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 changed from 'unknown' to 'primary'.
+MONGODB | Topology type 'ReplicaSetNoPrimary' changed to type 'ReplicaSetWithPrimary'.
+MONGODB | Server description for ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 changed from 'primary' to 'primary'.
+MONGODB | There was a change in the members of the 'ReplicaSetWithPrimary' topology.
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:10 conn:1:1 sconn:18038 | admin.saslStart | STARTED | {}
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:10 | admin.saslStart | SUCCEEDED | 0.045s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:11 conn:1:1 sconn:18038 | admin.saslContinue | STARTED | {}
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:11 | admin.saslContinue | SUCCEEDED | 0.045s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:12 conn:1:1 sconn:18038 | test.find | STARTED | {"find"=>"users", "filter"=>{"name"=>"Kelly Spinka"}, "limit"=>1, "projection"=>{"_id"=>1}, "$db"=>"test", "lsid"=>{"id"=><BSON::Binary:0x14980 type=uuid data=0x37d2410742404e5c...>}}
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:12 | test.find | SUCCEEDED | 0.419s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:13 conn:1:1 sconn:18038 | test.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"ricardo@cremin.io"}, "limit"=>1, "projection"=>{"_id"=>1}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x00000223532d37c8 @seconds=1682594624, @increment=2>, "signature"=>{"hash"=><BSON::Bina...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:13 | test.find | SUCCEEDED | 0.045s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:14 conn:1:1 sconn:18038 | test.insert | STARTED | {"insert"=>"users", "ordered"=>true, "documents"=>[{"_id"=>BSON::ObjectId('644a5b404d883724b0c5d07f'), "role"=>"user", "friend_ids"=>[], "name"=>"Kelly Spinka", "email"=>"ricardo@cremin.io", "password_digest"=>"$2a$04$hBjd7yWcZa3hxTfKD5Ij3.DFE1OqrBWBX...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:14 | test.insert | SUCCEEDED | 0.060s
+Processing by SessionsController#create as HTML
+  Parameters: {"email"=>"ricardo@cremin.io", "password"=>"[FILTERED]"}
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:15 conn:1:1 sconn:18038 | test.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"ricardo@cremin.io"}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000022353302258 @seconds=1682594624, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x15260 type=generic data=0x4523a07...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:15 | test.find | SUCCEEDED | 0.059s
+Completed 200 OK in 63ms (Views: 0.2ms | MongoDB: 59.0ms | Allocations: 1813)
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:16 conn:1:1 sconn:18038 | test.aggregate | STARTED | {"aggregate"=>"friendships", "pipeline"=>[{"$match"=>{}}, {"$group"=>{"_id"=>1, "n"=>{"$sum"=>1}}}], "cursor"=>{}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x00000223534a9430 @seconds=1682594624, @increment=4>, "signature"=>{"h...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:16 | test.aggregate | SUCCEEDED | 0.048s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:17 conn:1:1 sconn:18038 | test.find | STARTED | {"find"=>"users", "filter"=>{"name"=>"Fr. Gabriel Langworth"}, "limit"=>1, "projection"=>{"_id"=>1}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x00000223534a9430 @seconds=1682594624, @increment=4>, "signature"=>{"hash"=><BSON::B...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:17 | test.find | SUCCEEDED | 0.058s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:18 conn:1:1 sconn:18038 | test.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"rogelio_langworth@cole.name"}, "limit"=>1, "projection"=>{"_id"=>1}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x00000223534a9430 @seconds=1682594624, @increment=4>, "signature"=>{"hash"=><...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:18 | test.find | SUCCEEDED | 0.059s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:19 conn:1:1 sconn:18038 | test.insert | STARTED | {"insert"=>"users", "ordered"=>true, "documents"=>[{"_id"=>BSON::ObjectId('644a5b404d883724b0c5d080'), "role"=>"user", "friend_ids"=>[], "name"=>"Fr. Gabriel Langworth", "email"=>"rogelio_langworth@cole.name", "password_digest"=>"$2a$04$/vihiWHqoqR86M...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:19 | test.insert | SUCCEEDED | 0.059s
+Processing by FriendshipsController#create as HTML
+  Parameters: {"email"=>"rogelio_langworth@cole.name"}
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:20 conn:1:1 sconn:18038 | test.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('644a5b404d883724b0c5d07f')}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x00000223535fdd68 @seconds=1682594625, @increment=1>, "signature"=>{"hash"=><BSON::Binary:0x15380 type=g...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:20 | test.find | SUCCEEDED | 0.044s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:21 conn:1:1 sconn:18038 | test.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"rogelio_langworth@cole.name"}, "limit"=>1, "sort"=>{"_id"=>1}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x00000223535fdd68 @seconds=1682594625, @increment=1>, "signature"=>{"hash"=><BSON::...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:21 | test.find | SUCCEEDED | 0.060s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:22 conn:1:1 sconn:18038 | test.find | STARTED | {"find"=>"friendships", "filter"=>{"sender_id"=>BSON::ObjectId('644a5b404d883724b0c5d07f'), "receiver_id"=>BSON::ObjectId('644a5b404d883724b0c5d080')}, "limit"=>1, "projection"=>{"_id"=>1}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timest...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:22 | test.find | SUCCEEDED | 0.045s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:23 conn:1:1 sconn:18038 | test.find | STARTED | {"find"=>"friendships", "filter"=>{"sender_id"=>BSON::ObjectId('644a5b404d883724b0c5d080'), "receiver_id"=>BSON::ObjectId('644a5b404d883724b0c5d07f')}, "limit"=>1, "projection"=>{"_id"=>1}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timest...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:23 | test.find | SUCCEEDED | 0.044s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:24 conn:1:1 sconn:18038 | test.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('644a5b404d883724b0c5d080')}, "limit"=>1, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000022353655f18 @seconds=1682594625, @increment=2>, "signature"=>{"hash"=><BSON::Binary:0x...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:24 | test.find | SUCCEEDED | 0.044s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:25 conn:1:1 sconn:18038 | test.insert | STARTED | {"insert"=>"friendships", "ordered"=>true, "documents"=>[{"_id"=>BSON::ObjectId('644a5b404d883724b0c5d081'), "sender_id"=>BSON::ObjectId('644a5b404d883724b0c5d07f'), "receiver_id"=>BSON::ObjectId('644a5b404d883724b0c5d080'), "status"=>"pending", "upda...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:25 | test.insert | SUCCEEDED | 0.059s
+Completed 201 Created in 310ms (Views: 0.3ms | MongoDB: 295.5ms | Allocations: 6617)
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:26 conn:1:1 sconn:18038 | test.aggregate | STARTED | {"aggregate"=>"friendships", "pipeline"=>[{"$match"=>{}}, {"$group"=>{"_id"=>1, "n"=>{"$sum"=>1}}}], "cursor"=>{}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000022353716128 @seconds=1682594625, @increment=4>, "signature"=>{"h...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:26 | test.aggregate | SUCCEEDED | 0.045s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:27 conn:1:1 sconn:18038 | test.find | STARTED | {"find"=>"users", "filter"=>{"name"=>"Shannon Murazik"}, "limit"=>1, "projection"=>{"_id"=>1}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000022353716128 @seconds=1682594625, @increment=4>, "signature"=>{"hash"=><BSON::Binary:...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:27 | test.find | SUCCEEDED | 0.057s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:28 conn:1:1 sconn:18038 | test.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"cynthia_schiller@jakubowski-bradtke.com"}, "limit"=>1, "projection"=>{"_id"=>1}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000022353716128 @seconds=1682594625, @increment=4>, "signature"...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:28 | test.find | SUCCEEDED | 0.045s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:29 conn:1:1 sconn:18038 | test.insert | STARTED | {"insert"=>"users", "ordered"=>true, "documents"=>[{"_id"=>BSON::ObjectId('644a5b414d883724b0c5d082'), "role"=>"user", "friend_ids"=>[], "name"=>"Shannon Murazik", "email"=>"cynthia_schiller@jakubowski-bradtke.com", "password_digest"=>"$2a$04$betLdvOL...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:29 | test.insert | SUCCEEDED | 0.060s
+Processing by SessionsController#create as HTML
+  Parameters: {"email"=>"cynthia_schiller@jakubowski-bradtke.com", "password"=>"[FILTERED]"}
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:30 conn:1:1 sconn:18038 | test.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"cynthia_schiller@jakubowski-bradtke.com"}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000022353c6d400 @seconds=1682594625, @increment=5>, "signature"=>{"hash"=><BSON::Binary:0x15640 type=...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:30 | test.find | SUCCEEDED | 0.044s
+Completed 200 OK in 48ms (Views: 0.3ms | MongoDB: 44.1ms | Allocations: 1061)
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:31 conn:1:1 sconn:18038 | test.aggregate | STARTED | {"aggregate"=>"friendships", "pipeline"=>[{"$match"=>{}}, {"$group"=>{"_id"=>1, "n"=>{"$sum"=>1}}}], "cursor"=>{}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000022353c6d400 @seconds=1682594625, @increment=5>, "signature"=>{"h...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:31 | test.aggregate | SUCCEEDED | 0.056s
+Processing by FriendshipsController#create as HTML
+  Parameters: {"friendship"=>{"receiver_id"=>"644a5b414d883724b0c5d082", "sender_id"=>"644a5b414d883724b0c5d082"}}
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:32 conn:1:1 sconn:18038 | test.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('644a5b414d883724b0c5d082')}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000022353cbf458 @seconds=1682594625, @increment=6>, "signature"=>{"hash"=><BSON::Binary:0x15680 type=g...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:32 | test.find | SUCCEEDED | 0.043s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:33 conn:1:1 sconn:18038 | test.find | STARTED | {"find"=>"users", "filter"=>{"email"=>nil}, "limit"=>1, "sort"=>{"_id"=>1}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000022353cbf458 @seconds=1682594625, @increment=6>, "signature"=>{"hash"=><BSON::Binary:0x15680 type=generi...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:33 | test.find | SUCCEEDED | 0.045s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:34 conn:1:1 sconn:18038 | test.find | STARTED | {"find"=>"friendships", "filter"=>{"sender_id"=>BSON::ObjectId('644a5b414d883724b0c5d082'), "receiver_id"=>BSON::ObjectId('63f358124d88376dcc1d6498')}, "limit"=>1, "projection"=>{"_id"=>1}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timest...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:34 | test.find | SUCCEEDED | 0.044s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:35 conn:1:1 sconn:18038 | test.find | STARTED | {"find"=>"friendships", "filter"=>{"sender_id"=>BSON::ObjectId('63f358124d88376dcc1d6498'), "receiver_id"=>BSON::ObjectId('644a5b414d883724b0c5d082')}, "limit"=>1, "projection"=>{"_id"=>1}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timest...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:35 | test.find | SUCCEEDED | 0.061s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:36 conn:1:1 sconn:18038 | test.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('63f358124d88376dcc1d6498')}, "limit"=>1, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000022353cbf458 @seconds=1682594625, @increment=6>, "signature"=>{"hash"=><BSON::Binary:0x...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:36 | test.find | SUCCEEDED | 0.044s
+Completed 422 Unprocessable Entity in 251ms (Views: 1.2ms | MongoDB: 237.6ms | Allocations: 5990)
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:37 conn:1:1 sconn:18038 | test.aggregate | STARTED | {"aggregate"=>"friendships", "pipeline"=>[{"$match"=>{}}, {"$group"=>{"_id"=>1, "n"=>{"$sum"=>1}}}], "cursor"=>{}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000022353cbf458 @seconds=1682594625, @increment=6>, "signature"=>{"h...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:37 | test.aggregate | SUCCEEDED | 0.058s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:38 conn:1:1 sconn:18038 | test.find | STARTED | {"find"=>"friendships", "filter"=>{}, "limit"=>1, "sort"=>{"_id"=>-1}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000022353cbf458 @seconds=1682594625, @increment=6>, "signature"=>{"hash"=><BSON::Binary:0x15680 type=generic dat...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:38 | test.find | SUCCEEDED | 0.045s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:39 conn:1:1 sconn:18038 | test.find | STARTED | {"find"=>"users", "filter"=>{"name"=>"Mr. Marge Luettgen"}, "limit"=>1, "projection"=>{"_id"=>1}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000022353cbf458 @seconds=1682594625, @increment=6>, "signature"=>{"hash"=><BSON::Bina...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:39 | test.find | SUCCEEDED | 0.053s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:40 conn:1:1 sconn:18038 | test.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"carey_mckenzie@jakubowski.io"}, "limit"=>1, "projection"=>{"_id"=>1}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000022353cbf458 @seconds=1682594625, @increment=6>, "signature"=>{"hash"=>...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:40 | test.find | SUCCEEDED | 0.060s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:41 conn:1:1 sconn:18038 | test.insert | STARTED | {"insert"=>"users", "ordered"=>true, "documents"=>[{"_id"=>BSON::ObjectId('644a5b414d883724b0c5d083'), "role"=>"user", "friend_ids"=>[], "name"=>"Mr. Marge Luettgen", "email"=>"carey_mckenzie@jakubowski.io", "password_digest"=>"$2a$04$7czZhkFBquJUYtnW...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:41 | test.insert | SUCCEEDED | 0.061s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:42 conn:1:1 sconn:18038 | test.find | STARTED | {"find"=>"users", "filter"=>{"name"=>"Santo Balistreri"}, "limit"=>1, "projection"=>{"_id"=>1}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000022353e1d098 @seconds=1682594626, @increment=3>, "signature"=>{"hash"=><BSON::Binary...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:42 | test.find | SUCCEEDED | 0.057s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:43 conn:1:1 sconn:18038 | test.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"noah.howell@lindgren.net"}, "limit"=>1, "projection"=>{"_id"=>1}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000022353e1d098 @seconds=1682594626, @increment=3>, "signature"=>{"hash"=><BSO...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:43 | test.find | SUCCEEDED | 0.044s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:44 conn:1:1 sconn:18038 | test.insert | STARTED | {"insert"=>"users", "ordered"=>true, "documents"=>[{"_id"=>BSON::ObjectId('644a5b424d883724b0c5d084'), "role"=>"user", "friend_ids"=>[], "name"=>"Santo Balistreri", "email"=>"noah.howell@lindgren.net", "password_digest"=>"$2a$04$.dvw.LoO3NIvQY65P12ybO...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:44 | test.insert | SUCCEEDED | 0.060s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:45 conn:1:1 sconn:18038 | test.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('644a5b424d883724b0c5d084')}, "limit"=>1, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000022353e96178 @seconds=1682594626, @increment=4>, "signature"=>{"hash"=><BSON::Binary:0x...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:45 | test.find | SUCCEEDED | 0.045s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:46 conn:1:1 sconn:18038 | test.insert | STARTED | {"insert"=>"friendships", "ordered"=>true, "documents"=>[{"_id"=>BSON::ObjectId('644a5b424d883724b0c5d085'), "sender_id"=>BSON::ObjectId('644a5b414d883724b0c5d083'), "receiver_id"=>BSON::ObjectId('644a5b424d883724b0c5d084'), "status"=>"pending", "upda...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:46 | test.insert | SUCCEEDED | 0.059s
+Processing by FriendshipsController#update as HTML
+  Parameters: {"status"=>"accepted", "id"=>"644a5b424d883724b0c5d085"}
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | MongoDB: 0.0ms | Allocations: 166)
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:47 conn:1:1 sconn:18038 | test.find | STARTED | {"find"=>"friendships", "filter"=>{"_id"=>BSON::ObjectId('644a5b424d883724b0c5d085')}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000022353ed07b0 @seconds=1682594626, @increment=5>, "signature"=>{"hash"=><BSON::Binary:0x15940 ...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:47 | test.find | SUCCEEDED | 0.043s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:48 conn:1:1 sconn:18038 | test.find | STARTED | {"find"=>"users", "filter"=>{"name"=>"Amb. Darla Mitchell"}, "limit"=>1, "projection"=>{"_id"=>1}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000022353ed07b0 @seconds=1682594626, @increment=5>, "signature"=>{"hash"=><BSON::Bin...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:48 | test.find | SUCCEEDED | 0.057s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:49 conn:1:1 sconn:18038 | test.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"blair_skiles@schroeder-carter.name"}, "limit"=>1, "projection"=>{"_id"=>1}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000022353ed07b0 @seconds=1682594626, @increment=5>, "signature"=>{"h...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:49 | test.find | SUCCEEDED | 0.045s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:50 conn:1:1 sconn:18038 | test.insert | STARTED | {"insert"=>"users", "ordered"=>true, "documents"=>[{"_id"=>BSON::ObjectId('644a5b424d883724b0c5d086'), "role"=>"user", "friend_ids"=>[], "name"=>"Amb. Darla Mitchell", "email"=>"blair_skiles@schroeder-carter.name", "password_digest"=>"$2a$04$jCdb6zUZJ...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:50 | test.insert | SUCCEEDED | 0.061s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:51 conn:1:1 sconn:18038 | test.find | STARTED | {"find"=>"users", "filter"=>{"name"=>"Tamera Zulauf"}, "limit"=>1, "projection"=>{"_id"=>1}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x00000223542c8868 @seconds=1682594627, @increment=2>, "signature"=>{"hash"=><BSON::Binary:0x...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:51 | test.find | SUCCEEDED | 0.058s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:52 conn:1:1 sconn:18038 | test.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"beula@hegmann.info"}, "limit"=>1, "projection"=>{"_id"=>1}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x00000223542c8868 @seconds=1682594627, @increment=2>, "signature"=>{"hash"=><BSON::Bin...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:52 | test.find | SUCCEEDED | 0.044s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:53 conn:1:1 sconn:18038 | test.insert | STARTED | {"insert"=>"users", "ordered"=>true, "documents"=>[{"_id"=>BSON::ObjectId('644a5b424d883724b0c5d087'), "role"=>"user", "friend_ids"=>[], "name"=>"Tamera Zulauf", "email"=>"beula@hegmann.info", "password_digest"=>"$2a$04$FSFyVQHQC3dSvP5ImrEZ1uesZ8zRgOT...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:53 | test.insert | SUCCEEDED | 0.060s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:54 conn:1:1 sconn:18038 | test.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('644a5b424d883724b0c5d087')}, "limit"=>1, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000022354319128 @seconds=1682594627, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:54 | test.find | SUCCEEDED | 0.045s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:55 conn:1:1 sconn:18038 | test.insert | STARTED | {"insert"=>"friendships", "ordered"=>true, "documents"=>[{"_id"=>BSON::ObjectId('644a5b424d883724b0c5d088'), "sender_id"=>BSON::ObjectId('644a5b424d883724b0c5d086'), "receiver_id"=>BSON::ObjectId('644a5b424d883724b0c5d087'), "status"=>"pending", "upda...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:55 | test.insert | SUCCEEDED | 0.060s
+Processing by FriendshipsController#update as HTML
+  Parameters: {"status"=>"accepted", "id"=>"644a5b424d883724b0c5d088"}
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | MongoDB: 0.0ms | Allocations: 161)
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:56 conn:1:1 sconn:18038 | test.find | STARTED | {"find"=>"users", "filter"=>{"name"=>"Rep. Jonna Renner"}, "limit"=>1, "projection"=>{"_id"=>1}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000022354355df8 @seconds=1682594627, @increment=4>, "signature"=>{"hash"=><BSON::Binar...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:56 | test.find | SUCCEEDED | 0.046s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:57 conn:1:1 sconn:18038 | test.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"shantay@goyette.net"}, "limit"=>1, "projection"=>{"_id"=>1}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000022354355df8 @seconds=1682594627, @increment=4>, "signature"=>{"hash"=><BSON::Bi...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:57 | test.find | SUCCEEDED | 0.044s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:58 conn:1:1 sconn:18038 | test.insert | STARTED | {"insert"=>"users", "ordered"=>true, "documents"=>[{"_id"=>BSON::ObjectId('644a5b424d883724b0c5d089'), "role"=>"user", "friend_ids"=>[], "name"=>"Rep. Jonna Renner", "email"=>"shantay@goyette.net", "password_digest"=>"$2a$04$nMpH6zEhfoDNzr76MuwHz.X/Nb...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:58 | test.insert | SUCCEEDED | 0.060s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:59 conn:1:1 sconn:18038 | test.find | STARTED | {"find"=>"users", "filter"=>{"name"=>"Viva Green"}, "limit"=>1, "projection"=>{"_id"=>1}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000022354402af8 @seconds=1682594627, @increment=5>, "signature"=>{"hash"=><BSON::Binary:0x175...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:59 | test.find | SUCCEEDED | 0.057s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:60 conn:1:1 sconn:18038 | test.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"della@koss.com"}, "limit"=>1, "projection"=>{"_id"=>1}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000022354452be8 @seconds=1682594627, @increment=6>, "signature"=>{"hash"=><BSON::Binary:...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:60 | test.find | SUCCEEDED | 0.043s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:61 conn:1:1 sconn:18038 | test.insert | STARTED | {"insert"=>"users", "ordered"=>true, "documents"=>[{"_id"=>BSON::ObjectId('644a5b434d883724b0c5d08a'), "role"=>"user", "friend_ids"=>[], "name"=>"Viva Green", "email"=>"della@koss.com", "password_digest"=>"$2a$04$jl2/ytEwvChn3dH3YPj3SOjvIPOfoisFR0ZpAy...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:61 | test.insert | SUCCEEDED | 0.061s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:62 conn:1:1 sconn:18038 | test.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('644a5b434d883724b0c5d08a')}, "limit"=>1, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000022354487050 @seconds=1682594627, @increment=8>, "signature"=>{"hash"=><BSON::Binary:0x...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:62 | test.find | SUCCEEDED | 0.044s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:63 conn:1:1 sconn:18038 | test.insert | STARTED | {"insert"=>"friendships", "ordered"=>true, "documents"=>[{"_id"=>BSON::ObjectId('644a5b434d883724b0c5d08b'), "sender_id"=>BSON::ObjectId('644a5b424d883724b0c5d089'), "receiver_id"=>BSON::ObjectId('644a5b434d883724b0c5d08a'), "status"=>"pending", "upda...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:63 | test.insert | SUCCEEDED | 0.060s
+Processing by FriendshipsController#update as HTML
+  Parameters: {"status"=>"", "id"=>"644a5b434d883724b0c5d08b"}
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | MongoDB: 0.0ms | Allocations: 161)
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:64 conn:1:1 sconn:18038 | test.find | STARTED | {"find"=>"friendships", "filter"=>{"_id"=>BSON::ObjectId('644a5b434d883724b0c5d08b')}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x00000223544c3d70 @seconds=1682594627, @increment=9>, "signature"=>{"hash"=><BSON::Binary:0x17660 ...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:64 | test.find | SUCCEEDED | 0.043s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:65 conn:1:1 sconn:18038 | test.find | STARTED | {"find"=>"users", "filter"=>{"name"=>"Shanon Howell"}, "limit"=>1, "projection"=>{"_id"=>1}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x00000223544c3d70 @seconds=1682594627, @increment=9>, "signature"=>{"hash"=><BSON::Binary:0x...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:65 | test.find | SUCCEEDED | 0.057s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:66 conn:1:1 sconn:18038 | test.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"samira@watsica.biz"}, "limit"=>1, "projection"=>{"_id"=>1}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x00000223544c3d70 @seconds=1682594627, @increment=9>, "signature"=>{"hash"=><BSON::Bin...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:66 | test.find | SUCCEEDED | 0.044s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:67 conn:1:1 sconn:18038 | test.insert | STARTED | {"insert"=>"users", "ordered"=>true, "documents"=>[{"_id"=>BSON::ObjectId('644a5b434d883724b0c5d08c'), "role"=>"user", "friend_ids"=>[], "name"=>"Shanon Howell", "email"=>"samira@watsica.biz", "password_digest"=>"$2a$04$FY.F7eLYdrhnv7Ha1hmRe.rWEHyInXX...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:67 | test.insert | SUCCEEDED | 0.059s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:68 conn:1:1 sconn:18038 | test.find | STARTED | {"find"=>"users", "filter"=>{"name"=>"Holli Rippin"}, "limit"=>1, "projection"=>{"_id"=>1}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000022354552ed0 @seconds=1682594628, @increment=1>, "signature"=>{"hash"=><BSON::Binary:0x1...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:68 | test.find | SUCCEEDED | 0.059s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:69 conn:1:1 sconn:18038 | test.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"brock_herman@heidenreich-schowalter.co"}, "limit"=>1, "projection"=>{"_id"=>1}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000022354552ed0 @seconds=1682594628, @increment=1>, "signature"=...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:69 | test.find | SUCCEEDED | 0.044s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:70 conn:1:1 sconn:18038 | test.insert | STARTED | {"insert"=>"users", "ordered"=>true, "documents"=>[{"_id"=>BSON::ObjectId('644a5b434d883724b0c5d08d'), "role"=>"user", "friend_ids"=>[], "name"=>"Holli Rippin", "email"=>"brock_herman@heidenreich-schowalter.co", "password_digest"=>"$2a$04$5.CGYjjZ0yPm...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:70 | test.insert | SUCCEEDED | 0.046s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:71 conn:1:1 sconn:18038 | test.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('644a5b434d883724b0c5d08d')}, "limit"=>1, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x00000223545abd00 @seconds=1682594628, @increment=3>, "signature"=>{"hash"=><BSON::Binary:0x...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:71 | test.find | SUCCEEDED | 0.045s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:72 conn:1:1 sconn:18038 | test.insert | STARTED | {"insert"=>"friendships", "ordered"=>true, "documents"=>[{"_id"=>BSON::ObjectId('644a5b434d883724b0c5d08e'), "sender_id"=>BSON::ObjectId('644a5b434d883724b0c5d08c'), "receiver_id"=>BSON::ObjectId('644a5b434d883724b0c5d08d'), "status"=>"pending", "upda...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:72 | test.insert | SUCCEEDED | 0.058s
+Processing by FriendshipsController#update as HTML
+  Parameters: {"status"=>"", "id"=>"644a5b434d883724b0c5d08e"}
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | MongoDB: 0.0ms | Allocations: 161)
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:73 conn:1:1 sconn:18038 | test.find | STARTED | {"find"=>"users", "filter"=>{"name"=>"Hester Schuppe"}, "limit"=>1, "projection"=>{"_id"=>1}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x00000223545d8a58 @seconds=1682594628, @increment=4>, "signature"=>{"hash"=><BSON::Binary:0...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:73 | test.find | SUCCEEDED | 0.051s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:74 conn:1:1 sconn:18038 | test.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"amie@sanford.name"}, "limit"=>1, "projection"=>{"_id"=>1}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x00000223545d8a58 @seconds=1682594628, @increment=4>, "signature"=>{"hash"=><BSON::Bina...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:74 | test.find | SUCCEEDED | 0.061s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:75 conn:1:1 sconn:18038 | test.insert | STARTED | {"insert"=>"users", "ordered"=>true, "documents"=>[{"_id"=>BSON::ObjectId('644a5b434d883724b0c5d08f'), "role"=>"user", "friend_ids"=>[], "name"=>"Hester Schuppe", "email"=>"amie@sanford.name", "password_digest"=>"$2a$04$3.i8qQ.dN4qB9n.HZGdlWerGt7phfTp...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:75 | test.insert | SUCCEEDED | 0.060s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:76 conn:1:1 sconn:18038 | test.find | STARTED | {"find"=>"users", "filter"=>{"name"=>"Nannette Schmitt"}, "limit"=>1, "projection"=>{"_id"=>1}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x000002235468a528 @seconds=1682594628, @increment=5>, "signature"=>{"hash"=><BSON::Binary...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:76 | test.find | SUCCEEDED | 0.073s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:77 conn:1:1 sconn:18038 | test.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"glen@jacobs-harber.com"}, "limit"=>1, "projection"=>{"_id"=>1}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x000002235468a528 @seconds=1682594628, @increment=5>, "signature"=>{"hash"=><BSON:...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:77 | test.find | SUCCEEDED | 0.044s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:78 conn:1:1 sconn:18038 | test.insert | STARTED | {"insert"=>"users", "ordered"=>true, "documents"=>[{"_id"=>BSON::ObjectId('644a5b434d883724b0c5d090'), "role"=>"user", "friend_ids"=>[], "name"=>"Nannette Schmitt", "email"=>"glen@jacobs-harber.com", "password_digest"=>"$2a$04$6IEvfCOaflYdhMh6eViRiuB6...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:78 | test.insert | SUCCEEDED | 0.060s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:79 conn:1:1 sconn:18038 | test.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('644a5b434d883724b0c5d090')}, "limit"=>1, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x000002235470b448 @seconds=1682594628, @increment=7>, "signature"=>{"hash"=><BSON::Binary:0x...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:79 | test.find | SUCCEEDED | 0.044s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:80 conn:1:1 sconn:18038 | test.insert | STARTED | {"insert"=>"friendships", "ordered"=>true, "documents"=>[{"_id"=>BSON::ObjectId('644a5b444d883724b0c5d091'), "sender_id"=>BSON::ObjectId('644a5b434d883724b0c5d08f'), "receiver_id"=>BSON::ObjectId('644a5b434d883724b0c5d090'), "status"=>"pending", "upda...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:80 | test.insert | SUCCEEDED | 0.059s
+Processing by FriendshipsController#destroy as HTML
+  Parameters: {"id"=>"644a5b444d883724b0c5d091"}
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | MongoDB: 0.0ms | Allocations: 161)
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:81 conn:1:1 sconn:18038 | test.find | STARTED | {"find"=>"users", "filter"=>{"name"=>"Prof. Seth Sipes"}, "limit"=>1, "projection"=>{"_id"=>1}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000022354738060 @seconds=1682594628, @increment=9>, "signature"=>{"hash"=><BSON::Binary...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:81 | test.find | SUCCEEDED | 0.052s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:82 conn:1:1 sconn:18038 | test.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"crysta@nader.io"}, "limit"=>1, "projection"=>{"_id"=>1}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x0000022354738060 @seconds=1682594628, @increment=9>, "signature"=>{"hash"=><BSON::Binary...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:82 | test.find | SUCCEEDED | 0.044s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:83 conn:1:1 sconn:18038 | test.insert | STARTED | {"insert"=>"users", "ordered"=>true, "documents"=>[{"_id"=>BSON::ObjectId('644a5b444d883724b0c5d092'), "role"=>"user", "friend_ids"=>[], "name"=>"Prof. Seth Sipes", "email"=>"crysta@nader.io", "password_digest"=>"$2a$04$i/4VNZEBHGL.U1CmFjTCe.YJfsIBe/2...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:83 | test.insert | SUCCEEDED | 0.060s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:84 conn:1:1 sconn:18038 | test.find | STARTED | {"find"=>"users", "filter"=>{"name"=>"Lacey Schaefer"}, "limit"=>1, "projection"=>{"_id"=>1}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x00000223547c8a98 @seconds=1682594628, @increment=10>, "signature"=>{"hash"=><BSON::Binary:...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:84 | test.find | SUCCEEDED | 0.043s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:85 conn:1:1 sconn:18038 | test.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"lance_trantow@brekke-hermiston.co"}, "limit"=>1, "projection"=>{"_id"=>1}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x00000223547c8a98 @seconds=1682594628, @increment=10>, "signature"=>{"h...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:85 | test.find | SUCCEEDED | 0.044s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:86 conn:1:1 sconn:18038 | test.insert | STARTED | {"insert"=>"users", "ordered"=>true, "documents"=>[{"_id"=>BSON::ObjectId('644a5b444d883724b0c5d093'), "role"=>"user", "friend_ids"=>[], "name"=>"Lacey Schaefer", "email"=>"lance_trantow@brekke-hermiston.co", "password_digest"=>"$2a$04$1meyopqBy5Orvx5...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:86 | test.insert | SUCCEEDED | 0.060s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:87 conn:1:1 sconn:18038 | test.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('644a5b444d883724b0c5d093')}, "limit"=>1, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x00000223548258d8 @seconds=1682594629, @increment=1>, "signature"=>{"hash"=><BSON::Binary:0x...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:87 | test.find | SUCCEEDED | 0.043s
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:88 conn:1:1 sconn:18038 | test.insert | STARTED | {"insert"=>"friendships", "ordered"=>true, "documents"=>[{"_id"=>BSON::ObjectId('644a5b444d883724b0c5d094'), "sender_id"=>BSON::ObjectId('644a5b444d883724b0c5d092'), "receiver_id"=>BSON::ObjectId('644a5b444d883724b0c5d093'), "status"=>"pending", "upda...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:88 | test.insert | SUCCEEDED | 0.075s
+Processing by FriendshipsController#destroy as HTML
+  Parameters: {"id"=>"644a5b444d883724b0c5d094"}
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | MongoDB: 0.0ms | Allocations: 161)
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:89 conn:1:1 sconn:18038 | test.aggregate | STARTED | {"aggregate"=>"friendships", "pipeline"=>[{"$match"=>{}}, {"$group"=>{"_id"=>1, "n"=>{"$sum"=>1}}}], "cursor"=>{}, "$db"=>"test", "$clusterTime"=>{"clusterTime"=>#<BSON::Timestamp:0x000002235485e5e8 @seconds=1682594629, @increment=2>, "signature"=>{"h...
+MONGODB | ac-mspcz06-shard-00-01.bsbwlz3.mongodb.net:27017 req:89 | test.aggregate | SUCCEEDED | 0.050s

@@ -62,6 +62,8 @@ export default {
       axios.delete(config.removeFriendURL + id, {withCredentials: true})
           .then(() => this.$router.go(0))
           .catch(err => console.log(err.message));
+
+      this.$router.go(0);
     },
 
     editFriendship(id, friendshipStatus) {

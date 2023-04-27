@@ -9,8 +9,8 @@
                 <li class="list-group-item">
                   <h4 class="text-white">{{ collection.title }}</h4>
                   <router-link :to="'/collections/' + collection._id.$oid" class="btn btn-warning">Details</router-link>
-                  <button v-if="!isAdmin" class="btn btn-outline-warning" @click="deleteCollection(collection._id)">Delete Collection</button>
-                  <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#staticBackdrop" @click="getSharedFriends(collection._id)">Share collection</button>
+                  <button class="btn btn-outline-warning" @click="deleteCollection(collection._id)">Delete Collection</button>
+                  <button v-if="!isAdmin" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#staticBackdrop" @click="getSharedFriends(collection._id)">Share collection</button>
                 </li>
               </div>
             </div>

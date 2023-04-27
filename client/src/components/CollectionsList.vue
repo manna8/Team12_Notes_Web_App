@@ -9,7 +9,7 @@
                 <li class="list-group-item">
                   <h4 class="text-white">{{ collection.title }}</h4>
                   <router-link :to="'/collections/' + collection._id.$oid" class="btn btn-warning">Details</router-link>
-                  <button class="btn btn-outline-warning" @click="deleteCollection(collection._id)">Delete Collection</button>
+                  <button v-if="!isAdmin" class="btn btn-outline-warning" @click="deleteCollection(collection._id)">Delete Collection</button>
                   <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#staticBackdrop" @click="getSharedFriends(collection._id)">Share collection</button>
                 </li>
               </div>
@@ -168,8 +168,6 @@ export default {
       let ids = Object.values(stillShareWith).map(obj => obj.id?.$oid || obj);
       let combinedList = new Set([...ids, ...toShareList]);
       this.finalList = new Proxy([...combinedList], {});
-
-
     },
     closePopup() {
       this.friendsToShare = [];
@@ -183,6 +181,11 @@ export default {
   mounted() {
     this.getCollections();
     this.getFriendsWithId();
+  },
+  computed: {
+    isAdmin() {
+      return this.$store.state.admin;
+    }
   }
 }
 </script>

@@ -24,6 +24,8 @@ import Home from "@/components/Home.vue";
 import Collections from "@/components/Collections.vue";
 import EditNote from "@/components/EditNote.vue";
 import EditCollection from "@/components/EditCollection.vue";
+import Users from "@/components/Users.vue";
+import Friendships from "@/components/Friendships.vue";
 
 const router = createRouter({
     history: createWebHistory(),
@@ -37,6 +39,8 @@ const router = createRouter({
         { path: '/collections', component: Collections},
         { path: '/collections/:id', component: EditCollection, props: true},
         { path: '/notes/:id', component: EditNote, props: true},
+        { path: '/users', component: Users},
+        { path: '/friendships', component: Friendships},
         { path: '/', component: Home},
     ]
 });
@@ -46,7 +50,7 @@ const store = createStore({
     state() {
         return {
             loggedIn: 0,
-            admin: false
+            admin: 0
         };
     },
     mutations: {
@@ -55,10 +59,12 @@ const store = createStore({
         },
         logout(state) {
             state.loggedIn = 0;
-            state.admin = false;
         },
         setAdmin(state) {
-            state.admin = true;
+            state.admin = 1;
+        },
+        removeAdmin(state) {
+            state.admin = 0;
         }
     }
 });

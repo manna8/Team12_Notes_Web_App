@@ -11,7 +11,7 @@
                 <p class="note-text">{{ note.description }}</p>
                 <router-link :to="'/notes/' + note._id.$oid" class="btn btn-outline-warning">Details</router-link>
                 <button class="btn btn-outline-dark" @click="deleteNote(note._id)">Delete note</button>
-                <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#staticBackdrop" @click="getSharedFriends(note._id)">Share note</button>
+                <button v-if="!isAdmin" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#staticBackdrop" @click="getSharedFriends(note._id)">Share note</button>
               </div>
             </div>
           </div>
@@ -175,8 +175,6 @@ export default {
       let ids = Object.values(stillShareWith).map(obj => obj.id?.$oid || obj);
       let combinedList = new Set([...ids, ...toShareList]);
       this.finalList = new Proxy([...combinedList], {});
-
-
     },
     closePopup() {
       this.friendsToShare = [];
@@ -187,10 +185,14 @@ export default {
       this.finalList = [];
     }
   },
-
   mounted() {
     this.getNotes();
     this.getFriendsWithId();
+  },
+  computed: {
+    isAdmin() {
+      return this.$store.state.admin;
+    }
   }
 }
 </script>

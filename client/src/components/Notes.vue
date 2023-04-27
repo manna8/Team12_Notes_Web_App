@@ -2,7 +2,7 @@
 <div id="notes">
   <div class="container">
 
-    <div class="row ms-auto">
+    <div class="row ms-auto" v-if="!isAdmin">
       <div class="col">
         <div  class="d-grid">
           <br>
@@ -15,13 +15,13 @@
 
     <br>
 
-    <div class="row ms-auto">
+    <div class="row ms-auto m-2">
       <div class="col">
         <div  class="d-grid">
           <div class="btn-group" role="group" aria-label="Basic outlined example">
             <button type="button" class="btn btn-dark btn-outline-white text-white" :class="{ active: showUserNotes }" @click="toggleUserNotes">Your notes</button>
-            <button type="button" class="btn btn-dark btn-outline-white text-white" :class="{ active: showSharedWithUserNotes  }" @click="toggleSharedNotes">Notes shared with you</button>
-            <button type="button" class="btn btn-dark btn-outline-white text-white" :class="{ active: showSharingNotes  }" @click="toggleSharingNotes">Notes you are sharing</button>
+            <button v-if="!isAdmin" type="button" class="btn btn-dark btn-outline-white text-white" :class="{ active: showSharedWithUserNotes  }" @click="toggleSharedNotes">Notes shared with you</button>
+            <button v-if="!isAdmin" type="button" class="btn btn-dark btn-outline-white text-white" :class="{ active: showSharingNotes  }" @click="toggleSharingNotes">Notes you are sharing</button>
           </div>
         </div>
       </div>
@@ -102,7 +102,13 @@ export default {
         this.showSharedWithUserNotes = false;
       }
     }
+  },
+  computed: {
+    isAdmin() {
+      return this.$store.state.admin;
+    }
   }
+
 }
 </script>
 

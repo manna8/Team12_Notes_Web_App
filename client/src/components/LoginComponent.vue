@@ -34,7 +34,7 @@
 <script>
 import axios from "axios";
 import config from "../../config/config";
-import Cookies from 'js-cookie';
+// import Cookies from 'js-cookie';
 
 export default {
   name: "login",
@@ -69,11 +69,14 @@ export default {
             .then(() => {
               this.$router.push({path: '/notes'})
 
-              const myCookie = Cookies.get('jwt');
-              console.log(myCookie);
+              // const myCookie = Cookies.get('jwt');
 
               this.$store.commit('login');
-              console.log(this.$store.state.loggedIn);
+
+              if (this.input.username === 'admin@admin.com') {
+                this.$store.commit('setAdmin');
+                console.log(this.$store.state.admin);
+              }
 
               this.$swal({
                 position: 'top-end',

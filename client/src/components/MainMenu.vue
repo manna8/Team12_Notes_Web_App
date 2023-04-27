@@ -21,10 +21,16 @@
               <li><router-link class="dropdown-item" to="/collections">Collections</router-link></li>
             </ul>
           </li>
-          <li class="nav-item">
+          <li class="nav-item" v-if="!isAdmin">
             <router-link class="nav-link active" to="/friends">Friends</router-link>
           </li>
-          <li class="nav-item">
+          <li class="nav-item" v-else>
+            <router-link class="nav-link active" to="/users">Users</router-link>
+          </li>
+          <li class="nav-item" v-if="isAdmin">
+            <router-link class="nav-link active" to="/friendships">Friendships</router-link>
+          </li>
+          <li class="nav-item" v-if="!isAdmin">
             <router-link class="nav-link active" to="/profile">Profile</router-link>
           </li>
         </ul>
@@ -52,7 +58,7 @@ export default {
 
   data() {
     return {
-      isLoggedIn: false
+
     }
   },
   methods: {
@@ -61,13 +67,18 @@ export default {
           .then(() => this.$router.push({path: '/'}))
           .catch(err => console.log(err.message));
       this.$store.commit('logout');
+      this.$store.commit('removeAdmin');
       console.log(this.$store.state.loggedIn);
+      console.log(this.$store.state.admin);
       // sessionStorage.clear();
     },
   },
   computed: {
     isLogged() {
       return this.$store.state.loggedIn;
+    },
+    isAdmin() {
+      return this.$store.state.admin;
     }
   }
 }

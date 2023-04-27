@@ -2,10 +2,10 @@
   <div id="collections">
     <div class="container">
 
-      <div class="row ms-auto">
+      <div class="row ms-auto" v-if="!isAdmin">
         <div class="col">
           <div  class="d-grid">
-            <form class="container p-3 my-3 mx-auto mb-3 mt-5" v-bind:style="[isMobile() ? styleMobile : styleWeb]">
+            <form class="container p-3 my-3 mx-auto m-2 " v-bind:style="[isMobile() ? styleMobile : styleWeb]">
               <div class="input-group mb-3">
                 <input type="text" class="form-control" placeholder="Collection title" aria-label="Collection title" v-model="input.title">
                 <button class="btn btn-warning" type="button" @click="createCollection">Create Collection</button>
@@ -15,13 +15,13 @@
         </div>
       </div>
 
-      <div class="row ms-auto">
+      <div class="row ms-auto m-2">
         <div class="col">
           <div  class="d-grid">
             <div class="btn-group" role="group" aria-label="Basic outlined example">
-              <button type="button" class="btn btn-dark btn-outline-white text-white" :class="{ active: showUserCollections }" @click="toggleUserCollections">Your collection</button>
-              <button type="button" class="btn btn-dark btn-outline-white text-white" :class="{ active: showSharedWithUserCollections  }" @click="toggleSharedCollections">Collections shared with you</button>
-              <button type="button" class="btn btn-dark btn-outline-white text-white" :class="{ active: showSharingCollections  }" @click="toggleSharingCollections">Collections you are sharing</button>
+              <button type="button" class="btn btn-dark btn-outline-white text-white" :class="{ active: showUserCollections }" @click="toggleUserCollections">Your collections</button>
+              <button v-if="!isAdmin" type="button" class="btn btn-dark btn-outline-white text-white" :class="{ active: showSharedWithUserCollections  }" @click="toggleSharedCollections">Collections shared with you</button>
+              <button v-if="!isAdmin" type="button" class="btn btn-dark btn-outline-white text-white" :class="{ active: showSharingCollections  }" @click="toggleSharingCollections">Collections you are sharing</button>
             </div>
           </div>
         </div>
@@ -128,6 +128,11 @@ export default {
     },
     isMobile() {
       return screen.width < 500;
+    }
+  },
+  computed: {
+    isAdmin() {
+      return this.$store.state.admin;
     }
   }
 }

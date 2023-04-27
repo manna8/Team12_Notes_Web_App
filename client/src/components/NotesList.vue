@@ -4,7 +4,7 @@
       <div class="row row-cols-1 row-cols-md-3 g-4" v-if="notes.length !== 0" style="width: auto; height: auto">
         <ul v-for="note in notes" v-bind:key="note.title">
           <div class="col">
-            <div class="card" style="max-width: 15rem">
+            <div class="card" style="max-width: 15rem; min-width: 10rem">
               <img :src="getImageURL(note)" class="card-img-top" alt="image :/">
               <div class="card-body">
                 <h5 class="note-title">{{ note.title }}</h5>

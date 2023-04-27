@@ -19,7 +19,7 @@
       <div class="form-floating mb-3 d-flex flex-column align-items-start">
         <input type="password" class="form-control" id="floatingInput" placeholder="Enter password" v-model="input.password">
         <label for="floatingInput">Password</label>
-        <p class="text-warning text-opacity-75" v-if="!passwordValid">Please provide a password!</p>
+        <p class="text-warning text-opacity-75" v-if="!passwordValid">Password should contain at least 5 characters!</p>
       </div>
 
       <div class="form-floating mb-3 d-flex flex-column align-items-start">
@@ -100,6 +100,12 @@ export default {
     },
     checkValidity() {
       if (this.input.password === "") {
+        this.passwordValid = false;
+      } else {
+        this.passwordValid = true;
+      }
+
+      if (this.input.password.length < 5) {
         this.passwordValid = false;
       } else {
         this.passwordValid = true;

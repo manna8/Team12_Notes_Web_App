@@ -47,9 +47,9 @@
 </template>
 
 <script>
-import NotesList from "@/components/NotesList.vue";
-import SharingNotesList from "@/components/SharingNotesList.vue";
-import SharedNotesList from "@/components/SharedNotesList.vue";
+import NotesList from "@/components/Notes/NotesList.vue";
+import SharingNotesList from "@/components/Notes/SharingNotesList.vue";
+import SharedNotesList from "@/components/Notes/SharedNotesList.vue";
 
 export default {
   name: "Notes",

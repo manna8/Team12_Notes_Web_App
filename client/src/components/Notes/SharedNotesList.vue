@@ -29,7 +29,7 @@
 
 <script>
 import axios from "axios";
-import config from "../../config/config";
+import config from "../../../config/config";
 
 export default {
   name: "SharedNotesList",
@@ -51,7 +51,7 @@ export default {
         img.src = 'data:image/png;base64,' + note.photo;
         return img.src;
       } else {
-        return require('../assets/background2.png');
+        return require('../../assets/background2.png');
       }
     },
   },

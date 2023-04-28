@@ -1,26 +1,30 @@
 <template>
   <div>
     <div class="overflow-auto">
-      <div class="row row-cols-1 row-cols-md-3 g-4" v-if="collections.length !== 0" style="width: auto; height: auto">
-        <ul v-for="collection in collections" v-bind:key="collection.title">
+
+      <div class="row row-cols-1 row-cols-md-3 g-4" v-if="notes.length !== 0" style="width: auto; height: auto">
+        <ul v-for="note in notes" v-bind:key="note.title">
           <div class="col">
-            <div class="card" style="max-width: 18rem; background-color: #404040">
+            <div class="card" style="max-width: 15rem; min-width: 10rem">
+              <img :src="getImageURL(note)" class="card-img-top" alt="image :/">
               <div class="card-body">
-                <li class="list-group-item">
-                  <h4 class="text-white">{{ collection.title }}</h4>
-                  <router-link :to="'/collections/' + collection._id.$oid" class="btn btn-warning">Details</router-link>
-                  <button class="btn btn-outline-warning" @click="deleteCollection(collection._id)">Delete Collection</button>
-                  <button v-if="!isAdmin" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#staticBackdrop" @click="getSharedFriends(collection._id)">Share collection</button>
-                </li>
+                <h5 class="note-title">{{ note.title }}</h5>
+                <p class="note-text">{{ note.description }}</p>
+                <router-link :to="'/notes/' + note._id.$oid" class="btn btn-outline-warning">Details</router-link>
+                <button class="btn btn-outline-dark" @click="deleteNote(note._id)">Delete note</button>
+                <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#staticBackdrop" @click="getSharedFriends(note._id)">Share note</button>
               </div>
             </div>
-
           </div>
         </ul>
       </div>
-      <div class="container p-3 my-3 border mx-auto mb-3 mt-5 border-dark rounded text-center" v-else>
-        <h3>You don't have any collections yet!</h3>
+
+      <div class="container p-3 my-3 border mx-auto mb-3 mt-5 border-dark rounded" v-else>
+        <div class="text-center">
+          <h3>You don't have any notes yet!</h3>
+        </div>
       </div>
+
     </div>
 
     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -31,7 +35,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <h4 class="border-warning">Stop sharing collection with:</h4>
+            <h4 class="border-warning">Stop sharing note with:</h4>
             <div class="container" v-if="sharedFriendsList.length !== 0">
               <ul class="list-group" v-for="friend in sharedFriendsList" v-bind:key="friend.id.$oid">
                 <li class="list-group-item">
@@ -49,11 +53,11 @@
               </ul>
             </div>
             <div v-else>
-              <h5>You are not sharing this collection :(</h5>
+              <h5>You are not sharing this note :(</h5>
             </div>
           </div>
           <div class="modal-body">
-            <h4>Share collection with:</h4>
+            <h4>Share note with:</h4>
             <div class="container" v-if="besidesSharing.length !== 0">
               <ul class="list-group" v-for="friend in besidesSharing" v-bind:key="friend.id.$oid">
                 <li class="list-group-item">
@@ -77,21 +81,20 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" @click="closePopup()">Close</button>
-            <button type="button" class="btn btn-warning" data-bs-dismiss="modal" @click="shareCollection()">Share</button>
+            <button type="button" class="btn btn-warning" data-bs-dismiss="modal" @click="shareNote()">Share</button>
           </div>
         </div>
       </div>
     </div>
-
   </div>
 </template>
 
 <script>
 import axios from "axios";
-import config from "../../config/config";
+import config from "../../../config/config";
 
 export default {
-  name: "CollectionsList",
+  name: "NotesList",
 
   props: {
     id: String,
@@ -101,50 +104,58 @@ export default {
 
   data() {
     return {
-      collections: [],
+      notes: [],
       friendsListWithId: [],
       friendsToShare: [],
       sharedFriendsList: [],
       toStopSharing: [],
       besidesSharing: [],
       finalList: [],
-      sharedCollectionId: null,
-    }
+      sharedNoteId: null,
+    };
   },
 
   methods: {
-    async getCollections() {
-      const res = await axios.get(config.getCollectionsURL, {withCredentials: true});
-      this.collections = res.data;
+    async getNotes() {
+      const res = await axios.get(config.getSharingNotesURL, {withCredentials: true});
+      this.notes = res.data;
     },
     async getFriendsWithId() {
       const res = await axios.get(config.getFriendsWithIdURL, {withCredentials: true});
       this.friendsListWithId = res.data;
     },
     async getSharedFriends(id) {
-      this.sharedCollectionId = id;
+      this.sharedNoteId = id;
 
-      const res = await axios.get(config.getSharedFriendsColURL  + this.sharedCollectionId.$oid + '/shared_with', {withCredentials: true});
+      const res = await axios.get(config.getSharedFriendsURL  + this.sharedNoteId.$oid + '/shared_with', {withCredentials: true});
       this.sharedFriendsList = res.data;
 
       this.getBesidesSharing();
     },
-    deleteCollection(id) {
-      axios.delete(config.deleteCollectionURL + id.$oid, {withCredentials: true})
-          .then(() => this.getCollections())
+    deleteNote(id) {
+      axios.delete(config.deleteNotesURL + id.$oid, {withCredentials: true})
+          .then(() => this.getNotes())
           .catch(err => console.log(err.message));
     },
-    shareCollection() {
+    shareNote() {
       this.createFinalList();
 
-      axios.post(config.updateSharingCollectionsURL + this.sharedCollectionId.$oid + '/sharing_update', {'shared_with': this.finalList}, {withCredentials: true})
+      axios.post(config.updateSharingNotesURL + this.sharedNoteId.$oid + '/sharing_update', {'shared_with': this.finalList}, {withCredentials: true})
           .then(() => console.log('Hurraa!'))
           .catch(err => console.log(err));
 
       this.closePopup();
     },
-    getBesidesSharing() {
-
+    getImageURL(note) {
+      if (note.photo !== null) {
+        let img = new Image();
+        img.src = 'data:image/png;base64,' + note.photo;
+        return img.src;
+      } else {
+        return require('../../assets/background2.png');
+      }
+    },
+    getBesidesSharing(){
       const friendsList = Array.from(this.friendsListWithId);
       const sharedList = Array.from(this.sharedFriendsList);
 
@@ -170,20 +181,14 @@ export default {
       this.toStopSharing = [];
       this.sharedFriendsList = [];
       this.besidesSharing = [];
-      this.sharedCollectionId = null;
+      this.sharedNoteId = null;
       this.finalList = [];
     }
   },
 
   mounted() {
-    this.getCollections();
+    this.getNotes();
     this.getFriendsWithId();
-  },
-
-  computed: {
-    isAdmin() {
-      return this.$store.state.admin;
-    }
   }
 }
 </script>

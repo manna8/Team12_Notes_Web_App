@@ -15,14 +15,14 @@ import '../public/css/main.css';
 import App from '@/App.vue'
 import Registration from "@/components/Registration.vue";
 import LoginComponent from "@/components/LoginComponent.vue";
-import Notes from "@/components/Notes.vue";
+import Notes from "@/components/Notes/Notes.vue";
 import Friends from "@/components/Friends.vue";
 import Profile from "@/components/Profile.vue";
-import AddNote from "@/components/AddNote.vue";
+import AddNote from "@/components/Notes/AddNote.vue";
 import Home from "@/components/Home.vue";
-import Collections from "@/components/Collections.vue";
-import EditNote from "@/components/EditNote.vue";
-import EditCollection from "@/components/EditCollection.vue";
+import Collections from "@/components/Collections/Collections.vue";
+import EditNote from "@/components/Notes/EditNote.vue";
+import EditCollection from "@/components/Collections/EditCollection.vue";
 import Users from "@/components/Users.vue";
 import Friendships from "@/components/Friendships.vue";
 

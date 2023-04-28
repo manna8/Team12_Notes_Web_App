@@ -48,12 +48,12 @@
 </template>
 
 <script>
-import CollectionsList from "@/components/CollectionsList.vue";
-import SharedCollectionsList from "@/components/SharedCollectionsList.vue";
-import SharingCollectionsList from "@/components/SharingCollectionsList.vue";
+import CollectionsList from "@/components/Collections/CollectionsList.vue";
+import SharedCollectionsList from "@/components/Collections/SharedCollectionsList.vue";
+import SharingCollectionsList from "@/components/Collections/SharingCollectionsList.vue";
 
 import axios from "axios";
-import config from "../../config/config";
+import config from "../../../config/config";
 
 export default {
   name: "Collections",

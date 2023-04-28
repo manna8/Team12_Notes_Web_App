@@ -102,7 +102,6 @@ export default {
         this.showSharingCollections = false;
       }
     },
-
     toggleSharedCollections() {
       this.showSharedWithUserCollections = !this.showSharedWithUserCollections;
 
@@ -114,7 +113,6 @@ export default {
         this.showSharingCollections = false;
       }
     },
-
     toggleSharingCollections() {
       this.showSharingCollections = !this.showSharingCollections;
 
@@ -130,6 +128,7 @@ export default {
       return screen.width < 500;
     }
   },
+
   computed: {
     isAdmin() {
       return this.$store.state.admin;

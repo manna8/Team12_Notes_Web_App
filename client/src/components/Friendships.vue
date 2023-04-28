@@ -50,14 +50,12 @@ export default {
       friendships: []
     }
   },
+
   methods: {
     async getFriendships() {
       const res = await axios.get(config.getAllFriendshipsURL, {withCredentials: true});
       this.friendships = res.data;
-
-      console.log(this.friendships);
     },
-
     removeFriendship(id) {
       axios.delete(config.removeFriendURL + id, {withCredentials: true})
           .then(() => this.$router.go(0))
@@ -65,7 +63,6 @@ export default {
 
       this.$router.go(0);
     },
-
     editFriendship(id, friendshipStatus) {
       axios.put(config.answerFriendRequestURL + id, {
         "status": friendshipStatus,
@@ -74,6 +71,7 @@ export default {
           .catch(err => console.log(err.message));
     }
   },
+
   mounted() {
     this.getFriendships();
   }

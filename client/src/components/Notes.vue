@@ -54,6 +54,12 @@ import SharedNotesList from "@/components/SharedNotesList.vue";
 export default {
   name: "Notes",
 
+  components: {
+    NotesList,
+    SharingNotesList,
+    SharedNotesList
+  },
+
   data() {
     return {
       showUserNotes: true,
@@ -61,11 +67,7 @@ export default {
       showSharingNotes: false,
     };
   },
-  components: {
-    NotesList,
-    SharingNotesList,
-    SharedNotesList
-  },
+
   methods: {
     toggleUserNotes() {
       this.showUserNotes = !this.showUserNotes;
@@ -78,7 +80,6 @@ export default {
         this.showSharingNotes = false;
       }
     },
-
     toggleSharedNotes() {
       this.showSharedWithUserNotes = !this.showSharedWithUserNotes;
 
@@ -90,7 +91,6 @@ export default {
         this.showSharingNotes = false;
       }
     },
-
     toggleSharingNotes() {
       this.showSharingNotes = !this.showSharingNotes;
 
@@ -103,6 +103,7 @@ export default {
       }
     }
   },
+
   computed: {
     isAdmin() {
       return this.$store.state.admin;

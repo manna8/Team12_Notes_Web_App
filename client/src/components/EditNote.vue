@@ -14,7 +14,7 @@
         <p class="text-warning text-opacity-75" v-if="!descValid">Provide a description!</p>
       </div>
 
-      <div class="mb-3 d-flex flex-column align-items-start" v-if="collections.length !== 0">
+      <div class="mb-3 d-flex flex-column align-items-start" v-if="collections.length !== 0 &&  !isAdmin">
         <div>Selected collection: {{ originalCollection.title}}</div>
 
         <select v-model="input.selectedCollection">
@@ -60,6 +60,7 @@ export default {
       },
     }
   },
+
   methods: {
     async getNote() {
       const res = await axios.get(config.getNoteURL + this.id, {withCredentials: true});
@@ -70,15 +71,24 @@ export default {
     async getCollections() {
       const res = await axios.get(config.getCollectionsURL, {withCredentials: true});
       this.collections = res.data;
-      console.log(this.collections);
     },
-    titleValid() {
-      return this.note.title !== "";
-    },
-    descValid() {
-      return this.note.description !== "";
-    },
+    async uploadFile(event) {
+      this.selectedFile = event.target.files[0];
 
+      const reader = new FileReader();
+      reader.readAsDataURL(this.selectedFile);
+
+      await new Promise((resolve) => {
+        reader.onload = () => {
+          this.input.encodedFile = reader.result;
+          resolve();
+        };
+      });
+    },
+    async getCollection(id) {
+      const res = await axios.get(config.getCollectionURL + id, {withCredentials: true});
+      this.originalCollection = res.data.notes_collection;
+    },
     changeNote() {
       const formData = new FormData();
       formData.append('image', this.input.encodedFile);
@@ -113,28 +123,24 @@ export default {
         }
       }
     },
-    async uploadFile(event) {
-      this.selectedFile = event.target.files[0];
-
-      const reader = new FileReader();
-      reader.readAsDataURL(this.selectedFile);
-
-      await new Promise((resolve) => {
-        reader.onload = () => {
-          this.input.encodedFile = reader.result;
-          resolve();
-        };
-      });
+    titleValid() {
+      return this.note.title !== "";
     },
-      async getCollection(id) {
-        const res = await axios.get(config.getCollectionURL + id, {withCredentials: true});
-        this.originalCollection = res.data.notes_collection;
-      },
+    descValid() {
+      return this.note.description !== "";
+    },
   },
+
   created() {
     this.id = this.$route.params.id;
     this.getNote();
     this.getCollections();
+  },
+
+  computed: {
+    isAdmin() {
+      return this.$store.state.admin;
+    }
   }
 }
 </script>

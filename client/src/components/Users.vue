@@ -43,17 +43,21 @@ export default {
   data() {
     return {
       users: [],
+      friendships: [],
       message: '',
-      friendships: []
     }
   },
+
   methods: {
     async getAllUsers() {
       const res = await axios.get(config.getAllUsers, {withCredentials: true})
           .catch(err => console.log(err));
       this.users = res.data;
     },
-
+    async getFriendships() {
+      const res = await axios.get(config.answerFriendRequestURL, {withCredentials: true});
+      this.friendships = res.data;
+    },
     editUser(id, name, email) {
       if (name === "" || email === "") {
         this.$swal({
@@ -75,13 +79,8 @@ export default {
           .then(() => this.$router.push(0))
           .catch(err => console.log(err.message));
     },
-    async getFriendships() {
-      const res = await axios.get(config.answerFriendRequestURL, {withCredentials: true});
-      this.friendships = res.data;
-
-      console.log(this.friendships);
-    }
   },
+
   mounted() {
     this.getAllUsers();
     this.getFriendships();

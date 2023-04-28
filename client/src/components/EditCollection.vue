@@ -22,7 +22,7 @@
         </div>
       </ul>
     </div>
-    <div class="container p-3 my-3 border mx-auto mb-3 mt-5 border-dark rounded" v-else>
+    <div class="container p-3 my-3 border mx-auto mb-3 mt-5 border-dark rounded text-center" v-else>
       <h3>You haven't added any notes yet!</h3>
     </div>
   </div>
@@ -47,7 +47,7 @@ export default {
       notes: [],
 
       styleWeb: {
-        width: '400px',
+        width: '600px',
         height: 'auto'
       },
       styleMobile: {
@@ -56,6 +56,7 @@ export default {
       },
     }
   },
+
   methods: {
     async getCollection() {
       const res = await axios.get(config.getCollectionURL + this.id, {withCredentials: true});
@@ -89,12 +90,11 @@ export default {
     isMobile() {
       return screen.width < 500;
     }
-
   },
+
   created() {
     this.id = this.$route.params.id;
     this.getCollection();
-    // this.getNotes();
   }
 }
 </script>

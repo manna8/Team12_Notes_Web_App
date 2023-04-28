@@ -97,27 +97,26 @@ export default {
         width: '300px',
         height: 'auto'
       },
+
       emailValid: true,
       friendsList: [],
       sentFriendRequests: [],
       receivedFriendRequests: [],
     }
   },
+
   methods: {
     async getFriends() {
       const res = await axios.get(config.getFriendsURL, {withCredentials: true});
       this.friendsList = res.data;
-      console.log(this.friendsList);
     },
     async getReceivedFriends() {
       const res = await axios.get(config.getReceivedFriendsURL, {withCredentials: true});
       this.receivedFriendRequests = res.data;
-      console.log(this.receivedFriendRequests);
     },
     async getPendingFriends() {
       const res = await axios.get(config.getPendingFriendsURL, {withCredentials: true});
       this.sentFriendRequests = res.data;
-      console.log(this.sentFriendRequests);
     },
     addFriend() {
       if (this.input.email === "") {
@@ -150,7 +149,6 @@ export default {
                 });
               }
             });
-
       }
     },
     removeFriend(id) {
@@ -193,7 +191,6 @@ export default {
       axios.delete(config.removeFriendURL + id.$oid, {withCredentials: true})
           .then(() => this.$router.go(0))
           .catch(err => console.log(err.message));
-
     },
     blockFriend(id) {
       axios.put(config.answerFriendRequestURL + id.$oid, {
@@ -222,7 +219,6 @@ export default {
     this.getReceivedFriends();
     this.getPendingFriends();
   }
-
 }
 </script>
 

@@ -86,8 +86,7 @@ User guide can be accessible through this link [user guide](https://github.com/m
 │       │   └── TokenDataService.js
 │       ├── App.vue
 │       ├── http-common.js
-│       ├── main.js
-│       └──  router.js
+│       └──  main.js
 ├── sever
 │   ├── app
 │   │   ├── assets

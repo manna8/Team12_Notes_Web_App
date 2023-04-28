@@ -54,7 +54,6 @@ export default {
         width: '300px',
         height: 'auto'
       },
-
       input: {
         title: "",
         description: "",
@@ -68,6 +67,23 @@ export default {
   },
 
   methods: {
+    async getCollections() {
+      const res = await axios.get(config.getCollectionsURL, {withCredentials: true});
+      this.collections = res.data;
+    },
+    async uploadFile(event) {
+      this.selectedFile = event.target.files[0];
+
+      const reader = new FileReader();
+      reader.readAsDataURL(this.selectedFile);
+
+      await new Promise((resolve) => {
+        reader.onload = () => {
+          this.input.encodedFile = reader.result;
+          resolve();
+        };
+      });
+    },
     addNote() {
       const formData = new FormData();
       formData.append('image', this.input.encodedFile);
@@ -91,39 +107,18 @@ export default {
             "title": this.input.title,
             "description": this.input.description,
             "notes_collection_id": this.input.selectedCollection,
-            "photo": {} // Get the base64 string from the encoded file
+            "photo": {}
           }, {withCredentials: true})
               .then(() => this.$router.push({path: '/notes'}))
               .catch(err => console.log(err.message));
         }
-
       }
-
     },
-    async uploadFile(event) {
-      this.selectedFile = event.target.files[0];
-
-      const reader = new FileReader();
-      reader.readAsDataURL(this.selectedFile);
-
-      await new Promise((resolve) => {
-        reader.onload = () => {
-          this.input.encodedFile = reader.result;
-          resolve();
-        };
-      });
-    },
-
     titleValid() {
       return this.input.title !== "";
     },
     descValid() {
       return this.input.description !== "";
-    },
-    async getCollections() {
-      const res = await axios.get(config.getCollectionsURL, {withCredentials: true});
-      this.collections = res.data;
-      console.log(this.collections);
     },
     isMobile() {
       return screen.width < 500;

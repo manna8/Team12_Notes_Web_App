@@ -111,16 +111,11 @@ export default {
       finalList: []
     }
   },
+
   methods: {
-    deleteCollection(id) {
-      axios.delete(config.deleteCollectionURL + id.$oid, {withCredentials: true})
-          .then(() => this.getCollections())
-          .catch(err => console.log(err.message));
-    },
     async getCollections() {
       const res = await axios.get(config.getSharingCollectionsURL, {withCredentials: true});
       this.collections = res.data;
-      // console.log(this.collections);
     },
     async getFriendsWithId() {
       const res = await axios.get(config.getFriendsWithIdURL, {withCredentials: true});
@@ -133,8 +128,11 @@ export default {
       this.sharedFriendsList = res.data;
 
       this.getBesidesSharing();
-
-      console.log(this.besidesSharing);
+    },
+    deleteCollection(id) {
+      axios.delete(config.deleteCollectionURL + id.$oid, {withCredentials: true})
+          .then(() => this.getCollections())
+          .catch(err => console.log(err.message));
     },
     shareCollection() {
       this.createFinalList();
@@ -144,17 +142,13 @@ export default {
           .catch(err => console.log(err));
 
       this.closePopup();
-      // this.$router.go(0);
     },
-
     getBesidesSharing() {
-
       const friendsList = Array.from(this.friendsListWithId);
       const sharedList = Array.from(this.sharedFriendsList);
 
       this.besidesSharing = friendsList.filter(value => !sharedList.some(friend => JSON.stringify(friend) === JSON.stringify(value)));
       this.besidesSharing = new Proxy(this.besidesSharing, {});
-
     },
     createFinalList() {
       const stopList = Array.from(this.toStopSharing);
@@ -169,8 +163,6 @@ export default {
       let ids = Object.values(stillShareWith).map(obj => obj.id?.$oid || obj);
       let combinedList = new Set([...ids, ...toShareList]);
       this.finalList = new Proxy([...combinedList], {});
-
-
     },
     closePopup() {
       this.friendsToShare = [];
@@ -181,6 +173,7 @@ export default {
       this.finalList = [];
     }
   },
+
   mounted() {
     this.getCollections();
     this.getFriendsWithId();

@@ -34,10 +34,10 @@
 <script>
 import axios from "axios";
 import config from "../../config/config";
-// import Cookies from 'js-cookie';
 
 export default {
   name: "login",
+
   data() {
     return {
       input: {
@@ -56,6 +56,7 @@ export default {
       passwordValid: true
     }
   },
+
   methods: {
     login() {
       this.passwordValid = this.input.password !== "";
@@ -68,8 +69,6 @@ export default {
         }, {withCredentials: true})
             .then(() => {
               this.$router.push({path: '/notes'})
-
-              // const myCookie = Cookies.get('jwt');
 
               this.$store.commit('login');
 

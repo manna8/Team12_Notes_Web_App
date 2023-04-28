@@ -1,6 +1,7 @@
 <template>
   <div>
     <div class="overflow-auto">
+
       <div class="row row-cols-1 row-cols-md-3 g-4" v-if="notes.length !== 0" style="width: auto; height: auto">
         <ul v-for="note in notes" v-bind:key="note.title">
           <div class="col">
@@ -17,11 +18,13 @@
           </div>
         </ul>
       </div>
+
       <div class="container p-3 my-3 border mx-auto mb-3 mt-5 border-dark rounded" v-else>
         <div class="text-center">
           <h3>You don't have any notes yet!</h3>
         </div>
       </div>
+
     </div>
 
     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -103,33 +106,19 @@ export default {
     return {
       notes: [],
       friendsListWithId: [],
-      sharedNoteId: null,
       friendsToShare: [],
       sharedFriendsList: [],
       toStopSharing: [],
       besidesSharing: [],
-      finalList: []
+      finalList: [],
+      sharedNoteId: null,
     };
   },
 
   methods: {
-    deleteNote(id) {
-      axios.delete(config.deleteNotesURL + id.$oid, {withCredentials: true})
-          .then(() => this.getNotes())
-          .catch(err => console.log(err.message));
-    },
     async getNotes() {
       const res = await axios.get(config.getSharingNotesURL, {withCredentials: true});
       this.notes = res.data;
-    },
-    getImageURL(note) {
-      if (note.photo !== null) {
-        let img = new Image();
-        img.src = 'data:image/png;base64,' + note.photo;
-        return img.src;
-      } else {
-        return require('../assets/background2.png');
-      }
     },
     async getFriendsWithId() {
       const res = await axios.get(config.getFriendsWithIdURL, {withCredentials: true});
@@ -143,6 +132,11 @@ export default {
 
       this.getBesidesSharing();
     },
+    deleteNote(id) {
+      axios.delete(config.deleteNotesURL + id.$oid, {withCredentials: true})
+          .then(() => this.getNotes())
+          .catch(err => console.log(err.message));
+    },
     shareNote() {
       this.createFinalList();
 
@@ -152,15 +146,21 @@ export default {
 
       this.closePopup();
     },
-
-    getBesidesSharing() {
-
+    getImageURL(note) {
+      if (note.photo !== null) {
+        let img = new Image();
+        img.src = 'data:image/png;base64,' + note.photo;
+        return img.src;
+      } else {
+        return require('../assets/background2.png');
+      }
+    },
+    getBesidesSharing(){
       const friendsList = Array.from(this.friendsListWithId);
       const sharedList = Array.from(this.sharedFriendsList);
 
       this.besidesSharing = friendsList.filter(value => !sharedList.some(friend => JSON.stringify(friend) === JSON.stringify(value)));
       this.besidesSharing = new Proxy(this.besidesSharing, {});
-
     },
     createFinalList() {
       const stopList = Array.from(this.toStopSharing);
@@ -175,8 +175,6 @@ export default {
       let ids = Object.values(stillShareWith).map(obj => obj.id?.$oid || obj);
       let combinedList = new Set([...ids, ...toShareList]);
       this.finalList = new Proxy([...combinedList], {});
-
-
     },
     closePopup() {
       this.friendsToShare = [];

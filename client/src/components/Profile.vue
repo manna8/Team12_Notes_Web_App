@@ -87,17 +87,13 @@ export default {
     async getUserInfo() {
       const response = await axios.get(config.getUserInfoURL, {withCredentials: true});
       this.userDetails = response.data.user;
-      console.log(this.userDetails);
 
       this.setLocalInfo();
-      console.log(this.input);
     },
-
     setLocalInfo() {
       this.input.newEmail = this.userDetails.email;
       this.input.newUsername = this.userDetails.name;
     },
-
     changeUserDetails() {
       this.checkPasswordValidity();
 
@@ -152,13 +148,10 @@ export default {
               });
             });
       }
-
     },
-
     checkPasswordValidity() {
       this.passwordsMatch = this.input.newPassword === this.input.newPasswordRepeat;
     },
-
     deleteUser() {
       const id = this.userDetails._id.$oid;
 
@@ -190,7 +183,6 @@ export default {
     isMobile() {
       return screen.width < 500;
     }
-
   },
 
   mounted() {
